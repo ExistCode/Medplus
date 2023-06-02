@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="936.0" prefWidth="1500.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="medplus.Navigationcontroller">
+   <children>
+      <Pane layoutX="197.0" prefHeight="936.0" prefWidth="486.0" style="-fx-background-color: #EFF7F9; -fx-border-color: gray;" />
+      <Pane layoutX="-4.0" prefHeight="938.0" prefWidth="203.0" style="-fx-background-color: #089bAB;">
+         <children>
+            <Pane fx:id="dashboardbutton" layoutX="40.0" layoutY="80.0" onMouseClicked="#changedToDashboard" prefHeight="184.0" prefWidth="125.0">
+               <children>
+                  <ImageView fitHeight="60.0" fitWidth="67.0" layoutX="32.0" layoutY="47.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@icons/dashboards-icons-white.png" />
+                     </image>
+                  </ImageView>
+                  <Text fill="WHITE" layoutX="16.0" layoutY="136.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dashboard">
+                     <font>
+                        <Font name="SF Pro Rounded Semibold" size="20.0" />
+                     </font>
+                  </Text>
+               </children>
+            </Pane>
+            <Pane fx:id="patientsbutton" layoutX="40.0" layoutY="260.0" onMouseClicked="#changedToPatients" prefHeight="184.0" prefWidth="125.0">
+               <children>
+                  <ImageView fitHeight="60.0" fitWidth="111.0" layoutX="32.0" layoutY="37.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@icons/icons-profile-white.png" />
+                     </image>
+                  </ImageView>
+                  <Text fill="WHITE" layoutX="25.0" layoutY="138.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Patients">
+                     <font>
+                        <Font name="SF Pro Rounded Semibold" size="20.0" />
+                     </font>
+                  </Text>
+               </children>
+            </Pane>
+            <Pane fx:id="staffButton" layoutX="40.0" layoutY="444.0" onMouseClicked="#changedToStaff" prefHeight="184.0" prefWidth="125.0" style="-fx-background-color: white; -fx-background-radius: 60;">
+               <children>
+                  <ImageView fitHeight="60.0" fitWidth="111.0" layoutX="32.0" layoutY="37.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@icons/staff-icons-green.png" />
+                     </image>
+                  </ImageView>
+                  <Text fill="#089bab" layoutX="41.0" layoutY="138.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Staff">
+                     <font>
+                        <Font name="SF Pro Rounded Semibold" size="20.0" />
+                     </font>
+                  </Text>
+               </children>
+            </Pane>
+            <Pane fx:id="searchbutton" layoutX="40.0" layoutY="624.0" onMouseClicked="#changedToSearch" prefHeight="184.0" prefWidth="125.0">
+               <children>
+                  <ImageView fitHeight="60.0" fitWidth="111.0" layoutX="32.0" layoutY="37.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@icons/search-icons-white.png" />
+                     </image>
+                  </ImageView>
+                  <Text fill="WHITE" layoutX="30.0" layoutY="138.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Search">
+                     <font>
+                        <Font name="SF Pro Rounded Semibold" size="20.0" />
+                     </font>
+                  </Text>
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+   </children>
+</Pane>
