@@ -56,7 +56,7 @@ public class Homecontroller {
 
     @FXML
     void seePatientsDetails(MouseEvent event) throws IOException {
-        App.setRoot("search");
+        App.setRoot("patients_details");
 
     }
 }
