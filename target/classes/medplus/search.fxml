@@ -8,7 +8,6 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="936.0" prefWidth="1500.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="medplus.Navigationcontroller">
    <children>
-      <Pane layoutX="197.0" prefHeight="936.0" prefWidth="486.0" style="-fx-background-color: #EFF7F9; -fx-border-color: gray;" />
       <Pane layoutX="-4.0" prefHeight="938.0" prefWidth="203.0" style="-fx-background-color: #089bAB;">
          <children>
             <Pane fx:id="dashboardbutton" layoutX="40.0" layoutY="80.0" onMouseClicked="#changedToDashboard" prefHeight="184.0" prefWidth="125.0">

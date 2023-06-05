@@ -1,14 +1,171 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="936.0" prefWidth="1500.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="medplus.Navigationcontroller">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="936.0" prefWidth="1500.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="medplus.Homecontroller">
    <children>
-      <Pane layoutX="197.0" prefHeight="936.0" prefWidth="486.0" style="-fx-background-color: #EFF7F9; -fx-border-color: gray;" />
+      <Pane layoutX="197.0" prefHeight="936.0" prefWidth="486.0" style="-fx-background-color: #EFF7F9; -fx-border-color: gray;">
+         <children>
+            <Text fill="#089bab" layoutX="51.0" layoutY="98.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Latest patients">
+               <font>
+                  <Font name="SF Pro Text Bold" size="40.0" />
+               </font>
+            </Text>
+            <Label fx:id="datetime" layoutX="54.0" layoutY="123.0" text="Current date time" textFill="#00000040">
+               <font>
+                  <Font name="SF Pro Rounded Semibold" size="24.0" />
+               </font>
+            </Label>
+            <Pane layoutX="54.0" layoutY="182.0" prefHeight="200.0" prefWidth="377.0" style="-fx-background-color: white; -fx-background-radius: 20;">
+               <children>
+                  <ImageView fitHeight="102.0" fitWidth="60.0" layoutX="20.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@icons/icons-profile-green.png" />
+                     </image>
+                  </ImageView>
+                  <Text layoutX="92.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="First patient name">
+                     <font>
+                        <Font name="SF Pro Rounded Semibold" size="20.0" />
+                     </font>
+                  </Text>
+                  <Text fill="#00000040" layoutX="91.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gender, age">
+                     <font>
+                        <Font name="SF Pro Rounded Regular" size="16.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="26.0" layoutY="109.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Diseases, date">
+                     <font>
+                        <Font name="SF Pro Text Regular" size="20.0" />
+                     </font>
+                  </Text>
+                  <Text fill="#00000040" layoutX="26.0" layoutY="135.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Doctor's name">
+                     <font>
+                        <Font name="SF Pro Rounded Regular" size="16.0" />
+                     </font>
+                  </Text>
+                  <Text fill="#f9988b" layoutX="24.0" layoutY="174.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Status">
+                     <font>
+                        <Font name="SF Pro Text Bold" size="20.0" />
+                     </font>
+                  </Text>
+                  <Pane fx:id="seeDetails" layoutX="217.0" layoutY="147.0" onMouseClicked="#seePatientsDetails" prefHeight="40.0" prefWidth="141.0">
+                     <children>
+                        <Text fill="#089bab" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="See Details">
+                           <font>
+                              <Font name="SF Pro Text Bold" size="20.0" />
+                           </font>
+                        </Text>
+                        <ImageView fitHeight="40.0" fitWidth="25.0" layoutX="114.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@icons/details-icons.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+               </children>
+            </Pane>
+            <Pane layoutX="54.0" layoutY="421.0" prefHeight="200.0" prefWidth="377.0" style="-fx-background-color: white; -fx-background-radius: 20;">
+               <children>
+                  <ImageView fitHeight="102.0" fitWidth="60.0" layoutX="20.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@icons/icons-profile-green.png" />
+                     </image>
+                  </ImageView>
+                  <Text layoutX="92.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="First patient name">
+                     <font>
+                        <Font name="SF Pro Rounded Semibold" size="20.0" />
+                     </font>
+                  </Text>
+                  <Text fill="#00000040" layoutX="91.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gender, age">
+                     <font>
+                        <Font name="SF Pro Rounded Regular" size="16.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="26.0" layoutY="109.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Diseases, date">
+                     <font>
+                        <Font name="SF Pro Text Regular" size="20.0" />
+                     </font>
+                  </Text>
+                  <Text fill="#00000040" layoutX="26.0" layoutY="135.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Doctor's name">
+                     <font>
+                        <Font name="SF Pro Rounded Regular" size="16.0" />
+                     </font>
+                  </Text>
+                  <Text fill="#f9988b" layoutX="24.0" layoutY="174.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Status">
+                     <font>
+                        <Font name="SF Pro Text Bold" size="20.0" />
+                     </font>
+                  </Text>
+                  <Pane fx:id="seeDetails1" layoutX="217.0" layoutY="147.0" onMouseClicked="#seePatientsDetails" prefHeight="40.0" prefWidth="141.0">
+                     <children>
+                        <Text fill="#089bab" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="See Details">
+                           <font>
+                              <Font name="SF Pro Text Bold" size="20.0" />
+                           </font>
+                        </Text>
+                        <ImageView fitHeight="40.0" fitWidth="25.0" layoutX="114.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@icons/details-icons.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+               </children>
+            </Pane>
+            <Pane layoutX="54.0" layoutY="659.0" prefHeight="200.0" prefWidth="377.0" style="-fx-background-color: white; -fx-background-radius: 20;">
+               <children>
+                  <ImageView fitHeight="102.0" fitWidth="60.0" layoutX="20.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@icons/icons-profile-green.png" />
+                     </image>
+                  </ImageView>
+                  <Text layoutX="92.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="First patient name">
+                     <font>
+                        <Font name="SF Pro Rounded Semibold" size="20.0" />
+                     </font>
+                  </Text>
+                  <Text fill="#00000040" layoutX="91.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gender, age">
+                     <font>
+                        <Font name="SF Pro Rounded Regular" size="16.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="26.0" layoutY="109.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Diseases, date">
+                     <font>
+                        <Font name="SF Pro Text Regular" size="20.0" />
+                     </font>
+                  </Text>
+                  <Text fill="#00000040" layoutX="26.0" layoutY="135.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Doctor's name">
+                     <font>
+                        <Font name="SF Pro Rounded Regular" size="16.0" />
+                     </font>
+                  </Text>
+                  <Text fill="#f9988b" layoutX="24.0" layoutY="174.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Status">
+                     <font>
+                        <Font name="SF Pro Text Bold" size="20.0" />
+                     </font>
+                  </Text>
+                  <Pane fx:id="seeDetails2" layoutX="217.0" layoutY="147.0" onMouseClicked="#seePatientsDetails" prefHeight="40.0" prefWidth="141.0">
+                     <children>
+                        <Text fill="#089bab" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="See Details">
+                           <font>
+                              <Font name="SF Pro Text Bold" size="20.0" />
+                           </font>
+                        </Text>
+                        <ImageView fitHeight="40.0" fitWidth="25.0" layoutX="114.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@icons/details-icons.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+               </children>
+            </Pane>
+         </children></Pane>
       <Pane layoutX="-4.0" prefHeight="938.0" prefWidth="203.0" style="-fx-background-color: #089bAB;">
          <children>
             <Pane fx:id="dashboardbutton" layoutX="40.0" layoutY="80.0" onMouseClicked="#changedToDashboard" prefHeight="184.0" prefWidth="125.0" style="-fx-background-radius: 60; -fx-background-color: white;">
