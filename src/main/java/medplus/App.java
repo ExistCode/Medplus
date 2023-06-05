@@ -7,8 +7,9 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.text.Format;
 import java.text.SimpleDateFormat;
-import java.time.LocalDate;
+import java.util.Date;
 
 /**
  * JavaFX App
@@ -20,7 +21,7 @@ public class App extends Application {
     @Override
     public void start(Stage stage) throws IOException {
 
-        scene = new Scene(loadFXML("login"), 1500, 936);
+        scene = new Scene(loadFXML("login"), 1200, 900);
         stage.setFullScreen(true);
         stage.setScene(scene);
         stage.show();
@@ -38,6 +39,7 @@ public class App extends Application {
 
     public static void main(String[] args) {
         launch();
+
     }
 
 }

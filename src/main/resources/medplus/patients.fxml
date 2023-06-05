@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="936.0" prefWidth="1500.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="medplus.Navigationcontroller">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="936.0" prefWidth="1500.0" style="-fx-background-color: EFF7F9;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="medplus.Patientcontroller">
    <children>
-      <Pane layoutX="197.0" prefHeight="936.0" prefWidth="486.0" style="-fx-background-color: #EFF7F9; -fx-border-color: gray;" />
       <Pane layoutX="-4.0" prefHeight="938.0" prefWidth="203.0" style="-fx-background-color: #089bAB;">
          <children>
             <Pane fx:id="dashboardbutton" layoutX="40.0" layoutY="80.0" onMouseClicked="#changedToDashboard" prefHeight="184.0" prefWidth="125.0">
@@ -69,5 +71,48 @@
             </Pane>
          </children>
       </Pane>
+      <Pane layoutX="200.0" prefHeight="177.0" prefWidth="1300.0" style="-fx-background-color: white;">
+         <children>
+            <Text fill="#089bab" layoutX="63.0" layoutY="89.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Patients databases">
+               <font>
+                  <Font name="SF Pro Text Bold" size="40.0" />
+               </font>
+            </Text>
+            <Text fill="#00000040" layoutX="63.0" layoutY="138.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Access every patients detail here!">
+               <font>
+                  <Font name="SF Pro Display Semibold" size="24.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+      <Pane fx:id="addNewButton" layoutX="264.0" layoutY="224.0" onMouseClicked="#addNewPatientScreen" prefHeight="56.0" prefWidth="241.0" style="-fx-background-color: FEAD54; -fx-background-radius: 12;">
+         <children>
+            <Text layoutX="60.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="+ Add New">
+               <font>
+                  <Font name="SF Pro Rounded Medium" size="24.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+      <Pane layoutX="264.0" layoutY="337.0" prefHeight="520.0" prefWidth="1175.0" style="-fx-background-color: white;">
+         <children>
+            <TableView fx:id="patientsTable" layoutX="36.0" layoutY="27.0" prefHeight="455.0" prefWidth="1101.0" style="-fx-background-color: #EFF7F9; -fx-border-radius: 12;">
+              <columns>
+                <TableColumn prefWidth="117.26519775390625" style="-fx-background-color: #9DDBBE;" text="Patients No." />
+                <TableColumn prefWidth="127.73480224609375" style="-fx-background-color: #9DDBBE;" text="Patients Name" />
+                  <TableColumn prefWidth="147.80389404296875" style="-fx-background-color: #9DDBBE;" text="Date Check in" />
+                  <TableColumn prefWidth="206.35906982421875" style="-fx-background-color: #9DDBBE;" text="Doctor Name" />
+                  <TableColumn prefWidth="207.5054931640625" style="-fx-background-color: #9DDBBE;" text="Disease name" />
+                  <TableColumn prefWidth="140.262451171875" style="-fx-background-color: #9DDBBE;" text="Status" />
+                  <TableColumn prefWidth="156.4913330078125" style="-fx-background-color: #9DDBBE;" />
+              </columns>
+            </TableView>
+         </children>
+      </Pane>
+      <TextField fx:id="searchButton" alignment="CENTER" layoutX="1199.0" layoutY="224.0" prefHeight="56.0" prefWidth="241.0" promptText="Search Patients" style="-fx-border-color: #089bab; -fx-background-color: transparent; -fx-border-radius: 12;">
+         <font>
+            <Font name="SF Pro Text Semibold" size="13.0" />
+         </font>
+      </TextField>
    </children>
 </Pane>

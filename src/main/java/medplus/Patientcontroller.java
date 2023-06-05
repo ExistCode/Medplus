@@ -1,32 +1,34 @@
 package medplus;
 
 import java.io.IOException;
-import java.text.Format;
-import java.text.SimpleDateFormat;
-import java.time.LocalDate;
-import java.util.Date;
 
 import javafx.fxml.FXML;
-import javafx.scene.control.Label;
+import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
-import javafx.scene.text.Text;
 
-public class Homecontroller {
-
-    // System.out.println("Current Date = " + strDate);
+public class Patientcontroller {
+    @FXML
+    private Pane addNewButton;
 
     @FXML
-    private Pane dashboard;
+    private TableView<?> patientsTable;
+
     @FXML
-    private Text datetime;
+    private TextField searchButton;
+
+    @FXML
+    void addNewPatientScreen(MouseEvent event) throws IOException {
+        App.setRoot("add_patients");
+
+    }
+
     @FXML
     private Pane dashboardbutton;
 
     @FXML
     private Pane patientsbutton;
-    @FXML
-    private Pane seeDetails;
 
     @FXML
     private Pane searchbutton;
@@ -39,12 +41,8 @@ public class Homecontroller {
         App.setRoot("homescreen");
     }
 
-    @FXML
-    public void initialize() {
-        Format f = new SimpleDateFormat("dd MMM yy");
-        String strDate = f.format(new Date());
-        datetime.setText(strDate);
-    }
+    // String username = Username.getText();
+    // String password = Password.getText();
 
     @FXML
     void changedToPatients(MouseEvent event) throws IOException {
@@ -62,9 +60,4 @@ public class Homecontroller {
         App.setRoot("staff");
     }
 
-    @FXML
-    void seePatientsDetails(MouseEvent event) throws IOException {
-        App.setRoot("patients_details");
-
-    }
 }
