@@ -33,7 +33,7 @@ public class LoginController {
             username = Username.getText();
             password = Password.getText();
             if (!username.isEmpty() || !password.isEmpty()) {
-                if (username.equals(adminUsername) && password.equals(adminPassword)) {
+                if (username.equalsIgnoreCase(adminUsername) && password.equalsIgnoreCase(adminPassword)) {
                     App.setRoot("homescreen");
                 } else {
                     label.setText("!Wrong username or password. Try again.");

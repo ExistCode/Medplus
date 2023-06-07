@@ -8,6 +8,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import medplus.App;
+import medplus.models.Patients;
 
 public class Patientcontroller {
 
@@ -15,7 +16,7 @@ public class Patientcontroller {
     private Pane addNewButton;
 
     @FXML
-    private TableView<?> patientsTable;
+    private TableView<Patients> patientsTable;
 
     @FXML
     private TextField searchButton;

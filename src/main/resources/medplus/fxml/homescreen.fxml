@@ -20,7 +20,7 @@
                <children>
                   <ImageView fitHeight="102.0" fitWidth="60.0" layoutX="20.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@icons/icons-profile-green.png" />
+                        <Image url="@../assets/icons/icons-profile-green.png" />
                      </image>
                   </ImageView>
                   <Text layoutX="92.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="First patient name">
@@ -68,7 +68,7 @@
                <children>
                   <ImageView fitHeight="102.0" fitWidth="60.0" layoutX="20.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@icons/icons-profile-green.png" />
+                        <Image url="@../assets/icons/icons-profile-green.png" />
                      </image>
                   </ImageView>
                   <Text layoutX="92.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="First patient name">
@@ -116,7 +116,7 @@
                <children>
                   <ImageView fitHeight="102.0" fitWidth="60.0" layoutX="20.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@icons/icons-profile-green.png" />
+                        <Image url="@../assets/icons/icons-profile-green.png" />
                      </image>
                   </ImageView>
                   <Text layoutX="92.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="First patient name">
