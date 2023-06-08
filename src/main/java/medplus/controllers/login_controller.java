@@ -10,7 +10,7 @@ import medplus.App;
 
 import java.io.IOException;
 
-public class LoginController {
+public class login_controller {
     @FXML
     private PasswordField Password;
 
@@ -34,7 +34,7 @@ public class LoginController {
             password = Password.getText();
             if (!username.isEmpty() || !password.isEmpty()) {
                 if (username.equalsIgnoreCase(adminUsername) && password.equalsIgnoreCase(adminPassword)) {
-                    App.setRoot("homescreen");
+                    App.setRoot("home_screen");
                 } else {
                     label.setText("!Wrong username or password. Try again.");
                 }

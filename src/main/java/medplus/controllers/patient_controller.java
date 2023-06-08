@@ -8,22 +8,21 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import medplus.App;
-import medplus.models.Patients;
 
-public class Patientcontroller {
+public class patient_controller {
 
     @FXML
     private Pane addNewButton;
 
     @FXML
-    private TableView<Patients> patientsTable;
+    private TableView<String> patientsTable;
 
     @FXML
     private TextField searchButton;
 
     @FXML
     void addNewPatientScreen(MouseEvent event) throws IOException {
-        App.setRoot("addPatients");
+        App.setRoot("add_patients_screen");
     }
 
     @FXML
@@ -40,26 +39,23 @@ public class Patientcontroller {
 
     @FXML
     void changedToDashboard(MouseEvent event) throws IOException {
-        App.setRoot("homescreen");
+        App.setRoot("home_screen");
     }
-
-    // String username = Username.getText();
-    // String password = Password.getText();
 
     @FXML
     void changedToPatients(MouseEvent event) throws IOException {
-        App.setRoot("patients");
+        App.setRoot("patients_details_screen");
 
     }
 
     @FXML
     void changedToSearch(MouseEvent event) throws IOException {
-        App.setRoot("search");
+        App.setRoot("search_home_screen");
     }
 
     @FXML
     void changedToStaff(MouseEvent event) throws IOException {
-        App.setRoot("staff");
+        App.setRoot("staff_home_screen");
     }
 
 }

@@ -11,7 +11,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import medplus.App;
 
-public class Addpatientcontroller {
+public class add_patient_controller {
     ObservableList<String> bloodTypeOptions = FXCollections.observableArrayList(
             "A-",
             "A+",
@@ -38,13 +38,13 @@ public class Addpatientcontroller {
 
     @FXML
     void addPatient(MouseEvent event) throws IOException {
-        App.setRoot("homescreen");
+        App.setRoot("home_screen");
 
     }
 
     @FXML
     void backToPatients(MouseEvent event) throws IOException {
-        App.setRoot("patients");
+        App.setRoot("patients_home_screen");
 
     }
 

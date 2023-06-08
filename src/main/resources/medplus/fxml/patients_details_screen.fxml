@@ -6,8 +6,9 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="936.0" prefWidth="1500.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="medplus.controllers.Navigationcontroller">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="936.0" prefWidth="1500.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="medplus.controllers.navigation_controller">
    <children>
+      <Pane layoutX="197.0" prefHeight="936.0" prefWidth="486.0" style="-fx-background-color: #EFF7F9; -fx-border-color: gray;" />
       <Pane layoutX="-4.0" prefHeight="938.0" prefWidth="203.0" style="-fx-background-color: #089bAB;">
          <children>
             <Pane fx:id="dashboardbutton" layoutX="40.0" layoutY="80.0" onMouseClicked="#changedToDashboard" prefHeight="184.0" prefWidth="125.0">
@@ -24,14 +25,14 @@
                   </Text>
                </children>
             </Pane>
-            <Pane fx:id="patientsbutton" layoutX="40.0" layoutY="260.0" onMouseClicked="#changedToPatients" prefHeight="184.0" prefWidth="125.0">
+            <Pane fx:id="patientsbutton" layoutX="40.0" layoutY="260.0" onMouseClicked="#changedToPatients" prefHeight="184.0" prefWidth="125.0" style="-fx-background-color: white; -fx-background-radius: 60;">
                <children>
                   <ImageView fitHeight="60.0" fitWidth="111.0" layoutX="32.0" layoutY="37.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../assets/icons/icons-profile-white.png" />
+                        <Image url="@../assets/icons/icons-profile-green.png" />
                      </image>
                   </ImageView>
-                  <Text fill="WHITE" layoutX="25.0" layoutY="138.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Patients">
+                  <Text fill="#099dab" layoutX="25.0" layoutY="138.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Patients">
                      <font>
                         <Font name="SF Pro Rounded Semibold" size="20.0" />
                      </font>
@@ -52,14 +53,14 @@
                   </Text>
                </children>
             </Pane>
-            <Pane fx:id="searchbutton" layoutX="40.0" layoutY="624.0" onMouseClicked="#changedToSearch" prefHeight="184.0" prefWidth="125.0" style="-fx-background-color: white; -fx-background-radius: 60;">
+            <Pane fx:id="searchbutton" layoutX="40.0" layoutY="624.0" onMouseClicked="#changedToSearch" prefHeight="184.0" prefWidth="125.0">
                <children>
                   <ImageView fitHeight="60.0" fitWidth="111.0" layoutX="32.0" layoutY="37.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../assets/icons/search-icons-green.png" />
+                        <Image url="@../assets/icons/search-icons-white.png" />
                      </image>
                   </ImageView>
-                  <Text fill="#089bab" layoutX="30.0" layoutY="138.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Search">
+                  <Text fill="WHITE" layoutX="30.0" layoutY="138.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Search">
                      <font>
                         <Font name="SF Pro Rounded Semibold" size="20.0" />
                      </font>
