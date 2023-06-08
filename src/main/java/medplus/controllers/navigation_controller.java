@@ -11,7 +11,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import medplus.App;
 
-public class Navigationcontroller {
+public class navigation_controller {
     // @FXML
     // private TextField Username;
     // @FXML
@@ -33,7 +33,7 @@ public class Navigationcontroller {
 
     @FXML
     void changedToDashboard(MouseEvent event) throws IOException {
-        App.setRoot("homescreen");
+        App.setRoot("home_screen");
     }
 
     // String username = Username.getText();
@@ -41,18 +41,18 @@ public class Navigationcontroller {
 
     @FXML
     void changedToPatients(MouseEvent event) throws IOException {
-        App.setRoot("patients");
+        App.setRoot("patients_home_screen");
 
     }
 
     @FXML
     void changedToSearch(MouseEvent event) throws IOException {
-        App.setRoot("search");
+        App.setRoot("search_home_screen");
     }
 
     @FXML
     void changedToStaff(MouseEvent event) throws IOException {
-        App.setRoot("staff");
+        App.setRoot("staff_home_screen");
     }
 
 }

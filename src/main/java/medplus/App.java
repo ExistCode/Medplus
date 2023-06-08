@@ -18,7 +18,7 @@ public class App extends Application {
     @Override
     public void start(Stage stage) throws IOException {
 
-        scene = new Scene(loadFXML("login"), 1200, 900);
+        scene = new Scene(loadFXML("login_screen"), 1200, 900);
         stage.setFullScreen(true);
         stage.setScene(scene);
         stage.show();
@@ -34,6 +34,9 @@ public class App extends Application {
         // FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("fxml/" + fxml +
         // ".fxml"));
         FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("fxml/" + fxml + ".fxml"));
+
+        // FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("fxml/" + fxml +
+        // ".fxml"));
 
         // FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("fxml/" + fxml +
         // ".fxml"));

@@ -13,7 +13,7 @@ import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
 import medplus.App;
 
-public class Homecontroller {
+public class home_controller {
 
     // System.out.println("Current Date = " + strDate);
 
@@ -37,7 +37,7 @@ public class Homecontroller {
 
     @FXML
     void changedToDashboard(MouseEvent event) throws IOException {
-        App.setRoot("homescreen");
+        App.setRoot("home_screen");
     }
 
     @FXML
@@ -49,23 +49,23 @@ public class Homecontroller {
 
     @FXML
     void changedToPatients(MouseEvent event) throws IOException {
-        App.setRoot("patients");
+        App.setRoot("patients_home_screen");
 
     }
 
     @FXML
     void changedToSearch(MouseEvent event) throws IOException {
-        App.setRoot("search");
+        App.setRoot("search_home_screen");
     }
 
     @FXML
     void changedToStaff(MouseEvent event) throws IOException {
-        App.setRoot("staff");
+        App.setRoot("staff_home_screen");
     }
 
     @FXML
     void seePatientsDetails(MouseEvent event) throws IOException {
-        App.setRoot("patients_details");
+        App.setRoot("patients_details_screen");
 
     }
 }

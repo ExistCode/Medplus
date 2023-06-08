@@ -9,7 +9,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="936.0" prefWidth="1500.0" style="-fx-background-color: EFF7F9;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="medplus.controllers.Patientcontroller">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="936.0" prefWidth="1500.0" style="-fx-background-color: EFF7F9;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="medplus.controllers.patient_controller">
    <children>
       <Pane layoutX="-4.0" prefHeight="938.0" prefWidth="203.0" style="-fx-background-color: #089bAB;">
          <children>
@@ -96,16 +96,19 @@
       </Pane>
       <Pane layoutX="264.0" layoutY="337.0" prefHeight="520.0" prefWidth="1175.0" style="-fx-background-color: white;">
          <children>
-            <TableView fx:id="patientsTable" layoutX="36.0" layoutY="27.0" prefHeight="455.0" prefWidth="1101.0" style="-fx-background-color: #EFF7F9; -fx-border-radius: 12;">
+            <TableView fx:id="patientsTable" editable="true" layoutX="36.0" layoutY="27.0" prefHeight="455.0" prefWidth="1101.0" style="-fx-font-size: 20; -fx-background-color: white; -fx-background-color: #EFF7F9; -fx-background-radius: 12;">
               <columns>
-                <TableColumn prefWidth="117.26519775390625" style="-fx-background-color: #9DDBBE;" text="Patients No." />
-                <TableColumn prefWidth="127.73480224609375" style="-fx-background-color: #9DDBBE;" text="Patients Name" />
-                  <TableColumn prefWidth="147.80389404296875" style="-fx-background-color: #9DDBBE;" text="Date Check in" />
-                  <TableColumn prefWidth="206.35906982421875" style="-fx-background-color: #9DDBBE;" text="Doctor Name" />
-                  <TableColumn prefWidth="207.5054931640625" style="-fx-background-color: #9DDBBE;" text="Disease name" />
-                  <TableColumn prefWidth="140.262451171875" style="-fx-background-color: #9DDBBE;" text="Status" />
-                  <TableColumn prefWidth="156.4913330078125" style="-fx-background-color: #9DDBBE;" />
+                <TableColumn prefWidth="177.419677734375" style="-fx-background-color: #9DDBBE; -fx-background-radius: 12 0 0 0; -fx-snap-to-pixel: false;" text="Patients No." />
+                <TableColumn prefWidth="101.08029174804688" style="-fx-background-color: #9DDBBE;" text="Patients Name" />
+                  <TableColumn prefWidth="205.57452392578125" style="-fx-background-color: #9DDBBE;" text="Date Check in" />
+                  <TableColumn prefWidth="184.92547607421875" style="-fx-background-color: #9DDBBE;" text="Doctor Name" />
+                  <TableColumn prefWidth="165.19384765625" style="-fx-background-color: #9DDBBE;" text="Disease name" />
+                  <TableColumn prefWidth="165.768310546875" style="-fx-background-color: #9DDBBE;" text="Status" />
+                  <TableColumn prefWidth="100.231689453125" style="-fx-background-color: #9DDBBE; -fx-background-radius: 0 12 0 0;" />
               </columns>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
             </TableView>
          </children>
       </Pane>
