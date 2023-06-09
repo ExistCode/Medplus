@@ -8,8 +8,10 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import medplus.App;
+import medplus.models.Staff;
 
-public class patient_controller {
+public class staff_controller {
+
     @FXML
     private Pane analysisButton;
 
@@ -19,10 +21,22 @@ public class patient_controller {
     private Pane treatmentButton;
 
     @FXML
+    private Pane DoctorButton;
+
+    @FXML
+    private Pane adminButton;
+
+    @FXML
+    private Pane allButton;
+
+    @FXML
+    private Pane nursesButton;
+
+    @FXML
     private Pane addNewButton;
 
     @FXML
-    private TableView<String> patientsTable;
+    private TableView<Staff> staffTable;
 
     @FXML
     private TextField searchButton;
@@ -66,6 +80,30 @@ public class patient_controller {
     }
 
     @FXML
+    void changedToAdmin(MouseEvent event) throws IOException {
+        App.setRoot("staff_admin_home_screen");
+
+    }
+
+    @FXML
+    void changedToAll(MouseEvent event) throws IOException {
+        App.setRoot("staff_all_home_screen");
+
+    }
+
+    @FXML
+    void changedToDoctor(MouseEvent event) throws IOException {
+        App.setRoot("staff_doctor_home_screen");
+
+    }
+
+    @FXML
+    void changedToNurses(MouseEvent event) throws IOException {
+        App.setRoot("staff_nurses_home_screen");
+
+    }
+
+    @FXML
     void changedToAnalysis(MouseEvent event) {
 
     }
@@ -79,5 +117,4 @@ public class patient_controller {
     void changedToTreatment(MouseEvent event) {
 
     }
-
 }

@@ -52,7 +52,7 @@ public class navigation_controller {
 
     @FXML
     void changedToStaff(MouseEvent event) throws IOException {
-        App.setRoot("staff_home_screen");
+        App.setRoot("staff_all_home_screen");
     }
 
 }
