@@ -158,6 +158,61 @@
             </TableView>
          </children>
       </Pane>
-      <Pane layoutX="614.0" layoutY="46.0" prefHeight="278.0" prefWidth="613.0" style="-fx-background-color: EFF7F9; -fx-background-radius: 20;" />
+      <Pane layoutX="614.0" layoutY="47.0" prefHeight="278.0" prefWidth="613.0" style="-fx-background-color: EFF7F9; -fx-background-radius: 20;">
+         <children>
+            <Pane layoutX="26.0" layoutY="16.0" prefHeight="32.0" prefWidth="136.0" style="-fx-background-color: FEAD54; -fx-background-radius: 12;">
+               <children>
+                  <Text layoutX="28.0" layoutY="22.0" strokeType="OUTSIDE" strokeWidth="0.0" text="+ Add New">
+                     <font>
+                        <Font name="SF Pro Display Semibold" size="16.0" />
+                     </font>
+                  </Text>
+               </children>
+            </Pane>
+            <TextField alignment="CENTER" layoutX="431.0" layoutY="16.0" prefHeight="33.0" prefWidth="159.0" promptText="Search History" style="-fx-background-color: transparent; -fx-border-radius: 12; -fx-border-color: #089bab;">
+               <font>
+                  <Font name="SF Pro Rounded Semibold" size="16.0" />
+               </font>
+            </TextField>
+            <TableView layoutX="26.0" layoutY="91.0" prefHeight="166.0" prefWidth="562.0" style="-fx-background-color: white; -fx-background-radius: 8;">
+               <columns>
+                  <TableColumn prefWidth="96.09954833984375" style="-fx-background-color: #9DDBBE; -fx-background-radius: 8 0 0 0;" text="Patient Name" />
+                  <TableColumn prefWidth="59.40045166015625" style="-fx-background-color: #9DDBBE;" text="Staff No." />
+                  <TableColumn prefWidth="77.36016845703125" style="-fx-background-color: #9DDBBE;" text="Date" />
+                  <TableColumn prefWidth="82.040283203125" style="-fx-background-color: #9DDBBE;" text="Type" />
+                  <TableColumn prefWidth="90.08050537109375" style="-fx-background-color: #9DDBBE;" text="Result" />
+                  <TableColumn prefWidth="75.00115966796875" style="-fx-background-color: #9DDBBE;" />
+                  <TableColumn prefWidth="82.0010986328125" style="-fx-background-color: #9DDBBE; -fx-background-radius: 0 8 0 0;" />
+               </columns>
+            </TableView>
+            <Pane layoutX="27.0" layoutY="58.0" prefHeight="32.0" prefWidth="143.0" style="-fx-background-color: white; -fx-background-radius: 4;">
+               <children>
+                  <Text layoutX="47.0" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Analysis">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Text>
+               </children>
+            </Pane>
+            <Pane layoutX="166.0" layoutY="58.0" prefHeight="32.0" prefWidth="143.0">
+               <children>
+                  <Text fill="#00000040" layoutX="47.0" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Diagnosis">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Text>
+               </children>
+            </Pane>
+            <Pane layoutX="308.0" layoutY="58.0" prefHeight="32.0" prefWidth="143.0">
+               <children>
+                  <Text fill="#00000040" layoutX="47.0" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Treatment">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Text>
+               </children>
+            </Pane>
+         </children>
+      </Pane>
    </children>
 </Pane>
