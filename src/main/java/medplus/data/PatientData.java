@@ -10,13 +10,10 @@ import medplus.models.Patient;
 
 public class PatientData {
 
-        // ------------------------------------------------------------------------------
-        // Dummy Data
-        public static void fetchDummyPatientDataList() {
-                // Create a list to store the dummy patient data
-                List<Patient> patientDummyDataList = new ArrayList<>();
+        static List<Patient> patientDummyDataList = new ArrayList<>();
 
-                // Create and add dummy patient data to the list
+        public static void fetchDummyPatientDataList() {
+
                 patientDummyDataList.add(new Patient("P001", "John Doe", "1234567890", "Male",
                                 LocalDate.of(1990, 5, 15), 31, 175.0, 75.0, "O+", "New York", "1234567890"));
                 patientDummyDataList.add(new Patient("P002", "Jane Smith", "0987654321", "Female",
@@ -28,12 +25,16 @@ public class PatientData {
                 patientDummyDataList.add(new Patient("P005", "Michael Brown", "5432109876", "Male",
                                 LocalDate.of(1978, 7, 3), 43, 185.0, 90.0, "A-", "Miami", "5432109876"));
         }
-        // ------------------------------------------------------------------------------
+
+        public static List<Patient> getPatientData() {
+                return patientDummyDataList;
+        }
 
         public static String fileName = "src/main/resources/medplus/database/patient.txt";
 
         public static void main(String[] args) {
                 createNewFileWithHeaders();
+                fetchDummyPatientDataList();
                 createAddNewPatient();
         }
 
