@@ -77,6 +77,11 @@ public class Patient {
     }
 
     // Getter Functions
+    public String getPatientData() {
+        return patientId + "," + name + "," + nationalId + "," + gender + "," + dateOfBirth + "," + age + "," +
+                height + "," + weight + "," + bloodType + "," + address + "," + contactNumber;
+    }
+
     public String getPatientNationalId() {
         return nationalId;
     }
@@ -119,5 +124,9 @@ public class Patient {
 
     public String getPatientContactNumber() {
         return contactNumber;
+    }
+
+    public Object getAge() {
+        return null;
     }
 }
