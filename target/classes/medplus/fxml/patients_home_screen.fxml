@@ -35,9 +35,15 @@
       </Pane>
       <Pane layoutX="237.0" layoutY="227.0" prefHeight="459.0" prefWidth="1012.0" style="-fx-background-color: white;">
          <children>
-            <TableView fx:id="patientsTable" editable="true" layoutX="33.0" layoutY="26.0" prefHeight="408.0" prefWidth="948.0" style="-fx-font-size: 18;" stylesheets="@../css/styles.css">
+            <TableView fx:id="patientsTable" editable="true" layoutX="33.0" layoutY="26.0" prefHeight="408.0" prefWidth="948.0" style="-fx-font-size: 18; -fx-background-color: transparent; -fx-background-radius: 12;" stylesheets="@../../../java/medplus/css/style.css">
               <columns>
-                
+                <!-- <TableColumn fx:id="patientId" prefWidth="177.419677734375" text="Patients Id" />
+                <TableColumn fx:id="patientName" prefWidth="101.08029174804688" text="Patients Name" />
+                  <TableColumn fx:id="checkInDate" prefWidth="205.57452392578125" text="Date Check in" />
+                  <TableColumn fx:id="doctorId" prefWidth="184.92547607421875" text="Doctor Id" />
+                  <TableColumn fx:id="diseaseName" prefWidth="165.19384765625" text="Disease name" />
+                  <TableColumn fx:id="status" prefWidth="187.7076416015625" text="Status" />
+                  <TableColumn prefWidth="83.2923583984375" /> -->
               </columns>
                <columnResizePolicy>
                   <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
