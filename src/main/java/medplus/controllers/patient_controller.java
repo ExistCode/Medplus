@@ -109,9 +109,9 @@ public class patient_controller {
         genderColumn.setCellValueFactory(new PropertyValueFactory<>("gender"));
         dateOfBirthColumn.setCellValueFactory(new PropertyValueFactory<>("dateOfBirth"));
         bloodTypeColumn.setCellValueFactory(new PropertyValueFactory<>("bloodType"));
-        statusColumn.setCellValueFactory(new PropertyValueFactory<>(""));
-        updateColumn.setCellValueFactory(new PropertyValueFactory<>(""));
-        deleteColumn.setCellValueFactory(new PropertyValueFactory<>(""));
+        statusColumn.setCellValueFactory(new PropertyValueFactory<>("details"));
+        updateColumn.setCellValueFactory(new PropertyValueFactory<>("update"));
+        deleteColumn.setCellValueFactory(new PropertyValueFactory<>("delete"));
 
         patientsTable.setItems(patientDataList);
 
