@@ -16,14 +16,20 @@ public class PatientTableDataModel {
     private SimpleStringProperty gender;
     private SimpleObjectProperty<LocalDate> dateOfBirth;
     private SimpleStringProperty bloodType;
+    private SimpleStringProperty details;
+    private SimpleStringProperty update;
+    private SimpleStringProperty delete;
 
     public PatientTableDataModel(String patientId, String name, String gender, LocalDate dateOfBirth,
-            String bloodType) {
+            String bloodType, String details, String update, String delete) {
         this.patientId = new SimpleStringProperty(patientId);
         this.name = new SimpleStringProperty(name);
         this.gender = new SimpleStringProperty(gender);
         this.dateOfBirth = new SimpleObjectProperty<>(dateOfBirth);
         this.bloodType = new SimpleStringProperty(bloodType);
+        this.details = new SimpleStringProperty(details);
+        this.update = new SimpleStringProperty(update);
+        this.delete = new SimpleStringProperty(delete);
     }
 
     public static ObservableList<PatientTableDataModel> convertPatientDataToPatientTableDataModel() {
@@ -37,7 +43,8 @@ public class PatientTableDataModel {
             LocalDate dateOfBirth = initialPatientList.get(i).getPatientDateOfBirth();
             String bloodType = initialPatientList.get(i).getPatientBloodType();
 
-            convertedList.add(new PatientTableDataModel(patientId, name, gender, dateOfBirth, bloodType));
+            convertedList.add(new PatientTableDataModel(patientId, name, gender, dateOfBirth, bloodType, "Details",
+                    "Update", "Delete"));
         }
 
         return convertedList;
@@ -101,5 +108,41 @@ public class PatientTableDataModel {
 
     public void setBloodType(String bloodType) {
         this.bloodType.set(bloodType);
+    }
+
+    public String getDetails() {
+        return details.get();
+    }
+
+    public void setDetails() {
+        this.details.set("Details");
+    }
+
+    public SimpleStringProperty detailsProperty() {
+        return details;
+    }
+
+    public String getUpdate() {
+        return update.get();
+    }
+
+    public SimpleStringProperty updateProperty() {
+        return update;
+    }
+
+    public void setUpdate() {
+        this.update.set("Update");
+    }
+
+    public String getDelete() {
+        return delete.get();
+    }
+
+    public SimpleStringProperty deleteProperty() {
+        return delete;
+    }
+
+    public void setDelete() {
+        this.delete.set("Delete");
     }
 }

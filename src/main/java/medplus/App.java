@@ -37,11 +37,6 @@ public class App extends Application {
         // ".fxml"));
         FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("fxml/" + fxml + ".fxml"));
 
-        // FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("fxml/" + fxml +
-        // ".fxml"));
-
-        // FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("fxml/" + fxml +
-        // ".fxml"));
         return fxmlLoader.load();
     }
 
