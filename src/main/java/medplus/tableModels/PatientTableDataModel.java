@@ -33,7 +33,7 @@ public class PatientTableDataModel {
     }
 
     public static ObservableList<PatientTableDataModel> convertPatientDataToPatientTableDataModel() {
-        List<Patient> initialPatientList = PatientData.getPatientData();
+        List<Patient> initialPatientList = PatientData.fetchPatientDataFromDatabase();
         ObservableList<PatientTableDataModel> convertedList = FXCollections.observableArrayList();
 
         for (int i = 0; i < initialPatientList.size(); i++) {
