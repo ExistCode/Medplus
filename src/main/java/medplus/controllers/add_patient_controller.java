@@ -1,6 +1,7 @@
 package medplus.controllers;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -13,6 +14,7 @@ import medplus.App;
 import medplus.data.PatientData;
 
 public class add_patient_controller {
+    ArrayList<String> bloodTypeOption = new ArrayList<String>();
     ObservableList<String> bloodTypeOptions = FXCollections.observableArrayList(
             "A-",
             "A+",
