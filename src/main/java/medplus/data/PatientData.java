@@ -70,14 +70,7 @@ public class PatientData {
                 }
         }
 
-        public static void addNewPatient() {
-                List<Patient> patientList = fetchPatientDataFromDatabase();
-                int newPatientId = Integer.parseInt(patientList.get(patientList.size() - 1).getPatientId().substring(1))
-                                + 1;
-                String newPatientIdFormatted = String.format("P%03d", newPatientId);
-
-                Patient newPatient = new Patient(newPatientIdFormatted, "Michael Brown", "5432109876", "Male",
-                                LocalDate.of(1978, 7, 3), 43, 185.0, 90.0, "A-", "Miami", "5432109876");
+        public static void addNewPatient(Patient newPatient) {
 
                 try {
                         FileWriter writer = new FileWriter(fileName, true);
