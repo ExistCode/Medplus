@@ -1,16 +1,25 @@
 package medplus.controllers;
 
 import java.io.IOException;
+import java.time.LocalDate;
+import java.time.Month;
+import java.time.Period;
+import java.time.Year;
+import java.util.List;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.DatePicker;
+import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
+import javafx.scene.text.Text;
 import medplus.App;
 import medplus.data.PatientData;
+import medplus.models.Patient;
 
 public class add_patient_controller {
     ObservableList<String> bloodTypeOptions = FXCollections.observableArrayList(
@@ -27,21 +36,94 @@ public class add_patient_controller {
             "Male",
             "Female");
 
+    // TEXT FIELDS
     @FXML
-    private ComboBox<String> Gender;
+    private TextField addressTextField;
+
+    @FXML
+    private ComboBox<String> genderTextField;
+
+    @FXML
+    private TextField contactNumberTextField;
+
+    @FXML
+    private DatePicker dateOfBirthSelector;
+
+    @FXML
+    private ComboBox<String> bloodTypeTextField;
+
+    @FXML
+    private TextField heightTextField;
+
+    @FXML
+    private TextField nameTextField;
+
+    @FXML
+    private TextField nationalIdTextField;
+
+    @FXML
+    private TextField weightTextField;
+
+    @FXML
+    private ImageView backButton;
+
     @FXML
     private Pane addPatientButton;
 
     @FXML
-    private ImageView backButton;
-    @FXML
-    private ComboBox<String> bloodType;
+    private Text errorMessageDisplay;
 
     @FXML
     void addPatient(MouseEvent event) throws IOException {
-        PatientData.addNewPatient();
-        App.setRoot("patients_home_screen");
+        String errorMessage = validateInput();
 
+        if (errorMessage == "") {
+            List<Patient> patientList = PatientData.fetchPatientDataFromDatabase();
+            int newPatientId = Integer.parseInt(patientList.get(patientList.size() - 1).getPatientId().substring(1))
+                    + 1;
+            String newPatientIdFormatted = String.format("P%03d", newPatientId);
+            LocalDate dateOfBirth = dateOfBirthSelector.getValue();
+            LocalDate today = LocalDate.now();
+            Period p = Period.between(dateOfBirth, today);
+
+            Patient newPatient = new Patient(newPatientIdFormatted, nameTextField.getText(),
+                    nationalIdTextField.getText(),
+                    genderTextField.getSelectionModel().getSelectedItem(),
+                    dateOfBirth, p.getYears(), Double.parseDouble(heightTextField.getText()),
+                    Double.parseDouble(weightTextField.getText()),
+                    bloodTypeTextField.getSelectionModel().getSelectedItem(),
+                    addressTextField.getText(),
+                    contactNumberTextField.getText());
+            PatientData.addNewPatient(newPatient);
+            App.setRoot("patients_home_screen");
+        } else {
+            // Show error message
+            System.out.println(errorMessage);
+        }
+    }
+
+    private String validateInput() {
+        String errorMessage = "";
+
+        if (nameTextField.getText().isEmpty() || nationalIdTextField.getText().isEmpty()
+                || genderTextField.getSelectionModel().isEmpty() || dateOfBirthSelector.getValue() == null
+                || heightTextField.getText().isEmpty() || weightTextField.getText().isEmpty()
+                || bloodTypeTextField.getSelectionModel().isEmpty() || addressTextField.getText().isEmpty()
+                || contactNumberTextField.getText().isEmpty()) {
+            errorMessage = "Please make sure all fields are filled with the appropriate type.";
+            System.out.println(errorMessage);
+            errorMessageDisplay.setText(errorMessage);
+        } else {
+            try {
+                Double.parseDouble(heightTextField.getText());
+                Double.parseDouble(weightTextField.getText());
+            } catch (NumberFormatException e) {
+                errorMessage = "Please enter valid numeric values for height and weight.";
+                errorMessageDisplay.setText(errorMessage);
+            }
+        }
+
+        return errorMessage;
     }
 
     @FXML
@@ -55,8 +137,8 @@ public class add_patient_controller {
      */
     @FXML
     public void initialize() {
-        bloodType.setItems(bloodTypeOptions);
-        Gender.setItems(genderOptions);
+        bloodTypeTextField.setItems(bloodTypeOptions);
+        genderTextField.setItems(genderOptions);
 
     }
 
