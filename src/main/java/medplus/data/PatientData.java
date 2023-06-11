@@ -10,31 +10,46 @@ import medplus.models.Patient;
 
 public class PatientData {
 
-        // ------------------------------------------------------------------------------
-        // Dummy Data
-        public static void fetchDummyPatientDataList() {
-                // Create a list to store the dummy patient data
-                List<Patient> patientDummyDataList = new ArrayList<>();
-
-                // Create and add dummy patient data to the list
-                patientDummyDataList.add(new Patient("P001", "John Doe", "1234567890", "Male",
-                                LocalDate.of(1990, 5, 15), 31, 175.0, 75.0, "O+", "New York", "1234567890"));
-                patientDummyDataList.add(new Patient("P002", "Jane Smith", "0987654321", "Female",
-                                LocalDate.of(1985, 9, 21), 36, 165.0, 60.0, "A+", "Los Angeles", "0987654321"));
-                patientDummyDataList.add(new Patient("P003", "David Johnson", "9876543210", "Male",
-                                LocalDate.of(1982, 3, 8), 39, 180.0, 80.0, "B-", "Chicago", "9876543210"));
-                patientDummyDataList.add(new Patient("P004", "Sarah Williams", "0123456789", "Female",
-                                LocalDate.of(1995, 12, 12), 26, 160.0, 55.0, "AB+", "Houston", "0123456789"));
-                patientDummyDataList.add(new Patient("P005", "Michael Brown", "5432109876", "Male",
-                                LocalDate.of(1978, 7, 3), 43, 185.0, 90.0, "A-", "Miami", "5432109876"));
+        public static void main(String[] args) {
+                createNewFileWithHeaders();
+                fetchPatientDataFromDatabase();
         }
-        // ------------------------------------------------------------------------------
 
         public static String fileName = "src/main/resources/medplus/database/patient.txt";
 
-        public static void main(String[] args) {
-                createNewFileWithHeaders();
-                createAddNewPatient();
+        public static List<Patient> fetchPatientDataFromDatabase() {
+                List<Patient> patientList = new ArrayList<>();
+
+                try {
+                        BufferedReader reader = new BufferedReader(new FileReader(fileName));
+                        String line;
+                        reader.readLine(); // Skip the header line
+
+                        while ((line = reader.readLine()) != null) {
+                                String[] patientData = line.split(",");
+                                String patientId = patientData[0].trim();
+                                String name = patientData[1].trim();
+                                String nationalId = patientData[2].trim();
+                                String gender = patientData[3].trim();
+                                LocalDate dateOfBirth = LocalDate.parse(patientData[4].trim());
+                                int age = Integer.parseInt(patientData[5].trim());
+                                double height = Double.parseDouble(patientData[6].trim());
+                                double weight = Double.parseDouble(patientData[7].trim());
+                                String bloodType = patientData[8].trim();
+                                String address = patientData[9].trim();
+                                String contactNumber = patientData[10].trim();
+
+                                Patient patient = new Patient(patientId, name, nationalId, gender, dateOfBirth, age,
+                                                height, weight, bloodType, address, contactNumber);
+                                patientList.add(patient);
+                        }
+
+                        reader.close();
+                } catch (IOException e) {
+                        e.printStackTrace();
+                }
+
+                return patientList;
         }
 
         public static void createNewFileWithHeaders() {
@@ -55,21 +70,23 @@ public class PatientData {
                 }
         }
 
-        public static void createAddNewPatient() {
-                Patient newPatient = new Patient("P005", "Michael Brown", "5432109876", "Male",
-                                LocalDate.of(1978, 7, 3), 43, 185.0, 90.0, "A-", "Miami", "5432109876");
+        public static void addNewPatient(Patient newPatient) {
 
                 try {
                         FileWriter writer = new FileWriter(fileName, true);
-                        String patientData = String.format("%-10s%-20s%-15s%-10s%-15s%-5d%-8.1f%-8.1f%-10s%-20s%s",
-                                        newPatient.getPatientId(), newPatient.getPatientName(),
+                        String patientData = String.format("%s,%s,%s,%s,%s,%d,%.1f,%.1f,%s,%s,%s",
+                                        newPatient.getPatientId(),
+                                        newPatient.getPatientName(),
                                         newPatient.getPatientNationalId(),
                                         newPatient.getPatientGender(),
-                                        newPatient.getPatientDateOfBirth(), newPatient.getAge(),
+                                        newPatient.getPatientDateOfBirth(),
+                                        newPatient.getPatientAge(),
                                         newPatient.getPatientHeight(),
-                                        newPatient.getPatientHeight(),
-                                        newPatient.getPatientBloodType(), newPatient.getClass(),
+                                        newPatient.getPatientWeight(),
+                                        newPatient.getPatientBloodType(),
+                                        newPatient.getPatientAddress(),
                                         newPatient.getPatientContactNumber());
+
                         writer.append(patientData);
                         writer.append("\n");
                         writer.close();

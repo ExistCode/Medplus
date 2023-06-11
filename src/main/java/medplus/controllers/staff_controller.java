@@ -65,7 +65,7 @@ public class staff_controller {
 
     @FXML
     void changedToPatients(MouseEvent event) throws IOException {
-        App.setRoot("patients_details_screen");
+        App.setRoot("patients_home_screen");
 
     }
 

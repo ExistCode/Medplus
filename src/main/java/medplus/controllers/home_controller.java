@@ -3,19 +3,15 @@ package medplus.controllers;
 import java.io.IOException;
 import java.text.Format;
 import java.text.SimpleDateFormat;
-import java.time.LocalDate;
 import java.util.Date;
 
 import javafx.fxml.FXML;
-import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
 import medplus.App;
 
 public class home_controller {
-
-    // System.out.println("Current Date = " + strDate);
 
     @FXML
     private Pane dashboard;

@@ -1,21 +1,13 @@
 package medplus.controllers;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-// import javafx.scene.control.PasswordField;
-// import javafx.scene.control.TextField;
-
 import java.io.IOException;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import medplus.App;
 
 public class navigation_controller {
-    // @FXML
-    // private TextField Username;
-    // @FXML
-    // private PasswordField Password;
 
     @FXML
     private Button button;
@@ -35,9 +27,6 @@ public class navigation_controller {
     void changedToDashboard(MouseEvent event) throws IOException {
         App.setRoot("home_screen");
     }
-
-    // String username = Username.getText();
-    // String password = Password.getText();
 
     @FXML
     void changedToPatients(MouseEvent event) throws IOException {
