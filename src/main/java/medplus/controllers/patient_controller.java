@@ -123,7 +123,7 @@ public class patient_controller {
 
         patient_table_data_model patientDatabase = new patient_table_data_model();
         TableColumn patientId = new TableColumn("Patient ID");
-        TableColumn patientName = new TableColumn("Patient ID");
+        TableColumn patientName = new TableColumn("Patient ");
         TableColumn checkInDate = new TableColumn("Patient ID");
         TableColumn diseaseName = new TableColumn("Patient ID");
         TableColumn doctorId = new TableColumn("Patient ID");
