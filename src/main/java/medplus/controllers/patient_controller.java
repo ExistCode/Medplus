@@ -4,12 +4,17 @@ import java.io.IOException;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
+import javafx.scene.control.ContextMenu;
+import javafx.scene.control.MenuItem;
+import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
+import javafx.util.Callback;
 import medplus.App;
 import medplus.tableModels.PatientTableDataModel;
 
@@ -91,17 +96,31 @@ public class patient_controller {
 
         ObservableList<PatientTableDataModel> patientDataList = PatientTableDataModel
                 .convertPatientDataToPatientTableDataModel();
+        Button[] detailsButton = new Button[patientDataList.size()];
         TableColumn patientIdColumn = new TableColumn("Patient ID");
         TableColumn nameColumn = new TableColumn("Name");
         TableColumn genderColumn = new TableColumn("Gender");
         TableColumn dateOfBirthColumn = new TableColumn("Date of Birth");
         TableColumn bloodTypeColumn = new TableColumn("Blood Type");
-        TableColumn statusColumn = new TableColumn("");
+        TableColumn detailColumn = new TableColumn("");
         TableColumn updateColumn = new TableColumn("");
         TableColumn deleteColumn = new TableColumn("");
 
+        for (int i = 0; i < detailsButton.length; i++) {
+            detailsButton[i] = new Button();
+
+            detailsButton[i].setOnAction(e -> {
+                try {
+                    detailsButtonAction(e);
+                    System.out.println("keklik");
+                } catch (IOException ex) {
+                    ex.printStackTrace();
+                }
+            });
+        }
+
         patientsTable.getColumns().addAll(patientIdColumn, nameColumn, genderColumn,
-                bloodTypeColumn, dateOfBirthColumn, statusColumn, updateColumn, deleteColumn);
+                bloodTypeColumn, dateOfBirthColumn, detailColumn, updateColumn, deleteColumn);
 
         // Set cell value factories for each TableColumn
         patientIdColumn.setCellValueFactory(new PropertyValueFactory<>("patientId"));
@@ -109,13 +128,19 @@ public class patient_controller {
         genderColumn.setCellValueFactory(new PropertyValueFactory<>("gender"));
         dateOfBirthColumn.setCellValueFactory(new PropertyValueFactory<>("dateOfBirth"));
         bloodTypeColumn.setCellValueFactory(new PropertyValueFactory<>("bloodType"));
-        statusColumn.setCellValueFactory(new PropertyValueFactory<>("details"));
+        detailColumn.setCellValueFactory(new PropertyValueFactory<>("details"));
         updateColumn.setCellValueFactory(new PropertyValueFactory<>("update"));
         deleteColumn.setCellValueFactory(new PropertyValueFactory<>("delete"));
 
         patientsTable.setItems(patientDataList);
 
     }
+
+    public void detailsButtonAction(ActionEvent event) throws IOException {
+        App.setRoot("patients_details_screen");
+    }
+
+    // ...
 
     @FXML
     private void deleteRowFromTable(ActionEvent event) {

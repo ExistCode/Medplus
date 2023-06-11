@@ -5,6 +5,7 @@ import java.time.LocalDate;
 import java.time.Month;
 import java.time.Period;
 import java.time.Year;
+import java.util.ArrayList;
 import java.util.List;
 
 import javafx.collections.FXCollections;
@@ -22,6 +23,7 @@ import medplus.data.PatientData;
 import medplus.models.Patient;
 
 public class add_patient_controller {
+    ArrayList<String> bloodTypeOption = new ArrayList<String>();
     ObservableList<String> bloodTypeOptions = FXCollections.observableArrayList(
             "A-",
             "A+",

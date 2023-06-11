@@ -30,3 +30,7 @@
   -fx-background-insets: 0;
   -fx-background-radius: 1;
 }
+
+.button {
+  -fx-background-color: transparent;
+}

@@ -1,5 +1,6 @@
 package medplus.tableModels;
 
+import java.io.IOException;
 import java.time.LocalDate;
 import java.util.List;
 
@@ -7,6 +8,9 @@ import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
+import javafx.scene.control.Button;
+import medplus.App;
 import medplus.data.PatientData;
 import medplus.models.Patient;
 
@@ -16,25 +20,32 @@ public class PatientTableDataModel {
     private SimpleStringProperty gender;
     private SimpleObjectProperty<LocalDate> dateOfBirth;
     private SimpleStringProperty bloodType;
-    private SimpleStringProperty details;
-    private SimpleStringProperty update;
-    private SimpleStringProperty delete;
+    // private SimpleStringProperty details;
+    // private SimpleStringProperty update;
+    // private SimpleStringProperty delete;
+    private Button details;
+    private Button update;
+    private Button delete;
 
     public PatientTableDataModel(String patientId, String name, String gender, LocalDate dateOfBirth,
-            String bloodType, String details, String update, String delete) {
+            String bloodType) { // String details, String update, String delete) {
         this.patientId = new SimpleStringProperty(patientId);
         this.name = new SimpleStringProperty(name);
         this.gender = new SimpleStringProperty(gender);
         this.dateOfBirth = new SimpleObjectProperty<>(dateOfBirth);
         this.bloodType = new SimpleStringProperty(bloodType);
-        this.details = new SimpleStringProperty(details);
-        this.update = new SimpleStringProperty(update);
-        this.delete = new SimpleStringProperty(delete);
+        this.details = new Button("Details");
+        this.update = new Button("Update");
+        this.delete = new Button("Delete");
+        // this.details = new SimpleStringProperty(details);
+        // this.update = new SimpleStringProperty(update);
+        // this.delete = new SimpleStringProperty(delete);
     }
 
     public static ObservableList<PatientTableDataModel> convertPatientDataToPatientTableDataModel() {
         List<Patient> initialPatientList = PatientData.fetchPatientDataFromDatabase();
         ObservableList<PatientTableDataModel> convertedList = FXCollections.observableArrayList();
+        Button[] detailsButton = new Button[initialPatientList.size()];
 
         for (int i = 0; i < initialPatientList.size(); i++) {
             String patientId = initialPatientList.get(i).getPatientId();
@@ -43,11 +54,16 @@ public class PatientTableDataModel {
             LocalDate dateOfBirth = initialPatientList.get(i).getPatientDateOfBirth();
             String bloodType = initialPatientList.get(i).getPatientBloodType();
 
-            convertedList.add(new PatientTableDataModel(patientId, name, gender, dateOfBirth, bloodType, "Details",
-                    "Update", "Delete"));
+            convertedList.add(new PatientTableDataModel(patientId, name, gender, dateOfBirth, bloodType)); // ,
+                                                                                                           // "Details","Update",
+                                                                                                           // "Delete"
         }
 
         return convertedList;
+    }
+
+    public void detailsButtonAction(ActionEvent event) throws IOException {
+        App.setRoot("patients_details_screen");
     }
 
     public String getPatientId() {
@@ -110,39 +126,51 @@ public class PatientTableDataModel {
         this.bloodType.set(bloodType);
     }
 
-    public String getDetails() {
-        return details.get();
-    }
-
-    public void setDetails() {
-        this.details.set("Details");
-    }
-
-    public SimpleStringProperty detailsProperty() {
+    public Button getDetails() {
         return details;
     }
 
-    public String getUpdate() {
-        return update.get();
-    }
-
-    public SimpleStringProperty updateProperty() {
+    public Button getUpdate() {
         return update;
     }
 
-    public void setUpdate() {
-        this.update.set("Update");
-    }
-
-    public String getDelete() {
-        return delete.get();
-    }
-
-    public SimpleStringProperty deleteProperty() {
+    public Button getDelete() {
         return delete;
     }
 
-    public void setDelete() {
-        this.delete.set("Delete");
-    }
+    // public String getDetails() {
+    // return details.get();
+    // }
+
+    // public void setDetails() {
+    // this.details.set("Details");
+    // }
+
+    // public SimpleStringProperty detailsProperty() {
+    // return details;
+    // }
+
+    // public String getUpdate() {
+    // return update.get();
+    // }
+
+    // public SimpleStringProperty updateProperty() {
+    // return update;
+    // }
+
+    // public void setUpdate() {
+    // this.update.set("Update");
+    // }
+
+    // public String getDelete() {
+    // return delete.get();
+    // }
+
+    // public SimpleStringProperty deleteProperty() {
+    // return delete;
+    // }
+
+    // public void setDelete() {
+    // this.delete.set("Delete");
+    // }
 }
