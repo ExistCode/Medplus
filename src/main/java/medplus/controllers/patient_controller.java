@@ -102,19 +102,6 @@ public class patient_controller {
         TableColumn heightColumn = new TableColumn("Height");
         TableColumn weightColumn = new TableColumn("Weight");
 
-        for (int i = 0; i < detailsButton.length; i++) {
-            detailsButton[i] = new Button();
-
-            detailsButton[i].setOnAction(e -> {
-                try {
-                    detailsButtonAction(e);
-                    System.out.println("keklik");
-                } catch (IOException ex) {
-                    ex.printStackTrace();
-                }
-            });
-        }
-
         patientsTable.getColumns().addAll(patientIdColumn, nameColumn, genderColumn,
                 dateOfBirthColumn, ageColumn, bloodTypeColumn, heightColumn, weightColumn);
 
