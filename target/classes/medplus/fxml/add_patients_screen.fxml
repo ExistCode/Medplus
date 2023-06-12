@@ -109,15 +109,15 @@
       </Text>
       <Pane fx:id="addPatientButton" layoutX="559.0" layoutY="609.0" onMouseClicked="#addPatient" prefHeight="64.0" prefWidth="225.0" style="-fx-background-color: FEAD54; -fx-background-radius: 40;">
          <children>
-            <Text fill="WHITE" layoutX="56.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add patient">
+            <Text fill="WHITE" layoutX="43.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add patient">
                <font>
                   <Font name="SF Pro Text Bold" size="24.0" />
                </font>
             </Text>
          </children>
       </Pane>
-      <ComboBox fx:id="bloodTypeTextField" layoutX="154.0" layoutY="519.0" prefHeight="55.0" prefWidth="464.0" promptText="Blood type" style="-fx-background-color: white; -fx-border-color: #089bab; -fx-background-radius: 16; -fx-border-radius: 16; -fx-font-size: 24;" />
-      <ComboBox fx:id="genderTextField" layoutX="708.0" layoutY="392.0" prefHeight="55.0" prefWidth="464.0" promptText="Gender" style="-fx-background-color: white; -fx-border-color: #089bab; -fx-background-radius: 16; -fx-border-radius: 16; -fx-font-size: 24; -fx-font-family: SF Pro Text;" />
+      <ComboBox fx:id="bloodType" layoutX="154.0" layoutY="519.0" prefHeight="55.0" prefWidth="464.0" promptText="Blood type" style="-fx-background-color: white; -fx-border-color: #089bab; -fx-background-radius: 16; -fx-border-radius: 16; -fx-font-size: 24;" />
+      <ComboBox fx:id="Gender" layoutX="708.0" layoutY="392.0" prefHeight="55.0" prefWidth="464.0" promptText="Gender" style="-fx-background-color: white; -fx-border-color: #089bab; -fx-background-radius: 16; -fx-border-radius: 16; -fx-font-size: 24; -fx-font-family: SF Pro Text;" />
       <Text fx:id="errorMessageDisplay" fill="#f9988b" layoutX="19.0" layoutY="704.0" strokeType="OUTSIDE" strokeWidth="0.0" text=" " textAlignment="CENTER" wrappingWidth="1316.3828125">
          <font>
             <Font size="16.0" />

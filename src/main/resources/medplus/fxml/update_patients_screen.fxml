@@ -107,7 +107,7 @@
             <Font name="SF Pro Rounded Regular" size="28.0" />
          </font>
       </Text>
-      <Pane fx:id="addPatientButton" layoutX="542.0" layoutY="616.0" onMouseClicked="#addPatient" prefHeight="64.0" prefWidth="225.0" style="-fx-background-color: FEAD54; -fx-background-radius: 40;">
+      <Pane fx:id="updatePatientButton" layoutX="542.0" layoutY="616.0" onMouseClicked="#updatePatient" prefHeight="64.0" prefWidth="225.0" style="-fx-background-color: FEAD54; -fx-background-radius: 40;">
          <children>
             <Text fill="WHITE" layoutX="24.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Update Patient">
                <font>

@@ -50,6 +50,10 @@ public class patient_controller {
 
     @FXML
     private Pane staffButton;
+    @FXML
+    private Pane deleteButton;
+    @FXML
+    private Pane updateButton;
 
     @FXML
     void changedToDashboard(MouseEvent event) throws IOException {
@@ -60,6 +64,17 @@ public class patient_controller {
     void changedToPatients(MouseEvent event) throws IOException {
         App.setRoot("patients_details_screen");
 
+    }
+
+    @FXML
+    void deleteRow(MouseEvent event) {
+        patientsTable.getItems().removeAll(patientsTable.getSelectionModel().getSelectedItems());
+
+    }
+
+    @FXML
+    void switchToUpdateScreen(MouseEvent event) throws IOException {
+        App.setRoot("update_patients_screen");
     }
 
     @FXML
@@ -159,7 +174,7 @@ public class patient_controller {
 
     @FXML
     private void deleteRowFromTable(ActionEvent event) {
-        patientsTable.getItems().removeAll(patientsTable.getSelectionModel().getSelectedItems());
+
     }
 
 }
