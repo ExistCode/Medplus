@@ -2,13 +2,18 @@ package medplus.controllers;
 
 import java.io.IOException;
 
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
+import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import medplus.App;
 import medplus.models.Staff;
+import medplus.tableModels.StaffTableDataModel;
 
 public class staff_controller {
 
@@ -36,7 +41,7 @@ public class staff_controller {
     private Pane addNewButton;
 
     @FXML
-    private TableView<Staff> staffTable;
+    private TableView<StaffTableDataModel> staffTable;
 
     @FXML
     private TextField searchButton;
@@ -117,4 +122,30 @@ public class staff_controller {
     void changedToTreatment(MouseEvent event) {
 
     }
+
+    public void initialize() {
+        ObservableList<StaffTableDataModel> staffDataList = StaffTableDataModel.convertStaffDataToStaffTableDataModel();
+        Button[] detailsButton = new Button[staffDataList.size()];
+
+        TableColumn staffIdColumn = new TableColumn("Staff ID");
+        TableColumn nameColumn = new TableColumn("Name");
+        TableColumn jobTitleColumn = new TableColumn("Job Title");
+        TableColumn departmentColumn = new TableColumn("Department");
+        TableColumn emailColumn = new TableColumn("Email");
+        TableColumn contactNumberColumn = new TableColumn("Contact Number");
+
+        staffTable.getColumns().addAll(staffIdColumn, nameColumn, jobTitleColumn, departmentColumn, emailColumn,
+                contactNumberColumn);
+
+        // Set cell value factories for each TableColumn
+        staffIdColumn.setCellValueFactory(new PropertyValueFactory<>("staffId"));
+        nameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
+        jobTitleColumn.setCellValueFactory(new PropertyValueFactory<>("jobTitle"));
+        departmentColumn.setCellValueFactory(new PropertyValueFactory<>("department"));
+        emailColumn.setCellValueFactory(new PropertyValueFactory<>("email"));
+        contactNumberColumn.setCellValueFactory(new PropertyValueFactory<>("contactNumber"));
+
+        staffTable.setItems(staffDataList);
+    }
+
 }
