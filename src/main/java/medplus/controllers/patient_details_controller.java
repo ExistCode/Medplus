@@ -17,6 +17,12 @@ import medplus.data.PatientData;
 import medplus.tableModels.PatientTableDataModel;
 
 public class patient_details_controller extends patient_controller {
+    @FXML
+    private Pane analysisButton;
+    @FXML
+    private Pane diagnosisButton;
+    @FXML
+    private Pane treatmentButton;
 
     @FXML
     private Pane dashboardbutton;
@@ -87,5 +93,23 @@ public class patient_details_controller extends patient_controller {
         this.GenderText.setText(gender);
         this.patientsNameText.setText(name);
         this.dateOfBirthText.setText(dateOfBirth);
+    }
+
+    @FXML
+    void changedToAnalysis(MouseEvent event) throws IOException {
+        App.setRoot("patients_details_screen_analysis");
+
+    }
+
+    @FXML
+    void changedToDiagnosis(MouseEvent event) throws IOException {
+        App.setRoot("patients_details_screen_diagnosis");
+
+    }
+
+    @FXML
+    void changedToTreatment(MouseEvent event) throws IOException {
+        App.setRoot("patients_details_screen_treatment");
+
     }
 }

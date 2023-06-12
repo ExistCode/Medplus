@@ -185,7 +185,7 @@
                   <TableColumn prefWidth="82.0010986328125" style="-fx-background-color: #9DDBBE; -fx-background-radius: 0 8 0 0;" />
                </columns>
             </TableView>
-            <Pane layoutX="27.0" layoutY="58.0" prefHeight="32.0" prefWidth="143.0" style="-fx-background-color: white; -fx-background-radius: 4;">
+            <Pane fx:id="analysisButton" layoutX="27.0" layoutY="58.0" onMouseClicked="#changedToAnalysis" prefHeight="32.0" prefWidth="143.0" style="-fx-background-color: white; -fx-background-radius: 6;">
                <children>
                   <Text layoutX="47.0" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Analysis">
                      <font>
@@ -194,7 +194,7 @@
                   </Text>
                </children>
             </Pane>
-            <Pane layoutX="166.0" layoutY="58.0" prefHeight="32.0" prefWidth="143.0">
+            <Pane fx:id="diagnosisButton" layoutX="166.0" layoutY="58.0" onMouseClicked="#changedToDiagnosis" prefHeight="32.0" prefWidth="143.0">
                <children>
                   <Text fill="#00000040" layoutX="47.0" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Diagnosis">
                      <font>
@@ -203,7 +203,7 @@
                   </Text>
                </children>
             </Pane>
-            <Pane layoutX="308.0" layoutY="58.0" prefHeight="32.0" prefWidth="143.0">
+            <Pane fx:id="treatmentButton" layoutX="308.0" layoutY="58.0" onMouseClicked="#changedToTreatment" prefHeight="32.0" prefWidth="143.0">
                <children>
                   <Text fill="#00000040" layoutX="47.0" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Treatment">
                      <font>
