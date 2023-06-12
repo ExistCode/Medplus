@@ -5,16 +5,12 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-import javafx.scene.control.ContextMenu;
-import javafx.scene.control.MenuItem;
-import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
-import javafx.util.Callback;
 import medplus.App;
 import medplus.tableModels.PatientTableDataModel;
 
@@ -101,10 +97,10 @@ public class patient_controller {
         TableColumn nameColumn = new TableColumn("Name");
         TableColumn genderColumn = new TableColumn("Gender");
         TableColumn dateOfBirthColumn = new TableColumn("Date of Birth");
+        TableColumn ageColumn = new TableColumn("Age");
         TableColumn bloodTypeColumn = new TableColumn("Blood Type");
-        TableColumn detailColumn = new TableColumn("");
-        TableColumn updateColumn = new TableColumn("");
-        TableColumn deleteColumn = new TableColumn("");
+        TableColumn heightColumn = new TableColumn("Height");
+        TableColumn weightColumn = new TableColumn("Weight");
 
         for (int i = 0; i < detailsButton.length; i++) {
             detailsButton[i] = new Button();
@@ -120,7 +116,7 @@ public class patient_controller {
         }
 
         patientsTable.getColumns().addAll(patientIdColumn, nameColumn, genderColumn,
-                bloodTypeColumn, dateOfBirthColumn, detailColumn, updateColumn, deleteColumn);
+                dateOfBirthColumn, ageColumn, bloodTypeColumn, heightColumn, weightColumn);
 
         // Set cell value factories for each TableColumn
         patientIdColumn.setCellValueFactory(new PropertyValueFactory<>("patientId"));
@@ -128,9 +124,9 @@ public class patient_controller {
         genderColumn.setCellValueFactory(new PropertyValueFactory<>("gender"));
         dateOfBirthColumn.setCellValueFactory(new PropertyValueFactory<>("dateOfBirth"));
         bloodTypeColumn.setCellValueFactory(new PropertyValueFactory<>("bloodType"));
-        detailColumn.setCellValueFactory(new PropertyValueFactory<>("details"));
-        updateColumn.setCellValueFactory(new PropertyValueFactory<>("update"));
-        deleteColumn.setCellValueFactory(new PropertyValueFactory<>("delete"));
+        ageColumn.setCellValueFactory(new PropertyValueFactory<>("age"));
+        heightColumn.setCellValueFactory(new PropertyValueFactory<>("height"));
+        weightColumn.setCellValueFactory(new PropertyValueFactory<>("weight"));
 
         patientsTable.setItems(patientDataList);
 
