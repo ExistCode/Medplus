@@ -1,72 +1,126 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.gluonhq.charm.glisten.control.ToggleButtonGroup?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="medplus.controllers.navigation_controller">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="936.0" prefWidth="1500.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="medplus.navigation_controller">
    <children>
-      <Pane layoutX="197.0" prefHeight="722.0" prefWidth="435.0" style="-fx-background-color: #EFF7F9; -fx-border-color: gray; visibility: true;" />
-      <Pane layoutX="-4.0" prefHeight="722.0" prefWidth="203.0" style="-fx-background-color: #089bAB;">
+      <Pane layoutX="-4.0" prefHeight="938.0" prefWidth="203.0" style="-fx-background-color: #089bAB;">
          <children>
-            <Pane fx:id="dashboardbutton" layoutX="55.0" layoutY="65.0" onMouseClicked="#changedToDashboard" prefHeight="144.0" prefWidth="95.0">
+            <Pane fx:id="dashboardbutton" layoutX="40.0" layoutY="80.0" onMouseClicked="#changedToDashboard" prefHeight="184.0" prefWidth="125.0">
                <children>
-                  <ImageView fitHeight="60.0" fitWidth="61.0" layoutX="18.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="60.0" fitWidth="67.0" layoutX="32.0" layoutY="47.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../assets/icons/dashboards-icons-white.png" />
+                        <Image url="@../../../../../../../../Desktop/Medplus/Medplus/medplus/target/classes/medplus/icons/dashboards-icons-white.png" />
                      </image>
                   </ImageView>
-                  <Text fill="WHITE" layoutX="9.0" layoutY="106.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dashboard">
+                  <Text fill="WHITE" layoutX="16.0" layoutY="136.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dashboard">
                      <font>
-                        <Font name="SF Pro Rounded Semibold" size="16.0" />
+                        <Font name="SF Pro Rounded Semibold" size="20.0" />
                      </font>
                   </Text>
                </children>
             </Pane>
-            <Pane fx:id="patientsbutton" layoutX="55.0" layoutY="210.0" onMouseClicked="#changedToPatients" prefHeight="144.0" prefWidth="95.0">
+            <Pane fx:id="patientsbutton" layoutX="40.0" layoutY="260.0" onMouseClicked="#changedToPatients" prefHeight="184.0" prefWidth="125.0">
                <children>
-                  <ImageView fitHeight="60.0" fitWidth="61.0" layoutX="19.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="60.0" fitWidth="111.0" layoutX="32.0" layoutY="37.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../assets/icons/icons-profile-white.png" />
+                        <Image url="@../../../../../../../../Desktop/Medplus/Medplus/medplus/target/classes/medplus/icons/icons-profile-white.png" />
                      </image>
                   </ImageView>
-                  <Text fill="WHITE" layoutX="21.0" layoutY="114.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Patients">
+                  <Text fill="WHITE" layoutX="25.0" layoutY="138.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Patients">
                      <font>
-                        <Font name="SF Pro Rounded Semibold" size="16.0" />
+                        <Font name="SF Pro Rounded Semibold" size="20.0" />
                      </font>
                   </Text>
                </children>
             </Pane>
-            <Pane fx:id="staffButton" layoutX="53.0" layoutY="355.0" onMouseClicked="#changedToStaff" prefHeight="144.0" prefWidth="96.0">
+            <Pane fx:id="staffButton" layoutX="40.0" layoutY="444.0" onMouseClicked="#changedToStaff" prefHeight="184.0" prefWidth="125.0">
                <children>
-                  <ImageView fitHeight="60.0" fitWidth="61.0" layoutX="20.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="60.0" fitWidth="111.0" layoutX="32.0" layoutY="37.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../assets/icons/staff-icons-white.png" />
+                        <Image url="@../../../../../../../../Desktop/Medplus/Medplus/medplus/target/classes/medplus/icons/staff-icons-white.png" />
                      </image>
                   </ImageView>
-                  <Text fill="WHITE" layoutX="31.0" layoutY="117.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Staff">
+                  <Text fill="WHITE" layoutX="41.0" layoutY="138.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Staff">
                      <font>
-                        <Font name="SF Pro Rounded Semibold" size="16.0" />
+                        <Font name="SF Pro Rounded Semibold" size="20.0" />
                      </font>
                   </Text>
                </children>
             </Pane>
-            <Pane fx:id="searchbutton" layoutX="54.0" layoutY="498.0" onMouseClicked="#changedToSearch" prefHeight="144.0" prefWidth="95.0" style="-fx-background-color: white; -fx-background-radius: 60;">
+            <Pane fx:id="searchbutton" layoutX="40.0" layoutY="624.0" onMouseClicked="#changedToSearch" prefHeight="184.0" prefWidth="125.0" style="-fx-background-color: white; -fx-background-radius: 60;">
                <children>
-                  <ImageView fitHeight="60.0" fitWidth="61.0" layoutX="20.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="60.0" fitWidth="111.0" layoutX="32.0" layoutY="37.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../assets/icons/search-icons-green.png" />
+                        <Image url="@../../../../../../../../Desktop/Medplus/Medplus/medplus/target/classes/medplus/icons/search-icons-green.png" />
                      </image>
                   </ImageView>
-                  <Text fill="#089bab" layoutX="24.0" layoutY="110.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Search">
+                  <Text fill="#089bab" layoutX="30.0" layoutY="138.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Search">
                      <font>
-                        <Font name="SF Pro Rounded Semibold" size="16.0" />
+                        <Font name="SF Pro Rounded Semibold" size="20.0" />
                      </font>
                   </Text>
                </children>
             </Pane>
-         </children></Pane>
+         </children>
+      </Pane>
+      <Label layoutX="246.0" layoutY="36.0" text="Dashboard" textFill="#089bab">
+         <font>
+            <Font name="Verdana" size="40.0" />
+         </font>
+      </Label>
+      <ButtonBar layoutX="314.0" layoutY="119.0" prefHeight="40.0" prefWidth="200.0" />
+      <ToggleButtonGroup layoutX="489.0" layoutY="200.0" selectionType="SINGLE" />
+      <TableView layoutX="247.0" layoutY="239.0" prefHeight="661.0" prefWidth="1225.0" style="-fx-background-color: EFF7F9;">
+         <columns>
+            <TableColumn minWidth="25.0" prefWidth="245.0" style="-fx-background-color: #9DDBBE;" text="Medicine ID" />
+            <TableColumn minWidth="0.0" prefWidth="245.0" style="-fx-background-color: #9DDBBE;" text="Patient Name" />
+            <TableColumn prefWidth="245.0" style="-fx-background-color: #9DDBBE;" text="Doctor ID" />
+            <TableColumn prefWidth="245.0" style="-fx-background-color: #9DDBBE;" text="Amount" />
+            <TableColumn prefWidth="245.0" style="-fx-background-color: #9DDBBE;" text="Dose Detail" />
+         </columns>
+      </TableView>
+      <Text fill="#00000040" layoutX="250.0" layoutY="119.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Search any health care database here">
+         <font>
+            <Font name="Verdana" size="24.0" />
+         </font>
+      </Text>
+      <TextField layoutX="245.0" layoutY="183.0" prefHeight="38.0" prefWidth="1226.0" />
+      <Button layoutX="246.0" layoutY="135.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="224.0" style="-fx-background-color: FFFFFF;" text="Analysis">
+         <font>
+            <Font name="Verdana Bold" size="20.0" />
+         </font>
+      </Button>
+      <Button layoutX="470.0" layoutY="135.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="224.0" style="-fx-background-color: FFFFFF;" text="Diagnosis">
+         <font>
+            <Font name="Verdana Bold" size="20.0" />
+         </font>
+      </Button>
+      <Button layoutX="694.0" layoutY="135.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="224.0" style="-fx-background-color: FFFFFF;" text="Treatment">
+         <font>
+            <Font name="Verdana Bold" size="20.0" />
+         </font>
+      </Button>
+      <Button layoutX="917.0" layoutY="135.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="224.0" style="-fx-background-color: FFFFFF;" text="Procedure">
+         <font>
+            <Font name="Verdana Bold" size="20.0" />
+         </font>
+      </Button>
+      <Button layoutX="1141.0" layoutY="135.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="224.0" style="-fx-background-color: EFF7F9;" text="Medicine">
+         <font>
+            <Font name="Verdana Bold" size="20.0" />
+         </font>
+      </Button>
    </children>
 </Pane>
