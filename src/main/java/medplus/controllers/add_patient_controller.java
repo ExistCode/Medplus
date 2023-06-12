@@ -43,7 +43,7 @@ public class add_patient_controller {
     private TextField addressTextField;
 
     @FXML
-    private ComboBox<String> genderTextField;
+    private ComboBox<String> Gender;
 
     @FXML
     private TextField contactNumberTextField;
@@ -52,7 +52,7 @@ public class add_patient_controller {
     private DatePicker dateOfBirthSelector;
 
     @FXML
-    private ComboBox<String> bloodTypeTextField;
+    private ComboBox<String> bloodType;
 
     @FXML
     private TextField heightTextField;
@@ -74,6 +74,8 @@ public class add_patient_controller {
 
     @FXML
     private Text errorMessageDisplay;
+    @FXML
+    private Pane updatePatientButton;
 
     @FXML
     void addPatient(MouseEvent event) throws IOException {
@@ -90,10 +92,10 @@ public class add_patient_controller {
 
             Patient newPatient = new Patient(newPatientIdFormatted, nameTextField.getText(),
                     nationalIdTextField.getText(),
-                    genderTextField.getSelectionModel().getSelectedItem(),
+                    Gender.getSelectionModel().getSelectedItem(),
                     dateOfBirth, p.getYears(), Double.parseDouble(heightTextField.getText()),
                     Double.parseDouble(weightTextField.getText()),
-                    bloodTypeTextField.getSelectionModel().getSelectedItem(),
+                    bloodType.getSelectionModel().getSelectedItem(),
                     addressTextField.getText(),
                     contactNumberTextField.getText());
             PatientData.addNewPatient(newPatient);
@@ -108,9 +110,9 @@ public class add_patient_controller {
         String errorMessage = "";
 
         if (nameTextField.getText().isEmpty() || nationalIdTextField.getText().isEmpty()
-                || genderTextField.getSelectionModel().isEmpty() || dateOfBirthSelector.getValue() == null
+                || Gender.getSelectionModel().isEmpty() || dateOfBirthSelector.getValue() == null
                 || heightTextField.getText().isEmpty() || weightTextField.getText().isEmpty()
-                || bloodTypeTextField.getSelectionModel().isEmpty() || addressTextField.getText().isEmpty()
+                || bloodType.getSelectionModel().isEmpty() || addressTextField.getText().isEmpty()
                 || contactNumberTextField.getText().isEmpty()) {
             errorMessage = "Please make sure all fields are filled with the appropriate type.";
             System.out.println(errorMessage);
@@ -139,8 +141,13 @@ public class add_patient_controller {
      */
     @FXML
     public void initialize() {
-        bloodTypeTextField.setItems(bloodTypeOptions);
-        genderTextField.setItems(genderOptions);
+        bloodType.setItems(bloodTypeOptions);
+        Gender.setItems(genderOptions);
+
+    }
+
+    @FXML
+    void updatePatient(MouseEvent event) {
 
     }
 

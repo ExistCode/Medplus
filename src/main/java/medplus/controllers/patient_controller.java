@@ -50,6 +50,10 @@ public class patient_controller {
 
     @FXML
     private Pane staffButton;
+    @FXML
+    private Pane deleteButton;
+    @FXML
+    private Pane updateButton;
 
     @FXML
     void changedToDashboard(MouseEvent event) throws IOException {
@@ -60,6 +64,17 @@ public class patient_controller {
     void changedToPatients(MouseEvent event) throws IOException {
         App.setRoot("patients_details_screen");
 
+    }
+
+    @FXML
+    void deleteRow(MouseEvent event) {
+        patientsTable.getItems().removeAll(patientsTable.getSelectionModel().getSelectedItems());
+
+    }
+
+    @FXML
+    void switchToUpdateScreen(MouseEvent event) throws IOException {
+        App.setRoot("update_patients_screen");
     }
 
     @FXML
@@ -102,18 +117,18 @@ public class patient_controller {
         TableColumn heightColumn = new TableColumn("Height");
         TableColumn weightColumn = new TableColumn("Weight");
 
-        for (int i = 0; i < detailsButton.length; i++) {
-            detailsButton[i] = new Button();
+        // for (int i = 0; i < detailsButton.length; i++) {
+        // detailsButton[i] = new Button();
 
-            detailsButton[i].setOnAction(e -> {
-                try {
-                    detailsButtonAction(e);
-                    System.out.println("keklik");
-                } catch (IOException ex) {
-                    ex.printStackTrace();
-                }
-            });
-        }
+        // detailsButton[i].setOnAction(e -> {
+        // try {
+        // detailsButtonAction(e);
+        // System.out.println("keklik");
+        // } catch (IOException ex) {
+        // ex.printStackTrace();
+        // }
+        // });
+        // }
 
         patientsTable.getColumns().addAll(patientIdColumn, nameColumn, genderColumn,
                 dateOfBirthColumn, ageColumn, bloodTypeColumn, heightColumn, weightColumn);
@@ -129,18 +144,37 @@ public class patient_controller {
         weightColumn.setCellValueFactory(new PropertyValueFactory<>("weight"));
 
         patientsTable.setItems(patientDataList);
+        patientsTable.setOnMouseClicked(event -> {
+            if (event.getClickCount() == 2) {
+                try {
+                    PatientTableDataModel selectedPatient = patientsTable.getSelectionModel().getSelectedItem();
+                    if (selectedPatient != null) {
+                        App.setRoot("patients_details_screen");
+                    }
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
 
+        // patientsTable.setOnMousePressed(new EventHandler<MouseEvent>() {
+        // public void handle(MouseEvent event) {
+        // if (event.isPrimaryButtonDown() && event.getClickCount() == 2) {
+        // System.out.println(patientsTable.getSelectionModel().getSelectedItem());
+        // }
+        // }
+        // });
     }
 
-    public void detailsButtonAction(ActionEvent event) throws IOException {
-        App.setRoot("patients_details_screen");
-    }
+    // public void detailsButtonAction(MouseEvent event) throws IOException {
+    // App.setRoot("patients_details_screen");
+    // }
 
     // ...
 
     @FXML
     private void deleteRowFromTable(ActionEvent event) {
-        patientsTable.getItems().removeAll(patientsTable.getSelectionModel().getSelectedItems());
+
     }
 
 }
