@@ -33,9 +33,9 @@
             </Text>
          </children>
       </Pane>
-      <Pane layoutX="237.0" layoutY="227.0" prefHeight="459.0" prefWidth="1012.0" style="-fx-background-color: white;">
+      <Pane layoutX="237.0" layoutY="227.0" prefHeight="445.0" prefWidth="1012.0" style="-fx-background-color: white;">
          <children>
-            <TableView fx:id="patientsTable" editable="true" layoutX="33.0" layoutY="26.0" prefHeight="408.0" prefWidth="948.0" style="-fx-font-size: 18; -fx-background-color: transparent; -fx-background-radius: 12;" stylesheets="@../css/styles.css">
+            <TableView fx:id="patientsTable" editable="true" layoutX="33.0" layoutY="26.0" prefHeight="384.0" prefWidth="948.0" style="-fx-font-size: 18; -fx-background-color: transparent; -fx-background-radius: 12;" stylesheets="@../css/styles.css">
               <columns>
                 <!-- <TableColumn fx:id="patientId" prefWidth="177.419677734375" text="Patients Id" />
                 <TableColumn fx:id="patientName" prefWidth="101.08029174804688" text="Patients Name" />
