@@ -1,9 +1,13 @@
 package medplus.controllers;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -11,19 +15,23 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
+import javafx.scene.text.Text;
 import medplus.App;
+import medplus.data.PatientData;
+import medplus.models.Patient;
 import medplus.tableModels.PatientTableDataModel;
 
 public class patient_controller {
 
     //
-    @FXML
-    private Pane analysisButton;
 
     @FXML
-    private Pane diagnosisButton;
+    private Text GenderText;
     @FXML
-    private Pane treatmentButton;
+    private Text dateOfBirthText;
+
+    @FXML
+    private Text patientsNameText;
 
     @FXML
     private Pane addNewButton;
@@ -88,21 +96,6 @@ public class patient_controller {
     }
 
     @FXML
-    void changedToAnalysis(MouseEvent event) {
-
-    }
-
-    @FXML
-    void changedToDiagnosis(MouseEvent event) {
-
-    }
-
-    @FXML
-    void changedToTreatment(MouseEvent event) {
-
-    }
-
-    @FXML
     public void initialize() {
 
         ObservableList<PatientTableDataModel> patientDataList = PatientTableDataModel
@@ -146,34 +139,33 @@ public class patient_controller {
         patientsTable.setItems(patientDataList);
         patientsTable.setOnMouseClicked(event -> {
             if (event.getClickCount() == 2) {
-                try {
-                    PatientTableDataModel selectedPatient = patientsTable.getSelectionModel().getSelectedItem();
-                    if (selectedPatient != null) {
+                PatientTableDataModel selectedPatient = patientsTable.getSelectionModel().getSelectedItem();
+                if (selectedPatient != null) {
+
+                    try {
+                        PatientData.initpatientData.setPatientName(selectedPatient.getName());
+                        PatientData.initpatientData.setPatientGender(selectedPatient.getGender());
+                        PatientData.initpatientData.setPatientDateOfBirth(selectedPatient.getDateOfBirth());
+                        PatientData.initpatientData.setPatientBloodType(selectedPatient.getBloodType());
+                        PatientData.initpatientData.setPatientHeight(selectedPatient.getHeight());
+                        PatientData.initpatientData.setPatientWeight(selectedPatient.getWeight());
+
+                        System.out.println(PatientData.initpatientData.getPatientName());
+                        System.out.println(PatientData.initpatientData.getPatientGender());
+                        System.out.println(PatientData.initpatientData.getPatientDateOfBirth());
+                        System.out.println(PatientData.initpatientData.getPatientBloodType());
+                        System.out.println(PatientData.initpatientData.getPatientHeight());
+                        System.out.println(PatientData.initpatientData.getPatientWeight());
                         App.setRoot("patients_details_screen");
+
+                    } catch (IOException e) {
+                        // TODO Auto-generated catch block
+                        e.printStackTrace();
                     }
-                } catch (IOException e) {
-                    e.printStackTrace();
+
                 }
             }
         });
-
-        // patientsTable.setOnMousePressed(new EventHandler<MouseEvent>() {
-        // public void handle(MouseEvent event) {
-        // if (event.isPrimaryButtonDown() && event.getClickCount() == 2) {
-        // System.out.println(patientsTable.getSelectionModel().getSelectedItem());
-        // }
-        // }
-        // });
-    }
-
-    // public void detailsButtonAction(MouseEvent event) throws IOException {
-    // App.setRoot("patients_details_screen");
-    // }
-
-    // ...
-
-    @FXML
-    private void deleteRowFromTable(ActionEvent event) {
 
     }
 
