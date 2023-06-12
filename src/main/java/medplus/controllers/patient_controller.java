@@ -156,7 +156,7 @@ public class patient_controller {
                         System.out.println(PatientData.initpatientData.getPatientBloodType());
                         System.out.println(PatientData.initpatientData.getPatientHeight());
                         System.out.println(PatientData.initpatientData.getPatientWeight());
-                        App.setRoot("patients_details_screen");
+                        App.setRoot("patients_details_screen_analysis");
 
                     } catch (IOException e) {
                         // TODO Auto-generated catch block
