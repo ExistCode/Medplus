@@ -2,6 +2,7 @@ package medplus.controllers;
 
 import java.io.IOException;
 
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
@@ -11,12 +12,10 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import medplus.App;
-import medplus.data.PatientData;
 import medplus.data.StaffData;
-import medplus.tableModels.PatientTableDataModel;
 import medplus.tableModels.StaffTableDataModel;
 
-public class staff_controller {
+public class staff_admin_controller {
 
     @FXML
     private Pane analysisButton;
@@ -42,7 +41,7 @@ public class staff_controller {
     private Pane addNewButton;
 
     @FXML
-    private TableView<StaffTableDataModel> staffTable;
+    private TableView<StaffTableDataModel> adminTable;
 
     @FXML
     private TextField searchButton;
@@ -87,12 +86,12 @@ public class staff_controller {
 
     @FXML
     void changedToAdmin(MouseEvent event) throws IOException {
-        App.setRoot("staff_admin_home_screen");
 
     }
 
     @FXML
     void changedToAll(MouseEvent event) throws IOException {
+        App.setRoot("staff_all_home_screen");
 
     }
 
@@ -126,6 +125,14 @@ public class staff_controller {
     public void initialize() {
 
         ObservableList<StaffTableDataModel> staffDataList = StaffTableDataModel.convertStaffDataToStaffTableDataModel();
+        ObservableList<StaffTableDataModel> adminList = FXCollections.observableArrayList();
+
+        for (StaffTableDataModel staff : staffDataList) {
+
+            if (staff.getDepartment().equals("Administration")) {
+                adminList.add(staff);
+            }
+        }
 
         TableColumn staffIdColumn = new TableColumn("Staff ID");
         TableColumn nameColumn = new TableColumn("Name");
@@ -134,7 +141,8 @@ public class staff_controller {
         TableColumn emailColumn = new TableColumn("Email");
         TableColumn contactNumberColumn = new TableColumn("Contact Number");
 
-        staffTable.getColumns().addAll(staffIdColumn, nameColumn, jobTitleColumn, departmentColumn, emailColumn,
+        adminTable.getColumns().addAll(staffIdColumn, nameColumn, jobTitleColumn, departmentColumn,
+                emailColumn,
                 contactNumberColumn);
 
         // Set cell value factories for each TableColumn
@@ -145,10 +153,10 @@ public class staff_controller {
         emailColumn.setCellValueFactory(new PropertyValueFactory<>("email"));
         contactNumberColumn.setCellValueFactory(new PropertyValueFactory<>("contactNumber"));
 
-        staffTable.setItems(staffDataList);
-        staffTable.setOnMouseClicked(event -> {
+        adminTable.setItems(adminList);
+        adminTable.setOnMouseClicked(event -> {
             if (event.getClickCount() == 2) {
-                StaffTableDataModel selectedStaff = staffTable.getSelectionModel().getSelectedItem();
+                StaffTableDataModel selectedStaff = adminTable.getSelectionModel().getSelectedItem();
 
                 if (selectedStaff != null) {
 
