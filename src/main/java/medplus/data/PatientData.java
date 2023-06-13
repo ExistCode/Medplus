@@ -10,11 +10,6 @@ import medplus.models.Patient;
 
 public class PatientData {
 
-        public static void main(String[] args) {
-                createNewFileWithHeaders();
-                fetchPatientDataFromDatabase();
-        }
-
         public static String fileName = "src/main/resources/medplus/database/patient.txt";
 
         public static List<Patient> fetchPatientDataFromDatabase() {

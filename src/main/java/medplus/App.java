@@ -5,7 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import medplus.data.PatientData;
+import medplus.controllers.staff_controller;
 
 import java.io.IOException;
 
@@ -19,7 +19,7 @@ public class App extends Application {
     @Override
     public void start(Stage stage) throws IOException {
 
-        scene = new Scene(loadFXML("add_patients_screen"), 1280, 720);
+        scene = new Scene(loadFXML("home_screen"), 1280, 720);
         // scene.getStylesheets().add(App.class.getResource("css/style.css").toExternalForm());
         stage.setResizable(false);
         stage.setScene(scene);
@@ -41,7 +41,6 @@ public class App extends Application {
     }
 
     public static void main(String[] args) {
-        PatientData.main(null);
         launch();
 
     }
