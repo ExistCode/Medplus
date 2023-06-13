@@ -36,7 +36,7 @@
             <Font name="SF Pro Rounded Semibold" size="28.0" />
          </font>
       </Text>
-      <DatePicker fx:id="dateOfBirthSelector" layoutX="154.0" layoutY="278.0" prefHeight="55.0" prefWidth="464.0" promptText="YYYY-MM-DD" style="-fx-background-color: white; -fx-border-radius: 16; -fx-background-radius: 16; -fx-font-size: 24;" />
+      <DatePicker fx:id="dateOfBirthSelector" editable="false" layoutX="154.0" layoutY="278.0" prefHeight="55.0" prefWidth="464.0" promptText="DD/MM/YYYY" style="-fx-background-color: white; -fx-border-radius: 16; -fx-background-radius: 16; -fx-font-size: 24;" />
       <Text fill="#089bab" layoutX="154.0" layoutY="379.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Address">
          <font>
             <Font name="SF Pro Rounded Semibold" size="28.0" />

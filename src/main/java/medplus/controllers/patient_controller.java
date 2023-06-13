@@ -77,6 +77,11 @@ public class patient_controller {
     @FXML
     void deleteRow(MouseEvent event) {
         patientsTable.getItems().removeAll(patientsTable.getSelectionModel().getSelectedItems());
+        String selectedRowId = patientsTable.getSelectionModel().getSelectedItem().getPatientId().toString();
+        int selectedRowIdPlusOne = Integer.parseInt(selectedRowId.substring(1))
+                + 1;
+        String newPatientIdFormatted = String.format("P%03d", selectedRowIdPlusOne);
+        PatientData.deletePatientById(newPatientIdFormatted);
 
     }
 
@@ -97,10 +102,9 @@ public class patient_controller {
 
     @FXML
     public void initialize() {
-
         ObservableList<PatientTableDataModel> patientDataList = PatientTableDataModel
                 .convertPatientDataToPatientTableDataModel();
-        Button[] detailsButton = new Button[patientDataList.size()];
+
         TableColumn patientIdColumn = new TableColumn("Patient ID");
         TableColumn nameColumn = new TableColumn("Name");
         TableColumn genderColumn = new TableColumn("Gender");
@@ -109,19 +113,6 @@ public class patient_controller {
         TableColumn bloodTypeColumn = new TableColumn("Blood Type");
         TableColumn heightColumn = new TableColumn("Height");
         TableColumn weightColumn = new TableColumn("Weight");
-
-        // for (int i = 0; i < detailsButton.length; i++) {
-        // detailsButton[i] = new Button();
-
-        // detailsButton[i].setOnAction(e -> {
-        // try {
-        // detailsButtonAction(e);
-        // System.out.println("keklik");
-        // } catch (IOException ex) {
-        // ex.printStackTrace();
-        // }
-        // });
-        // }
 
         patientsTable.getColumns().addAll(patientIdColumn, nameColumn, genderColumn,
                 dateOfBirthColumn, ageColumn, bloodTypeColumn, heightColumn, weightColumn);
@@ -137,6 +128,7 @@ public class patient_controller {
         weightColumn.setCellValueFactory(new PropertyValueFactory<>("weight"));
 
         patientsTable.setItems(patientDataList);
+
         patientsTable.setOnMouseClicked(event -> {
             if (event.getClickCount() == 2) {
                 PatientTableDataModel selectedPatient = patientsTable.getSelectionModel().getSelectedItem();

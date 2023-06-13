@@ -3,6 +3,9 @@ package medplus.data;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+
+import javafx.scene.paint.Stop;
+
 import java.time.LocalDate;
 import java.io.*;
 
@@ -92,29 +95,35 @@ public class PatientData {
                 }
         }
 
-        public static void deleteRecordById(ArrayList<String> arrayList, Scanner input) {
-                System.out.println("Enter the patient ID or keyword to delete a record:");
-                String searchKey = input.next();
+        public static void deletePatientById(String id) {
+                System.out.println("\nDELETED ID: " + id);
+                ArrayList<String> fetchedPatientListAfterDeletion = new ArrayList<>();
                 String line;
+
                 try {
                         BufferedReader reader = new BufferedReader(new FileReader(fileName));
                         while ((line = reader.readLine()) != null) {
-                                if (line.contains(searchKey)) {
-                                        System.out.println(line);
-                                        continue;
+                                if (line.contains(id)) {
+                                        System.out.println("FOUND ID");
                                 } else {
-                                        arrayList.add(line);
+                                        fetchedPatientListAfterDeletion.add(line);
                                 }
+
                         }
                         reader.close();
                 } catch (IOException e) {
                         System.out.println(e);
                 }
 
+                // for (int i = 0; i < fetchedPatientListAfterDeletion.size(); i++) {
+                // System.out.println("ENTER FOR");
+                // System.out.println(fetchedPatientListAfterDeletion.get(i));
+                // }
+
                 try {
                         FileWriter writer = new FileWriter(fileName);
-                        for (int i = 0; i < arrayList.size(); i++) {
-                                writer.append(arrayList.get(i));
+                        for (int i = 0; i < fetchedPatientListAfterDeletion.size(); i++) {
+                                writer.append(fetchedPatientListAfterDeletion.get(i));
                                 writer.append("\n");
                         }
                         writer.close();
