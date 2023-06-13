@@ -81,10 +81,10 @@ public class home_controller {
         numOfStaffs.setText(Integer.toString(initialStaffList.size()));
         // To get the number of staff
         for (Staff staff : initialStaffList) {
-            if (staff.getStaffDepartment().contains("doctor")) {
+            if (staff.getStaffDepartment().equals("Doctor")) {
                 this.numOfDoctor++;
 
-            } else if (staff.getStaffDepartment().contains("nurse")) {
+            } else if (staff.getStaffDepartment().equals("Nurse")) {
                 this.numOfNurse++;
 
             } else {
