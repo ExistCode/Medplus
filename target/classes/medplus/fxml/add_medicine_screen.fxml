@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="936.0" prefWidth="1500.0" style="-fx-background-color: EFF7F9;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Pane fx:id="addPatientButton" layoutX="593.0" layoutY="787.0" onMouseClicked="#addPatient" prefHeight="90.0" prefWidth="359.0" style="-fx-background-color: FEAD54; -fx-background-radius: 40;">
+         <children>
+            <Text fx:id="addMedicineButton" fill="WHITE" layoutX="84.0" layoutY="55.0" onMouseClicked="#addMedicine" strokeType="OUTSIDE" strokeWidth="0.0" text="Add Medicine">
+               <font>
+                  <Font name="SF Pro Text Bold" size="32.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+      <Text fill="#089bab" layoutX="100.0" layoutY="200.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Patient Name">
+         <font>
+            <Font name="SF Pro Rounded Semibold" size="36.0" />
+         </font>
+      </Text>
+      <Text fill="#089bab" layoutX="800.0" layoutY="200.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Doctor ID">
+         <font>
+            <Font name="SF Pro Rounded Semibold" size="36.0" />
+         </font>
+      </Text>
+      <TextField layoutX="100.0" layoutY="220.0" prefHeight="70.0" prefWidth="568.0" promptText="Enter patient name" style="-fx-background-color: white; -fx-background-radius: 16; -fx-border-radius: 16; -fx-border-color: #089bab;">
+         <font>
+            <Font name="SF Pro Text Semibold" size="24.0" />
+         </font>
+      </TextField>
+      <TextField layoutX="800.0" layoutY="220.0" prefHeight="70.0" prefWidth="568.0" promptText="Enter Staff ID" style="-fx-background-color: white; -fx-background-radius: 16; -fx-border-radius: 16; -fx-border-color: #089bab;">
+         <font>
+            <Font name="SF Pro Text Semibold" size="24.0" />
+         </font>
+      </TextField>
+      <Text fill="#089bab" layoutX="100.0" layoutY="350.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Medicine">
+         <font>
+            <Font name="SF Pro Rounded Semibold" size="36.0" />
+         </font>
+      </Text>
+      <TextField layoutX="100.0" layoutY="370.0" prefHeight="70.0" prefWidth="568.0" promptText="Enter medicine name" style="-fx-background-color: white; -fx-background-radius: 16; -fx-border-radius: 16; -fx-border-color: #089bab;">
+         <font>
+            <Font name="SF Pro Text Semibold" size="24.0" />
+         </font>
+      </TextField>
+      <Text fill="#089bab" layoutX="800.0" layoutY="350.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Amount">
+         <font>
+            <Font name="SF Pro Rounded Semibold" size="36.0" />
+         </font>
+      </Text>
+      <TextField layoutX="800.0" layoutY="370.0" prefHeight="70.0" prefWidth="568.0" promptText="Enter amount" style="-fx-background-color: white; -fx-background-radius: 16; -fx-border-radius: 16; -fx-border-color: #089bab;">
+         <font>
+            <Font name="SF Pro Text Semibold" size="24.0" />
+         </font>
+      </TextField>
+      <TextField layoutX="100.0" layoutY="530.0" prefHeight="70.0" prefWidth="1300.0" promptText="Enter dose information" style="-fx-background-color: white; -fx-background-radius: 16; -fx-border-radius: 16; -fx-border-color: #089bab;">
+         <font>
+            <Font name="SF Pro Text Semibold" size="24.0" />
+         </font>
+      </TextField>
+      <Text fill="#089bab" layoutX="100.0" layoutY="500.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dose details">
+         <font>
+            <Font name="SF Pro Rounded Semibold" size="36.0" />
+         </font>
+      </Text>
+   </children>
+</Pane>

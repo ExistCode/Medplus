@@ -9,6 +9,7 @@ import java.io.*;
 import medplus.models.Patient;
 
 public class PatientData {
+        public static Patient initpatientData = new Patient("", "", "", "", null, 0, 0.0, 0.0, "", "", "");
 
         public static String fileName = "src/main/resources/medplus/database/patient.txt";
 

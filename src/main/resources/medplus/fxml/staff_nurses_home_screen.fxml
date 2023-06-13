@@ -83,7 +83,7 @@
             <Font name="SF Pro Text Semibold" size="13.0" />
          </font>
       </TextField>
-      <Pane layoutX="-6.0" prefHeight="722.0" prefWidth="203.0" style="-fx-background-color: #089bAB;">
+      <Pane layoutX="-4.0" prefHeight="722.0" prefWidth="203.0" style="-fx-background-color: #089bAB;">
          <children>
             <Pane fx:id="dashboardbutton" layoutX="55.0" layoutY="65.0" onMouseClicked="#changedToDashboard" prefHeight="144.0" prefWidth="95.0">
                <children>
