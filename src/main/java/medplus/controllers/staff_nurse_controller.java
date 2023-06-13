@@ -2,6 +2,7 @@ package medplus.controllers;
 
 import java.io.IOException;
 
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
@@ -13,7 +14,7 @@ import javafx.scene.layout.Pane;
 import medplus.App;
 import medplus.tableModels.StaffTableDataModel;
 
-public class staff_controller {
+public class staff_nurse_controller {
 
     @FXML
     private Pane analysisButton;
@@ -39,7 +40,7 @@ public class staff_controller {
     private Pane addNewButton;
 
     @FXML
-    private TableView<StaffTableDataModel> staffTable;
+    private TableView<StaffTableDataModel> nurseTable;
 
     @FXML
     private TextField searchButton;
@@ -90,6 +91,7 @@ public class staff_controller {
 
     @FXML
     void changedToAll(MouseEvent event) throws IOException {
+        App.setRoot("staff_all_home_screen");
 
     }
 
@@ -101,8 +103,6 @@ public class staff_controller {
 
     @FXML
     void changedToNurses(MouseEvent event) throws IOException {
-        App.setRoot("staff_nurses_home_screen");
-
     }
 
     @FXML
@@ -123,6 +123,14 @@ public class staff_controller {
     public void initialize() {
 
         ObservableList<StaffTableDataModel> staffDataList = StaffTableDataModel.convertStaffDataToStaffTableDataModel();
+        ObservableList<StaffTableDataModel> nurseList = FXCollections.observableArrayList();
+
+        for (StaffTableDataModel staff : staffDataList) {
+
+            if (staff.getDepartment().equals("Nurse")) {
+                nurseList.add(staff);
+            }
+        }
 
         TableColumn staffIdColumn = new TableColumn("Staff ID");
         TableColumn nameColumn = new TableColumn("Name");
@@ -131,7 +139,8 @@ public class staff_controller {
         TableColumn emailColumn = new TableColumn("Email");
         TableColumn contactNumberColumn = new TableColumn("Contact Number");
 
-        staffTable.getColumns().addAll(staffIdColumn, nameColumn, jobTitleColumn, departmentColumn, emailColumn,
+        nurseTable.getColumns().addAll(staffIdColumn, nameColumn, jobTitleColumn, departmentColumn,
+                emailColumn,
                 contactNumberColumn);
 
         // Set cell value factories for each TableColumn
@@ -142,6 +151,6 @@ public class staff_controller {
         emailColumn.setCellValueFactory(new PropertyValueFactory<>("email"));
         contactNumberColumn.setCellValueFactory(new PropertyValueFactory<>("contactNumber"));
 
-        staffTable.setItems(staffDataList);
+        nurseTable.setItems(nurseList);
     }
 }
