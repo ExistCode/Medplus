@@ -166,6 +166,7 @@ public class staff_controller {
                         System.out.println(StaffData.initStaffData.getStaffContactNumber());
                         System.out.println(StaffData.initStaffData.getStaffDepartment());
                         System.out.println(StaffData.initStaffData.getStaffJobTitle());
+                        System.out.println("Keklik");
 
                         App.setRoot("staff_details_analysis_screen");
 
