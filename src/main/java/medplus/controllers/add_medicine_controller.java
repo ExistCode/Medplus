@@ -34,7 +34,7 @@ public class add_medicine_controller {
 
     @FXML
     void backToSearch(MouseEvent event) throws IOException {
-        App.setRoot("search_home_screen");
+        App.setRoot("search_medicine_screen");
 
     }
 

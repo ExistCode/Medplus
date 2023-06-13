@@ -2,6 +2,7 @@ package medplus.controllers;
 
 import java.io.IOException;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
@@ -40,7 +41,6 @@ public class add_analysis_controller {
     @FXML
     void backToSearch(MouseEvent event) throws IOException {
         App.setRoot("search_home_screen");
-
     }
 
 }

@@ -39,8 +39,8 @@ public class add_procedure_controller {
 
     @FXML
     void backToSearch(MouseEvent event) throws IOException {
-        App.setRoot("search_home_screen");
-
+        App.setRoot("search_procedure_screen");
     }
+    //cannot function
 
 }
