@@ -76,7 +76,7 @@ public class staff_controller {
 
     @FXML
     void changedToSearch(MouseEvent event) throws IOException {
-        App.setRoot("search_home_screen");
+        App.setRoot("search_home_screen"); 
     }
 
     @FXML
