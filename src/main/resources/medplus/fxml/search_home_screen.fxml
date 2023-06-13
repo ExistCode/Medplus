@@ -13,7 +13,7 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="medplus.controllers.search_controller">
    <children>
-      <Pane layoutX="-6.0" prefHeight="722.0" prefWidth="203.0" style="-fx-background-color: #089bAB;">
+      <Pane layoutX="-4.0" prefHeight="722.0" prefWidth="203.0" style="-fx-background-color: #089bAB;">
          <children>
             <Pane fx:id="dashboardbutton" layoutX="55.0" layoutY="65.0" onMouseClicked="#changedToDashboard" prefHeight="144.0" prefWidth="95.0">
                <children>
@@ -29,14 +29,14 @@
                   </Text>
                </children>
             </Pane>
-            <Pane fx:id="patientsbutton" layoutX="55.0" layoutY="210.0" onMouseClicked="#changedToPatients" prefHeight="144.0" prefWidth="95.0" style="-fx-background-color: white; -fx-background-radius: 60;">
+            <Pane fx:id="patientsbutton" layoutX="55.0" layoutY="210.0" onMouseClicked="#changedToPatients" prefHeight="144.0" prefWidth="95.0">
                <children>
                   <ImageView fitHeight="60.0" fitWidth="61.0" layoutX="19.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../assets/icons/icons-profile-green.png" />
+                        <Image url="@../assets/icons/icons-profile-white.png" />
                      </image>
                   </ImageView>
-                  <Text fill="#089bab" layoutX="21.0" layoutY="114.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Patients">
+                  <Text fill="WHITE" layoutX="21.0" layoutY="114.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Patients">
                      <font>
                         <Font name="SF Pro Rounded Semibold" size="16.0" />
                      </font>
@@ -57,14 +57,14 @@
                   </Text>
                </children>
             </Pane>
-            <Pane fx:id="searchbutton" layoutX="54.0" layoutY="498.0" onMouseClicked="#changedToSearch" prefHeight="144.0" prefWidth="95.0">
+            <Pane fx:id="searchbutton" layoutX="54.0" layoutY="498.0" onMouseClicked="#changedToSearch" prefHeight="144.0" prefWidth="95.0" style="-fx-background-color: white; -fx-background-radius: 60;">
                <children>
-                  <ImageView fitHeight="60.0" fitWidth="61.0" layoutX="20.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="60.0" fitWidth="61.0" layoutX="20.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true" style="-fx-background-color: white; -fx-blend-mode: 60;">
                      <image>
-                        <Image url="@../assets/icons/search-icons-white.png" />
+                        <Image url="@../assets/icons/search-icons-green.png" />
                      </image>
                   </ImageView>
-                  <Text fill="WHITE" layoutX="24.0" layoutY="110.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Search">
+                  <Text fill="#089bab" layoutX="24.0" layoutY="110.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Search">
                      <font>
                         <Font name="SF Pro Rounded Semibold" size="16.0" />
                      </font>
