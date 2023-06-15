@@ -4,15 +4,14 @@ import java.io.IOException;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import medplus.App;
 
-public class search_screen_controller {
+public class search_diagnosis_controller {
 
     @FXML
-    private ImageView Analysis_btn;
+    private Pane addButton;
 
     @FXML
     private Button analysisButton;
@@ -42,8 +41,11 @@ public class search_screen_controller {
     private Button treatmentButton;
 
     @FXML
+    private Pane updateButton;
+
+    @FXML
     void changedToAnalysis(MouseEvent event) throws IOException {
-        App.setRoot("search_home_screen");
+        App.setRoot("search_analysis_screen");
     }
 
     @FXML
@@ -52,7 +54,7 @@ public class search_screen_controller {
     }
 
     @FXML
-    void changedToDiagnosis(MouseEvent event) throws IOException{
+    void changedToDiagnosis(MouseEvent event) throws IOException {
         App.setRoot("search_diagnosis_screen");
     }
 
@@ -73,7 +75,7 @@ public class search_screen_controller {
 
     @FXML
     void changedToSearch(MouseEvent event) throws IOException {
-        App.setRoot("search_home_screen");
+        App.setRoot("search_analysis_screen");
     }
 
     @FXML
@@ -87,15 +89,15 @@ public class search_screen_controller {
     }
 
     @FXML
-    void switchToAddScreen(MouseEvent event) throws IOException{
-        App.setRoot("add_analysis_screen");
+    void switchToAddScreen(MouseEvent event) throws IOException {
+        App.setRoot("add_diagnosis_screen");
     }
+    //cannot function
 
     @FXML
-    void switchToUpdateScreen(MouseEvent event) throws IOException{
-        App.setRoot("update_analysis_screen");
+    void switchToUpdateScreen(MouseEvent event) throws IOException {
+        App.setRoot("update_diagnosis_screen");
     }
 
 }
-
 

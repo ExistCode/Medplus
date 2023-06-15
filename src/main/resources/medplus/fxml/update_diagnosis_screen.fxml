@@ -54,7 +54,7 @@
             <Font name="Verdana" size="24.0" />
          </font>
       </TextField>
-      <ImageView fx:id="backButton" fitHeight="45.0" fitWidth="71.0" layoutX="54.0" layoutY="42.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="backButton" fitHeight="45.0" fitWidth="71.0" layoutX="54.0" layoutY="42.0" onMouseClicked="#backToSearch" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../assets/icons/icons8-back-100.png" />
          </image>

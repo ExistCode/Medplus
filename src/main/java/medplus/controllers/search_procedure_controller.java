@@ -9,7 +9,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import medplus.App;
 
-public class search_screen_controller {
+public class search_procedure_controller {
 
     @FXML
     private ImageView Analysis_btn;
@@ -88,14 +88,12 @@ public class search_screen_controller {
 
     @FXML
     void switchToAddScreen(MouseEvent event) throws IOException{
-        App.setRoot("add_analysis_screen");
+        App.setRoot("add_procedure_screen");
     }
 
     @FXML
     void switchToUpdateScreen(MouseEvent event) throws IOException{
-        App.setRoot("update_analysis_screen");
+        App.setRoot("update_procedure_screen");
     }
 
 }
-
-

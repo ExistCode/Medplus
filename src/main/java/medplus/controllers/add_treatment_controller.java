@@ -35,7 +35,7 @@ public class add_treatment_controller {
 
     @FXML
     void backToSearch(MouseEvent event) throws IOException {
-        App.setRoot("search_home_screen");
+        App.setRoot("search_treatment_screen");
 
     }
 
