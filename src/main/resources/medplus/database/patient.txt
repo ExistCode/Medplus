@@ -1,7 +1,6 @@
 Patient ID,Name,National ID,Gender,Date of Birth,Age,Height,Weight,Blood Type,Address,Contact Number
 P001,John Doe,1234567890,Male,1990-05-15,31,175.0,75.0,O+,New York,1234567890
 P002,Jane Smith,0987654321,Female,1985-09-21,36,165.0,60.0,A+,Los Angeles,0987654321
-P003,David Johnson,9876543210,Male,1982-03-08,39,180.0,80.0,B-,Chicago,9876543210
 P004,Sarah Williams,0123456789,Female,1995-12-12,26,160.0,55.0,AB+,Houston,0123456789
 P005,Michael Brown,5432109876,Male,1978-07-03,43,185.0,90.0,A-,Miami,5432109876
 P006,Emily Johnson,4567890123,Female,1992-11-25,30,170.0,65.0,B+,Seattle,4567890123
@@ -17,3 +16,5 @@ P015,Andrew Martin,4567890123,Male,1984-09-08,39,180.0,80.0,AB+,Houston,45678901
 P016,Bonifacio Ronald,0356599,Male,2015-06-16,7,180.0,80.0,AB+,Taylors,123456678
 P017,Rex Lim,03112702016989,Male,2003-11-20,19,180.0,80.0,AB+,lanjiao,0147593534
 P018,abdulla,0678,Male,2023-06-08,0,174.0,67.0,B+,dlatour,679689
+P019,Hans,038291,Male,2004-08-20,18,170.0,83.0,A-,U-residence,0149605815
+P020,askdjankd,asdadsad,Male,2023-06-03,0,123.0,123.0,AB-,amsdsand,1231313
