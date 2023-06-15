@@ -8,10 +8,9 @@ public class BiobloodAnalysis extends Analysis {
     private String bloodType;
     private String coagulationProfile;
 
-    public BiobloodAnalysis(String analysisId, String patientId, String staffId, LocalDate date, String typeOfTest,
-            String testInformation, String resultSummary, String bCount, String bChem, String bType,
-            String coagProfile) {
-        super(analysisId, patientId, staffId, date, typeOfTest, testInformation, resultSummary);
+    public BiobloodAnalysis(String analysisId, String patientName, String staffId, String typeOfTest, String resultSummary, LocalDate date, String testInformation,
+                             String bCount, String bChem, String bType, String coagProfile) {
+        super(analysisId, patientName, staffId, typeOfTest, resultSummary, date, testInformation);
         bloodCount = bCount;
         bloodChemistry = bChem;
         bloodType = bType;

@@ -2,21 +2,20 @@ package medplus.models;
 
 import java.time.LocalDate;
 
+
 public class Diagnosis {
     private String diagnosisId;
-    private String patientId;
+    private String patientName;
     private String staffId;
     private LocalDate date;
-    private String name;
     private String sickness;
 
     // Constructor
-    public Diagnosis(String dId, String pId, String sId, LocalDate d, String n, String s) {
+    public Diagnosis(String dId, String pName, String sId, LocalDate d, String s) {
         diagnosisId = dId;
-        patientId = pId;
+        patientName = pName;
         staffId = sId;
         date = d;
-        name = n;
         sickness = s;
     }
 
@@ -25,8 +24,8 @@ public class Diagnosis {
         diagnosisId = dId;
     }
 
-    public void setPatientId(String pId) {
-        patientId = pId;
+    public void setPatientName(String pName) {
+        patientName = pName;
     }
 
     public void setStaffId(String sId) {
@@ -35,10 +34,6 @@ public class Diagnosis {
 
     public void setDate(LocalDate d) {
         date = d;
-    }
-
-    public void setName(String n) {
-        name = n;
     }
 
     public void setSickness(String s) {
@@ -50,8 +45,8 @@ public class Diagnosis {
         return diagnosisId;
     }
 
-    public String getPatientId() {
-        return patientId;
+    public String getPatientName() {
+        return patientName;
     }
 
     public String getStaffId() {
@@ -60,10 +55,6 @@ public class Diagnosis {
 
     public LocalDate getDate() {
         return date;
-    }
-
-    public String getName() {
-        return name;
     }
 
     public String getSickness() {

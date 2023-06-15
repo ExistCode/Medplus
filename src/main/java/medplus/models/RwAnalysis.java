@@ -12,10 +12,9 @@ public class RwAnalysis extends Analysis {
     private boolean bacteriaPresence;
 
     // Constructor
-    public RwAnalysis(String analysisId, String patientId, String staffId, LocalDate date, String typeOfTest,
-            String testInformation, String resultSummary, double vol, String appr, double ph,
-            boolean glucosePres, boolean proteinPres, boolean bloodCellsPres, boolean bacteriaPres) {
-        super(analysisId, patientId, staffId, date, typeOfTest, testInformation, resultSummary);
+    public RwAnalysis(String analysisId, String patientName, String staffId, String typeOfTest, String resultSummary, LocalDate date, String testInformation,
+                     double vol, String appr, double ph, boolean glucosePres, boolean proteinPres, boolean bloodCellsPres, boolean bacteriaPres) {
+        super(analysisId, patientName, staffId, typeOfTest, resultSummary, date, testInformation);
         volume = vol;
         appearance = appr;
         pH = ph;

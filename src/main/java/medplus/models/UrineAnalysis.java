@@ -13,10 +13,10 @@ public class UrineAnalysis extends Analysis {
     private boolean presenceOfCrystal;
 
     // Constructor
-    public UrineAnalysis(String aId, String pId, String sId, LocalDate d, String testType, String info, String summary,
+    public UrineAnalysis(String analysisId, String patientName, String staffId, String typeOfTest, String resultSummary, LocalDate date, String testInformation, 
             double vol, String appr, double ph, boolean glucose, boolean protein, boolean bloodCells,
             boolean bacteria, boolean crystal) {
-        super(aId, pId, sId, d, testType, info, summary);
+        super(analysisId, patientName, staffId, typeOfTest, resultSummary, date, testInformation);
         volume = vol;
         appearance = appr;
         pH = ph;
