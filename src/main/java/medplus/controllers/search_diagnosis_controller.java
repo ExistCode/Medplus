@@ -2,11 +2,17 @@ package medplus.controllers;
 
 import java.io.IOException;
 
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import medplus.App;
+import medplus.data.DiagnosisData;
+import medplus.tableModels.DiagnosisTableDataModel;
 
 public class search_diagnosis_controller {
 
@@ -99,5 +105,59 @@ public class search_diagnosis_controller {
         App.setRoot("update_diagnosis_screen");
     }
 
+    @FXML
+    private TableView<DiagnosisTableDataModel> diagnosisTable;
+
+    @FXML
+    void deleteRow(MouseEvent event) {
+        diagnosisTable.getItems().removeAll(diagnosisTable.getSelectionModel().getSelectedItems());
+        String selectedRowId = diagnosisTable.getSelectionModel().getSelectedItem().getDiagnosisId().toString();
+        int selectedRowIdPlusOne = Integer.parseInt(selectedRowId.substring(1)) + 1;
+        String newDiagnosisIdFormatted = String.format("D%03d", selectedRowIdPlusOne);
+        DiagnosisData.deleteDiagnosisById(newDiagnosisIdFormatted);
+
+    }
+
+    @FXML
+    public void initialize() {
+        ObservableList<DiagnosisTableDataModel> diagnosisDataList = DiagnosisTableDataModel.convertDiagnosisDataToDiagnosisTableDataModel();
+
+        TableColumn diagnosisIdColumn = new TableColumn("Diagnosis ID");
+        TableColumn patientNameColumn = new TableColumn("Patient Name");
+        TableColumn staffIdColumn = new TableColumn("Staff ID");
+        TableColumn dateColumn = new TableColumn("Diagnosis Date");
+        TableColumn sicknessColumn = new TableColumn("Sickness");
+
+        diagnosisTable.getColumns().addAll(diagnosisIdColumn, patientNameColumn, staffIdColumn, dateColumn, sicknessColumn);
+
+        // Set cell value factories for each TableColumn
+        diagnosisIdColumn.setCellValueFactory(new PropertyValueFactory<>("diagnosisId"));
+        patientNameColumn.setCellValueFactory(new PropertyValueFactory<>("patientName"));
+        staffIdColumn.setCellValueFactory(new PropertyValueFactory<>("staffId"));
+        dateColumn.setCellValueFactory(new PropertyValueFactory<>("date"));
+        sicknessColumn.setCellValueFactory(new PropertyValueFactory<>("sickness"));
+
+        diagnosisTable.setItems(diagnosisDataList);
+
+        diagnosisTable.setOnMouseClicked(event -> {
+            if (event.getClickCount() == 2) {
+                DiagnosisTableDataModel selectedDiagnosis = diagnosisTable.getSelectionModel().getSelectedItem();
+                if (selectedDiagnosis != null) {
+
+                    DiagnosisData.initdiagnosisData.setDiagnosisId(selectedDiagnosis.getDiagnosisId());
+                    DiagnosisData.initdiagnosisData.setPatientName(selectedDiagnosis.getPatientName());
+                    DiagnosisData.initdiagnosisData.setStaffId(selectedDiagnosis.getStaffId());
+                    DiagnosisData.initdiagnosisData.setDate(selectedDiagnosis.getDate());
+                    DiagnosisData.initdiagnosisData.setSickness(selectedDiagnosis.getSickness());
+
+                    System.out.println(DiagnosisData.initdiagnosisData.getDiagnosisId());
+                    System.out.println(DiagnosisData.initdiagnosisData.getPatientName());
+                    System.out.println(DiagnosisData.initdiagnosisData.getStaffId());
+                    System.out.println(DiagnosisData.initdiagnosisData.getDate());
+                    System.out.println(DiagnosisData.initdiagnosisData.getSickness());
+                }
+            }
+        });
+    }
 }
 

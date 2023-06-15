@@ -1,0 +1,3 @@
+Diagnosis ID,Patient Name,Staff ID,Date,Sickness
+D001, Lim Chuan Zhe,S001,2023-06-01,FewerD002,Hans,S001,2023-06-16,Fewer
+D002,Hans,S001,2023-06-16,Little Fewer

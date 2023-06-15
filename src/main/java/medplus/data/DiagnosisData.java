@@ -7,15 +7,20 @@ import java.util.Scanner;
 import java.time.LocalDate;
 import java.io.*;
 
-import medplus.models.Patient;
+import medplus.models.Diagnosis;
 
-public class PatientData {
-        public static Patient initpatientData = new Patient("", "", "", "", null, 0, 0.0, 0.0, "", "", "");
+public class DiagnosisData {
+        public static Diagnosis initdiagnosisData = new Diagnosis("", "", "", null , "");
 
-        public static String fileName = "src/main/resources/medplus/database/patient.txt";
+        public static void main(String[] args) {
+        createNewFileWithHeaders();
+        fetchDiagnosisDataFromDatabase();
+        }
 
-        public static List<Patient> fetchPatientDataFromDatabase() {
-                List<Patient> patientList = new ArrayList<>();
+        public static String fileName = "src/main/resources/medplus/database/diagnosis.txt";
+
+        public static List<Diagnosis> fetchDiagnosisDataFromDatabase() {
+                List<Diagnosis> diagnosisList = new ArrayList<>();
 
                 try {
                         BufferedReader reader = new BufferedReader(new FileReader(fileName));
@@ -23,22 +28,16 @@ public class PatientData {
                         reader.readLine(); // Skip the header line
 
                         while ((line = reader.readLine()) != null) {
-                                String[] patientData = line.split(",");
-                                String patientId = patientData[0].trim();
-                                String name = patientData[1].trim();
-                                String nationalId = patientData[2].trim();
-                                String gender = patientData[3].trim();
-                                LocalDate dateOfBirth = LocalDate.parse(patientData[4].trim());
-                                int age = Integer.parseInt(patientData[5].trim());
-                                double height = Double.parseDouble(patientData[6].trim());
-                                double weight = Double.parseDouble(patientData[7].trim());
-                                String bloodType = patientData[8].trim();
-                                String address = patientData[9].trim();
-                                String contactNumber = patientData[10].trim();
+                                String[] diagnosisData = line.split(",");
+                                String diagnosisId = diagnosisData[0].trim();
+                                String patientName = diagnosisData[1].trim();
+                                String staffId = diagnosisData[2].trim();
+                                LocalDate date = LocalDate.parse(diagnosisData[3].trim());
+                                String sickness = diagnosisData[4].trim();
+                                
 
-                                Patient patient = new Patient(patientId, name, nationalId, gender, dateOfBirth, age,
-                                                height, weight, bloodType, address, contactNumber);
-                                patientList.add(patient);
+                                Diagnosis diagnosis = new Diagnosis(diagnosisId, patientName, staffId, date, sickness);
+                                diagnosisList.add(diagnosis);
                         }
 
                         reader.close();
@@ -46,7 +45,7 @@ public class PatientData {
                         e.printStackTrace();
                 }
 
-                return patientList;
+                return diagnosisList;
         }
 
         public static void createNewFileWithHeaders() {
@@ -55,7 +54,7 @@ public class PatientData {
                 try {
                         if (database.createNewFile()) {
                                 FileWriter writer = new FileWriter(fileName, true);
-                                writer.append("Patient ID, Name, National ID, Gender, Date of Birth, Age, Height, Weight, Blood Type, Address, Contact Number");
+                                writer.append("Diagnosis ID, Patient Name, Staff ID, Date, Sickness");
                                 writer.append("\n");
                                 writer.close();
                                 System.out.println("File created successfully!");
@@ -67,35 +66,29 @@ public class PatientData {
                 }
         }
 
-        public static void addNewPatient(Patient newPatient) {
+        public static void addNewDiagnosis(Diagnosis newDiagnosis) {
 
                 try {
                         FileWriter writer = new FileWriter(fileName, true);
-                        String patientData = String.format("%s,%s,%s,%s,%s,%d,%.1f,%.1f,%s,%s,%s",
-                                        newPatient.getPatientId(),
-                                        newPatient.getPatientName(),
-                                        newPatient.getPatientNationalId(),
-                                        newPatient.getPatientGender(),
-                                        newPatient.getPatientDateOfBirth(),
-                                        newPatient.getPatientAge(),
-                                        newPatient.getPatientHeight(),
-                                        newPatient.getPatientWeight(),
-                                        newPatient.getPatientBloodType(),
-                                        newPatient.getPatientAddress(),
-                                        newPatient.getPatientContactNumber());
+                        String diagnosisData = String.format("%s,%s,%s,%s,%s",
+                                        newDiagnosis.getDiagnosisId(),
+                                        newDiagnosis.getPatientName(),
+                                        newDiagnosis.getStaffId(),
+                                        newDiagnosis.getDate(),
+                                        newDiagnosis.getSickness());
 
-                        writer.append(patientData);
+                        writer.append(diagnosisData);
                         writer.append("\n");
                         writer.close();
-                        System.out.println("Patient added successfully!");
+                        System.out.println("Diagnosis added successfully!");
                 } catch (IOException e) {
                         System.out.println(e);
                 }
         }
 
-        public static void deletePatientById(String id) {
+        public static void deleteDiagnosisById(String id) {
                 System.out.println("\nDELETED ID: " + id);
-                ArrayList<String> fetchedPatientListAfterDeletion = new ArrayList<>();
+                ArrayList<String> fetchedDiagnosisListAfterDeletion = new ArrayList<>();
                 String line;
 
                 try {
@@ -104,7 +97,7 @@ public class PatientData {
                                 if (line.contains(id)) {
                                         System.out.println("FOUND ID");
                                 } else {
-                                        fetchedPatientListAfterDeletion.add(line);
+                                        fetchedDiagnosisListAfterDeletion.add(line);
                                 }
 
                         }
@@ -120,8 +113,8 @@ public class PatientData {
 
                 try {
                         FileWriter writer = new FileWriter(fileName);
-                        for (int i = 0; i < fetchedPatientListAfterDeletion.size(); i++) {
-                                writer.append(fetchedPatientListAfterDeletion.get(i));
+                        for (int i = 0; i < fetchedDiagnosisListAfterDeletion.size(); i++) {
+                                writer.append(fetchedDiagnosisListAfterDeletion.get(i));
                                 writer.append("\n");
                         }
                         writer.close();
@@ -132,10 +125,10 @@ public class PatientData {
                 }
         }
 
-        public static void updateRecord(ArrayList<String> arrayList, Scanner input) {
+        public static void updateDiagnosis(ArrayList<String> arrayList, Scanner input) {
                 try {
                         BufferedReader reader = new BufferedReader(new FileReader(fileName));
-                        System.out.println("Please enter the patient ID or keyword to update the record:");
+                        System.out.println("Please enter the diagnosis ID or keyword to update the record:");
                         String searchKey = input.next();
                         String line;
                         while ((line = reader.readLine()) != null) {

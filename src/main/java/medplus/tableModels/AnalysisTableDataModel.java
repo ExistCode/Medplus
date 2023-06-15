@@ -1,21 +1,14 @@
 package medplus.tableModels;
 
-import java.io.IOException;
 import java.time.LocalDate;
 import java.util.List;
 
-import javafx.beans.property.SimpleDoubleProperty;
-import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
-import medplus.App;
 import medplus.data.AnalysisData;
-import medplus.data.PatientData;
 import medplus.models.Analysis;
-import medplus.models.Patient;
 
 public class AnalysisTableDataModel {
     private SimpleStringProperty analysisId;
