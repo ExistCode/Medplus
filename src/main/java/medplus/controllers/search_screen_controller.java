@@ -86,6 +86,16 @@ public class search_screen_controller {
         App.setRoot("search_treatment_screen");
     }
 
+    @FXML
+    void switchToAddScreen(MouseEvent event) throws IOException{
+        App.setRoot("add_analysis_screen");
+    }
+
+    @FXML
+    void switchToUpdateScreen(MouseEvent event) throws IOException{
+        App.setRoot("update_analysis_screen");
+    }
+
 }
 
 

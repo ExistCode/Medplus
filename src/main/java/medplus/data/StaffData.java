@@ -9,6 +9,7 @@ import java.io.*;
 import medplus.models.Staff;
 
 public class StaffData {
+    public static Staff initStaffData = new Staff("", "", "", "", null, 0, "", "", "");
 
     public static void main(String[] args) {
         createNewFileWithHeaders();

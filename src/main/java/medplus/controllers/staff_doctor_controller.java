@@ -12,6 +12,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import medplus.App;
+import medplus.data.StaffData;
 import medplus.tableModels.StaffTableDataModel;
 
 public class staff_doctor_controller {
@@ -153,5 +154,37 @@ public class staff_doctor_controller {
         contactNumberColumn.setCellValueFactory(new PropertyValueFactory<>("contactNumber"));
 
         doctorTable.setItems(doctorList);
+        doctorTable.setOnMouseClicked(event -> {
+            if (event.getClickCount() == 2) {
+                StaffTableDataModel selectedStaff = doctorTable.getSelectionModel().getSelectedItem();
+
+                if (selectedStaff != null) {
+
+                    try {
+
+                        StaffData.initStaffData.setStaffName(selectedStaff.getName());
+                        StaffData.initStaffData.seStafftEmail(selectedStaff.getEmail());
+                        StaffData.initStaffData.setStaffContactNumber(selectedStaff.getContactNumber());
+                        StaffData.initStaffData.setStaffDepartment(selectedStaff.getDepartment());
+                        StaffData.initStaffData.setStaffJobTitle(selectedStaff.getJobTitle());
+                        //
+
+                        System.out.println(StaffData.initStaffData.getStaffName());
+                        System.out.println(StaffData.initStaffData.getStaffEmail());
+                        System.out.println(StaffData.initStaffData.getStaffContactNumber());
+                        System.out.println(StaffData.initStaffData.getStaffDepartment());
+                        System.out.println(StaffData.initStaffData.getStaffJobTitle());
+                        System.out.println("Keklik");
+
+                        App.setRoot("staff_details_analysis_screen");
+
+                    } catch (IOException e) {
+                        // TODO Auto-generated catch block
+                        e.printStackTrace();
+                    }
+
+                }
+            }
+        });
     }
 }

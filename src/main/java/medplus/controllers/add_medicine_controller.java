@@ -1,25 +1,40 @@
 package medplus.controllers;
 
+import java.io.IOException;
+
 import javafx.fxml.FXML;
+import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
-import javafx.scene.text.Text;
+import medplus.App;
 
 public class add_medicine_controller {
 
     @FXML
-    private Text addMedicineButton;
+    private Pane addMedicineButton;
 
     @FXML
-    private Pane addPatientButton;
+    private ImageView backButton;
 
     @FXML
-    void addMedicine(MouseEvent event) {
-
-    }
+    private TextField doseInfoTextField;
 
     @FXML
-    void addPatient(MouseEvent event) {
+    private TextField medAmountTextField;
+
+    @FXML
+    private TextField medNameTextField;
+
+    @FXML
+    private TextField patientNameTextField;
+
+    @FXML
+    private TextField staffIDTextField;
+
+    @FXML
+    void backToSearch(MouseEvent event) throws IOException {
+        App.setRoot("search_medicine_screen");
 
     }
 
