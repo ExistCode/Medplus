@@ -45,7 +45,7 @@ public class search_diagnosis_controller {
 
     @FXML
     void changedToAnalysis(MouseEvent event) throws IOException {
-        App.setRoot("search_analysis_screen");
+        App.setRoot("search_home_screen");
     }
 
     @FXML
@@ -75,7 +75,7 @@ public class search_diagnosis_controller {
 
     @FXML
     void changedToSearch(MouseEvent event) throws IOException {
-        App.setRoot("search_analysis_screen");
+        App.setRoot("search_home_screen");
     }
 
     @FXML

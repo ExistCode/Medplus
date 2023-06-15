@@ -4,22 +4,22 @@ import java.time.LocalDate;
 
 public class Analysis {
     private String analysisId;
-    private String patientId;
+    private String patientName;
     private String staffId;
-    private LocalDate date;
     private String typeOfTest;
-    private String testInformation;
     private String resultSummary;
+    private LocalDate date;
+    private String testInformation;
 
     // Constructor
-    public Analysis(String aId, String pId, String sId, LocalDate d, String testType, String info, String summary) {
+    public Analysis(String aId, String pName, String sId, String testType, String summary, LocalDate d,  String info) {
         analysisId = aId;
-        patientId = pId;
+        patientName = pName;
         staffId = sId;
-        date = d;
         typeOfTest = testType;
-        testInformation = info;
         resultSummary = summary;
+        date = d;
+        testInformation = info;
     }
 
     // Setter functions
@@ -27,28 +27,28 @@ public class Analysis {
         analysisId = aId;
     }
 
-    public void setPatientId(String pId) {
-        patientId = pId;
+    public void setPatientName(String pName) {
+        patientName = pName;
     }
 
     public void setStaffId(String sId) {
         staffId = sId;
     }
 
-    public void setDate(LocalDate d) {
-        date = d;
-    }
-
     public void setTypeOfTest(String testType) {
         typeOfTest = testType;
     }
 
-    public void setTestInformation(String info) {
-        testInformation = info;
-    }
-
     public void setResultSummary(String summary) {
         resultSummary = summary;
+    }
+
+    public void setDate(LocalDate d) {
+        date = d;
+    }
+
+    public void setTestInformation(String info) {
+        testInformation = info;
     }
 
     // Getter functions
@@ -56,27 +56,28 @@ public class Analysis {
         return analysisId;
     }
 
-    public String getPatientId() {
-        return patientId;
+    public String getPatientName() {
+        return patientName;
     }
 
     public String getStaffId() {
         return staffId;
     }
 
-    public LocalDate getDate() {
-        return date;
-    }
-
     public String getTypeOfTest() {
         return typeOfTest;
+    }
+
+    public String getResultSummary() {
+        return resultSummary;
+    }
+
+    public LocalDate getDate() {
+        return date;
     }
 
     public String getTestInformation() {
         return testInformation;
     }
 
-    public String getResultSummary() {
-        return resultSummary;
-    }
 }

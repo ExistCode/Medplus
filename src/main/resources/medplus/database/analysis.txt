@@ -1,0 +1,4 @@
+Analysis ID,Patient Name,Staff ID,Type Of Test,Result Summary,Date,Test Information
+A001,Lim Chuan Zhe,S001,Bioblood Analysis,Positive,2023-06-01,Dengue Fewer
+A003,Hans,S001,Bioblood Analysis,Negative,2023-06-08,Covid-19
+A004,Cheng You You,S010,Bioblood Analysis,Negative,2023-06-01,Covid-19
