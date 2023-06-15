@@ -49,7 +49,7 @@ public class staff_controller {
 
     @FXML
     void addNewPatientScreen(MouseEvent event) throws IOException {
-        App.setRoot("add_staff_screen");
+        App.setRoot("update_staff_screen");
     }
 
     @FXML
