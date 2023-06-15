@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
@@ -41,7 +42,7 @@
             <Font name="SF Pro Rounded Semibold" size="28.0" />
          </font>
       </Text>
-      <TextField fx:id="addressTextField" layoutX="154.0" layoutY="392.0" prefHeight="55.0" prefWidth="464.0" promptText="Enter Email Address" style="-fx-background-color: white; -fx-background-radius: 16; -fx-border-radius: 16; -fx-border-color: #089bab;">
+      <TextField fx:id="emailTextField" layoutX="154.0" layoutY="392.0" prefHeight="55.0" prefWidth="464.0" promptText="Enter Email Address" style="-fx-background-color: white; -fx-background-radius: 16; -fx-border-radius: 16; -fx-border-color: #089bab;">
          <font>
             <Font name="SF Pro Text Semibold" size="24.0" />
          </font>
@@ -76,14 +77,14 @@
             <Font name="SF Pro Rounded Semibold" size="28.0" />
          </font>
       </Text>
-      <Text fill="#089bab" layoutX="708.0" layoutY="502.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Specialties">
+      <Text fill="#089bab" layoutX="708.0" layoutY="502.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Age">
          <font>
             <Font name="SF Pro Rounded Semibold" size="28.0" />
          </font>
       </Text>
       <Pane fx:id="addStaffButton" layoutX="559.0" layoutY="617.0" onMouseClicked="#addStaff" prefHeight="64.0" prefWidth="225.0" style="-fx-background-color: FEAD54; -fx-background-radius: 40;">
          <children>
-            <Text fill="WHITE" layoutX="43.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add Staff">
+            <Text fill="WHITE" layoutX="53.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add Staff">
                <font>
                   <Font name="SF Pro Text Bold" size="24.0" />
                </font>
@@ -95,20 +96,16 @@
             <Font size="16.0" />
          </font>
       </Text>
-      <TextField fx:id="addressTextField1" layoutX="709.0" layoutY="519.0" prefHeight="55.0" prefWidth="464.0" promptText="Enter your specialty" style="-fx-background-color: white; -fx-background-radius: 16; -fx-border-radius: 16; -fx-border-color: #089bab;">
+      <TextField fx:id="ageTextField" layoutX="709.0" layoutY="519.0" prefHeight="55.0" prefWidth="464.0" promptText="Enter your age" style="-fx-background-color: white; -fx-background-radius: 16; -fx-border-radius: 16; -fx-border-color: #089bab;">
          <font>
             <Font name="SF Pro Text Semibold" size="24.0" />
          </font>
       </TextField>
-      <TextField fx:id="addressTextField2" layoutX="151.0" layoutY="517.0" prefHeight="55.0" prefWidth="464.0" promptText="Enter job title" style="-fx-background-color: white; -fx-background-radius: 16; -fx-border-radius: 16; -fx-border-color: #089bab;">
+      <TextField fx:id="jobTitleTextField" layoutX="151.0" layoutY="517.0" prefHeight="55.0" prefWidth="464.0" promptText="Enter job title" style="-fx-background-color: white; -fx-background-radius: 16; -fx-border-radius: 16; -fx-border-color: #089bab;">
          <font>
             <Font name="SF Pro Text Semibold" size="24.0" />
          </font>
       </TextField>
-      <TextField fx:id="contactNumberTextField1" layoutX="706.0" layoutY="390.0" prefHeight="55.0" prefWidth="464.0" promptText="Enter department" style="-fx-background-color: white; -fx-background-radius: 16; -fx-border-radius: 16; -fx-border-color: #089bab;">
-         <font>
-            <Font name="SF Pro Text Semibold" size="24.0" />
-         </font>
-      </TextField>
+      <ComboBox fx:id="departmentBox" layoutX="706.0" layoutY="390.0" prefHeight="55.0" prefWidth="464.0" promptText="Choose department" style="-fx-border-radius: 16; -fx-background-color: white; -fx-border-color: #089bab; -fx-background-radius: 16; -fx-font-size: 24;" />
    </children>
 </Pane>
