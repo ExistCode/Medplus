@@ -180,6 +180,7 @@ public class patient_controller {
 
                 }
             }
+
         });
 
     }
