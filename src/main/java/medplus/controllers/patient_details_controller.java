@@ -74,18 +74,18 @@ public class patient_details_controller extends patient_controller {
     @FXML
     public void initialize() {
         // Format f = new SimpleDateFormat("dd MMM yy");
-        String strDate = PatientData.initpatientData.getPatientDateOfBirth()
+        String strDate = PatientData.initPatientData.getPatientDateOfBirth()
                 .format(DateTimeFormatter.ofLocalizedDate(FormatStyle.LONG));
-        System.out.println(PatientData.initpatientData.getPatientName());
-        patientsNameText.setText(PatientData.initpatientData.getPatientName());
-        GenderText.setText(PatientData.initpatientData.getPatientGender());
+        System.out.println(PatientData.initPatientData.getPatientName());
+        patientsNameText.setText(PatientData.initPatientData.getPatientName());
+        GenderText.setText(PatientData.initPatientData.getPatientGender());
         dateOfBirthText.setText(strDate);
 
         // dateOfBirthText.setText(PatientData.initpatientData.getPatientDateOfBirth().toString());
-        bloodTypeText.setText(PatientData.initpatientData.getPatientBloodType());
+        bloodTypeText.setText(PatientData.initPatientData.getPatientBloodType());
 
-        heightText.setText(Double.toString(PatientData.initpatientData.getPatientHeight()));
-        weightText.setText(Double.toString(PatientData.initpatientData.getPatientWeight()));
+        heightText.setText(Double.toString(PatientData.initPatientData.getPatientHeight()));
+        weightText.setText(Double.toString(PatientData.initPatientData.getPatientWeight()));
 
     }
 

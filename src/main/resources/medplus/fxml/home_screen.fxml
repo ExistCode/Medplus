@@ -11,7 +11,7 @@
    <children>
       <Pane layoutX="197.0" prefHeight="722.0" prefWidth="435.0" style="-fx-background-color: #EFF7F9; -fx-border-color: gray; visibility: true;">
          <children>
-            <Text fill="#089bab" layoutX="36.0" layoutY="73.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Latest patients">
+            <Text fill="#089bab" layoutX="36.0" layoutY="73.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Latest Patients">
                <font>
                   <Font name="SF Pro Text Bold" size="32.0" />
                </font>
