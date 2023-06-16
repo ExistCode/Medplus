@@ -122,15 +122,29 @@ public class staff_nurse_controller {
 
     }
 
+    // @FXML
+    // void deleteRow(MouseEvent event) {
+    // nurseTable.getItems().removeAll(nurseTable.getSelectionModel().getSelectedItems());
+    // String selectedRowId =
+    // nurseTable.getSelectionModel().getSelectedItem().getStaffId().toString();
+    // int selectedRowIdPlusOne = Integer.parseInt(selectedRowId.substring(1));
+    // String newNurseIdFormatted = String.format("S%03d", selectedRowIdPlusOne);
+    // System.out.println(newNurseIdFormatted);
+    // StaffData.deleteStaffById(newNurseIdFormatted);
+
+    // }
     @FXML
     void deleteRow(MouseEvent event) {
-        nurseTable.getItems().removeAll(nurseTable.getSelectionModel().getSelectedItems());
-        String selectedRowId = nurseTable.getSelectionModel().getSelectedItem().getStaffId().toString();
-        int selectedRowIdPlusOne = Integer.parseInt(selectedRowId.substring(1))
-                + 1;
-        String newStaffIdFormatted = String.format("S%03d", selectedRowIdPlusOne);
-        StaffData.deleteStaffById(newStaffIdFormatted);
+        StaffTableDataModel selectedStaff = nurseTable.getSelectionModel().getSelectedItem();
 
+        if (selectedStaff != null) {
+            nurseTable.getItems().remove(selectedStaff);
+
+            String selectedRowId = selectedStaff.getStaffId().toString();
+            int selectedRowIdPlusOne = Integer.parseInt(selectedRowId.substring(1));
+            String newNurseIdFormatted = String.format("S%03d", selectedRowIdPlusOne);
+            StaffData.deleteStaffById(newNurseIdFormatted);
+        }
     }
 
     @FXML

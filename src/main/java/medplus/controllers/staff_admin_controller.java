@@ -125,13 +125,16 @@ public class staff_admin_controller {
 
     @FXML
     void deleteRow(MouseEvent event) {
-        adminTable.getItems().removeAll(adminTable.getSelectionModel().getSelectedItems());
-        String selectedRowId = adminTable.getSelectionModel().getSelectedItem().getStaffId().toString();
-        int selectedRowIdPlusOne = Integer.parseInt(selectedRowId.substring(1))
-                + 1;
-        String newStaffIdFormatted = String.format("S%03d", selectedRowIdPlusOne);
-        StaffData.deleteStaffById(newStaffIdFormatted);
+        StaffTableDataModel selectedStaff = adminTable.getSelectionModel().getSelectedItem();
 
+        if (selectedStaff != null) {
+            adminTable.getItems().remove(selectedStaff);
+
+            String selectedRowId = selectedStaff.getStaffId().toString();
+            int selectedRowIdPlusOne = Integer.parseInt(selectedRowId.substring(1));
+            String newAdminIdFormatted = String.format("S%03d", selectedRowIdPlusOne);
+            StaffData.deleteStaffById(newAdminIdFormatted);
+        }
     }
 
     @FXML

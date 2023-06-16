@@ -1,6 +1,7 @@
 package medplus.controllers;
 
 import java.io.IOException;
+import java.time.LocalDateTime;
 
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -13,7 +14,7 @@ import javafx.scene.layout.Pane;
 import medplus.App;
 import medplus.data.PatientData;
 import medplus.data.StaffData;
-
+import medplus.tableModels.PatientTableDataModel;
 import medplus.tableModels.StaffTableDataModel;
 
 public class staff_controller {
@@ -123,19 +124,53 @@ public class staff_controller {
 
     }
 
+    // @FXML
+    // void deleteRow(MouseEvent event) {
+    // staffTable.getItems().removeAll(staffTable.getSelectionModel().getSelectedItems());
+    // String selectedRowId =
+    // staffTable.getSelectionModel().getSelectedItem().getStaffId().toString();
+    // int selectedRowIdPlusOne = Integer.parseInt(selectedRowId.substring(1));
+    // String newStaffIdFormatted = String.format("S%03d", selectedRowIdPlusOne);
+    // StaffData.deleteStaffById(newStaffIdFormatted);
+
+    // }
     @FXML
     void deleteRow(MouseEvent event) {
-        staffTable.getItems().removeAll(staffTable.getSelectionModel().getSelectedItems());
-        String selectedRowId = staffTable.getSelectionModel().getSelectedItem().getStaffId().toString();
-        int selectedRowIdPlusOne = Integer.parseInt(selectedRowId.substring(1))
-                + 1;
-        String newStaffIdFormatted = String.format("S%03d", selectedRowIdPlusOne);
-        StaffData.deleteStaffById(newStaffIdFormatted);
+        StaffTableDataModel selectedStaff = staffTable.getSelectionModel().getSelectedItem();
 
+        if (selectedStaff != null) {
+            staffTable.getItems().remove(selectedStaff);
+
+            String selectedRowId = selectedStaff.getStaffId().toString();
+            int selectedRowIdPlusOne = Integer.parseInt(selectedRowId.substring(1));
+            String newStaffIdFormatted = String.format("S%03d", selectedRowIdPlusOne);
+            StaffData.deleteStaffById(newStaffIdFormatted);
+        }
     }
 
     @FXML
     void switchToUpdateScreen(MouseEvent event) {
+        StaffTableDataModel selectedStaff = staffTable.getSelectionModel().getSelectedItem();
+        if (selectedStaff != null) {
+            try {
+                StaffData.initStaffData.setStaffId(selectedStaff.getStaffId());
+                StaffData.initStaffData.setStaffName(selectedStaff.getName());
+                StaffData.initStaffData.setStaffNationalId("12347483");
+                StaffData.initStaffData.seStafftEmail(selectedStaff.getEmail());
+                StaffData.initStaffData.seStafftDateOfBirth(null);
+                StaffData.initStaffData.setStaffAge(30);
+                StaffData.initStaffData.setStaffContactNumber(selectedStaff.getContactNumber());
+                StaffData.initStaffData.setStaffJobTitle(selectedStaff.getJobTitle());
+                StaffData.initStaffData.setStaffDepartment(selectedStaff.getDepartment());
+
+                App.setRoot("update_staff_screen");
+
+            } catch (IOException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+
+        }
 
     }
 
