@@ -13,7 +13,7 @@ import javafx.scene.layout.Pane;
 import medplus.App;
 import medplus.data.PatientData;
 import medplus.data.StaffData;
-import medplus.tableModels.PatientTableDataModel;
+
 import medplus.tableModels.StaffTableDataModel;
 
 public class staff_controller {
@@ -48,8 +48,8 @@ public class staff_controller {
     private TextField searchButton;
 
     @FXML
-    void addNewPatientScreen(MouseEvent event) throws IOException {
-        App.setRoot("update_staff_screen");
+    void changedToaddNewStaffScreen(MouseEvent event) throws IOException {
+        App.setRoot("add_staff_screen");
     }
 
     @FXML
@@ -122,6 +122,27 @@ public class staff_controller {
     void changedToTreatment(MouseEvent event) {
 
     }
+
+    @FXML
+    void deleteRow(MouseEvent event) {
+        staffTable.getItems().removeAll(staffTable.getSelectionModel().getSelectedItems());
+        String selectedRowId = staffTable.getSelectionModel().getSelectedItem().getStaffId().toString();
+        int selectedRowIdPlusOne = Integer.parseInt(selectedRowId.substring(1))
+                + 1;
+        String newStaffIdFormatted = String.format("S%03d", selectedRowIdPlusOne);
+        StaffData.deleteStaffById(newStaffIdFormatted);
+
+    }
+
+    @FXML
+    void switchToUpdateScreen(MouseEvent event) {
+
+    }
+
+    @FXML
+    private Pane updateButton;
+    @FXML
+    private Pane deleteButton;
 
     public void initialize() {
 
