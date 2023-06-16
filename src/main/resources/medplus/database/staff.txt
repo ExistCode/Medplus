@@ -22,5 +22,3 @@ S026,Natalie Walker,9517538524,nataliewalker@medplus.com,1991-08-14,32,951753852
 S027,Jonathan Thompson,3698521470,jonathanthompson@medplus.com,1981-02-07,42,3698521470,Head Surgeon,Doctor
 S029,David Martinez,1478523690,davidmartinez@medplus.com,1989-09-16,34,1478523690,Orthopedic Surgeon,Doctor
 S030,Emma Adams,6549871230,emmaadams@medplus.com,1988-11-05,35,6549871230,Administrator,AdministrationS031,
-S031,Hans,0920912,andreanto,2023-06-10,0,20910,ejdusad,Doctor
-S032,Hansu asu,0910290,andreantohanss@gmail.com,2004-06-20,18,091202901,Resident Doctor,Doctor
