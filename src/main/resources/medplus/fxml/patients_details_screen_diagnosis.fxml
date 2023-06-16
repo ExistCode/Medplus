@@ -131,7 +131,7 @@
       </Text>
       <Pane layoutX="251.0" layoutY="387.0" prefHeight="288.0" prefWidth="981.0" style="-fx-background-color: EFF7F9; -fx-background-radius: 20;">
          <children>
-            <Pane layoutX="29.0" layoutY="20.0" prefHeight="47.0" prefWidth="198.0" style="-fx-background-color: FEAD54; -fx-background-radius: 12;">
+            <Pane id="addNewMedicalHistory" fx:id="addMedicalHistory" layoutX="29.0" layoutY="20.0" onMouseClicked="#changedToAddMedicalHistory" prefHeight="47.0" prefWidth="198.0" style="-fx-background-color: FEAD54; -fx-background-radius: 12;">
                <children>
                   <TextField alignment="CENTER" layoutX="700.0" prefHeight="49.0" prefWidth="224.0" promptText="Search History" style="-fx-background-color: transparent; -fx-border-radius: 12; -fx-border-color: #089bab;">
                      <font>

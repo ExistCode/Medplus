@@ -10,7 +10,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import medplus.App;
 
-public class add_medical_history_controller {
+public class update_medical_history_controller {
 
     @FXML
     private Pane addAnalysisButton;
@@ -39,3 +39,4 @@ public class add_medical_history_controller {
     }
 
 }
+
