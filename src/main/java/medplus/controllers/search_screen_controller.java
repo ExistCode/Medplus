@@ -13,7 +13,6 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import medplus.App;
 import medplus.data.AnalysisData;
-import medplus.data.PatientData;
 import medplus.tableModels.AnalysisTableDataModel;
 
 public class search_screen_controller {
@@ -62,7 +61,7 @@ public class search_screen_controller {
     }
 
     @FXML
-    void changedToDiagnosis(MouseEvent event) throws IOException{
+    void changedToDiagnosis(MouseEvent event) throws IOException {
         App.setRoot("search_diagnosis_screen");
     }
 
@@ -97,12 +96,12 @@ public class search_screen_controller {
     }
 
     @FXML
-    void switchToAddScreen(MouseEvent event) throws IOException{
+    void switchToAddScreen(MouseEvent event) throws IOException {
         App.setRoot("add_analysis_screen");
     }
 
     @FXML
-    void switchToUpdateScreen(MouseEvent event) throws IOException{
+    void switchToUpdateScreen(MouseEvent event) throws IOException {
         App.setRoot("update_analysis_screen");
     }
 
@@ -119,7 +118,8 @@ public class search_screen_controller {
 
     @FXML
     public void initialize() {
-        ObservableList<AnalysisTableDataModel> analysisDataList = AnalysisTableDataModel.convertAnalysisDataToAnalysisTableDataModel();
+        ObservableList<AnalysisTableDataModel> analysisDataList = AnalysisTableDataModel
+                .convertAnalysisDataToAnalysisTableDataModel();
 
         TableColumn analysisIdColumn = new TableColumn("Analysis ID");
         TableColumn nameColumn = new TableColumn("Patient Name");
@@ -129,7 +129,8 @@ public class search_screen_controller {
         TableColumn InfoColumn = new TableColumn("Test Information");
         TableColumn summaryColumn = new TableColumn("Result Summary");
 
-        analysisTable.getColumns().addAll(analysisIdColumn, nameColumn, staffIdColumn, dateColumn, TypeColumn, InfoColumn, summaryColumn);
+        analysisTable.getColumns().addAll(analysisIdColumn, nameColumn, staffIdColumn, dateColumn, TypeColumn,
+                InfoColumn, summaryColumn);
 
         // Set cell value factories for each TableColumn
         analysisIdColumn.setCellValueFactory(new PropertyValueFactory<>("analysisId"));
@@ -168,5 +169,3 @@ public class search_screen_controller {
     }
 
 }
-
-

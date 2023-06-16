@@ -10,7 +10,7 @@ import java.io.*;
 import medplus.models.Patient;
 
 public class PatientData {
-        public static Patient initpatientData = new Patient("", "", "", "", null, 0, 0.0, 0.0, "", "", "");
+        public static Patient initPatientData = new Patient("", "", "", "", null, 0, 0.0, 0.0, "", "", "");
 
         public static String fileName = "src/main/resources/medplus/database/patient.txt";
 
@@ -94,7 +94,6 @@ public class PatientData {
         }
 
         public static void deletePatientById(String id) {
-                System.out.println("\nDELETED ID: " + id);
                 ArrayList<String> fetchedPatientListAfterDeletion = new ArrayList<>();
                 String line;
 
@@ -113,11 +112,6 @@ public class PatientData {
                         System.out.println(e);
                 }
 
-                // for (int i = 0; i < fetchedPatientListAfterDeletion.size(); i++) {
-                // System.out.println("ENTER FOR");
-                // System.out.println(fetchedPatientListAfterDeletion.get(i));
-                // }
-
                 try {
                         FileWriter writer = new FileWriter(fileName);
                         for (int i = 0; i < fetchedPatientListAfterDeletion.size(); i++) {
@@ -132,22 +126,29 @@ public class PatientData {
                 }
         }
 
-        public static void updateRecord(ArrayList<String> arrayList, Scanner input) {
+        public static void updatePatientData(Patient newPatientData) {
+                ArrayList<String> fetchedPatientListAfterDeletion = new ArrayList<>();
+                String line;
+
                 try {
                         BufferedReader reader = new BufferedReader(new FileReader(fileName));
-                        System.out.println("Please enter the patient ID or keyword to update the record:");
-                        String searchKey = input.next();
-                        String line;
                         while ((line = reader.readLine()) != null) {
-                                if (line.contains(searchKey)) {
-                                        System.out.println("Enter the attribute value you want to change:");
-                                        String oldValue = input.next();
-                                        System.out.println("Enter the new attribute value:");
-                                        String newValue = input.next();
-                                        arrayList.add(line.replace(oldValue, newValue));
+                                if (line.contains(newPatientData.getPatientId())) {
+                                        fetchedPatientListAfterDeletion.add(newPatientData.getPatientId() + ","
+                                                        + newPatientData.getPatientName() + ","
+                                                        + newPatientData.getPatientNationalId() + ","
+                                                        + newPatientData.getPatientGender() + ","
+                                                        + newPatientData.getPatientDateOfBirth() + ","
+                                                        + newPatientData.getPatientAge() + ","
+                                                        + newPatientData.getPatientHeight() + ","
+                                                        + newPatientData.getPatientWeight() + ","
+                                                        + newPatientData.getPatientBloodType() + ","
+                                                        + newPatientData.getPatientAddress() + ","
+                                                        + newPatientData.getPatientContactNumber());
                                 } else {
-                                        arrayList.add(line);
+                                        fetchedPatientListAfterDeletion.add(line);
                                 }
+
                         }
                         reader.close();
                 } catch (IOException e) {
@@ -156,8 +157,8 @@ public class PatientData {
 
                 try {
                         FileWriter writer = new FileWriter(fileName);
-                        for (int i = 0; i < arrayList.size(); i++) {
-                                writer.append(arrayList.get(i));
+                        for (int i = 0; i < fetchedPatientListAfterDeletion.size(); i++) {
+                                writer.append(fetchedPatientListAfterDeletion.get(i));
                                 writer.append("\n");
                         }
                         writer.close();

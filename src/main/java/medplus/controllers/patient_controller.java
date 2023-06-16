@@ -87,7 +87,30 @@ public class patient_controller {
 
     @FXML
     void switchToUpdateScreen(MouseEvent event) throws IOException {
-        App.setRoot("update_patients_screen");
+        PatientTableDataModel selectedPatient = patientsTable.getSelectionModel().getSelectedItem();
+        if (selectedPatient != null) {
+            try {
+                PatientData.initPatientData.setPatientId(selectedPatient.getPatientId());
+                PatientData.initPatientData.setPatientName(selectedPatient.getName());
+                PatientData.initPatientData.setPatientNationalId("6789012345");
+                PatientData.initPatientData.setPatientGender(selectedPatient.getGender());
+                PatientData.initPatientData.setPatientDateOfBirth(selectedPatient.getDateOfBirth());
+                PatientData.initPatientData.setPatientAge(selectedPatient.getAge());
+                PatientData.initPatientData.setPatientHeight(selectedPatient.getHeight());
+                PatientData.initPatientData.setPatientWeight(selectedPatient.getWeight());
+                PatientData.initPatientData.setPatientBloodType(selectedPatient.getBloodType());
+                PatientData.initPatientData.setPatientAddress("Miami");
+                PatientData.initPatientData.setPatientContactNumber("60238343422");
+
+                App.setRoot("update_patients_screen");
+
+            } catch (IOException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+
+        }
+
     }
 
     @FXML
@@ -135,19 +158,19 @@ public class patient_controller {
                 if (selectedPatient != null) {
 
                     try {
-                        PatientData.initpatientData.setPatientName(selectedPatient.getName());
-                        PatientData.initpatientData.setPatientGender(selectedPatient.getGender());
-                        PatientData.initpatientData.setPatientDateOfBirth(selectedPatient.getDateOfBirth());
-                        PatientData.initpatientData.setPatientBloodType(selectedPatient.getBloodType());
-                        PatientData.initpatientData.setPatientHeight(selectedPatient.getHeight());
-                        PatientData.initpatientData.setPatientWeight(selectedPatient.getWeight());
+                        PatientData.initPatientData.setPatientName(selectedPatient.getName());
+                        PatientData.initPatientData.setPatientGender(selectedPatient.getGender());
+                        PatientData.initPatientData.setPatientDateOfBirth(selectedPatient.getDateOfBirth());
+                        PatientData.initPatientData.setPatientBloodType(selectedPatient.getBloodType());
+                        PatientData.initPatientData.setPatientHeight(selectedPatient.getHeight());
+                        PatientData.initPatientData.setPatientWeight(selectedPatient.getWeight());
 
-                        System.out.println(PatientData.initpatientData.getPatientName());
-                        System.out.println(PatientData.initpatientData.getPatientGender());
-                        System.out.println(PatientData.initpatientData.getPatientDateOfBirth());
-                        System.out.println(PatientData.initpatientData.getPatientBloodType());
-                        System.out.println(PatientData.initpatientData.getPatientHeight());
-                        System.out.println(PatientData.initpatientData.getPatientWeight());
+                        System.out.println(PatientData.initPatientData.getPatientName());
+                        System.out.println(PatientData.initPatientData.getPatientGender());
+                        System.out.println(PatientData.initPatientData.getPatientDateOfBirth());
+                        System.out.println(PatientData.initPatientData.getPatientBloodType());
+                        System.out.println(PatientData.initPatientData.getPatientHeight());
+                        System.out.println(PatientData.initPatientData.getPatientWeight());
                         App.setRoot("patients_details_screen_analysis");
 
                     } catch (IOException e) {
@@ -157,6 +180,7 @@ public class patient_controller {
 
                 }
             }
+
         });
 
     }

@@ -70,7 +70,7 @@
                </children>
             </Pane>
          </children></Pane>
-      <Text fill="#089bab" layoutX="218.0" layoutY="52.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dashboard">
+      <Text fill="#089bab" layoutX="218.0" layoutY="52.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Search">
          <font>
             <Font name="Verdana" size="32.0" />
          </font>

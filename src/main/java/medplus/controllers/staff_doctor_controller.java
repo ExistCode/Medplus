@@ -12,6 +12,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import medplus.App;
+import medplus.data.PatientData;
 import medplus.data.StaffData;
 import medplus.tableModels.StaffTableDataModel;
 
@@ -121,6 +122,42 @@ public class staff_doctor_controller {
     void changedToTreatment(MouseEvent event) {
 
     }
+
+    @FXML
+    void deleteRow(MouseEvent event) {
+        StaffTableDataModel selectedStaff = doctorTable.getSelectionModel().getSelectedItem();
+
+        if (selectedStaff != null) {
+            doctorTable.getItems().remove(selectedStaff);
+
+            String selectedRowId = selectedStaff.getStaffId().toString();
+            int selectedRowIdPlusOne = Integer.parseInt(selectedRowId.substring(1));
+            String newDoctorIdFormatted = String.format("S%03d", selectedRowIdPlusOne);
+            StaffData.deleteStaffById(newDoctorIdFormatted);
+        }
+    }
+
+    // @FXML
+    // void deleteRow(MouseEvent event) {
+    // doctorTable.getItems().removeAll(doctorTable.getSelectionModel().getSelectedItems());
+    // String selectedRowId =
+    // doctorTable.getSelectionModel().getSelectedItem().getStaffId().toString();
+    // int selectedRowIdPlusOne = Integer.parseInt(selectedRowId.substring(1));
+    // String newDoctorIdFormatted = String.format("S%03d", selectedRowIdPlusOne);
+    // StaffData.deleteStaffById(newDoctorIdFormatted);
+
+    // }
+
+    @FXML
+    void switchToUpdateScreen(MouseEvent event) throws IOException {
+        App.setRoot("update_staff_screen");
+
+    }
+
+    @FXML
+    private Pane updateButton;
+    @FXML
+    private Pane deleteButton;
 
     public void initialize() {
 
