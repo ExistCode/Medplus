@@ -15,6 +15,8 @@ import medplus.data.StaffData;
 public class staff_details_controller {
     @FXML
     private Pane analysisButton;
+    @FXML
+    private Pane addMedicalHistoryButton;
 
     @FXML
     private Pane dashboardbutton;
@@ -71,18 +73,23 @@ public class staff_details_controller {
     }
 
     @FXML
-    void changedToAnalysis(MouseEvent event) {
-
+    void changedToAnalysis(MouseEvent event) throws IOException{
+        App.setRoot("staff_details_analysis_screen");
     }
 
     @FXML
-    void changedToDiagnosis(MouseEvent event) {
-
+    void changedToDiagnosis(MouseEvent event) throws IOException{
+        App.setRoot("staff_details_diagnosis_screen");
     }
 
     @FXML
-    void changedToTreatment(MouseEvent event) {
+    void changedToTreatment(MouseEvent event) throws IOException {
+        App.setRoot("staff_details_treatment_screen");
+    }
 
+    @FXML
+    void changedToAddMedicalHistory(MouseEvent event) throws IOException {
+        App.setRoot("add_medical_history_screen");
     }
 
     @FXML
