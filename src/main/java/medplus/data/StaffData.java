@@ -94,6 +94,45 @@ public class StaffData {
         }
     }
 
+    public static void deleteStaffById(String id) {
+        System.out.println("\nDELETED ID: " + id);
+        ArrayList<String> fetchedStaffListAfterDeletion = new ArrayList<>();
+        String line;
+
+        try {
+            BufferedReader reader = new BufferedReader(new FileReader(fileName));
+            while ((line = reader.readLine()) != null) {
+                if (line.contains(id)) {
+                    System.out.println("FOUND ID");
+                } else {
+                    fetchedStaffListAfterDeletion.add(line);
+                }
+
+            }
+            reader.close();
+        } catch (IOException e) {
+            System.out.println(e);
+        }
+
+        // for (int i = 0; i < fetchedStaffListAfterDeletion.size(); i++) {
+        // System.out.println("ENTER FOR");
+        // System.out.println(fetchedStaffListAfterDeletion.get(i));
+        // }
+
+        try {
+            FileWriter writer = new FileWriter(fileName);
+            for (int i = 0; i < fetchedStaffListAfterDeletion.size(); i++) {
+                writer.append(fetchedStaffListAfterDeletion.get(i));
+                writer.append("\n");
+            }
+            writer.close();
+        } catch (IOException e) {
+            System.out.println(e);
+        } finally {
+            System.out.println("Deletion done!");
+        }
+    }
+
     public static void deleteRecordById(ArrayList<String> arrayList, Scanner input) {
         System.out.println("Enter the staff ID or keyword to delete a record:");
         String searchKey = input.next();

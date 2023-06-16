@@ -12,6 +12,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import medplus.App;
+import medplus.data.PatientData;
 import medplus.data.StaffData;
 import medplus.tableModels.StaffTableDataModel;
 
@@ -120,6 +121,28 @@ public class staff_nurse_controller {
     void changedToTreatment(MouseEvent event) {
 
     }
+
+    @FXML
+    void deleteRow(MouseEvent event) {
+        nurseTable.getItems().removeAll(nurseTable.getSelectionModel().getSelectedItems());
+        String selectedRowId = nurseTable.getSelectionModel().getSelectedItem().getStaffId().toString();
+        int selectedRowIdPlusOne = Integer.parseInt(selectedRowId.substring(1))
+                + 1;
+        String newStaffIdFormatted = String.format("S%03d", selectedRowIdPlusOne);
+        StaffData.deleteStaffById(newStaffIdFormatted);
+
+    }
+
+    @FXML
+    void switchToUpdateScreen(MouseEvent event) throws IOException {
+        App.setRoot("update_staff_screen");
+
+    }
+
+    @FXML
+    private Pane updateButton;
+    @FXML
+    private Pane deleteButton;
 
     public void initialize() {
 
