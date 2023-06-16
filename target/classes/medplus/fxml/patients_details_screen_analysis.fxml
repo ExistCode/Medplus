@@ -132,9 +132,9 @@
          <children>
             <Pane fx:id="addMedHis" layoutX="29.0" layoutY="20.0" onMouseClicked="#changedToAddMedicalHistory" prefHeight="47.0" prefWidth="198.0" style="-fx-background-color: FEAD54; -fx-background-radius: 12;">
                <children>
-                  <Text layoutX="28.0" layoutY="24.0" strokeType="OUTSIDE" strokeWidth="0.0" text="+ New Medical History">
+                  <Text layoutX="20.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" text="+ New Medical History">
                      <font>
-                        <Font size="16.0" />
+                        <Font name="SF Pro Rounded Semibold" size="16.0" />
                      </font>
                   </Text>
                </children>
@@ -192,11 +192,11 @@
                   </Text>
                </children>
             </Pane>
-            <Pane layoutX="493.0" layoutY="16.0" prefHeight="32.0" prefWidth="95.0" style="-fx-background-color: FEAD54; -fx-background-radius: 12;">
+            <Pane layoutX="510.0" layoutY="16.0" prefHeight="32.0" prefWidth="81.0" style="-fx-background-color: FEAD54; -fx-background-radius: 12;">
                <children>
-                  <Text layoutX="25.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="+ Add">
+                  <Text layoutX="17.0" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="+ Add">
                      <font>
-                        <Font size="16.0" />
+                        <Font name="SF Pro Rounded Bold" size="16.0" />
                      </font>
                   </Text>
                </children>
