@@ -51,6 +51,9 @@ public class patient_details_controller extends patient_controller {
     private Pane staffButton;
 
     @FXML
+    private Pane addMedicalHistory;
+    
+    @FXML
     void changedToDashboard(MouseEvent event) throws IOException {
         App.setRoot("home_screen");
     }
@@ -110,6 +113,12 @@ public class patient_details_controller extends patient_controller {
     @FXML
     void changedToTreatment(MouseEvent event) throws IOException {
         App.setRoot("patients_details_screen_treatment");
+
+    }
+
+    @FXML
+    void changedToAddMedicalHistory(MouseEvent event) throws IOException {
+        App.setRoot("add_medical_history_screen");
 
     }
 }
