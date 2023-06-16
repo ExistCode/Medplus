@@ -78,9 +78,9 @@ public class update_staff_controller {
                     dateOfBirth, p.getYears(), contactNumberTextField.getText(),
                     jobTitleTextField.getText(),
                     departmentBox.getSelectionModel().getSelectedItem());
-            StaffData.
+            StaffData.updateStaffData(newStaff);
 
-                    App.setRoot("staff_all_home_screen");
+            App.setRoot("staff_all_home_screen");
 
         } else {
             // Printing error message
