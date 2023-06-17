@@ -2,20 +2,32 @@ package medplus.controllers;
 
 import java.io.IOException;
 
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.collections.transformation.FilteredList;
+import javafx.collections.transformation.SortedList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import medplus.App;
 import medplus.data.AnalysisData;
+import medplus.data.PatientData;
+import medplus.data.StaffData;
 import medplus.tableModels.AnalysisTableDataModel;
+import medplus.tableModels.StaffTableDataModel;
 
 public class search_screen_controller {
+    @FXML
+    private TextField searchedAnalysisText;
 
     @FXML
     private ImageView Analysis_btn;
@@ -46,6 +58,8 @@ public class search_screen_controller {
 
     @FXML
     private Button treatmentButton;
+    @FXML
+    private Pane deleteButton;
 
     @FXML
     private TableView<AnalysisTableDataModel> analysisTable;
@@ -107,17 +121,43 @@ public class search_screen_controller {
 
     @FXML
     void deleteRow(MouseEvent event) {
-        analysisTable.getItems().removeAll(analysisTable.getSelectionModel().getSelectedItems());
-        String selectedRowId = analysisTable.getSelectionModel().getSelectedItem().getAnalysisId().toString();
-        int selectedRowIdPlusOne = Integer.parseInt(selectedRowId.substring(1))
-                + 1;
-        String newAnalysisIdFormatted = String.format("A%03d", selectedRowIdPlusOne);
-        AnalysisData.deleteAnalysisById(newAnalysisIdFormatted);
 
+        AnalysisTableDataModel selectedAnalysis = analysisTable.getSelectionModel().getSelectedItem();
+
+        if (selectedAnalysis != null) {
+            analysisTable.getItems().remove(selectedAnalysis);
+
+            String selectedRowId = selectedAnalysis.getAnalysisId().toString();
+            int selectedRowIdPlusOne = Integer.parseInt(selectedRowId.substring(1));
+            String newAnalysisIdFormatted = String.format("A%03d", selectedRowIdPlusOne);
+            AnalysisData.deleteAnalysisById(newAnalysisIdFormatted);
+        }
     }
+
+    // @FXML
+    // ObservableList<AnalysisTableDataModel> searchAnalysis(ActionEvent event) {
+    // ObservableList<AnalysisTableDataModel> searchedAnalysisList =
+    // FXCollections.observableArrayList();
+    // ObservableList<AnalysisTableDataModel> analysisDataList =
+    // AnalysisTableDataModel
+    // .convertAnalysisDataToAnalysisTableDataModel();
+    // for (AnalysisTableDataModel analysis : analysisDataList) {
+    // if (searchButton.getText().equals(analysis.getAnalysisId())) {
+    // searchedAnalysisList.add(analysis);
+
+    // } else {
+    // searchedAnalysisList.addAll(analysisDataList);
+
+    // }
+
+    // }
+    // return searchedAnalysisList;
+
+    // }
 
     @FXML
     public void initialize() {
+
         ObservableList<AnalysisTableDataModel> analysisDataList = AnalysisTableDataModel
                 .convertAnalysisDataToAnalysisTableDataModel();
 
@@ -140,32 +180,61 @@ public class search_screen_controller {
         TypeColumn.setCellValueFactory(new PropertyValueFactory<>("typeOfTest"));
         InfoColumn.setCellValueFactory(new PropertyValueFactory<>("testInformation"));
         summaryColumn.setCellValueFactory(new PropertyValueFactory<>("resultSummary"));
-
         analysisTable.setItems(analysisDataList);
 
-        analysisTable.setOnMouseClicked(event -> {
-            if (event.getClickCount() == 2) {
-                AnalysisTableDataModel selectedAnalysis = analysisTable.getSelectionModel().getSelectedItem();
-                if (selectedAnalysis != null) {
-
-                    AnalysisData.initanalysisData.setAnalysisId(selectedAnalysis.getAnalysisId());
-                    AnalysisData.initanalysisData.setPatientName(selectedAnalysis.getPatientName());
-                    AnalysisData.initanalysisData.setStaffId(selectedAnalysis.getStaffId());
-                    AnalysisData.initanalysisData.setTypeOfTest(selectedAnalysis.getTypeOfTest());
-                    AnalysisData.initanalysisData.setResultSummary(selectedAnalysis.getResultSummary());
-                    AnalysisData.initanalysisData.setDate(selectedAnalysis.getDate());
-                    AnalysisData.initanalysisData.setTestInformation(selectedAnalysis.getTestInformation());
-
-                    System.out.println(AnalysisData.initanalysisData.getAnalysisId());
-                    System.out.println(AnalysisData.initanalysisData.getPatientName());
-                    System.out.println(AnalysisData.initanalysisData.getStaffId());
-                    System.out.println(AnalysisData.initanalysisData.getTypeOfTest());
-                    System.out.println(AnalysisData.initanalysisData.getResultSummary());
-                    System.out.println(AnalysisData.initanalysisData.getDate());
-                    System.out.println(AnalysisData.initanalysisData.getTestInformation());
+        FilteredList<AnalysisTableDataModel> filteredData = new FilteredList<>(analysisDataList, b -> true);
+        searchedAnalysisText.textProperty().addListener((observable, oldvalue, newvalue) -> {
+            filteredData.setPredicate(AnalysisTableDataModel -> {
+                if (newvalue.isEmpty() || newvalue.isBlank() || newvalue == null) {
+                    return true;
                 }
-            }
+
+                String searchKeyword = newvalue.toLowerCase();
+                if (AnalysisTableDataModel.getPatientName().toLowerCase().indexOf(searchKeyword) > -1) {
+                    return true;
+                } else if (AnalysisTableDataModel.getAnalysisId().toLowerCase().indexOf(searchKeyword) > -1) {
+                    return true;
+                } else if (AnalysisTableDataModel.getStaffId().toLowerCase().indexOf(searchKeyword) > -1) {
+                    return true;
+                } else if (AnalysisTableDataModel.getTypeOfTest().toLowerCase().indexOf(searchKeyword) > -1) {
+                    return true;
+                } else if (AnalysisTableDataModel.getResultSummary().toLowerCase().indexOf(searchKeyword) > -1) {
+                    return true;
+                } else {
+                    return false;
+                }
+            });
         });
+        SortedList<AnalysisTableDataModel> sortedAnalysisData = new SortedList<>(filteredData);
+        sortedAnalysisData.comparatorProperty().bind(analysisTable.comparatorProperty());
+        analysisTable.setItems(sortedAnalysisData);
+
+        // analysisTable.setOnMouseClicked(event -> {
+        // if (event.getClickCount() == 2) {
+        // AnalysisTableDataModel selectedAnalysis =
+        // analysisTable.getSelectionModel().getSelectedItem();
+        // if (selectedAnalysis != null) {
+        // Alert popUpAnalysisDetails = new Alert(AlertType.INFORMATION);
+        // popUpAnalysisDetails.setTitle("Analysis Details");
+
+        // AnalysisData.initanalysisData.setAnalysisId(selectedAnalysis.getAnalysisId());
+        // AnalysisData.initanalysisData.setPatientName(selectedAnalysis.getPatientName());
+        // AnalysisData.initanalysisData.setStaffId(selectedAnalysis.getStaffId());
+        // AnalysisData.initanalysisData.setTypeOfTest(selectedAnalysis.getTypeOfTest());
+        // AnalysisData.initanalysisData.setResultSummary(selectedAnalysis.getResultSummary());
+        // AnalysisData.initanalysisData.setDate(selectedAnalysis.getDate());
+        // AnalysisData.initanalysisData.setTestInformation(selectedAnalysis.getTestInformation());
+
+        // System.out.println(AnalysisData.initanalysisData.getAnalysisId());
+        // System.out.println(AnalysisData.initanalysisData.getPatientName());
+        // System.out.println(AnalysisData.initanalysisData.getStaffId());
+        // System.out.println(AnalysisData.initanalysisData.getTypeOfTest());
+        // System.out.println(AnalysisData.initanalysisData.getResultSummary());
+        // System.out.println(AnalysisData.initanalysisData.getDate());
+        // System.out.println(AnalysisData.initanalysisData.getTestInformation());
+        // }
+        // }
+        // });
     }
 
 }
