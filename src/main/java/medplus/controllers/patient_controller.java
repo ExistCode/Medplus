@@ -5,6 +5,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javafx.collections.ObservableList;
+import javafx.collections.transformation.FilteredList;
+import javafx.collections.transformation.SortedList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -19,6 +21,7 @@ import javafx.scene.text.Text;
 import medplus.App;
 import medplus.data.PatientData;
 import medplus.models.Patient;
+import medplus.tableModels.AnalysisTableDataModel;
 import medplus.tableModels.PatientTableDataModel;
 
 public class patient_controller {
@@ -151,6 +154,41 @@ public class patient_controller {
         weightColumn.setCellValueFactory(new PropertyValueFactory<>("weight"));
 
         patientsTable.setItems(patientDataList);
+        FilteredList<PatientTableDataModel> filteredData = new FilteredList<>(patientDataList, b -> true);
+        searchButton.textProperty().addListener((observable, oldvalue, newvalue) -> {
+            filteredData.setPredicate(PatientTableDataModel -> {
+                if (newvalue.isEmpty() || newvalue.isBlank() || newvalue == null) {
+                    return true;
+                }
+
+                String searchKeyword = newvalue.toLowerCase();
+                if (PatientTableDataModel.getPatientId().toLowerCase().indexOf(searchKeyword) > -1) {
+                    return true;
+                } else if (PatientTableDataModel.getName().toLowerCase().indexOf(searchKeyword) > -1) {
+                    return true;
+                } else if (PatientTableDataModel.getGender().toLowerCase().indexOf(searchKeyword) > -1) {
+                    return true;
+                } else if (Integer.toString(PatientTableDataModel.getAge()).toLowerCase().indexOf(searchKeyword) > -1) {
+                    return true;
+                } else if (PatientTableDataModel.getBloodType().toLowerCase().indexOf(searchKeyword) > -1) {
+                    return true;
+                } else if (Double.toString(PatientTableDataModel.getHeight()).toLowerCase()
+                        .indexOf(searchKeyword) > -1) {
+                    return true;
+
+                } else if (Double.toString(PatientTableDataModel.getWeight()).toLowerCase()
+                        .indexOf(searchKeyword) > -1) {
+                    return true;
+                } else {
+                    return false;
+                }
+            });
+        });
+
+        SortedList<PatientTableDataModel> sortedPatientData = new SortedList<>(
+                filteredData);
+        sortedPatientData.comparatorProperty().bind(patientsTable.comparatorProperty());
+        patientsTable.setItems(sortedPatientData);
 
         patientsTable.setOnMouseClicked(event -> {
             if (event.getClickCount() == 2) {
