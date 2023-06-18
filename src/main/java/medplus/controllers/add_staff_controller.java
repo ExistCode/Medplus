@@ -80,7 +80,13 @@ public class add_staff_controller {
                     jobTitleTextField.getText(),
                     departmentBox.getSelectionModel().getSelectedItem());
             StaffData.addNewStaff(newStaff);
-            App.setRoot("staff_all_home_screen");
+            StaffData.initStaffData.setStaffName(nameTextField.getText());
+            StaffData.initStaffData.seStafftEmail(emailTextField.getText());
+            StaffData.initStaffData.setStaffContactNumber(contactNumberTextField.getText());
+            StaffData.initStaffData.setStaffDepartment(departmentBox.getSelectionModel().getSelectedItem());
+            StaffData.initStaffData.setStaffJobTitle(jobTitleTextField.getText());
+
+            App.setRoot("staff_details_analysis_screen");
         } else {
             // Show error message
             System.out.println(errorMessage);

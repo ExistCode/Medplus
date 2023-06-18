@@ -18,6 +18,10 @@ import medplus.tableModels.PatientTableDataModel;
 
 public class patient_details_controller extends patient_controller {
     @FXML
+    private Pane deleteButton;
+    @FXML
+    private Pane updateButton;
+    @FXML
     private Pane analysisButton;
     @FXML
     private Pane diagnosisButton;
@@ -52,7 +56,7 @@ public class patient_details_controller extends patient_controller {
 
     @FXML
     private Pane addMedicalHistory;
-    
+
     @FXML
     void changedToDashboard(MouseEvent event) throws IOException {
         App.setRoot("home_screen");
@@ -119,6 +123,16 @@ public class patient_details_controller extends patient_controller {
     @FXML
     void changedToAddMedicalHistory(MouseEvent event) throws IOException {
         App.setRoot("add_medical_history_screen");
+
+    }
+
+    @FXML
+    void deleteRow(MouseEvent event) {
+
+    }
+
+    @FXML
+    void switchToUpdateScreen(MouseEvent event) {
 
     }
 }
