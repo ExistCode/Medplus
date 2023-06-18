@@ -139,7 +139,7 @@
                   </Text>
                </children>
             </Pane>
-            <TableView fx:id="patientMedicalHistoryTable" layoutX="33.0" layoutY="74.0" prefHeight="187.0" prefWidth="920.0" style="-fx-background-color: white; -fx-background-radius: 16;">
+            <TableView fx:id="patientMedicalHistoryTable" layoutX="33.0" layoutY="74.0" prefHeight="187.0" prefWidth="920.0" stylesheets="@../css/styles.css">
               <columns>
                 <TableColumn prefWidth="96.9368896484375" style="-fx-background-color: #9DDBBE; -fx-font-size: 16; -fx-background-radius: 12 0 0 0;" text="Patient No." />
                 <TableColumn prefWidth="124.593017578125" style="-fx-background-color: #9DDBBE; -fx-font-size: 16;" text="Staff No." />
@@ -150,6 +150,24 @@
                   <TableColumn minWidth="0.0" prefWidth="108.259765625" style="-fx-background-color: #9DDBBE; -fx-font-size: 16; -fx-background-radius: 0 12 0 0;" />
               </columns>
             </TableView>
+            <Pane fx:id="updateButton" layoutX="841.0" layoutY="16.0" onMouseClicked="#switchToUpdateScreen" prefHeight="48.0" prefWidth="52.0">
+               <children>
+                  <ImageView fitHeight="48.0" fitWidth="35.0" layoutX="8.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/icons/pencil-buttons-48.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Pane fx:id="deleteButton" layoutX="899.0" layoutY="16.0" onMouseClicked="#deleteRow" prefHeight="48.0" prefWidth="52.0">
+               <children>
+                  <ImageView fitHeight="48.0" fitWidth="35.0" layoutX="8.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/icons/delete-button-90.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
          </children>
       </Pane>
       <Pane layoutX="614.0" layoutY="47.0" prefHeight="278.0" prefWidth="613.0" style="-fx-background-color: EFF7F9; -fx-background-radius: 20;">
