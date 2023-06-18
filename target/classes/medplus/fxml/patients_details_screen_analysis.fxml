@@ -139,7 +139,7 @@
                   </Text>
                </children>
             </Pane>
-            <TableView layoutX="33.0" layoutY="74.0" prefHeight="187.0" prefWidth="920.0" style="-fx-background-color: white; -fx-background-radius: 16;">
+            <TableView fx:id="patientMedicalHistoryTable" layoutX="33.0" layoutY="74.0" prefHeight="187.0" prefWidth="920.0" stylesheets="@../css/styles.css">
               <columns>
                 <TableColumn prefWidth="96.9368896484375" style="-fx-background-color: #9DDBBE; -fx-font-size: 16; -fx-background-radius: 12 0 0 0;" text="Patient No." />
                 <TableColumn prefWidth="124.593017578125" style="-fx-background-color: #9DDBBE; -fx-font-size: 16;" text="Staff No." />

@@ -19,6 +19,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
 import medplus.App;
+import medplus.data.MedicalHistoryData;
 import medplus.data.PatientData;
 import medplus.models.Patient;
 import medplus.tableModels.AnalysisTableDataModel;
@@ -196,6 +197,7 @@ public class patient_controller {
                 if (selectedPatient != null) {
 
                     try {
+                        PatientData.initPatientData.setPatientId(selectedPatient.getPatientId());
                         PatientData.initPatientData.setPatientName(selectedPatient.getName());
                         PatientData.initPatientData.setPatientGender(selectedPatient.getGender());
                         PatientData.initPatientData.setPatientDateOfBirth(selectedPatient.getDateOfBirth());
