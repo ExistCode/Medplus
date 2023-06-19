@@ -23,6 +23,7 @@ import medplus.data.AnalysisData;
 import medplus.data.PatientData;
 import medplus.data.StaffData;
 import medplus.tableModels.AnalysisTableDataModel;
+import medplus.tableModels.PatientTableDataModel;
 import medplus.tableModels.StaffTableDataModel;
 
 public class search_screen_controller {
@@ -116,7 +117,26 @@ public class search_screen_controller {
 
     @FXML
     void switchToUpdateScreen(MouseEvent event) throws IOException {
-        App.setRoot("update_analysis_screen");
+        AnalysisTableDataModel selectedAnalysis = analysisTable.getSelectionModel().getSelectedItem();
+        if (selectedAnalysis != null) {
+            try {
+                AnalysisData.initanalysisData.setAnalysisId(selectedAnalysis.getAnalysisId());
+                AnalysisData.initanalysisData.setPatientName(selectedAnalysis.getPatientName());
+                AnalysisData.initanalysisData.setStaffId(selectedAnalysis.getStaffId());
+                AnalysisData.initanalysisData.setTypeOfTest(selectedAnalysis.getTypeOfTest());
+                AnalysisData.initanalysisData.setResultSummary(selectedAnalysis.getResultSummary());
+                AnalysisData.initanalysisData.setDate(selectedAnalysis.getDate());
+                AnalysisData.initanalysisData.setTestInformation(selectedAnalysis.getTestInformation());
+
+                App.setRoot("update_analysis_screen");
+
+            } catch (IOException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+
+        }
+
     }
 
     @FXML
@@ -216,14 +236,6 @@ public class search_screen_controller {
         // if (selectedAnalysis != null) {
         // Alert popUpAnalysisDetails = new Alert(AlertType.INFORMATION);
         // popUpAnalysisDetails.setTitle("Analysis Details");
-
-        // AnalysisData.initanalysisData.setAnalysisId(selectedAnalysis.getAnalysisId());
-        // AnalysisData.initanalysisData.setPatientName(selectedAnalysis.getPatientName());
-        // AnalysisData.initanalysisData.setStaffId(selectedAnalysis.getStaffId());
-        // AnalysisData.initanalysisData.setTypeOfTest(selectedAnalysis.getTypeOfTest());
-        // AnalysisData.initanalysisData.setResultSummary(selectedAnalysis.getResultSummary());
-        // AnalysisData.initanalysisData.setDate(selectedAnalysis.getDate());
-        // AnalysisData.initanalysisData.setTestInformation(selectedAnalysis.getTestInformation());
 
         // System.out.println(AnalysisData.initanalysisData.getAnalysisId());
         // System.out.println(AnalysisData.initanalysisData.getPatientName());

@@ -36,7 +36,7 @@
             <Font name="System Bold" size="28.0" />
          </font>
       </Text>
-      <TextField layoutX="716.0" layoutY="345.0" prefHeight="60.0" prefWidth="450.0" promptText="Enter Contact Number" style="-fx-background-color: white; -fx-background-radius: 16; -fx-border-radius: 16; -fx-border-color: #089bab;">
+      <TextField fx:id="ResultsTextField" layoutX="716.0" layoutY="345.0" prefHeight="60.0" prefWidth="450.0" promptText="Enter Contact Number" style="-fx-background-color: white; -fx-background-radius: 16; -fx-border-radius: 16; -fx-border-color: #089bab;">
          <font>
             <Font name="SF Pro Text Semibold" size="24.0" />
          </font>
@@ -56,7 +56,7 @@
             <Font name="System Bold" size="28.0" />
          </font>
       </Text>
-      <Pane fx:id="updateAnalysisButton" layoutX="500.0" layoutY="630.0" prefHeight="60.0" prefWidth="320.0" style="-fx-background-color: FEAD54; -fx-background-radius: 40;">
+      <Pane fx:id="updateAnalysisButton" layoutX="500.0" layoutY="630.0" onMouseClicked="#updateAnalysis" prefHeight="60.0" prefWidth="320.0" style="-fx-background-color: FEAD54; -fx-background-radius: 40;">
          <children>
             <Text fill="WHITE" layoutX="15.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Update Analysis" textAlignment="CENTER">
                <font>
@@ -80,6 +80,11 @@
       <Text fill="#089bab" layoutX="716.0" layoutY="458.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Test Information">
          <font>
             <Font name="System Bold" size="28.0" />
+         </font>
+      </Text>
+      <Text fx:id="errorMessageDisplay" fill="#f9988b" layoutX="13.0" layoutY="711.0" strokeType="OUTSIDE" strokeWidth="0.0" text=" " textAlignment="CENTER" wrappingWidth="1257.1827697753906">
+         <font>
+            <Font size="16.0" />
          </font>
       </Text>
    </children>
