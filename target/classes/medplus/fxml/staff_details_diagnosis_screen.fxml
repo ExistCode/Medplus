@@ -54,6 +54,7 @@
                   </Text>
                </children>
             </Pane>
+            
             <Pane fx:id="searchbutton" layoutX="54.0" layoutY="498.0" onMouseClicked="#changedToSearch" prefHeight="144.0" prefWidth="95.0">
                <children>
                   <ImageView fitHeight="60.0" fitWidth="61.0" layoutX="20.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true">
@@ -74,7 +75,7 @@
             <Font name="SF Pro Text Semibold" size="28.0" />
          </font>
       </Text>
-      <Pane layoutX="251.0" layoutY="99.0" prefHeight="175.0" prefWidth="298.0" style="-fx-background-color: EFF7F9; -fx-background-radius: 20;">
+      <Pane layoutX="251.0" layoutY="99.0" prefHeight="222.0" prefWidth="298.0" style="-fx-background-color: EFF7F9; -fx-background-radius: 20;">
          <children>
             <Text fx:id="staffName" layoutX="-2.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Staff's name" textAlignment="CENTER" wrappingWidth="298.0">
                <font>
@@ -111,9 +112,37 @@
                   <Font name="SF Pro Text Regular" size="16.0" />
                </font>
             </Text>
+            <Pane fx:id="editStaffButton" layoutX="37.0" layoutY="169.0" onMouseClicked="#editStaffDetails" prefHeight="35.0" prefWidth="102.0" style="-fx-background-color: #9ddbbe; -fx-background-radius: 12;">
+               <children>
+                  <Text fill="WHITE" layoutX="23.0" layoutY="24.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Edit">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Text>
+                  <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="66.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/icons/edit-buttons-white.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Pane fx:id="deleteStaffButton" layoutX="161.0" layoutY="169.0" onMouseClicked="#deleteStaff" prefHeight="35.0" prefWidth="102.0" style="-fx-background-color: #f9988b; -fx-background-radius: 12;">
+               <children>
+                  <Text fill="WHITE" layoutX="16.0" layoutY="24.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Delete">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Text>
+                  <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="71.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/icons/delete-buttons-90-white.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
          </children>
       </Pane>
-      <Text fill="#089bab" layoutX="251.0" layoutY="358.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Medical History">
+      <Text fill="#089bab" layoutX="251.0" layoutY="365.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Medical History">
          <font>
             <Font name="SF Pro Text Bold" size="28.0" />
          </font>

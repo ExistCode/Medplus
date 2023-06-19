@@ -207,12 +207,21 @@ public class staff_controller {
                 if (selectedStaff != null) {
 
                     try {
-
+                        StaffData.initStaffData.setStaffId(selectedStaff.getStaffId());
                         StaffData.initStaffData.setStaffName(selectedStaff.getName());
+                        StaffData.initStaffData.setStaffNationalId("12347483");
                         StaffData.initStaffData.seStafftEmail(selectedStaff.getEmail());
+                        StaffData.initStaffData.seStafftDateOfBirth(null);
+                        StaffData.initStaffData.setStaffAge(30);
                         StaffData.initStaffData.setStaffContactNumber(selectedStaff.getContactNumber());
-                        StaffData.initStaffData.setStaffDepartment(selectedStaff.getDepartment());
                         StaffData.initStaffData.setStaffJobTitle(selectedStaff.getJobTitle());
+                        StaffData.initStaffData.setStaffDepartment(selectedStaff.getDepartment());
+
+                        // StaffData.initStaffData.setStaffName(selectedStaff.getName());
+                        // StaffData.initStaffData.seStafftEmail(selectedStaff.getEmail());
+                        // StaffData.initStaffData.setStaffContactNumber(selectedStaff.getContactNumber());
+                        // StaffData.initStaffData.setStaffDepartment(selectedStaff.getDepartment());
+                        // StaffData.initStaffData.setStaffJobTitle(selectedStaff.getJobTitle());
                         //
 
                         System.out.println(StaffData.initStaffData.getStaffName());
