@@ -34,6 +34,10 @@ public class patient_details_controller extends patient_controller {
     private Pane diagnosisButton;
     @FXML
     private Pane treatmentButton;
+    @FXML
+    private Text editPatientButton;
+    @FXML
+    private Text deletePatientButton;
 
     @FXML
     private Pane dashboardbutton;
@@ -119,6 +123,31 @@ public class patient_details_controller extends patient_controller {
 
     @FXML
     void switchToUpdateScreen(MouseEvent event) {
+
+    }
+
+    @FXML
+    void editPatientDetails(MouseEvent event) throws IOException {
+        PatientData.initPatientData.setPatientId(PatientData.initPatientData.getPatientId());
+        PatientData.initPatientData.setPatientName(PatientData.initPatientData.getPatientName());
+        PatientData.initPatientData.setPatientNationalId("6789012345");
+        PatientData.initPatientData.setPatientGender(PatientData.initPatientData.getPatientGender());
+        PatientData.initPatientData.setPatientDateOfBirth(PatientData.initPatientData.getPatientDateOfBirth());
+        PatientData.initPatientData.setPatientAge(PatientData.initPatientData.getPatientAge());
+        PatientData.initPatientData.setPatientHeight(PatientData.initPatientData.getPatientHeight());
+        PatientData.initPatientData.setPatientWeight(PatientData.initPatientData.getPatientWeight());
+        PatientData.initPatientData.setPatientBloodType(PatientData.initPatientData.getPatientBloodType());
+        PatientData.initPatientData.setPatientAddress("Miami");
+        PatientData.initPatientData.setPatientContactNumber("60238343422");
+
+        App.setRoot("update_patients_screen");
+
+    }
+
+    @FXML
+    void deletePatient(MouseEvent event) throws IOException {
+        PatientData.deletePatientById(PatientData.initPatientData.getPatientId());
+        App.setRoot("patients_home_screen");
 
     }
 
