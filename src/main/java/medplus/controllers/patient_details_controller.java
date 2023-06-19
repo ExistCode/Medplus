@@ -35,9 +35,9 @@ public class patient_details_controller extends patient_controller {
     @FXML
     private Pane treatmentButton;
     @FXML
-    private Text editPatientButton;
+    private Pane editPatientButton;
     @FXML
-    private Text deletePatientButton;
+    private Pane deletePatientButton;
 
     @FXML
     private Pane dashboardbutton;
