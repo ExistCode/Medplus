@@ -89,12 +89,12 @@ public class staff_details_controller {
     }
 
     @FXML
-    void changedToAnalysis(MouseEvent event) throws IOException{
+    void changedToAnalysis(MouseEvent event) throws IOException {
         App.setRoot("staff_details_analysis_screen");
     }
 
     @FXML
-    void changedToDiagnosis(MouseEvent event) throws IOException{
+    void changedToDiagnosis(MouseEvent event) throws IOException {
         App.setRoot("staff_details_diagnosis_screen");
     }
 
@@ -110,6 +110,7 @@ public class staff_details_controller {
 
     @FXML
     void deleteStaff(MouseEvent event) throws IOException {
+        System.out.println(StaffData.initStaffData.getStaffId());
         StaffData.deleteStaffById(StaffData.initStaffData.getStaffId());
         App.setRoot("staff_all_home_screen");
     }
@@ -131,7 +132,6 @@ public class staff_details_controller {
         App.setRoot("update_staff_screen");
 
     }
-    
 
     @FXML
     public void initialize() {

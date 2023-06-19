@@ -2,7 +2,6 @@ Staff ID,Name,National ID,Email,Date of Birth,Age,Contact Number,Job Title,Depar
 S001,John Doe,12347483,johndoe@medplus.com,2023-06-08,0,1234567890,Resident Doctor,Doctor
 S002,Jane Smith,0987654321,janesmith@medplus.com,1975-09-21,47,0987654321,Senior Nurse,Nurse
 S004,Sarah Williams,0123456789,sarahwilliams@medplus.com,1990-12-12,33,0123456789,Head Nurse,Nurse
-S005,Michael Brown,5432109876,michaelbrown@medplus.com,1975-07-03,48,5432109876,Administrator,Administration
 S006,Emily Johnson,4567890123,emilyjohnson@medplus.com,1988-11-25,34,4567890123,Anesthetist,Doctor
 S007,Robert Davis,7890123456,robertdavis@medplus.com,1980-02-10,43,7890123456,Senior Physician,Doctor
 S008,Linda Wilson,2345678901,lindawilson@medplus.com,1995-06-18,28,2345678901,Head Nurse,Nurse
