@@ -10,6 +10,7 @@ import javafx.collections.transformation.SortedList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -80,12 +81,22 @@ public class patient_controller {
 
     @FXML
     void deleteRow(MouseEvent event) {
-        patientsTable.getItems().removeAll(patientsTable.getSelectionModel().getSelectedItems());
-        String selectedRowId = patientsTable.getSelectionModel().getSelectedItem().getPatientId().toString();
-        int selectedRowIdPlusOne = Integer.parseInt(selectedRowId.substring(1))
-                + 1;
-        String newPatientIdFormatted = String.format("P%03d", selectedRowIdPlusOne);
-        PatientData.deletePatientById(newPatientIdFormatted);
+        PatientTableDataModel selectedPatient = patientsTable.getSelectionModel().getSelectedItem();
+        if (selectedPatient != null) {
+
+            patientsTable.getItems().removeAll(patientsTable.getSelectionModel().getSelectedItems());
+            String selectedRowId = patientsTable.getSelectionModel().getSelectedItem().getPatientId().toString();
+            int selectedRowIdPlusOne = Integer.parseInt(selectedRowId.substring(1))
+                    + 1;
+            String newPatientIdFormatted = String.format("P%03d", selectedRowIdPlusOne);
+            PatientData.deletePatientById(newPatientIdFormatted);
+        } else {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText("Please select a patient");
+            alert.showAndWait();
+
+        }
 
     }
 
@@ -113,6 +124,11 @@ public class patient_controller {
                 e.printStackTrace();
             }
 
+        } else {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText("Please select a patient");
+            alert.showAndWait();
         }
 
     }
@@ -129,6 +145,7 @@ public class patient_controller {
 
     @FXML
     public void initialize() {
+
         ObservableList<PatientTableDataModel> patientDataList = PatientTableDataModel
                 .convertPatientDataToPatientTableDataModel();
 
