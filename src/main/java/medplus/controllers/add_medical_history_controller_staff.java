@@ -9,6 +9,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import medplus.App;
+import medplus.data.PatientData;
 
 public class add_medical_history_controller_staff {
 
@@ -22,7 +23,7 @@ public class add_medical_history_controller_staff {
     private DatePicker dateAnalysisDatePicker;
 
     @FXML
-    private TextField patientNameTextField;
+    private TextField patientIdTextField;
 
     @FXML
     private TextField staffIDTextField;
@@ -37,5 +38,4 @@ public class add_medical_history_controller_staff {
     void backToStaffDetails(MouseEvent event) throws IOException {
         App.setRoot("staff_details_analysis_screen");
     }
-
 }
