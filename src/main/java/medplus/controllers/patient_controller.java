@@ -156,7 +156,7 @@ public class patient_controller {
 
                     try {
                         PatientData.initPatientData.setPatientId(selectedPatient.getPatientId());
-                        PatientData.initPatientData.setPatientId(selectedPatient.getName());
+                        PatientData.initPatientData.setPatientName(selectedPatient.getName());
                         PatientData.initPatientData.setPatientGender(selectedPatient.getGender());
                         PatientData.initPatientData.setPatientDateOfBirth(selectedPatient.getDateOfBirth());
                         PatientData.initPatientData.setPatientBloodType(selectedPatient.getBloodType());
