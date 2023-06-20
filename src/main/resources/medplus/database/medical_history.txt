@@ -6,15 +6,12 @@ MH004,P001,S006,2023-03-12,11:30:00,Normal,Annual physical examination,none
 MH005,P002,S008,2022-08-20,11:15:00,Normal,Annual physical examination,none
 MH006,P002,S008,2022-12-10,16:20:00,Abnormal,Iron deficiency,Recommended dietary changes
 MH007,P002,S006,2023-01-05,13:45:00,Normal,Follow-up appointment,none
-MH008,P002,S006,2023-03-15,09:30:00,Normal,Diagnostic tests,none
 MH009,P004,S008,2022-11-28,10:00:00,Normal,Follow-up appointment,none
 MH010,P004,S007,2023-01-10,13:15:00,Normal,Annual physical examination,none
-MH011,P004,S007,2023-03-05,16:30:00,Normal,Routine check-up,none
-MH012,P004,S006,2023-05-20,09:45:00,Abnormal,High blood sugar levels,Prescribed medication
+MH011,P004,S007,2023-03-05,17:13:35.711102,Normal,Routine check-up,Cancer
 MH013,P005,S007,2022-09-05,13:00:00,Normal,Initial consultation,none
 MH014,P005,S007,2022-09-10,09:30:00,Normal,Diagnostic tests,none
 MH015,P005,S006,2022-11-05,14:30:00,Normal,Routine check-up,none
-MH016,P005,S006,2023-02-18,10:45:00,Abnormal,Allergy symptoms,Prescribed medication
 MH017,P006,S006,2022-07-20,15:45:00,Normal,Pre-surgery evaluation,none
 MH018,P006,S007,2022-08-10,11:00:00,Normal,Follow-up appointment,none
 MH019,P006,S007,2022-11-28,16:30:00,Normal,Annual physical examination,none

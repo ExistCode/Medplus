@@ -2,20 +2,20 @@ package medplus.models;
 
 public class Medicine {
     private String medicineId;
-    private String patientId;
+    private String patientName;
     private String doctorId;
-    private String name;
-    private String doseDetail;
+    private String medicineName;
     private String amount;
+    private String doseDetail;
 
     // Constructor
-    public Medicine(String mId, String pId, String dId, String n, String dose, String amt) {
+    public Medicine(String mId, String pName, String dId, String mName, String amt, String dose) {
         medicineId = mId;
-        patientId = pId;
+        patientName = pName;
         doctorId = dId;
-        name = n;
-        doseDetail = dose;
+        medicineName = mName;
         amount = amt;
+        doseDetail = dose;
     }
 
     // Setter functions
@@ -23,16 +23,16 @@ public class Medicine {
         medicineId = mId;
     }
 
-    public void setPatientId(String pId) {
-        patientId = pId;
+    public void setPatientName(String pName) {
+        patientName = pName;
     }
 
     public void setDoctorId(String dId) {
         doctorId = dId;
     }
 
-    public void setName(String n) {
-        name = n;
+    public void setMedicineName(String mName){
+        medicineName = mName;
     }
 
     public void setDoseDetail(String dose) {
@@ -48,18 +48,18 @@ public class Medicine {
         return medicineId;
     }
 
-    public String getPatientId() {
-        return patientId;
+    public String getPatientName() {
+        return patientName;
     }
 
     public String getDoctorId() {
         return doctorId;
     }
 
-    public String getName() {
-        return name;
+    public String getMedicineName(){
+        return medicineName;
     }
-
+    
     public String getDoseDetail() {
         return doseDetail;
     }

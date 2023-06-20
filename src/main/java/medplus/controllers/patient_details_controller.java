@@ -10,6 +10,7 @@ import java.time.format.FormatStyle;
 import java.util.Date;
 import java.util.List;
 
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
@@ -23,42 +24,53 @@ import medplus.data.MedicalHistoryData;
 import medplus.data.PatientData;
 import medplus.data.StaffData;
 import medplus.models.MedicalHistory;
+import medplus.tableModels.AnalysisTableDataModel;
 import medplus.tableModels.MedicalHistoryTableDataModel;
 import medplus.tableModels.PatientTableDataModel;
 import medplus.tableModels.StaffTableDataModel;
 
 public class patient_details_controller extends patient_controller {
     @FXML
-    private Pane deleteButton;
+    private Text GenderText;
+
     @FXML
-    private Pane updateButton;
+    private Pane addMedHis;
+
     @FXML
     private Pane analysisButton;
+
     @FXML
-    private Pane diagnosisButton;
+    private TableView<AnalysisTableDataModel> analysisTable;
+
     @FXML
-    private Pane treatmentButton;
-    @FXML
-    private Pane editPatientButton;
-    @FXML
-    private Pane deletePatientButton;
+    private Text bloodTypeText;
 
     @FXML
     private Pane dashboardbutton;
-    @FXML
-    private Text GenderText;
 
     @FXML
     private Text dateOfBirthText;
 
     @FXML
-    private Text patientsNameText;
+    private Pane deleteButton;
+
     @FXML
-    private Text bloodTypeText;
+    private Pane deletePatientButton;
+
+    @FXML
+    private Pane diagnosisButton;
+
+    @FXML
+    private Pane editPatientButton;
+
     @FXML
     private Text heightText;
+
     @FXML
-    private Text weightText;
+    private TableView<MedicalHistoryTableDataModel> patientMedicalHistoryTable;
+
+    @FXML
+    private Text patientsNameText;
 
     @FXML
     private Pane patientsbutton;
@@ -70,14 +82,36 @@ public class patient_details_controller extends patient_controller {
     private Pane staffButton;
 
     @FXML
-    private Pane addMedicalHistory;
+    private Pane treatmentButton;
 
     @FXML
-    private TableView<MedicalHistoryTableDataModel> patientMedicalHistoryTable;
+    private Pane updateButton;
+
+    @FXML
+    private Text weightText;
+
+    @FXML
+    void changedToAddMedicalHistory(MouseEvent event) throws IOException {
+        MedicalHistoryData.initMedicalHistoryData.setPatientId(PatientData.initPatientData.getPatientId());
+        App.setRoot("add_medical_history_screen");
+
+    }
+
+    @FXML
+    void changedToAnalysis(MouseEvent event) throws IOException {
+        App.setRoot("patients_details_screen_analysis");
+
+    }
 
     @FXML
     void changedToDashboard(MouseEvent event) throws IOException {
         App.setRoot("home_screen");
+    }
+
+    @FXML
+    void changedToDiagnosis(MouseEvent event) throws IOException {
+        App.setRoot("patients_details_screen_diagnosis");
+
     }
 
     @FXML
@@ -97,27 +131,8 @@ public class patient_details_controller extends patient_controller {
     }
 
     @FXML
-    void changedToAnalysis(MouseEvent event) throws IOException {
-        App.setRoot("patients_details_screen_analysis");
-
-    }
-
-    @FXML
-    void changedToDiagnosis(MouseEvent event) throws IOException {
-        App.setRoot("patients_details_screen_diagnosis");
-
-    }
-
-    @FXML
     void changedToTreatment(MouseEvent event) throws IOException {
         App.setRoot("patients_details_screen_treatment");
-
-    }
-
-    @FXML
-    void changedToAddMedicalHistory(MouseEvent event) throws IOException {
-        MedicalHistoryData.initMedicalHistoryData.setPatientId(PatientData.initPatientData.getPatientId());
-        App.setRoot("add_medical_history_screen");
 
     }
 
@@ -192,6 +207,7 @@ public class patient_details_controller extends patient_controller {
         heightText.setText(Double.toString(PatientData.initPatientData.getPatientHeight()));
         weightText.setText(Double.toString(PatientData.initPatientData.getPatientWeight()));
         initializeMedicalHistoryTable();
+        initializeAnalysisTable();
 
     }
 
@@ -239,6 +255,42 @@ public class patient_details_controller extends patient_controller {
                 resultColumn, observationColumn, complicationColumn);
 
         patientMedicalHistoryTable.setItems(medicalHistoryDataList);
+    }
+
+    @FXML
+    public void initializeAnalysisTable() {
+        ObservableList<AnalysisTableDataModel> analysisDataList = AnalysisTableDataModel
+                .convertAnalysisDataToAnalysisTableDataModel();
+        ObservableList<AnalysisTableDataModel> patientAnalysisTableData = FXCollections.observableArrayList();
+
+        for (AnalysisTableDataModel analysis : analysisDataList) {
+            if (analysis.getPatientName().equalsIgnoreCase(PatientData.initPatientData.getPatientName())) {
+                patientAnalysisTableData.add(analysis);
+            }
+        }
+        TableColumn analysisIdColumn = new TableColumn("Analysis ID");
+        // TableColumn nameColumn = new TableColumn("Patient Name");
+        TableColumn staffIdColumn = new TableColumn("Staff ID");
+        TableColumn dateColumn = new TableColumn("Analysis Date");
+        TableColumn TypeColumn = new TableColumn("Type Of Analysis");
+        TableColumn InfoColumn = new TableColumn("Test Information");
+        TableColumn summaryColumn = new TableColumn("Result Summary");
+
+        analysisTable.getColumns().addAll(analysisIdColumn, staffIdColumn,
+                dateColumn, TypeColumn,
+                InfoColumn, summaryColumn);
+
+        // Set cell value factories for each TableColumn
+        analysisIdColumn.setCellValueFactory(new PropertyValueFactory<>("analysisId"));
+        // nameColumn.setCellValueFactory(new PropertyValueFactory<>("patientName"));
+        staffIdColumn.setCellValueFactory(new PropertyValueFactory<>("staffId"));
+        dateColumn.setCellValueFactory(new PropertyValueFactory<>("date"));
+        TypeColumn.setCellValueFactory(new PropertyValueFactory<>("typeOfTest"));
+        InfoColumn.setCellValueFactory(new PropertyValueFactory<>("testInformation"));
+        summaryColumn.setCellValueFactory(new PropertyValueFactory<>("resultSummary"));
+
+        analysisTable.setItems(patientAnalysisTableData);
+
     }
 
 }

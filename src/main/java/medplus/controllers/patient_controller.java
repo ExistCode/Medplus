@@ -10,6 +10,7 @@ import javafx.collections.transformation.SortedList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -31,6 +32,7 @@ public class patient_controller {
 
     @FXML
     private Text GenderText;
+
     @FXML
     private Text dateOfBirthText;
 
@@ -80,12 +82,23 @@ public class patient_controller {
 
     @FXML
     void deleteRow(MouseEvent event) {
-        patientsTable.getItems().removeAll(patientsTable.getSelectionModel().getSelectedItems());
-        String selectedRowId = patientsTable.getSelectionModel().getSelectedItem().getPatientId().toString();
-        int selectedRowIdPlusOne = Integer.parseInt(selectedRowId.substring(1))
-                + 1;
-        String newPatientIdFormatted = String.format("P%03d", selectedRowIdPlusOne);
-        PatientData.deletePatientById(newPatientIdFormatted);
+        PatientTableDataModel selectedPatient = patientsTable.getSelectionModel().getSelectedItem();
+        if (selectedPatient != null) {
+
+            patientsTable.getItems().removeAll(patientsTable.getSelectionModel().getSelectedItems());
+            String selectedRowId = patientsTable.getSelectionModel().getSelectedItem().getPatientId().toString();
+            int selectedRowIdPlusOne = Integer.parseInt(selectedRowId.substring(1))
+                    + 1;
+            String newPatientIdFormatted = String.format("P%03d", selectedRowIdPlusOne);
+            PatientData.deletePatientById(newPatientIdFormatted);
+        } else {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText("Please select a patient");
+            alert.showAndWait();
+
+        }
+
     }
 
     @FXML
@@ -112,6 +125,11 @@ public class patient_controller {
                 e.printStackTrace();
             }
 
+        } else {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText("Please select a patient");
+            alert.showAndWait();
         }
 
     }
@@ -128,6 +146,45 @@ public class patient_controller {
 
     @FXML
     public void initialize() {
+        initializePatientTableData();
+        searchPatient();
+
+        patientsTable.setOnMouseClicked(event -> {
+            if (event.getClickCount() == 2) {
+                PatientTableDataModel selectedPatient = patientsTable.getSelectionModel().getSelectedItem();
+                if (selectedPatient != null) {
+
+                    try {
+                        PatientData.initPatientData.setPatientId(selectedPatient.getPatientId());
+                        PatientData.initPatientData.setPatientName(selectedPatient.getName());
+                        PatientData.initPatientData.setPatientGender(selectedPatient.getGender());
+                        PatientData.initPatientData.setPatientDateOfBirth(selectedPatient.getDateOfBirth());
+                        PatientData.initPatientData.setPatientBloodType(selectedPatient.getBloodType());
+                        PatientData.initPatientData.setPatientHeight(selectedPatient.getHeight());
+                        PatientData.initPatientData.setPatientWeight(selectedPatient.getWeight());
+
+                        System.out.println(PatientData.initPatientData.getPatientName());
+                        System.out.println(PatientData.initPatientData.getPatientGender());
+                        System.out.println(PatientData.initPatientData.getPatientDateOfBirth());
+                        System.out.println(PatientData.initPatientData.getPatientBloodType());
+                        System.out.println(PatientData.initPatientData.getPatientHeight());
+                        System.out.println(PatientData.initPatientData.getPatientWeight());
+                        App.setRoot("patients_details_screen_analysis");
+
+                    } catch (IOException e) {
+                        // TODO Auto-generated catch block
+                        e.printStackTrace();
+                    }
+
+                }
+            }
+
+        });
+
+    }
+
+    @FXML
+    public void initializePatientTableData() {
         ObservableList<PatientTableDataModel> patientDataList = PatientTableDataModel
                 .convertPatientDataToPatientTableDataModel();
 
@@ -154,6 +211,13 @@ public class patient_controller {
         weightColumn.setCellValueFactory(new PropertyValueFactory<>("weight"));
 
         patientsTable.setItems(patientDataList);
+    }
+
+    @FXML
+    public void searchPatient() {
+        ObservableList<PatientTableDataModel> patientDataList = PatientTableDataModel
+                .convertPatientDataToPatientTableDataModel();
+
         FilteredList<PatientTableDataModel> filteredData = new FilteredList<>(patientDataList, b -> true);
         searchButton.textProperty().addListener((observable, oldvalue, newvalue) -> {
             filteredData.setPredicate(PatientTableDataModel -> {
@@ -189,39 +253,6 @@ public class patient_controller {
                 filteredData);
         sortedPatientData.comparatorProperty().bind(patientsTable.comparatorProperty());
         patientsTable.setItems(sortedPatientData);
-
-        patientsTable.setOnMouseClicked(event -> {
-            if (event.getClickCount() == 2) {
-                PatientTableDataModel selectedPatient = patientsTable.getSelectionModel().getSelectedItem();
-                if (selectedPatient != null) {
-
-                    try {
-                        PatientData.initPatientData.setPatientId(selectedPatient.getPatientId());
-                        PatientData.initPatientData.setPatientName(selectedPatient.getName());
-                        PatientData.initPatientData.setPatientGender(selectedPatient.getGender());
-                        PatientData.initPatientData.setPatientDateOfBirth(selectedPatient.getDateOfBirth());
-                        PatientData.initPatientData.setPatientBloodType(selectedPatient.getBloodType());
-                        PatientData.initPatientData.setPatientHeight(selectedPatient.getHeight());
-                        PatientData.initPatientData.setPatientWeight(selectedPatient.getWeight());
-
-                        System.out.println(PatientData.initPatientData.getPatientName());
-                        System.out.println(PatientData.initPatientData.getPatientGender());
-                        System.out.println(PatientData.initPatientData.getPatientDateOfBirth());
-                        System.out.println(PatientData.initPatientData.getPatientBloodType());
-                        System.out.println(PatientData.initPatientData.getPatientHeight());
-                        System.out.println(PatientData.initPatientData.getPatientWeight());
-                        App.setRoot("patients_details_screen_analysis");
-
-                    } catch (IOException e) {
-                        // TODO Auto-generated catch block
-                        e.printStackTrace();
-                    }
-
-                }
-            }
-
-        });
-
     }
 
 }

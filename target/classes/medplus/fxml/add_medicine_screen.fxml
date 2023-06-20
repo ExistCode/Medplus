@@ -9,7 +9,7 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: EFF7F9;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="medplus.controllers.add_medicine_controller">
    <children>
-      <Pane fx:id="addMedicineButton" layoutX="500.0" layoutY="630.0" prefHeight="60.0" prefWidth="360.0" style="-fx-background-color: FEAD54; -fx-background-radius: 40;">
+      <Pane fx:id="addMedicineButton" layoutX="486.0" layoutY="617.0" onMouseClicked="#addMedicine" prefHeight="60.0" prefWidth="360.0" style="-fx-background-color: FEAD54; -fx-background-radius: 40;">
          <children>
             <Text fill="WHITE" layoutX="60.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add Medicine">
                <font>
@@ -33,7 +33,7 @@
             <Font name="Verdana" size="24.0" />
          </font>
       </TextField>
-      <TextField fx:id="staffIDTextField" layoutX="716.0" layoutY="219.0" prefHeight="60.0" prefWidth="450.0" promptText="Enter Doctor ID" style="-fx-background-color: white; -fx-background-radius: 16; -fx-border-radius: 16; -fx-border-color: #089bab;">
+      <TextField fx:id="doctorIDTextField" layoutX="716.0" layoutY="219.0" prefHeight="60.0" prefWidth="450.0" promptText="Enter Doctor ID" style="-fx-background-color: white; -fx-background-radius: 16; -fx-border-radius: 16; -fx-border-color: #089bab;">
          <font>
             <Font name="Verdana" size="24.0" />
          </font>
@@ -76,6 +76,11 @@
       <Text fill="#089bab" layoutX="154.0" layoutY="77.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add Medicine">
          <font>
             <Font name="Verdana Bold" size="32.0" />
+         </font>
+      </Text>
+      <Text fx:id="errorMessageDisplay" fill="#f9988b" layoutX="17.0" layoutY="705.0" strokeType="OUTSIDE" strokeWidth="0.0" text=" " textAlignment="CENTER" wrappingWidth="1258.0488893985748">
+         <font>
+            <Font size="16.0" />
          </font>
       </Text>
    </children>
