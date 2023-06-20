@@ -261,10 +261,12 @@ public class patient_details_controller extends patient_controller {
     public void initializeAnalysisTable() {
         ObservableList<AnalysisTableDataModel> analysisDataList = AnalysisTableDataModel
                 .convertAnalysisDataToAnalysisTableDataModel();
+
         ObservableList<AnalysisTableDataModel> patientAnalysisTableData = FXCollections.observableArrayList();
 
         for (AnalysisTableDataModel analysis : analysisDataList) {
-            if (analysis.getPatientName().equalsIgnoreCase(PatientData.initPatientData.getPatientId())) {
+            System.out.println(analysis.getPatientName());
+            if (analysis.getPatientName().equalsIgnoreCase(PatientData.initPatientData.getPatientName())) {
                 patientAnalysisTableData.add(analysis);
             }
         }

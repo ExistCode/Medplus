@@ -20,6 +20,9 @@ import medplus.data.StaffData;
 import medplus.tableModels.MedicalHistoryTableDataModel;
 
 public class staff_details_controller {
+    // Changes this to AppointmentTableDataModel
+    @FXML
+    private TableView<String> appointmentTable;
     @FXML
     private Pane deleteStaffButton;
     @FXML
@@ -29,7 +32,21 @@ public class staff_details_controller {
     @FXML
     private Pane analysisButton;
     @FXML
-    private Pane addMedicalHistoryButton;
+    private Pane addNewMedicalHistory;
+
+    @FXML
+    private Pane deleteAppointmentButton;
+
+    @FXML
+    private Pane deleteMedHis;
+    @FXML
+    private TableView<?> medicalHistoryTable;
+
+    @FXML
+    private Pane updateAppointmentButton;
+
+    @FXML
+    private Pane updateMedicalHistoryButton;
 
     @FXML
     private Pane dashboardbutton;
@@ -143,6 +160,26 @@ public class staff_details_controller {
         staffBirthday.setText(StaffData.initStaffData.getStaffContactNumber());
         staffDepartment.setText(StaffData.initStaffData.getStaffDepartment());
         staffSpecialty.setText(StaffData.initStaffData.getStaffJobTitle());
+
+    }
+
+    @FXML
+    void deleteAppointment(MouseEvent event) {
+
+    }
+
+    @FXML
+    void deleteMedicalHistory(MouseEvent event) {
+
+    }
+
+    @FXML
+    void switchToUpdateScreen(MouseEvent event) {
+
+    }
+
+    @FXML
+    void updateAppointment(MouseEvent event) {
 
     }
 
