@@ -30,7 +30,7 @@ import medplus.tableModels.MedicalHistoryTableDataModel;
 import medplus.tableModels.PatientTableDataModel;
 import medplus.tableModels.StaffTableDataModel;
 
-public class patient_details_controller extends patient_controller {
+public class patient_details_diagnosis_controller {
     @FXML
     private Text GenderText;
 
@@ -39,9 +39,6 @@ public class patient_details_controller extends patient_controller {
 
     @FXML
     private Pane analysisButton;
-
-    @FXML
-    private TableView<AnalysisTableDataModel> analysisTable;
 
     @FXML
     private Text bloodTypeText;
@@ -210,7 +207,7 @@ public class patient_details_controller extends patient_controller {
         heightText.setText(Double.toString(PatientData.initPatientData.getPatientHeight()));
         weightText.setText(Double.toString(PatientData.initPatientData.getPatientWeight()));
         initializeMedicalHistoryTable();
-        initializeAnalysisTable();
+        initializeDiagnosisTable();
 
     }
 
@@ -261,41 +258,35 @@ public class patient_details_controller extends patient_controller {
     }
 
     @FXML
-    public void initializeAnalysisTable() {
-        ObservableList<AnalysisTableDataModel> analysisDataList = AnalysisTableDataModel
-                .convertAnalysisDataToAnalysisTableDataModel();
+    public void initializeDiagnosisTable() {
+        ObservableList<DiagnosisTableDataModel> diagnosisDataList = DiagnosisTableDataModel
+                .convertDiagnosisDataToDiagnosisTableDataModel();
 
-        ObservableList<AnalysisTableDataModel> patientAnalysisTableData = FXCollections.observableArrayList();
+        ObservableList<DiagnosisTableDataModel> patientDiagnosisTableData = FXCollections.observableArrayList();
 
-        for (AnalysisTableDataModel analysis : analysisDataList) {
-            System.out.println(analysis.getPatientName());
-            if (analysis.getPatientName().equalsIgnoreCase(PatientData.initPatientData.getPatientName())) {
-                patientAnalysisTableData.add(analysis);
+        for (DiagnosisTableDataModel diagnosis : diagnosisDataList) {
+            System.out.println(diagnosis.getPatientName());
+            if (diagnosis.getPatientName().equalsIgnoreCase(PatientData.initPatientData.getPatientName())) {
+                patientDiagnosisTableData.add(diagnosis);
             }
         }
-        TableColumn analysisIdColumn = new TableColumn("Analysis ID");
-        // TableColumn nameColumn = new TableColumn("Patient Name");
+        TableColumn diagnosisIdColumn = new TableColumn("Diagnosis ID");
+        TableColumn patientNameColumn = new TableColumn("Patient Name");
         TableColumn staffIdColumn = new TableColumn("Staff ID");
-        TableColumn dateColumn = new TableColumn("Analysis Date");
-        TableColumn TypeColumn = new TableColumn("Type Of Analysis");
-        TableColumn InfoColumn = new TableColumn("Test Information");
-        TableColumn summaryColumn = new TableColumn("Result Summary");
+        TableColumn dateColumn = new TableColumn("Diagnosis Date");
+        TableColumn sicknessColumn = new TableColumn("Sickness");
 
-        analysisTable.getColumns().addAll(analysisIdColumn, staffIdColumn,
-                dateColumn, TypeColumn,
-                InfoColumn, summaryColumn);
+        diagnosisTable.getColumns().addAll(diagnosisIdColumn, patientNameColumn, staffIdColumn, dateColumn,
+                sicknessColumn);
 
         // Set cell value factories for each TableColumn
-        analysisIdColumn.setCellValueFactory(new PropertyValueFactory<>("analysisId"));
-        // nameColumn.setCellValueFactory(new PropertyValueFactory<>("patientName"));
+        diagnosisIdColumn.setCellValueFactory(new PropertyValueFactory<>("diagnosisId"));
+        patientNameColumn.setCellValueFactory(new PropertyValueFactory<>("patientName"));
         staffIdColumn.setCellValueFactory(new PropertyValueFactory<>("staffId"));
         dateColumn.setCellValueFactory(new PropertyValueFactory<>("date"));
-        TypeColumn.setCellValueFactory(new PropertyValueFactory<>("typeOfTest"));
-        InfoColumn.setCellValueFactory(new PropertyValueFactory<>("testInformation"));
-        summaryColumn.setCellValueFactory(new PropertyValueFactory<>("resultSummary"));
+        sicknessColumn.setCellValueFactory(new PropertyValueFactory<>("sickness"));
 
-        analysisTable.setItems(patientAnalysisTableData);
+        diagnosisTable.setItems(patientDiagnosisTableData);
 
     }
-
 }
