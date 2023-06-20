@@ -21,8 +21,11 @@ import javafx.scene.text.Text;
 import medplus.App;
 import medplus.data.MedicalHistoryData;
 import medplus.data.PatientData;
+import medplus.data.StaffData;
+import medplus.models.MedicalHistory;
 import medplus.tableModels.MedicalHistoryTableDataModel;
 import medplus.tableModels.PatientTableDataModel;
+import medplus.tableModels.StaffTableDataModel;
 
 public class patient_details_controller extends patient_controller {
     @FXML
@@ -119,8 +122,18 @@ public class patient_details_controller extends patient_controller {
     }
 
     @FXML
-    void deleteRow(MouseEvent event) {
+    void deleteMedicalHistory(MouseEvent event) {
+        MedicalHistoryTableDataModel selectedMedHis = patientMedicalHistoryTable.getSelectionModel().getSelectedItem();
 
+        if (selectedMedHis != null) {
+
+            patientMedicalHistoryTable.getItems().remove(selectedMedHis);
+            // staffTable.setItems(filteringList());
+
+            String selectedRowId = selectedMedHis.getMedHisId().toString();
+            System.out.println("\n selectedRowid: " + selectedRowId);
+            MedicalHistoryData.deleteMedicalHistoryById(selectedRowId);
+        }
     }
 
     @FXML
@@ -163,7 +176,6 @@ public class patient_details_controller extends patient_controller {
     void deletePatient(MouseEvent event) throws IOException {
         PatientData.deletePatientById(PatientData.initPatientData.getPatientId());
         App.setRoot("patients_home_screen");
-
     }
 
     @FXML

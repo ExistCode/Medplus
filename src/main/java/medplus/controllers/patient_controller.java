@@ -86,7 +86,6 @@ public class patient_controller {
                 + 1;
         String newPatientIdFormatted = String.format("P%03d", selectedRowIdPlusOne);
         PatientData.deletePatientById(newPatientIdFormatted);
-
     }
 
     @FXML

@@ -104,14 +104,15 @@ public class MedicalHistoryData {
         }
     }
 
-    public static void deleteMedicalHistoryByPatientId(String patientId) {
+    public static void deleteMedicalHistoryById(String medHisId) {
+        System.out.println("\nDeleted MedHis Id: " + medHisId);
         ArrayList<String> fetchedMedicalHistoryListAfterDeletion = new ArrayList<>();
         String line;
 
         try {
             BufferedReader reader = new BufferedReader(new FileReader(fileName));
             while ((line = reader.readLine()) != null) {
-                if (line.contains(patientId)) {
+                if (line.contains(medHisId)) {
                     System.out.println("FOUND ID");
                 } else {
                     fetchedMedicalHistoryListAfterDeletion.add(line);

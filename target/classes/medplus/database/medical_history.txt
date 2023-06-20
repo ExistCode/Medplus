@@ -32,19 +32,15 @@ MH030,P009,S007,2023-02-03,16:26:24.666896,Normal,Routine check-up,Medicine 1
 MH031,P009,S006,2023-04-15,16:23:34.986602900,Normal,Annual physical examination 1,none
 MH032,P010,S006,2022-08-10,16:27:30.394372100,Normal,Initial consultation 1,none
 MH033,P010,S006,2022-08-20,11:30:00,Normal,Diagnostic tests,none
-MH034,P010,S007,2022-11-10,14:20:00,Normal,Routine check-up,none
 MH035,P010,S007,2023-01-28,10:45:00,Normal,Follow-up appointment,none
-MH036,P011,S007,2022-09-18,15:30:00,Normal,Routine check-up,none
 MH037,P011,S007,2022-12-05,10:45:00,Normal,Follow-up appointment,none
 MH038,P011,S006,2023-03-08,13:00:00,Normal,Annual physical examination,none
-MH039,P012,S008,2022-12-10,09:00:00,Normal,Annual physical examination,none
 MH040,P012,S007,2023-02-28,12:15:00,Normal,Routine check-up,none
 MH041,P012,S007,2023-04-20,15:30:00,Normal,Follow-up appointment,none
 MH042,P013,S007,2022-10-05,16:23:02.893967200,Normal,Follow-up appointment 1,none
 MH043,P013,S007,2022-10-05,13:41:35.154277300,Normal,Follow-up appointment 1,none
 MH044,P013,S007,2022-10-05,13:41:35.154277300,Normal,Follow-up appointment 1,none
 MH045,P013,S007,2022-10-05,13:41:35.154277300,Normal,Follow-up appointment 1,none
-MH046,P014,S008,2022-08-28,10:45:00,Normal,Follow-up appointment,none
 MH047,P014,S008,2022-11-10,16:00:00,Normal,Annual physical examination,none
 MH048,P014,S007,2023-02-05,09:30:00,Normal,Routine check-up,none
 MH049,P014,S007,2023-05-15,14:15:00,Normal,Follow-up appointment,none
@@ -59,5 +55,6 @@ MH057,P016,S006,2023-03-20,11:45:00,Normal,Initial consultation,none
 MH058,P017,S006,2022-10-05,13:00:00,Normal,Diagnostic tests,none
 MH059,P017,S007,2022-10-10,09:30:00,Normal,Annual physical examination,none
 MH060,P017,S007,2022-12-20,14:45:00,Normal,Routine check-up,none
-P061,P013,sdsd,2023-06-12,16:21:46.844800400,sds,sdsd,sds
+MH061,P013,sdsd,2023-06-12,16:21:46.844800400,sds,sdsd,sds
 MH062,P010,s007,2023-06-12,16:27:38.885954300,sdsd,s,sdsd
+MH063,P011,SDSD,2023-06-19,16:37:38.347323700,SDSD,SDSD,SDSD
