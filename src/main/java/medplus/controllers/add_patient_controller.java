@@ -99,7 +99,15 @@ public class add_patient_controller {
                     addressTextField.getText(),
                     contactNumberTextField.getText());
             PatientData.addNewPatient(newPatient);
-            App.setRoot("patients_home_screen");
+            PatientData.initPatientData.setPatientName(nameTextField.getText());
+            PatientData.initPatientData.setPatientGender(Gender.getSelectionModel().getSelectedItem());
+            PatientData.initPatientData.setPatientDateOfBirth(dateOfBirth);
+            PatientData.initPatientData
+                    .setPatientBloodType(bloodType.getSelectionModel().getSelectedItem());
+            PatientData.initPatientData.setPatientHeight(Double.parseDouble(heightTextField.getText()));
+            PatientData.initPatientData.setPatientWeight(Double.parseDouble(weightTextField.getText()));
+
+            App.setRoot("patients_details_screen_analysis");
         } else {
             // Show error message
             System.out.println(errorMessage);

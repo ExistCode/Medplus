@@ -1,11 +1,14 @@
 package medplus.controllers;
 
+import java.io.IOException;
+
 import javafx.fxml.FXML;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
+import medplus.App;
 
 public class add_medical_history_controller {
 
@@ -31,8 +34,8 @@ public class add_medical_history_controller {
     private TextField testInfoTextField;
 
     @FXML
-    void backToSearch(MouseEvent event) {
-        
+    void backToSearch(MouseEvent event) throws IOException {
+        App.setRoot("patients_details_screen_analysis");
     }
 
 }

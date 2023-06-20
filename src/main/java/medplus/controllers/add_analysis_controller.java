@@ -64,7 +64,8 @@ public class add_analysis_controller {
 
         if (errorMessage == "") {
             List<Analysis> analysisList = AnalysisData.fetchAnalysisDataFromDatabase();
-            int newAnalysisId = Integer.parseInt(analysisList.get(analysisList.size() - 1).getAnalysisId().substring(1)) + 1;
+            int newAnalysisId = Integer.parseInt(analysisList.get(analysisList.size() - 1).getAnalysisId().substring(1))
+                    + 1;
             String newAnalysisIdFormatted = String.format("A%03d", newAnalysisId);
 
             Analysis newAnalysis = new Analysis(newAnalysisIdFormatted, patientNameTextField.getText(),

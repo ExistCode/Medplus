@@ -4,6 +4,8 @@ import java.io.IOException;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.collections.transformation.FilteredList;
+import javafx.collections.transformation.SortedList;
 import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -122,15 +124,29 @@ public class staff_nurse_controller {
 
     }
 
+    // @FXML
+    // void deleteRow(MouseEvent event) {
+    // nurseTable.getItems().removeAll(nurseTable.getSelectionModel().getSelectedItems());
+    // String selectedRowId =
+    // nurseTable.getSelectionModel().getSelectedItem().getStaffId().toString();
+    // int selectedRowIdPlusOne = Integer.parseInt(selectedRowId.substring(1));
+    // String newNurseIdFormatted = String.format("S%03d", selectedRowIdPlusOne);
+    // System.out.println(newNurseIdFormatted);
+    // StaffData.deleteStaffById(newNurseIdFormatted);
+
+    // }
     @FXML
     void deleteRow(MouseEvent event) {
-        nurseTable.getItems().removeAll(nurseTable.getSelectionModel().getSelectedItems());
-        String selectedRowId = nurseTable.getSelectionModel().getSelectedItem().getStaffId().toString();
-        int selectedRowIdPlusOne = Integer.parseInt(selectedRowId.substring(1))
-                + 1;
-        String newStaffIdFormatted = String.format("S%03d", selectedRowIdPlusOne);
-        StaffData.deleteStaffById(newStaffIdFormatted);
+        StaffTableDataModel selectedStaff = nurseTable.getSelectionModel().getSelectedItem();
 
+        if (selectedStaff != null) {
+            nurseTable.getItems().remove(selectedStaff);
+
+            String selectedRowId = selectedStaff.getStaffId().toString();
+            int selectedRowIdPlusOne = Integer.parseInt(selectedRowId.substring(1));
+            String newNurseIdFormatted = String.format("S%03d", selectedRowIdPlusOne);
+            StaffData.deleteStaffById(newNurseIdFormatted);
+        }
     }
 
     @FXML
@@ -176,6 +192,36 @@ public class staff_nurse_controller {
         contactNumberColumn.setCellValueFactory(new PropertyValueFactory<>("contactNumber"));
 
         nurseTable.setItems(nurseList);
+        FilteredList<StaffTableDataModel> filteredData = new FilteredList<>(nurseList, b -> true);
+        searchButton.textProperty().addListener((observable, oldvalue, newvalue) -> {
+            filteredData.setPredicate(StaffTableDataModel -> {
+                if (newvalue.isEmpty() || newvalue.isBlank() || newvalue == null) {
+                    return true;
+                }
+
+                String searchKeyword = newvalue.toLowerCase();
+                if (StaffTableDataModel.getStaffId().toLowerCase().indexOf(searchKeyword) > -1) {
+                    return true;
+                } else if (StaffTableDataModel.getName().toLowerCase().indexOf(searchKeyword) > -1) {
+                    return true;
+                } else if (StaffTableDataModel.getJobTitle().toLowerCase().indexOf(searchKeyword) > -1) {
+                    return true;
+                } else if (StaffTableDataModel.getDepartment().toLowerCase().indexOf(searchKeyword) > -1) {
+                    return true;
+                } else if (StaffTableDataModel.getEmail().toLowerCase().indexOf(searchKeyword) > -1) {
+                    return true;
+                } else if (StaffTableDataModel.getContactNumber().toLowerCase().indexOf(searchKeyword) > -1) {
+                    return true;
+                } else {
+                    return false;
+                }
+            });
+        });
+
+        SortedList<StaffTableDataModel> sortedStaffData = new SortedList<>(
+                filteredData);
+        sortedStaffData.comparatorProperty().bind(nurseTable.comparatorProperty());
+        nurseTable.setItems(sortedStaffData);
         nurseTable.setOnMouseClicked(event -> {
             if (event.getClickCount() == 2) {
                 StaffTableDataModel selectedStaff = nurseTable.getSelectionModel().getSelectedItem();

@@ -12,11 +12,11 @@ import java.io.*;
 import medplus.models.Analysis;
 
 public class AnalysisData {
-        public static Analysis initanalysisData = new Analysis("", "", "", "", "", null,  "");
+        public static Analysis initanalysisData = new Analysis("", "", "", "", "", null, "");
 
         public static void main(String[] args) {
-        createNewFileWithHeaders();
-        fetchAnalysisDataFromDatabase();
+                createNewFileWithHeaders();
+                fetchAnalysisDataFromDatabase();
         }
 
         public static String fileName = "src/main/resources/medplus/database/analysis.txt";
@@ -38,9 +38,9 @@ public class AnalysisData {
                                 String resultSummary = analysisData[4].trim();
                                 LocalDate date = LocalDate.parse(analysisData[5].trim());
                                 String testInformation = analysisData[6].trim();
-                                
 
-                                Analysis analysis = new Analysis(analysisId, patientName, staffId, typeOfTest, resultSummary, date, testInformation);
+                                Analysis analysis = new Analysis(analysisId, patientName, staffId, typeOfTest,
+                                                resultSummary, date, testInformation);
                                 analysisList.add(analysis);
                         }
 
@@ -131,22 +131,30 @@ public class AnalysisData {
                 }
         }
 
-        public static void updateAnanlysis(ArrayList<String> arrayList, Scanner input) {
+        public static void updateAnalysis(Analysis newAnalysisData) {
+                ArrayList<String> fetchedAnalysisListAfterDeletion = new ArrayList<>();
+                String line;
+
                 try {
                         BufferedReader reader = new BufferedReader(new FileReader(fileName));
-                        System.out.println("Please enter the analysis ID or keyword to update the record:");
-                        String searchKey = input.next();
-                        String line;
                         while ((line = reader.readLine()) != null) {
-                                if (line.contains(searchKey)) {
-                                        System.out.println("Enter the attribute value you want to change:");
-                                        String oldValue = input.next();
-                                        System.out.println("Enter the new attribute value:");
-                                        String newValue = input.next();
-                                        arrayList.add(line.replace(oldValue, newValue));
+
+                                if (line.contains(newAnalysisData.getAnalysisId())) {
+                                        System.out.println(newAnalysisData.getAnalysisId());
+
+                                        fetchedAnalysisListAfterDeletion.add(newAnalysisData.getAnalysisId() + ","
+
+                                                        + newAnalysisData.getPatientName() + ","
+                                                        + newAnalysisData.getStaffId() + ","
+                                                        + newAnalysisData.getTypeOfTest() + ","
+                                                        + newAnalysisData.getResultSummary() + ","
+                                                        + newAnalysisData.getDate() + ","
+                                                        + newAnalysisData.getTestInformation());
+
                                 } else {
-                                        arrayList.add(line);
+                                        fetchedAnalysisListAfterDeletion.add(line);
                                 }
+
                         }
                         reader.close();
                 } catch (IOException e) {
@@ -155,8 +163,8 @@ public class AnalysisData {
 
                 try {
                         FileWriter writer = new FileWriter(fileName);
-                        for (int i = 0; i < arrayList.size(); i++) {
-                                writer.append(arrayList.get(i));
+                        for (int i = 0; i < fetchedAnalysisListAfterDeletion.size(); i++) {
+                                writer.append(fetchedAnalysisListAfterDeletion.get(i));
                                 writer.append("\n");
                         }
                         writer.close();
@@ -166,4 +174,5 @@ public class AnalysisData {
                         System.out.println("Update done!");
                 }
         }
+
 }

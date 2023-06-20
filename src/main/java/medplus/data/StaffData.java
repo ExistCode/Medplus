@@ -201,4 +201,43 @@ public class StaffData {
             System.out.println("Update done!");
         }
     }
+
+    public static void updateStaffData(Staff newStaffData) {
+        ArrayList<String> fetchedStaffListAfterDeletion = new ArrayList<>();
+        String line;
+
+        try {
+            BufferedReader reader = new BufferedReader(new FileReader(fileName));
+            while ((line = reader.readLine()) != null) {
+                if (line.contains(newStaffData.getStaffId())) {
+                    fetchedStaffListAfterDeletion.add(newStaffData.getStaffId() + "," + newStaffData.getStaffName()
+                            + "," + newStaffData.getStaffNationalId() + "," + newStaffData.getStaffEmail() + ","
+                            + newStaffData.getStaffDateOfBirth() + "," + newStaffData.getStaffAge() + ","
+                            + newStaffData.getStaffContactNumber() + "," + newStaffData.getStaffJobTitle() + ","
+                            + newStaffData.getStaffDepartment());
+                }
+
+                else {
+                    fetchedStaffListAfterDeletion.add(line);
+                }
+
+            }
+            reader.close();
+        } catch (IOException e) {
+            System.out.println(e);
+        }
+
+        try {
+            FileWriter writer = new FileWriter(fileName);
+            for (int i = 0; i < fetchedStaffListAfterDeletion.size(); i++) {
+                writer.append(fetchedStaffListAfterDeletion.get(i));
+                writer.append("\n");
+            }
+            writer.close();
+        } catch (IOException e) {
+            System.out.println(e);
+        } finally {
+            System.out.println("Update done!");
+        }
+    }
 }

@@ -4,6 +4,8 @@ import java.io.IOException;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.collections.transformation.FilteredList;
+import javafx.collections.transformation.SortedList;
 import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -125,13 +127,16 @@ public class staff_admin_controller {
 
     @FXML
     void deleteRow(MouseEvent event) {
-        adminTable.getItems().removeAll(adminTable.getSelectionModel().getSelectedItems());
-        String selectedRowId = adminTable.getSelectionModel().getSelectedItem().getStaffId().toString();
-        int selectedRowIdPlusOne = Integer.parseInt(selectedRowId.substring(1))
-                + 1;
-        String newStaffIdFormatted = String.format("S%03d", selectedRowIdPlusOne);
-        StaffData.deleteStaffById(newStaffIdFormatted);
+        StaffTableDataModel selectedStaff = adminTable.getSelectionModel().getSelectedItem();
 
+        if (selectedStaff != null) {
+            adminTable.getItems().remove(selectedStaff);
+
+            String selectedRowId = selectedStaff.getStaffId().toString();
+            int selectedRowIdPlusOne = Integer.parseInt(selectedRowId.substring(1));
+            String newAdminIdFormatted = String.format("S%03d", selectedRowIdPlusOne);
+            StaffData.deleteStaffById(newAdminIdFormatted);
+        }
     }
 
     @FXML
@@ -177,6 +182,36 @@ public class staff_admin_controller {
         contactNumberColumn.setCellValueFactory(new PropertyValueFactory<>("contactNumber"));
 
         adminTable.setItems(adminList);
+        FilteredList<StaffTableDataModel> filteredData = new FilteredList<>(adminList, b -> true);
+        searchButton.textProperty().addListener((observable, oldvalue, newvalue) -> {
+            filteredData.setPredicate(StaffTableDataModel -> {
+                if (newvalue.isEmpty() || newvalue.isBlank() || newvalue == null) {
+                    return true;
+                }
+
+                String searchKeyword = newvalue.toLowerCase();
+                if (StaffTableDataModel.getStaffId().toLowerCase().indexOf(searchKeyword) > -1) {
+                    return true;
+                } else if (StaffTableDataModel.getName().toLowerCase().indexOf(searchKeyword) > -1) {
+                    return true;
+                } else if (StaffTableDataModel.getJobTitle().toLowerCase().indexOf(searchKeyword) > -1) {
+                    return true;
+                } else if (StaffTableDataModel.getDepartment().toLowerCase().indexOf(searchKeyword) > -1) {
+                    return true;
+                } else if (StaffTableDataModel.getEmail().toLowerCase().indexOf(searchKeyword) > -1) {
+                    return true;
+                } else if (StaffTableDataModel.getContactNumber().toLowerCase().indexOf(searchKeyword) > -1) {
+                    return true;
+                } else {
+                    return false;
+                }
+            });
+        });
+
+        SortedList<StaffTableDataModel> sortedStaffData = new SortedList<>(
+                filteredData);
+        sortedStaffData.comparatorProperty().bind(adminTable.comparatorProperty());
+        adminTable.setItems(sortedStaffData);
         adminTable.setOnMouseClicked(event -> {
             if (event.getClickCount() == 2) {
                 StaffTableDataModel selectedStaff = adminTable.getSelectionModel().getSelectedItem();
