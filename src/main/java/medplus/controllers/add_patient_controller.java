@@ -99,7 +99,7 @@ public class add_patient_controller {
                     addressTextField.getText(),
                     contactNumberTextField.getText());
             PatientData.addNewPatient(newPatient);
-            PatientData.initPatientData.setPatientName(nameTextField.getText());
+            PatientData.initPatientData.setPatientId(nameTextField.getText());
             PatientData.initPatientData.setPatientGender(Gender.getSelectionModel().getSelectedItem());
             PatientData.initPatientData.setPatientDateOfBirth(dateOfBirth);
             PatientData.initPatientData

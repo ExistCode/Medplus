@@ -19,7 +19,7 @@ import medplus.tableModels.PatientTableDataModel;
 
 public class search_medicine_controller {
 
-     @FXML
+    @FXML
     private ImageView Analysis_btn;
 
     @FXML
@@ -61,7 +61,6 @@ public class search_medicine_controller {
     @FXML
     private TableView<MedicineTableDataModel> medicineTable;
 
-
     @FXML
     void changedToAnalysis(MouseEvent event) throws IOException {
         App.setRoot("search_home_screen");
@@ -73,7 +72,7 @@ public class search_medicine_controller {
     }
 
     @FXML
-    void changedToDiagnosis(MouseEvent event) throws IOException{
+    void changedToDiagnosis(MouseEvent event) throws IOException {
         App.setRoot("search_diagnosis_screen");
     }
 
@@ -108,7 +107,7 @@ public class search_medicine_controller {
     }
 
     @FXML
-    void switchToAddScreen(MouseEvent event) throws IOException{
+    void switchToAddScreen(MouseEvent event) throws IOException {
         App.setRoot("add_medicine_screen");
     }
 
@@ -156,7 +155,8 @@ public class search_medicine_controller {
         TableColumn amountColumn = new TableColumn("Amount");
         TableColumn doseDetailColumn = new TableColumn("Dose Detail");
 
-        medicineTable.getColumns().addAll(medicineIdColumn, patientNameColumn, doctorIdColumn, medicineNameColumn, amountColumn, doseDetailColumn);
+        medicineTable.getColumns().addAll(medicineIdColumn, patientNameColumn, doctorIdColumn, medicineNameColumn,
+                amountColumn, doseDetailColumn);
 
         // Set cell value factories for each TableColumn
         medicineIdColumn.setCellValueFactory(new PropertyValueFactory<>("medicineId"));

@@ -156,14 +156,14 @@ public class patient_controller {
 
                     try {
                         PatientData.initPatientData.setPatientId(selectedPatient.getPatientId());
-                        PatientData.initPatientData.setPatientName(selectedPatient.getName());
+                        PatientData.initPatientData.setPatientId(selectedPatient.getName());
                         PatientData.initPatientData.setPatientGender(selectedPatient.getGender());
                         PatientData.initPatientData.setPatientDateOfBirth(selectedPatient.getDateOfBirth());
                         PatientData.initPatientData.setPatientBloodType(selectedPatient.getBloodType());
                         PatientData.initPatientData.setPatientHeight(selectedPatient.getHeight());
                         PatientData.initPatientData.setPatientWeight(selectedPatient.getWeight());
 
-                        System.out.println(PatientData.initPatientData.getPatientName());
+                        System.out.println(PatientData.initPatientData.getPatientId());
                         System.out.println(PatientData.initPatientData.getPatientGender());
                         System.out.println(PatientData.initPatientData.getPatientDateOfBirth());
                         System.out.println(PatientData.initPatientData.getPatientBloodType());
