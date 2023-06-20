@@ -12,6 +12,10 @@ import java.util.List;
 import medplus.models.MedicalHistory;
 
 public class MedicalHistoryData {
+
+    public static MedicalHistory initMedicalHistoryData = new MedicalHistory("", "", LocalDate.now(), LocalTime.now(),
+            "", "", "");
+
     public static String fileName = "src/main/resources/medplus/database/medical_history.txt";
 
     public static List<MedicalHistory> fetchMedicalHistoryDataFromDatabaseById(String id) {
@@ -63,6 +67,76 @@ public class MedicalHistoryData {
             System.out.println("Medical history added successfully!");
         } catch (IOException e) {
             System.out.println(e);
+        }
+    }
+
+    public static void deleteMedicalHistoryByPatientId(String patientId) {
+        ArrayList<String> fetchedMedicalHistoryListAfterDeletion = new ArrayList<>();
+        String line;
+
+        try {
+            BufferedReader reader = new BufferedReader(new FileReader(fileName));
+            while ((line = reader.readLine()) != null) {
+                if (line.contains(patientId)) {
+                    System.out.println("FOUND ID");
+                } else {
+                    fetchedMedicalHistoryListAfterDeletion.add(line);
+                }
+            }
+            reader.close();
+        } catch (IOException e) {
+            System.out.println(e);
+        }
+
+        try {
+            FileWriter writer = new FileWriter(fileName);
+            for (int i = 0; i < fetchedMedicalHistoryListAfterDeletion.size(); i++) {
+                writer.append(fetchedMedicalHistoryListAfterDeletion.get(i));
+                writer.append("\n");
+            }
+            writer.close();
+        } catch (IOException e) {
+            System.out.println(e);
+        } finally {
+            System.out.println("Deletion done!");
+        }
+    }
+
+    public static void updateMedicalHistory(MedicalHistory newMedicalHistoryData) {
+        ArrayList<String> fetchedMedicalHistoryListAfterUpdate = new ArrayList<>();
+        String line;
+
+        try {
+            BufferedReader reader = new BufferedReader(new FileReader(fileName));
+            while ((line = reader.readLine()) != null) {
+                if (line.contains(newMedicalHistoryData.getPatientId())) {
+                    fetchedMedicalHistoryListAfterUpdate.add(newMedicalHistoryData.getPatientId() + ","
+                            + newMedicalHistoryData.getStaffId() + ","
+                            + newMedicalHistoryData.getDate() + ","
+                            + newMedicalHistoryData.getTime() + ","
+                            + newMedicalHistoryData.getResult() + ","
+                            + newMedicalHistoryData.getObservation() + ","
+                            + newMedicalHistoryData.getComplication());
+                } else {
+                    fetchedMedicalHistoryListAfterUpdate.add(line);
+                }
+            }
+            reader.close();
+        } catch (IOException e) {
+            System.out.println(e);
+        }
+
+        try {
+            FileWriter writer = new FileWriter(fileName);
+            for (int i = 0; i < fetchedMedicalHistoryListAfterUpdate.size(); i++) {
+                writer.append(fetchedMedicalHistoryListAfterUpdate.get(i));
+                writer.append("\n");
+            }
+            writer.close();
+        } catch (IOException e) {
+            System.out.println(e);
+        } finally {
+            System.out.println("Update done!");
         }
     }
 }

@@ -1,8 +1,6 @@
 package medplus.controllers;
 
 import java.io.IOException;
-import java.time.LocalDate;
-import java.time.Period;
 import java.util.List;
 
 import javafx.fxml.FXML;
@@ -14,9 +12,7 @@ import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
 import medplus.App;
 import medplus.data.DiagnosisData;
-import medplus.data.PatientData;
 import medplus.models.Diagnosis;
-import medplus.models.Patient;
 
 public class add_diagnosis_controller {
 
@@ -52,7 +48,8 @@ public class add_diagnosis_controller {
 
         if (errorMessage == "") {
             List<Diagnosis> diagnosisList = DiagnosisData.fetchDiagnosisDataFromDatabase();
-            int newDiagnosisId = Integer.parseInt(diagnosisList.get(diagnosisList.size() - 1).getDiagnosisId().substring(1))
+            int newDiagnosisId = Integer
+                    .parseInt(diagnosisList.get(diagnosisList.size() - 1).getDiagnosisId().substring(1))
                     + 1;
             String newDiagnosisIdFormatted = String.format("D%03d", newDiagnosisId);
 
@@ -72,7 +69,7 @@ public class add_diagnosis_controller {
         String errorMessage = "";
 
         if (patientNameTextField.getText().isEmpty() || staffIDTextField.getText().isEmpty()
-                || dateOfBirthSelector.getValue() == null || medAmountTextField.getText().isEmpty()){
+                || dateOfBirthSelector.getValue() == null || medAmountTextField.getText().isEmpty()) {
             errorMessage = "Please make sure all fields are filled with the appropriate type.";
             System.out.println(errorMessage);
             errorMessageDisplay.setText(errorMessage);

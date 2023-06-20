@@ -19,6 +19,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
 import medplus.App;
+import medplus.data.MedicalHistoryData;
 import medplus.data.PatientData;
 import medplus.tableModels.MedicalHistoryTableDataModel;
 import medplus.tableModels.PatientTableDataModel;
@@ -112,6 +113,7 @@ public class patient_details_controller extends patient_controller {
 
     @FXML
     void changedToAddMedicalHistory(MouseEvent event) throws IOException {
+        MedicalHistoryData.initMedicalHistoryData.setPatientId(PatientData.initPatientData.getPatientId());
         App.setRoot("add_medical_history_screen");
 
     }
