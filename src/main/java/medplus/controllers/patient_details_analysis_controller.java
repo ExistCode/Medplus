@@ -10,6 +10,7 @@ import java.time.format.FormatStyle;
 import java.util.Date;
 import java.util.List;
 
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
@@ -19,11 +20,14 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
 import medplus.App;
+import medplus.data.AnalysisData;
 import medplus.data.PatientData;
+import medplus.tableModels.AnalysisTableDataModel;
 import medplus.tableModels.MedicalHistoryTableDataModel;
 import medplus.tableModels.PatientTableDataModel;
+import medplus.tableModels.StaffTableDataModel;
 
-public class patient_details_controller extends patient_controller {
+public class patient_details_analysis_controller extends patient_controller {
     @FXML
     private Pane deleteButton;
     @FXML
@@ -67,6 +71,8 @@ public class patient_details_controller extends patient_controller {
 
     @FXML
     private Pane addMedicalHistory;
+    @FXML
+    private TableView<AnalysisTableDataModel> analysisTable;
 
     @FXML
     private TableView<MedicalHistoryTableDataModel> patientMedicalHistoryTable;
@@ -165,6 +171,7 @@ public class patient_details_controller extends patient_controller {
         heightText.setText(Double.toString(PatientData.initPatientData.getPatientHeight()));
         weightText.setText(Double.toString(PatientData.initPatientData.getPatientWeight()));
         initializeMedicalHistoryTable();
+        initializeAnalysisTable();
 
     }
 
@@ -209,6 +216,41 @@ public class patient_details_controller extends patient_controller {
                 resultColumn, observationColumn, complicationColumn);
 
         patientMedicalHistoryTable.setItems(medicalHistoryDataList);
+    }
+
+    @FXML
+    public void initializeAnalysisTable() {
+        ObservableList<AnalysisTableDataModel> analysisDataList = AnalysisTableDataModel
+                .convertAnalysisDataToAnalysisTableDataModel();
+        ObservableList<AnalysisTableDataModel> patientAnalysisTableData = FXCollections.observableArrayList();
+
+        for (AnalysisTableDataModel analysis : analysisDataList) {
+            if (analysis.getPatientName().equalsIgnoreCase(PatientData.initPatientData.getPatientName())) {
+                patientAnalysisTableData.add(analysis);
+            }
+        }
+        TableColumn analysisIdColumn = new TableColumn("Analysis ID");
+        // TableColumn nameColumn = new TableColumn("Patient Name");
+        TableColumn staffIdColumn = new TableColumn("Staff ID");
+        TableColumn dateColumn = new TableColumn("Analysis Date");
+        TableColumn TypeColumn = new TableColumn("Type Of Analysis");
+        TableColumn InfoColumn = new TableColumn("Test Information");
+        TableColumn summaryColumn = new TableColumn("Result Summary");
+
+        analysisTable.getColumns().addAll(analysisIdColumn, staffIdColumn, dateColumn, TypeColumn,
+                InfoColumn, summaryColumn);
+
+        // Set cell value factories for each TableColumn
+        analysisIdColumn.setCellValueFactory(new PropertyValueFactory<>("analysisId"));
+        // nameColumn.setCellValueFactory(new PropertyValueFactory<>("patientName"));
+        staffIdColumn.setCellValueFactory(new PropertyValueFactory<>("staffId"));
+        dateColumn.setCellValueFactory(new PropertyValueFactory<>("date"));
+        TypeColumn.setCellValueFactory(new PropertyValueFactory<>("typeOfTest"));
+        InfoColumn.setCellValueFactory(new PropertyValueFactory<>("testInformation"));
+        summaryColumn.setCellValueFactory(new PropertyValueFactory<>("resultSummary"));
+
+        analysisTable.setItems(patientAnalysisTableData);
+
     }
 
 }

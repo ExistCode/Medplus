@@ -138,7 +138,10 @@ public class AnalysisData {
                 try {
                         BufferedReader reader = new BufferedReader(new FileReader(fileName));
                         while ((line = reader.readLine()) != null) {
+
                                 if (line.contains(newAnalysisData.getAnalysisId())) {
+                                        System.out.println(newAnalysisData.getAnalysisId());
+
                                         fetchedAnalysisListAfterDeletion.add(newAnalysisData.getAnalysisId() + ","
 
                                                         + newAnalysisData.getPatientName() + ","
@@ -147,6 +150,7 @@ public class AnalysisData {
                                                         + newAnalysisData.getResultSummary() + ","
                                                         + newAnalysisData.getDate() + ","
                                                         + newAnalysisData.getTestInformation());
+
                                 } else {
                                         fetchedAnalysisListAfterDeletion.add(line);
                                 }
