@@ -32,6 +32,7 @@ public class patient_controller {
 
     @FXML
     private Text GenderText;
+    
     @FXML
     private Text dateOfBirthText;
 

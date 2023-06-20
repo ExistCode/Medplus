@@ -45,7 +45,7 @@
             <Font name="Verdana Bold" size="32.0" />
          </font>
       </Text>
-      <Pane fx:id="updateTreatmentButton" layoutX="500.0" layoutY="630.0" prefHeight="60.0" prefWidth="270.0" style="-fx-background-color: FEAD54; -fx-background-radius: 40;">
+      <Pane fx:id="updateTreatmentButton" layoutX="500.0" layoutY="624.0" onMouseClicked="#updateTreatment" prefHeight="60.0" prefWidth="270.0" style="-fx-background-color: FEAD54; -fx-background-radius: 40;">
          <children>
             <Text fill="WHITE" layoutX="15.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Update Treatment">
                <font>
@@ -71,5 +71,10 @@
             <Font name="Verdana" size="24.0" />
          </font>
       </TextField>
+      <Text fx:id="errorMessageDisplay" fill="#f9988b" layoutX="4.0" layoutY="708.0" strokeType="OUTSIDE" strokeWidth="0.0" text=" " textAlignment="CENTER" wrappingWidth="1271.199951171875">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Text>
    </children>
 </Pane>
