@@ -2,22 +2,22 @@ package medplus.models;
 
 import java.time.LocalDate;
 
-public class TreatmentCourse {
+public class Treatment {
     private String treatmentId;
-    private String patientId;
-    private String staffId;
+    private String patientName;
+    private String doctorId;
     private LocalDate startDate;
     private LocalDate endDate;
-    private String treatmentDetail;
+    private String treatmentInfo;
 
     // Constructor
-    public TreatmentCourse(String tId, String pId, String sId, LocalDate start, LocalDate end, String detail) {
+    public Treatment(String tId, String pName, String dId, LocalDate start, LocalDate end, String info) {
         treatmentId = tId;
-        patientId = pId;
-        staffId = sId;
+        patientName = pName;
+        doctorId = dId;
         startDate = start;
         endDate = end;
-        treatmentDetail = detail;
+        treatmentInfo = info;
     }
 
     // Setter functions
@@ -25,12 +25,12 @@ public class TreatmentCourse {
         treatmentId = tId;
     }
 
-    public void setPatientId(String pId) {
-        patientId = pId;
+    public void setPatientName(String pName) {
+        patientName = pName;
     }
 
-    public void setStaffId(String sId) {
-        staffId = sId;
+    public void setDoctorId(String dId) {
+        doctorId = dId;
     }
 
     public void setStartDate(LocalDate start) {
@@ -41,8 +41,8 @@ public class TreatmentCourse {
         endDate = end;
     }
 
-    public void setTreatmentDetail(String detail) {
-        treatmentDetail = detail;
+    public void setTreatmentInfo(String info) {
+        treatmentInfo = info;
     }
 
     // Getter functions
@@ -50,12 +50,12 @@ public class TreatmentCourse {
         return treatmentId;
     }
 
-    public String getPatientId() {
-        return patientId;
+    public String getPatientName() {
+        return patientName;
     }
 
-    public String getStaffId() {
-        return staffId;
+    public String getDoctorId() {
+        return doctorId;
     }
 
     public LocalDate getStartDate() {
@@ -66,7 +66,7 @@ public class TreatmentCourse {
         return endDate;
     }
 
-    public String getTreatmentDetail() {
-        return treatmentDetail;
+    public String getTreatmentInfo() {
+        return treatmentInfo;
     }
 }
