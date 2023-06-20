@@ -158,7 +158,7 @@
       </Text>
       <Pane layoutX="251.0" layoutY="387.0" prefHeight="288.0" prefWidth="981.0" style="-fx-background-color: EFF7F9; -fx-background-radius: 20;">
          <children>
-            <Pane fx:id="addMedHis" layoutX="29.0" layoutY="20.0" onMouseClicked="#changedToAddMedicalHistory" prefHeight="47.0" prefWidth="198.0" style="-fx-background-color: FEAD54; -fx-background-radius: 12;">
+            <Pane fx:id="addMedHis" layoutX="33.0" layoutY="17.0" onMouseClicked="#changedToAddMedicalHistory" prefHeight="47.0" prefWidth="198.0" style="-fx-background-color: FEAD54; -fx-background-radius: 12;">
                <children>
                   <Text layoutX="20.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" text="+ New Medical History">
                      <font>

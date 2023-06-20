@@ -124,7 +124,20 @@ public class patient_details_controller extends patient_controller {
     }
 
     @FXML
-    void switchToUpdateScreen(MouseEvent event) {
+    void switchToUpdateScreen(MouseEvent event) throws IOException {
+        MedicalHistoryTableDataModel selectedMedHis = patientMedicalHistoryTable.getSelectionModel()
+                .getSelectedItem();
+        System.out.println("\nClicked Observation: " + selectedMedHis.getObservation());
+        MedicalHistoryData.initMedicalHistoryData.setMedicalHistoryId(selectedMedHis.getMedHisId());
+        MedicalHistoryData.initMedicalHistoryData.setPatientId(selectedMedHis.getPatientId());
+        MedicalHistoryData.initMedicalHistoryData.setStaffId(selectedMedHis.getStaffId());
+        MedicalHistoryData.initMedicalHistoryData.setDate(selectedMedHis.getDate());
+        MedicalHistoryData.initMedicalHistoryData.setTime(selectedMedHis.getTime());
+        MedicalHistoryData.initMedicalHistoryData.setResult(selectedMedHis.getResult());
+        MedicalHistoryData.initMedicalHistoryData.setObservation(selectedMedHis.getObservation());
+        MedicalHistoryData.initMedicalHistoryData.setComplication(selectedMedHis.getComplication());
+
+        App.setRoot("update_medical_history_screen");
 
     }
 
@@ -184,13 +197,13 @@ public class patient_details_controller extends patient_controller {
         System.out.println("\nPatient Id: " + patientId);
         ObservableList<MedicalHistoryTableDataModel> medicalHistoryDataList = MedicalHistoryTableDataModel
                 .convertMedicalHistoryDataToTableDataModel(patientId);
-        for (MedicalHistoryTableDataModel medhis : medicalHistoryDataList) {
-            System.out.println(medhis.getObservation());
-        }
+        // for (MedicalHistoryTableDataModel medhis : medicalHistoryDataList) {
+        // System.out.println(medhis.getObservation());
+        // }
 
         // Clear existing columns before adding new ones
         patientMedicalHistoryTable.getColumns().clear();
-
+        TableColumn<MedicalHistoryTableDataModel, String> medHisIdColumn = new TableColumn<>("History ID");
         TableColumn<MedicalHistoryTableDataModel, String> patientIdColumn = new TableColumn<>("Patient ID");
         TableColumn<MedicalHistoryTableDataModel, String> staffIdColumn = new TableColumn<>("Staff ID");
         TableColumn<MedicalHistoryTableDataModel, LocalDate> dateColumn = new TableColumn<>("Date");
@@ -198,6 +211,8 @@ public class patient_details_controller extends patient_controller {
         TableColumn<MedicalHistoryTableDataModel, String> resultColumn = new TableColumn<>("Result");
         TableColumn<MedicalHistoryTableDataModel, String> observationColumn = new TableColumn<>("Observation");
         TableColumn<MedicalHistoryTableDataModel, String> complicationColumn = new TableColumn<>("Complication");
+
+        medHisIdColumn.setCellValueFactory(new PropertyValueFactory<>("medHisId"));
 
         patientIdColumn.setCellValueFactory(new PropertyValueFactory<>("patientId"));
         staffIdColumn.setCellValueFactory(new PropertyValueFactory<>("staffId"));
@@ -207,7 +222,8 @@ public class patient_details_controller extends patient_controller {
         observationColumn.setCellValueFactory(new PropertyValueFactory<>("observation"));
         complicationColumn.setCellValueFactory(new PropertyValueFactory<>("complication"));
 
-        patientMedicalHistoryTable.getColumns().addAll(patientIdColumn, staffIdColumn, dateColumn, timeColumn,
+        patientMedicalHistoryTable.getColumns().addAll(medHisIdColumn, patientIdColumn, staffIdColumn, dateColumn,
+                timeColumn,
                 resultColumn, observationColumn, complicationColumn);
 
         patientMedicalHistoryTable.setItems(medicalHistoryDataList);

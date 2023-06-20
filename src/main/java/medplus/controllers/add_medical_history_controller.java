@@ -3,6 +3,7 @@ package medplus.controllers;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.util.List;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.DatePicker;
@@ -14,6 +15,7 @@ import medplus.App;
 import medplus.data.MedicalHistoryData;
 import medplus.data.PatientData;
 import medplus.models.MedicalHistory;
+import java.time.format.DateTimeFormatter;
 
 public class add_medical_history_controller {
 
@@ -48,9 +50,16 @@ public class add_medical_history_controller {
 
     @FXML
     void addNewMedHis(MouseEvent event) {
+
         String errorMessage = validateInput();
 
         if (errorMessage.isEmpty()) {
+            List<MedicalHistory> medicalHistoryList = MedicalHistoryData
+                    .fetchAllMedicalHistoryDataFromDatabase();
+            int newMedHisId = Integer
+                    .parseInt(medicalHistoryList.get(medicalHistoryList.size() - 1).getMedHisId().substring(2))
+                    + 1;
+            String newMedHisIdFormatted = String.format("MH%03d", newMedHisId);
             String patientId = patientIdTextField.getText();
             String staffId = staffIDTextField.getText();
             LocalDate date = medHisDatePicker.getValue();
@@ -58,9 +67,9 @@ public class add_medical_history_controller {
             String observation = observationTextField.getText();
             String complication = complicationTextField.getText();
 
-            MedicalHistory newMedicalHistory = new MedicalHistory(patientId, staffId, date, LocalTime.now(), result,
-                    observation,
-                    complication);
+            MedicalHistory newMedicalHistory = new MedicalHistory(newMedHisIdFormatted, patientId, staffId, date,
+                    LocalTime.now(), result,
+                    observation, complication); // Empty medHisId parameter
             MedicalHistoryData.addNewMedicalHistory(newMedicalHistory);
 
             try {

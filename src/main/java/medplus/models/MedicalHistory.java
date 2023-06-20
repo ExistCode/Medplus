@@ -3,6 +3,7 @@ package medplus.models;
 import java.time.*;
 
 public class MedicalHistory {
+    private String medHisId;
     private String patientId;
     private String staffId;
     private LocalDate date;
@@ -12,7 +13,9 @@ public class MedicalHistory {
     private String complication;
 
     // Constructor
-    public MedicalHistory(String pId, String sId, LocalDate d, LocalTime t, String r, String obs, String comp) {
+    public MedicalHistory(String mHId, String pId, String sId, LocalDate d, LocalTime t, String r, String obs,
+            String comp) {
+        medHisId = mHId;
         patientId = pId;
         staffId = sId;
         date = d;
@@ -23,6 +26,10 @@ public class MedicalHistory {
     }
 
     // Setter Functions
+    public void setMedicalHistoryId(String mHId) {
+        medHisId = mHId;
+    }
+
     public void setPatientId(String pId) {
         patientId = pId;
     }
@@ -52,6 +59,10 @@ public class MedicalHistory {
     }
 
     // Getter Functions
+    public String getMedHisId() {
+        return medHisId;
+    }
+
     public String getPatientId() {
         return patientId;
     }
