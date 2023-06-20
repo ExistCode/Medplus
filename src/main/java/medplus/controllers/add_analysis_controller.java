@@ -3,6 +3,7 @@ package medplus.controllers;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -17,15 +18,22 @@ import javafx.scene.text.Text;
 import medplus.App;
 import medplus.data.AnalysisData;
 import medplus.models.Analysis;
+import medplus.tableModels.PatientTableDataModel;
+import medplus.tableModels.StaffTableDataModel;
 
 public class add_analysis_controller {
+    @FXML
+    private ComboBox<String> staffIdComboBox;
 
     ArrayList<String> analysisTypeOption = new ArrayList<String>();
+
     ObservableList<String> analysisTypeOptions = FXCollections.observableArrayList(
             "Bioblood Analysis",
             "Rw Analysis",
             "Urine Analysis");
 
+    @FXML
+    private ComboBox<String> patientIdComboBox;
     @FXML
     private Pane addAnalysisButton;
 
@@ -60,6 +68,8 @@ public class add_analysis_controller {
 
     @FXML
     void addAnalysis(MouseEvent event) throws IOException {
+        ObservableList<PatientTableDataModel> patientDataList = PatientTableDataModel
+                .convertPatientDataToPatientTableDataModel();
         String errorMessage = validateInput();
 
         if (errorMessage == "") {
@@ -68,12 +78,18 @@ public class add_analysis_controller {
                     + 1;
             String newAnalysisIdFormatted = String.format("A%03d", newAnalysisId);
 
-            Analysis newAnalysis = new Analysis(newAnalysisIdFormatted, patientNameTextField.getText(),
-                    staffIDTextField.getText(),
+            Analysis newAnalysis = new Analysis(newAnalysisIdFormatted,
+                    patientIdComboBox.getSelectionModel().getSelectedItem(),
+                    staffIdComboBox.getSelectionModel().getSelectedItem(),
                     analysisType.getSelectionModel().getSelectedItem(),
                     summaryTextField.getText(),
                     dateAnalysisSelector.getValue(),
                     testInfoTextField.getText());
+            // if
+            // (patientNameTextField.getText().equalsIgnoreCase(patientDataList.get(0).getPatientId()))
+            // {
+            // System.out.println(patientDataList.get(0).getName());
+            // }
 
             AnalysisData.addNewAnalysis(newAnalysis);
             App.setRoot("search_home_screen");
@@ -86,7 +102,7 @@ public class add_analysis_controller {
     private String validateInput() {
         String errorMessage = "";
 
-        if (patientNameTextField.getText().isEmpty() || staffIDTextField.getText().isEmpty()
+        if (patientIdComboBox.getSelectionModel().isEmpty() || staffIdComboBox.getSelectionModel().isEmpty()
                 || analysisType.getSelectionModel().isEmpty() || summaryTextField.getText().isEmpty()
                 || dateAnalysisSelector.getValue() == null || testInfoTextField.getText().isEmpty()) {
             errorMessage = "Please make sure all fields are filled with the appropriate type.";
@@ -99,5 +115,31 @@ public class add_analysis_controller {
     @FXML
     public void initialize() {
         analysisType.setItems(analysisTypeOptions);
+        patientIdComboBox.setItems(fetchPatientName());
+        staffIdComboBox.setItems(fetchStaffId());
+
+        // Scanner sc = new Scanner(System.in);
+        // String input = sc.nextLine();
+
+    }
+
+    ObservableList<String> fetchPatientName() {
+        ObservableList<PatientTableDataModel> patientDataList = PatientTableDataModel
+                .convertPatientDataToPatientTableDataModel();
+        ObservableList<String> patientId = FXCollections.observableArrayList();
+        for (PatientTableDataModel patient : patientDataList) {
+            patientId.add(patient.getName());
+        }
+        return patientId;
+    }
+
+    ObservableList<String> fetchStaffId() {
+        ObservableList<StaffTableDataModel> staffDataList = StaffTableDataModel
+                .convertStaffDataToStaffTableDataModel();
+        ObservableList<String> staffId = FXCollections.observableArrayList();
+        for (StaffTableDataModel staff : staffDataList) {
+            staffId.add(staff.getStaffId());
+        }
+        return staffId;
     }
 }

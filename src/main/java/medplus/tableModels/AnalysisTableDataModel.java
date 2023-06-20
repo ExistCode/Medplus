@@ -19,7 +19,8 @@ public class AnalysisTableDataModel {
     private SimpleObjectProperty<LocalDate> date;
     private SimpleStringProperty testInformation;
 
-    public AnalysisTableDataModel(String analysisId, String patientName, String staffId, String typeOfTest, String resultSummary, LocalDate date, String testInformation) {
+    public AnalysisTableDataModel(String analysisId, String patientName, String staffId, String typeOfTest,
+            String resultSummary, LocalDate date, String testInformation) {
         this.analysisId = new SimpleStringProperty(analysisId);
         this.patientName = new SimpleStringProperty(patientName);
         this.staffId = new SimpleStringProperty(staffId);
@@ -42,9 +43,9 @@ public class AnalysisTableDataModel {
             LocalDate date = initialAnalysisList.get(i).getDate();
             String testInformation = initialAnalysisList.get(i).getTestInformation();
 
-
             convertedList.add(
-                    new AnalysisTableDataModel(analysisId, patientName, staffId, typeOfTest, resultSummary, date, testInformation));
+                    new AnalysisTableDataModel(analysisId, patientName, staffId, typeOfTest, resultSummary, date,
+                            testInformation));
         }
 
         return convertedList;
@@ -134,4 +135,3 @@ public class AnalysisTableDataModel {
         this.testInformation.set(testInformation);
     }
 }
-

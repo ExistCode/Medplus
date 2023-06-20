@@ -18,8 +18,14 @@ import medplus.App;
 import medplus.data.AnalysisData;
 import medplus.data.PatientData;
 import medplus.models.Analysis;
+import medplus.tableModels.PatientTableDataModel;
+import medplus.tableModels.StaffTableDataModel;
 
 public class update_analysis_controller {
+    @FXML
+    private ComboBox<String> staffIdComboBox;
+    @FXML
+    private ComboBox<String> patientIdComboBox;
     ArrayList<String> analysisTypeOption = new ArrayList<String>();
     ObservableList<String> analysisTypeOptions = FXCollections.observableArrayList(
             "Bioblood Analysis",
@@ -59,13 +65,16 @@ public class update_analysis_controller {
 
     @FXML
     public void initialize() {
-        patientNameTextField.setText(AnalysisData.initanalysisData.getPatientName());
-        staffIDTextField.setText(AnalysisData.initanalysisData.getStaffId());
+        patientIdComboBox.setValue(AnalysisData.initanalysisData.getPatientName());
+        staffIdComboBox.setValue(AnalysisData.initanalysisData.getStaffId());
         analysisTypeComboBox.setValue(AnalysisData.initanalysisData.getTypeOfTest());
         ResultsTextField.setText(AnalysisData.initanalysisData.getResultSummary());
         dateAnalysisDatePicker.setValue(AnalysisData.initanalysisData.getDate());
         testInformationTextField.setText(AnalysisData.initanalysisData.getTestInformation());
         analysisTypeComboBox.setItems(analysisTypeOptions);
+        patientIdComboBox.setItems(fetchPatientName());
+        staffIdComboBox.setItems(fetchStaffId());
+
     }
 
     @FXML
@@ -80,8 +89,8 @@ public class update_analysis_controller {
             // String newAnalysisIdFormatted = String.format("A%03d", newAnalysisId);
 
             Analysis newAnalysis = new Analysis(AnalysisData.initanalysisData.getAnalysisId(),
-                    patientNameTextField.getText(),
-                    staffIDTextField.getText(),
+                    patientIdComboBox.getSelectionModel().getSelectedItem(),
+                    staffIdComboBox.getSelectionModel().getSelectedItem(),
                     analysisTypeComboBox.getSelectionModel().getSelectedItem(),
                     ResultsTextField.getText(),
                     dateAnalysisDatePicker.getValue(),
@@ -99,7 +108,7 @@ public class update_analysis_controller {
     private String validateInput() {
         String errorMessage = "";
 
-        if (patientNameTextField.getText().isEmpty() || staffIDTextField.getText().isEmpty()
+        if (patientIdComboBox.getSelectionModel().isEmpty() || staffIdComboBox.getSelectionModel().isEmpty()
                 || analysisTypeComboBox.getSelectionModel().isEmpty() || ResultsTextField.getText().isEmpty()
                 || dateAnalysisDatePicker.getValue() == null || testInformationTextField.getText().isEmpty()) {
             errorMessage = "Please make sure all fields are filled with the appropriate type.";
@@ -109,4 +118,23 @@ public class update_analysis_controller {
         return errorMessage;
     }
 
+    ObservableList<String> fetchPatientName() {
+        ObservableList<PatientTableDataModel> patientDataList = PatientTableDataModel
+                .convertPatientDataToPatientTableDataModel();
+        ObservableList<String> patientId = FXCollections.observableArrayList();
+        for (PatientTableDataModel patient : patientDataList) {
+            patientId.add(patient.getName());
+        }
+        return patientId;
+    }
+
+    ObservableList<String> fetchStaffId() {
+        ObservableList<StaffTableDataModel> staffDataList = StaffTableDataModel
+                .convertStaffDataToStaffTableDataModel();
+        ObservableList<String> staffId = FXCollections.observableArrayList();
+        for (StaffTableDataModel staff : staffDataList) {
+            staffId.add(staff.getStaffId());
+        }
+        return staffId;
+    }
 }

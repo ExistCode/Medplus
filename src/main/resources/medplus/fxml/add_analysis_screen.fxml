@@ -26,22 +26,12 @@
             <Font name="System Bold" size="28.0" />
          </font>
       </Text>
-      <TextField fx:id="patientNameTextField" layoutX="154.0" layoutY="219.0" prefHeight="60.0" prefWidth="450.0" promptText="Enter Patient Name" style="-fx-background-color: white; -fx-background-radius: 16; -fx-border-radius: 16; -fx-border-color: #089bab;">
-         <font>
-            <Font name="SF Pro Text Semibold" size="24.0" />
-         </font>
-      </TextField>
       <Text fill="#089bab" layoutX="154.0" layoutY="332.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Analysis Type">
          <font>
             <Font name="System Bold" size="28.0" />
          </font>
       </Text>
       <TextField fx:id="summaryTextField" layoutX="716.0" layoutY="345.0" prefHeight="60.0" prefWidth="450.0" promptText="Enter Analysis Results" style="-fx-background-color: white; -fx-background-radius: 16; -fx-border-radius: 16; -fx-border-color: #089bab;">
-         <font>
-            <Font name="SF Pro Text Semibold" size="24.0" />
-         </font>
-      </TextField>
-      <TextField fx:id="staffIDTextField" layoutX="716.0" layoutY="219.0" prefHeight="60.0" prefWidth="450.0" promptText="Enter Staff ID" style="-fx-background-color: white; -fx-background-radius: 16; -fx-border-radius: 16; -fx-border-color: #089bab;">
          <font>
             <Font name="SF Pro Text Semibold" size="24.0" />
          </font>
@@ -87,5 +77,7 @@
             <Font size="16.0" />
          </font>
       </Text>
+      <ComboBox fx:id="patientIdComboBox" layoutX="154.0" layoutY="219.0" prefHeight="60.0" prefWidth="450.0" promptText="Patient Name" style="-fx-border-color: #089bab; -fx-background-color: white; -fx-background-radius: 16; -fx-border-radius: 16; -fx-font-size: 24;" />
+      <ComboBox fx:id="staffIdComboBox" layoutX="716.0" layoutY="219.0" prefHeight="60.0" prefWidth="450.0" promptText="Staff Id" style="-fx-border-color: #089bab; -fx-background-color: white; -fx-background-radius: 16; -fx-border-radius: 16; -fx-font-size: 24;" />
    </children>
 </Pane>

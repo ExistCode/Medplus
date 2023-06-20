@@ -70,7 +70,7 @@ public class search_treatment_controller {
     }
 
     @FXML
-    void changedToDiagnosis(MouseEvent event) throws IOException{
+    void changedToDiagnosis(MouseEvent event) throws IOException {
         App.setRoot("search_diagnosis_screen");
     }
 
@@ -105,7 +105,7 @@ public class search_treatment_controller {
     }
 
     @FXML
-    void switchToAddScreen(MouseEvent event) throws IOException{
+    void switchToAddScreen(MouseEvent event) throws IOException {
         App.setRoot("add_treatment_screen");
     }
 
@@ -155,7 +155,8 @@ public class search_treatment_controller {
         TableColumn endDateColumn = new TableColumn("End Date");
         TableColumn treatmentInfoColumn = new TableColumn("Treatment Info");
 
-        treatmentTable.getColumns().addAll(treatmentIdColumn, patientNameColumn, doctorIdColumn, startDateColumn, endDateColumn, treatmentInfoColumn);
+        treatmentTable.getColumns().addAll(treatmentIdColumn, patientNameColumn, doctorIdColumn, startDateColumn,
+                endDateColumn, treatmentInfoColumn);
 
         // Set cell value factories for each TableColumn
         treatmentIdColumn.setCellValueFactory(new PropertyValueFactory<>("treatmentId"));
