@@ -25,8 +25,9 @@ public class update_treatment_controller {
 
     @FXML
     private ComboBox<String> staffIdComboBox;
+
     @FXML
-    private ComboBox<String> patientIdComboBox;
+    private ComboBox<String> patientNameComboBox;
 
     @FXML
     private DatePicker dateEndDatePicker;
@@ -35,7 +36,7 @@ public class update_treatment_controller {
     private DatePicker dateStartDatePicker;
 
     @FXML
-    private TextField treatmentDetailsTextField;
+    private TextField treatmentInfoTextField;
 
     @FXML
     private Pane updateTreatmentButton;
@@ -54,11 +55,11 @@ public class update_treatment_controller {
 
         if (errorMessage == "") {
 
-            Treatment newTreatment = new Treatment(TreatmentData.initTreatmentData.getTreatmentId(), patientIdComboBox.getSelectionModel().getSelectedItem(),
+            Treatment newTreatment = new Treatment(TreatmentData.initTreatmentData.getTreatmentId(), patientNameComboBox.getSelectionModel().getSelectedItem(),
                     staffIdComboBox.getSelectionModel().getSelectedItem(),
                     dateStartDatePicker.getValue(),
                     dateEndDatePicker.getValue(),
-                    treatmentDetailsTextField.getText());
+                    treatmentInfoTextField.getText());
             TreatmentData.updateTreatmentData(newTreatment);
             App.setRoot("search_treatment_screen");
         } else {
@@ -70,9 +71,9 @@ public class update_treatment_controller {
     private String validateInput() {
         String errorMessage = "";
 
-        if (patientIdComboBox.getSelectionModel().isEmpty() || staffIdComboBox.getSelectionModel().isEmpty()
+        if (patientNameComboBox.getSelectionModel().isEmpty() || staffIdComboBox.getSelectionModel().isEmpty()
                 || dateStartDatePicker.getValue() == null || dateEndDatePicker.getValue() == null
-                || treatmentDetailsTextField.getText().isEmpty()) {
+                || treatmentInfoTextField.getText().isEmpty()) {
             errorMessage = "Please make sure all fields are filled with the appropriate type.";
             System.out.println(errorMessage);
             errorMessageDisplay.setText(errorMessage);
@@ -83,24 +84,24 @@ public class update_treatment_controller {
 
     @FXML
     public void initialize() {
-        patientIdComboBox.setValue(TreatmentData.initTreatmentData.getPatientName());
-        staffIdComboBox.setValue(TreatmentData.initTreatmentData.getDoctorId());
+        patientNameComboBox.setValue(TreatmentData.initTreatmentData.getPatientName());
+        staffIdComboBox.setValue(TreatmentData.initTreatmentData.getStaffId());
         dateStartDatePicker.setValue(TreatmentData.initTreatmentData.getStartDate());
         dateEndDatePicker.setValue(TreatmentData.initTreatmentData.getEndDate());
-        treatmentDetailsTextField.setText(TreatmentData.initTreatmentData.getTreatmentInfo());
-        patientIdComboBox.setItems(fetchPatientName());
+        treatmentInfoTextField.setText(TreatmentData.initTreatmentData.getTreatmentInfo());
+        patientNameComboBox.setItems(fetchPatientName());
         staffIdComboBox.setItems(fetchStaffId());
     }
 
     ObservableList<String> fetchPatientName() {
         ObservableList<PatientTableDataModel> patientDataList = PatientTableDataModel
                 .convertPatientDataToPatientTableDataModel();
-        ObservableList<String> patientId = FXCollections.observableArrayList();
+        ObservableList<String> patientName = FXCollections.observableArrayList();
         for (PatientTableDataModel patient : patientDataList) {
-            patientId.add(patient.getName());
+            patientName.add(patient.getName());
             System.out.println("done ga");
         }
-        return patientId;
+        return patientName;
     }
 
     ObservableList<String> fetchStaffId() {

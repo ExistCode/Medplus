@@ -35,19 +35,13 @@ public class add_treatment_controller {
     private DatePicker dateStartDatePicker;
 
     @FXML
-    private TextField patientNameTextField;
-
-    @FXML
-    private TextField doctorIDTextField;
-
-    @FXML
     private TextField treatmentInfoTextField;
 
     @FXML
     private Text errorMessageDisplay;
 
     @FXML
-    private ComboBox<String> patientIdComboBox;
+    private ComboBox<String> patientNameComboBox;
 
     @FXML
     private ComboBox<String> staffIdComboBox;
@@ -55,11 +49,11 @@ public class add_treatment_controller {
     ObservableList<String> fetchPatientName() {
         ObservableList<PatientTableDataModel> patientDataList = PatientTableDataModel
                 .convertPatientDataToPatientTableDataModel();
-        ObservableList<String> patientId = FXCollections.observableArrayList();
+        ObservableList<String> patientName = FXCollections.observableArrayList();
         for (PatientTableDataModel patient : patientDataList) {
-            patientId.add(patient.getName());
+            patientName.add(patient.getName());
         }
-        return patientId;
+        return patientName;
     }
 
     ObservableList<String> fetchStaffId() {
@@ -74,18 +68,13 @@ public class add_treatment_controller {
 
     @FXML
     public void initialize() {
-        patientIdComboBox.setItems(fetchPatientName());
+        patientNameComboBox.setItems(fetchPatientName());
         staffIdComboBox.setItems(fetchStaffId());
-
-        // Scanner sc = new Scanner(System.in);
-        // String input = sc.nextLine();
-
     }
 
     @FXML
     void backToSearch(MouseEvent event) throws IOException {
         App.setRoot("search_treatment_screen");
-
     }
 
     @FXML
@@ -100,7 +89,7 @@ public class add_treatment_controller {
             LocalDate dateStart = dateStartDatePicker.getValue();
             LocalDate dateEnd = dateEndDatePicker.getValue();
 
-            Treatment newTreatment = new Treatment(newTreatmentIdFormatted, patientIdComboBox.getSelectionModel().getSelectedItem(),
+            Treatment newTreatment = new Treatment(newTreatmentIdFormatted, patientNameComboBox.getSelectionModel().getSelectedItem(),
                     staffIdComboBox.getSelectionModel().getSelectedItem(),
                     dateStart,
                     dateEnd,
@@ -116,8 +105,8 @@ public class add_treatment_controller {
     private String validateInput() {
         String errorMessage = "";
 
-        if (patientIdComboBox.getSelectionModel().isEmpty() || staffIdComboBox.getSelectionModel().isEmpty()
-                || dateStartDatePicker.getValue() == null || dateEndDatePicker.getValue() == null
+        if (patientNameComboBox.getSelectionModel().isEmpty() ||  staffIdComboBox.getSelectionModel().isEmpty()
+                || dateStartDatePicker.getValue() == null||  dateEndDatePicker.getValue() == null
                 || treatmentInfoTextField.getText().isEmpty()) {
             errorMessage = "Please make sure all fields are filled with the appropriate type.";
             System.out.println(errorMessage);

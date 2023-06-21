@@ -3,7 +3,6 @@ package medplus.controllers;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -33,7 +32,8 @@ public class add_analysis_controller {
             "Urine Analysis");
 
     @FXML
-    private ComboBox<String> patientIdComboBox;
+    private ComboBox<String> patientNameComboBox;
+    
     @FXML
     private Pane addAnalysisButton;
 
@@ -45,12 +45,6 @@ public class add_analysis_controller {
 
     @FXML
     private DatePicker dateAnalysisSelector;
-
-    @FXML
-    private TextField patientNameTextField;
-
-    @FXML
-    private TextField staffIDTextField;
 
     @FXML
     private TextField summaryTextField;
@@ -79,7 +73,7 @@ public class add_analysis_controller {
             String newAnalysisIdFormatted = String.format("A%03d", newAnalysisId);
 
             Analysis newAnalysis = new Analysis(newAnalysisIdFormatted,
-                    patientIdComboBox.getSelectionModel().getSelectedItem(),
+                    patientNameComboBox.getSelectionModel().getSelectedItem(),
                     staffIdComboBox.getSelectionModel().getSelectedItem(),
                     analysisType.getSelectionModel().getSelectedItem(),
                     summaryTextField.getText(),
@@ -102,7 +96,7 @@ public class add_analysis_controller {
     private String validateInput() {
         String errorMessage = "";
 
-        if (patientIdComboBox.getSelectionModel().isEmpty() || staffIdComboBox.getSelectionModel().isEmpty()
+        if (patientNameComboBox.getSelectionModel().isEmpty() || staffIdComboBox.getSelectionModel().isEmpty()
                 || analysisType.getSelectionModel().isEmpty() || summaryTextField.getText().isEmpty()
                 || dateAnalysisSelector.getValue() == null || testInfoTextField.getText().isEmpty()) {
             errorMessage = "Please make sure all fields are filled with the appropriate type.";
@@ -115,22 +109,18 @@ public class add_analysis_controller {
     @FXML
     public void initialize() {
         analysisType.setItems(analysisTypeOptions);
-        patientIdComboBox.setItems(fetchPatientName());
+        patientNameComboBox.setItems(fetchPatientName());
         staffIdComboBox.setItems(fetchStaffId());
-
-        // Scanner sc = new Scanner(System.in);
-        // String input = sc.nextLine();
-
     }
 
     ObservableList<String> fetchPatientName() {
         ObservableList<PatientTableDataModel> patientDataList = PatientTableDataModel
                 .convertPatientDataToPatientTableDataModel();
-        ObservableList<String> patientId = FXCollections.observableArrayList();
+        ObservableList<String> patientName = FXCollections.observableArrayList();
         for (PatientTableDataModel patient : patientDataList) {
-            patientId.add(patient.getName());
+            patientName.add(patient.getName());
         }
-        return patientId;
+        return patientName;
     }
 
     ObservableList<String> fetchStaffId() {

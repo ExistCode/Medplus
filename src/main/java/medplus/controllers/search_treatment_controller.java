@@ -3,10 +3,13 @@ package medplus.controllers;
 import java.io.IOException;
 
 import javafx.collections.ObservableList;
+import javafx.collections.transformation.FilteredList;
+import javafx.collections.transformation.SortedList;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -19,6 +22,9 @@ public class search_treatment_controller {
 
     @FXML
     private ImageView Analysis_btn;
+
+    @FXML
+    private TextField searchTreatmentText;
 
     @FXML
     private Button analysisButton;
@@ -127,11 +133,10 @@ public class search_treatment_controller {
             try {
                 TreatmentData.initTreatmentData.setTreatmentId(selectedTreatment.getTreatmentId());
                 TreatmentData.initTreatmentData.setPatientName(selectedTreatment.getPatientName());
-                TreatmentData.initTreatmentData.setDoctorId(selectedTreatment.getDoctorId());
+                TreatmentData.initTreatmentData.setStaffId(selectedTreatment.getStaffId());
                 TreatmentData.initTreatmentData.setStartDate(selectedTreatment.getStartDate());
                 TreatmentData.initTreatmentData.setEndDate(selectedTreatment.getEndDate());
                 TreatmentData.initTreatmentData.setTreatmentInfo(selectedTreatment.getTreatmentInfo());
-
                 App.setRoot("update_treatment_screen");
 
             } catch (IOException e) {
@@ -161,14 +166,42 @@ public class search_treatment_controller {
         // Set cell value factories for each TableColumn
         treatmentIdColumn.setCellValueFactory(new PropertyValueFactory<>("treatmentId"));
         patientNameColumn.setCellValueFactory(new PropertyValueFactory<>("patientName"));
-        staffIdColumn.setCellValueFactory(new PropertyValueFactory<>("doctorId"));
+        staffIdColumn.setCellValueFactory(new PropertyValueFactory<>("staffId"));
         startDateColumn.setCellValueFactory(new PropertyValueFactory<>("startDate"));
         endDateColumn.setCellValueFactory(new PropertyValueFactory<>("endDate"));
         treatmentInfoColumn.setCellValueFactory(new PropertyValueFactory<>("treatmentInfo"));
-
         treatmentTable.setItems(treatmentDataList);
 
-        treatmentTable.setOnMouseClicked(event -> {
+        FilteredList<TreatmentTableDataModel> filteredData = new FilteredList<>(treatmentDataList, b -> true);
+        searchTreatmentText.textProperty().addListener((observable, oldvalue, newvalue) -> {
+            filteredData.setPredicate(TreatmentTableDataModel -> {
+                if (newvalue.isEmpty() || newvalue.isBlank() || newvalue == null) {
+                    return true;
+                }
+
+                String searchKeyword = newvalue.toLowerCase();
+                if (TreatmentTableDataModel.getPatientName().toLowerCase().indexOf(searchKeyword) > -1) {
+                    return true;
+                } else if (TreatmentTableDataModel.getTreatmentId().toLowerCase().indexOf(searchKeyword) > -1) {
+                    return true;
+                } else if (TreatmentTableDataModel.getStaffId().toLowerCase().indexOf(searchKeyword) > -1) {
+                    return true;
+                } else if (TreatmentTableDataModel.getStartDate().toString().toLowerCase().indexOf(searchKeyword) > -1) {
+                    return true;
+                } else if (TreatmentTableDataModel.getEndDate().toString().toLowerCase().indexOf(searchKeyword) > -1) {
+                    return true;
+                } else if (TreatmentTableDataModel.getTreatementInfo().toLowerCase().indexOf(searchKeyword) > -1) {
+                    return true;
+                } else {
+                    return false;
+                }
+            });
+        });
+        SortedList<TreatmentTableDataModel> sortedTreatmentData = new SortedList<>(filteredData);
+        sortedTreatmentData.comparatorProperty().bind(treatmentTable.comparatorProperty());
+        treatmentTable.setItems(sortedTreatmentData);
+
+        /*treatmentTable.setOnMouseClicked(event -> {
             if (event.getClickCount() == 2) {
                 TreatmentTableDataModel selectedTreatment = treatmentTable.getSelectionModel().getSelectedItem();
                 if (selectedTreatment != null) {
@@ -189,6 +222,6 @@ public class search_treatment_controller {
 
         });
 
+    }*/
     }
-
 }

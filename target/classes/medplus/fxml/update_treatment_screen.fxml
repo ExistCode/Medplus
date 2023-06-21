@@ -55,7 +55,7 @@
             <Font name="Verdana Bold" size="32.0" />
          </font>
       </Text>
-      <TextField fx:id="treatmentDetailsTextField" layoutX="154.0" layoutY="472.0" prefHeight="60.0" prefWidth="1019.0" promptText="Enter Treatment Details Here" style="-fx-background-color: white; -fx-background-radius: 16; -fx-border-radius: 16; -fx-border-color: #089bab;">
+      <TextField fx:id="treatmentInfoTextField" layoutX="154.0" layoutY="472.0" prefHeight="60.0" prefWidth="1019.0" promptText="Enter Treatment Details Here" style="-fx-background-color: white; -fx-background-radius: 16; -fx-border-radius: 16; -fx-border-color: #089bab;">
          <font>
             <Font name="Verdana" size="24.0" />
          </font>
@@ -67,7 +67,7 @@
             <Font size="16.0" />
          </font>
       </Text>
-      <ComboBox fx:id="patientIdComboBox" layoutX="154.0" layoutY="219.0" prefHeight="60.0" prefWidth="450.0" promptText="Patient Name" style="-fx-border-color: #089bab; -fx-background-color: white; -fx-background-radius: 16; -fx-border-radius: 16; -fx-font-size: 24;" />
+      <ComboBox fx:id="patientNameComboBox" layoutX="154.0" layoutY="219.0" prefHeight="60.0" prefWidth="450.0" promptText="Patient Name" style="-fx-border-color: #089bab; -fx-background-color: white; -fx-background-radius: 16; -fx-border-radius: 16; -fx-font-size: 24;" />
       <ComboBox fx:id="staffIdComboBox" layoutX="716.0" layoutY="219.0" prefHeight="60.0" prefWidth="450.0" promptText="Staff Id" style="-fx-border-color: #089bab; -fx-background-color: white; -fx-background-radius: 16; -fx-border-radius: 16; -fx-font-size: 24;" />
    </children>
 </Pane>

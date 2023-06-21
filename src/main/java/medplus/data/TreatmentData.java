@@ -14,6 +14,11 @@ import medplus.models.Treatment;
 public class TreatmentData {
     public static Treatment initTreatmentData = new Treatment("", "", "", null, null, "");
 
+        public static void main(String[] args) {
+                createNewFileWithHeaders();
+                fetchTreatmentDataFromDatabase();
+        }
+
         public static String fileName = "src/main/resources/medplus/database/treatment.txt";
 
         public static List<Treatment> fetchTreatmentDataFromDatabase() {
@@ -28,12 +33,12 @@ public class TreatmentData {
                                 String[] TreatmentData = line.split(",");
                                 String treatmentId = TreatmentData[0].trim();
                                 String patientName = TreatmentData[1].trim();
-                                String doctorId = TreatmentData[2].trim();
+                                String staffId = TreatmentData[2].trim();
                                 LocalDate startDate = LocalDate.parse(TreatmentData[3].trim());
                                 LocalDate endDate = LocalDate.parse(TreatmentData[4].trim());
                                 String treatmentInfo = TreatmentData[5].trim();
 
-                                Treatment treatment = new Treatment(treatmentId, patientName,doctorId, startDate, endDate, treatmentInfo);
+                                Treatment treatment = new Treatment(treatmentId, patientName, staffId, startDate, endDate, treatmentInfo);
                                 treatmentList.add(treatment);
                         }
 
@@ -51,7 +56,7 @@ public class TreatmentData {
                 try {
                         if (database.createNewFile()) {
                                 FileWriter writer = new FileWriter(fileName, true);
-                                writer.append("Treatment ID, Patient Name, Doctor ID, Start Date, End Date, Treatment Info");
+                                writer.append("Treatment ID, Patient Name, Staff ID, Start Date, End Date, Treatment Info");
                                 writer.append("\n");
                                 writer.close();
                                 System.out.println("File created successfully!");
@@ -70,7 +75,7 @@ public class TreatmentData {
                         String treatmentData = String.format("%s,%s,%s,%s,%s,%s",
                                         newTreatment.getTreatmentId(),
                                         newTreatment.getPatientName(),
-                                        newTreatment.getDoctorId(),
+                                        newTreatment.getStaffId(),
                                         newTreatment.getStartDate(),
                                         newTreatment.getEndDate(),
                                         newTreatment.getTreatmentInfo());
@@ -127,7 +132,7 @@ public class TreatmentData {
                                 if (line.contains(newTreatmentData.getTreatmentId())) {
                                         fetchedTreatmentListAfterDeletion.add(newTreatmentData.getTreatmentId() + ","
                                                         + newTreatmentData.getPatientName() + ","
-                                                        + newTreatmentData.getDoctorId() + ","
+                                                        + newTreatmentData.getStaffId() + ","
                                                         + newTreatmentData.getStartDate() + ","
                                                         + newTreatmentData.getEndDate() + ","
                                                         + newTreatmentData.getTreatmentInfo() + ",");

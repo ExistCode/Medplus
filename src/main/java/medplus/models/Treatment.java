@@ -5,16 +5,16 @@ import java.time.LocalDate;
 public class Treatment {
     private String treatmentId;
     private String patientName;
-    private String doctorId;
+    private String staffId;
     private LocalDate startDate;
     private LocalDate endDate;
     private String treatmentInfo;
 
     // Constructor
-    public Treatment(String tId, String pName, String dId, LocalDate start, LocalDate end, String info) {
+    public Treatment(String tId, String pName, String sId, LocalDate start, LocalDate end, String info) {
         treatmentId = tId;
         patientName = pName;
-        doctorId = dId;
+        staffId = sId;
         startDate = start;
         endDate = end;
         treatmentInfo = info;
@@ -29,8 +29,8 @@ public class Treatment {
         patientName = pName;
     }
 
-    public void setDoctorId(String dId) {
-        doctorId = dId;
+    public void setStaffId(String sId) {
+        staffId = sId;
     }
 
     public void setStartDate(LocalDate start) {
@@ -54,8 +54,8 @@ public class Treatment {
         return patientName;
     }
 
-    public String getDoctorId() {
-        return doctorId;
+    public String getStaffId() {
+        return staffId;
     }
 
     public LocalDate getStartDate() {

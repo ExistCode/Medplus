@@ -174,10 +174,10 @@ public class home_controller {
         secondPatientNameAppointment.setText(getLatest2Treatments().get(0).getPatientName());
         firstAppointmentDetails.setText(
                 getLatest2Treatments().get(1).getTreatmentInfo());
-        firstAppointmentStaffName.setText(getLatest2Treatments().get(1).getDoctorId());
+        firstAppointmentStaffName.setText(getLatest2Treatments().get(1).getStaffId());
         secondAppointmentDetails.setText(
                 getLatest2Treatments().get(0).getTreatmentInfo());
-        secondAppointmentStaffName.setText(getLatest2Treatments().get(0).getDoctorId());
+        secondAppointmentStaffName.setText(getLatest2Treatments().get(0).getStaffId());
 
     }
 

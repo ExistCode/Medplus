@@ -13,15 +13,15 @@ import medplus.models.Treatment;
 public class TreatmentTableDataModel {
     private SimpleStringProperty treatmentId;
     private SimpleStringProperty patientName;
-    private SimpleStringProperty doctorId;
+    private SimpleStringProperty staffId;
     private SimpleObjectProperty<LocalDate> startDate;
     private SimpleObjectProperty<LocalDate> endDate;
     private SimpleStringProperty treatmentInfo;
 
-    public TreatmentTableDataModel(String treatmentId, String patientName, String doctorId, LocalDate startDate, LocalDate endDate, String treatmentInfo) {
+    public TreatmentTableDataModel(String treatmentId, String patientName, String staffId, LocalDate startDate, LocalDate endDate, String treatmentInfo) {
         this.treatmentId = new SimpleStringProperty(treatmentId);
         this.patientName = new SimpleStringProperty(patientName);
-        this.doctorId = new SimpleStringProperty(doctorId);
+        this.staffId = new SimpleStringProperty(staffId);
         this.startDate = new SimpleObjectProperty<>(startDate);
         this.endDate = new SimpleObjectProperty<>(endDate);
         this.treatmentInfo = new SimpleStringProperty(treatmentInfo);
@@ -34,11 +34,11 @@ public class TreatmentTableDataModel {
         for (int i = 0; i < initialTreatmentList.size(); i++) {
             String treatmentId = initialTreatmentList.get(i).getTreatmentId();
             String patientName = initialTreatmentList.get(i).getPatientName();
-            String doctorId = initialTreatmentList.get(i).getDoctorId();
+            String staffId = initialTreatmentList.get(i).getStaffId();
             LocalDate startDate = initialTreatmentList.get(i).getStartDate();
             LocalDate endDate = initialTreatmentList.get(i).getEndDate();
             String treatmentInfo = initialTreatmentList.get(i).getTreatmentInfo();
-            convertedList.add(new TreatmentTableDataModel(treatmentId, patientName, doctorId, startDate, endDate, treatmentInfo));
+            convertedList.add(new TreatmentTableDataModel(treatmentId, patientName, staffId, startDate, endDate, treatmentInfo));
         }
 
         return convertedList;
@@ -68,16 +68,16 @@ public class TreatmentTableDataModel {
         this.patientName.set(patientName);
     }
 
-    public String getDoctorId(){
-        return doctorId.get();
+    public String getStaffId(){
+        return staffId.get();
     }
 
-    public SimpleStringProperty doctorIdProperty(){
-        return doctorId;
+    public SimpleStringProperty staffIdProperty(){
+        return staffId;
     }
 
-    public void setDcotorId(String doctorId){
-        this.doctorId.set(doctorId);
+    public void setDcotorId(String staffId){
+        this.staffId.set(staffId);
     }
 
     public LocalDate getStartDate(){

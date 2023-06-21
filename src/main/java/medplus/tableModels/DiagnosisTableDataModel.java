@@ -15,14 +15,14 @@ public class DiagnosisTableDataModel {
     private SimpleStringProperty patientName;
     private SimpleStringProperty staffId;
     private SimpleObjectProperty<LocalDate> date;
-    private SimpleStringProperty sickness;
+    private SimpleStringProperty diagnosis;
 
-    public DiagnosisTableDataModel(String diagnosisId, String patientName, String staffId, LocalDate date, String sickness){
+    public DiagnosisTableDataModel(String diagnosisId, String patientName, String staffId, LocalDate date, String diagnosis){
         this.diagnosisId = new SimpleStringProperty(diagnosisId);
         this.patientName = new SimpleStringProperty(patientName);
         this.staffId = new SimpleStringProperty(staffId);
         this.date = new SimpleObjectProperty<>(date);
-        this.sickness = new SimpleStringProperty(sickness);
+        this.diagnosis = new SimpleStringProperty(diagnosis);
     }
 
     public static ObservableList<DiagnosisTableDataModel> convertDiagnosisDataToDiagnosisTableDataModel() {
@@ -34,10 +34,10 @@ public class DiagnosisTableDataModel {
             String patientName = initialDiagnosisList.get(i).getPatientName();
             String staffId = initialDiagnosisList.get(i).getStaffId();
             LocalDate date = initialDiagnosisList.get(i).getDate();
-            String sickness = initialDiagnosisList.get(i).getSickness();
+            String diagnosis = initialDiagnosisList.get(i).getDiagnosis();
         
             convertedList.add(
-                    new DiagnosisTableDataModel(diagnosisId, patientName, staffId, date, sickness));
+                    new DiagnosisTableDataModel(diagnosisId, patientName, staffId, date, diagnosis));
         }
 
         return convertedList;
@@ -91,16 +91,16 @@ public class DiagnosisTableDataModel {
         this.date.set(date);
     }
 
-    public String getSickness() {
-        return sickness.get();
+    public String getDiagnosis() {
+        return diagnosis.get();
     }
 
-    public SimpleStringProperty SicknessProperty() {
-        return sickness;
+    public SimpleStringProperty DiagnosisProperty() {
+        return diagnosis;
     }
 
-    public void setSickness(String sickness) {
-        this.sickness.set(sickness);
+    public void setDiagnosis(String diagnosis) {
+        this.diagnosis.set(diagnosis);
     }
 
 }
