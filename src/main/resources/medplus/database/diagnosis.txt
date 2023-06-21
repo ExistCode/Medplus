@@ -1,4 +1,4 @@
 Diagnosis ID,Patient Name,Staff ID,Date,Sickness
 D001,Lim Chuan Zhe,S002,2023-06-04,Fewer
-D002,Hans,S002,2023-04-26,Headache
+D002,Hans Andreanto,S002,2023-04-26,Headache
 D004,Cheng You You,S001,2023-04-11,Fewer,Headache
