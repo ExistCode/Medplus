@@ -23,7 +23,6 @@ import medplus.data.PatientData;
 import medplus.models.Patient;
 
 public class add_patient_controller {
-    ArrayList<String> bloodTypeOption = new ArrayList<String>();
     ObservableList<String> bloodTypeOptions = FXCollections.observableArrayList(
             "A-",
             "A+",

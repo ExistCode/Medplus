@@ -3,55 +3,52 @@ package medplus.controllers;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
 import medplus.App;
+import medplus.data.AppointmentData;
 import medplus.data.PatientData;
 import medplus.data.StaffData;
 import medplus.tableModels.AppointmentTableDataModel;
 import medplus.tableModels.MedicalHistoryTableDataModel;
 
 public class staff_details_controller {
-    // Changes this to AppointmentTableDataModel
     @FXML
-    private TableView<AppointmentTableDataModel> appointmentTable;
-    @FXML
-    private Pane deleteStaffButton;
-    @FXML
-    private Pane updateButton;
-    @FXML
-    private Pane editStaffButton;
-    @FXML
-    private Pane analysisButton;
+    private Pane addNewAppointmentButton;
+
     @FXML
     private Pane addNewMedicalHistory;
+
+    @FXML
+    private TableView<AppointmentTableDataModel> appointmentTable;
+
+    @FXML
+    private Pane dashboardbutton;
 
     @FXML
     private Pane deleteAppointmentButton;
 
     @FXML
     private Pane deleteMedHis;
-    @FXML
-    private TableView<?> medicalHistoryTable;
 
     @FXML
-    private Pane updateAppointmentButton;
+    private Pane deleteStaffButton;
 
     @FXML
-    private Pane updateMedicalHistoryButton;
+    private Pane editStaffButton;
 
     @FXML
-    private Pane dashboardbutton;
-
-    @FXML
-    private Pane diagnosisButton;
+    private TableView<MedicalHistoryTableDataModel> medicalHistoryTable;
 
     @FXML
     private Pane patientsbutton;
@@ -78,10 +75,10 @@ public class staff_details_controller {
     private Text staffSpecialty;
 
     @FXML
-    private Pane treatmentButton;
+    private Pane updateAppointmentButton;
 
     @FXML
-    private TableView<MedicalHistoryTableDataModel> patientMedicalHistoryTable;
+    private Pane updateMedicalHistoryButton;
 
     @FXML
     void changedToDashboard(MouseEvent event) throws IOException {
@@ -138,6 +135,37 @@ public class staff_details_controller {
     }
 
     @FXML
+    void addNewAppointment(MouseEvent event) throws IOException {
+        AppointmentData.initAppointmentData.setPatientId(StaffData.initStaffData.getStaffId());
+        App.setRoot("add_appointment_screen");
+    }
+
+    @FXML
+    void deleteAppointment(MouseEvent event) {
+
+    }
+
+    @FXML
+    void updateAppointment(MouseEvent event) {
+
+    }
+
+    @FXML
+    void deleteMedicalHistory(MouseEvent event) {
+
+    }
+
+    @FXML
+    void editAppointment(MouseEvent event) {
+
+    }
+
+    @FXML
+    void switchToUpdateScreen(MouseEvent event) {
+
+    }
+
+    @FXML
     public void initializeAppointmentTable() {
         System.out.println("\nEnter Initialize Appointment Table");
         String staffId = StaffData.initStaffData.getStaffId();
@@ -160,7 +188,22 @@ public class staff_details_controller {
         patientIdColumn.setCellValueFactory(new PropertyValueFactory<>("patientId"));
         roomNumColumn.setCellValueFactory(new PropertyValueFactory<>("roomNum"));
         dateColumn.setCellValueFactory(new PropertyValueFactory<>("date"));
+
+        // Customize the cell value factory for timeColumn to display only hour and
+        // minute
         timeColumn.setCellValueFactory(new PropertyValueFactory<>("time"));
+        timeColumn.setCellFactory(column -> new TableCell<AppointmentTableDataModel, LocalTime>() {
+            @Override
+            protected void updateItem(LocalTime time, boolean empty) {
+                super.updateItem(time, empty);
+                if (empty || time == null) {
+                    setText(null);
+                } else {
+                    setText(time.format(DateTimeFormatter.ofPattern("HH:mm")));
+                }
+            }
+        });
+
         descriptionColumn.setCellValueFactory(new PropertyValueFactory<>("description"));
 
         appointmentTable.getColumns().addAll(appointmentIdColumn, staffIdColumn, patientIdColumn, roomNumColumn,
@@ -183,25 +226,4 @@ public class staff_details_controller {
         initializeAppointmentTable();
 
     }
-
-    @FXML
-    void deleteAppointment(MouseEvent event) {
-
-    }
-
-    @FXML
-    void deleteMedicalHistory(MouseEvent event) {
-
-    }
-
-    @FXML
-    void switchToUpdateScreen(MouseEvent event) {
-
-    }
-
-    @FXML
-    void updateAppointment(MouseEvent event) {
-
-    }
-
 }

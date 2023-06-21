@@ -1,0 +1,104 @@
+package medplus.controllers;
+
+import java.io.IOException;
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.util.List;
+
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.fxml.FXML;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.DatePicker;
+import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.Pane;
+import medplus.App;
+import medplus.data.AppointmentData;
+import medplus.data.MedicalHistoryData;
+import medplus.data.PatientData;
+import medplus.data.StaffData;
+import medplus.models.Appointment;
+import medplus.models.MedicalHistory;
+
+public class add_appointment_controller {
+
+    ObservableList<String> roomNumOption = FXCollections.observableArrayList(
+            "R101", "R102", "R103", "R104", "R105", "R106", "R201", "R202", "R203", "R204",
+            "R205", "R206", "R207", "R208", "R301", "R302", "R303", "R304", "R305", "R306");
+
+    @FXML
+    private Pane addAppointmentButton;
+
+    @FXML
+    private DatePicker appointmentDatePicker;
+
+    @FXML
+    private ImageView backButton;
+
+    @FXML
+    private TextField descriptionTextField;
+
+    @FXML
+    private TextField patinetIdTextField;
+
+    @FXML
+    private ComboBox<String> roomNumberComboBox;
+
+    @FXML
+    private TextField staffIdTextField;
+
+    @FXML
+    void addNewAppointment(MouseEvent event) {
+        String errorMessage = validateInput();
+
+        if (errorMessage.isEmpty()) {
+            List<Appointment> appointmentList = AppointmentData.fetchAllAppointmentDataFromDatabase();
+            int newAppointmentId = Integer
+                    .parseInt(appointmentList.get(appointmentList.size() - 1).getAppointmentId().substring(1)) + 1;
+            String newAppointmentIdFormatted = String.format("A%03d", newAppointmentId);
+            String patientId = patinetIdTextField.getText();
+            String staffId = staffIdTextField.getText();
+            LocalDate date = appointmentDatePicker.getValue();
+            String description = descriptionTextField.getText();
+            String roomNumber = roomNumberComboBox.getValue();
+
+            Appointment newAppointment = new Appointment(newAppointmentIdFormatted, patientId, staffId, roomNumber,
+                    date, LocalTime.now(), description);
+            AppointmentData.addNewAppointment(newAppointment);
+
+            try {
+                App.setRoot("staff_details_analysis_Screen");
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        } else {
+            // Show error message
+            System.out.println(errorMessage);
+        }
+    }
+
+    private String validateInput() {
+        String errorMessage = "";
+
+        if (patinetIdTextField.getText().isEmpty() || staffIdTextField.getText().isEmpty()
+                || appointmentDatePicker.getValue() == null || descriptionTextField.getText().isEmpty()
+                || roomNumberComboBox.getValue() == null) {
+            errorMessage = "Please make sure all fields are filled.";
+        }
+
+        return errorMessage;
+    }
+
+    @FXML
+    void backToSearch(MouseEvent event) {
+
+    }
+
+    @FXML
+    public void initialize() {
+        staffIdTextField.setText(StaffData.initStaffData.getStaffId());
+        roomNumberComboBox.setItems(roomNumOption);
+    }
+}

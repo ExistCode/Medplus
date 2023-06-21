@@ -13,6 +13,7 @@ import java.util.List;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -245,14 +246,28 @@ public class patient_details_controller extends patient_controller {
         patientIdColumn.setCellValueFactory(new PropertyValueFactory<>("patientId"));
         staffIdColumn.setCellValueFactory(new PropertyValueFactory<>("staffId"));
         dateColumn.setCellValueFactory(new PropertyValueFactory<>("date"));
+
+        // Customize the cell value factory for timeColumn to display only hour and
+        // minute
         timeColumn.setCellValueFactory(new PropertyValueFactory<>("time"));
+        timeColumn.setCellFactory(column -> new TableCell<MedicalHistoryTableDataModel, LocalTime>() {
+            @Override
+            protected void updateItem(LocalTime time, boolean empty) {
+                super.updateItem(time, empty);
+                if (empty || time == null) {
+                    setText(null);
+                } else {
+                    setText(time.format(DateTimeFormatter.ofPattern("HH:mm")));
+                }
+            }
+        });
+
         resultColumn.setCellValueFactory(new PropertyValueFactory<>("result"));
         observationColumn.setCellValueFactory(new PropertyValueFactory<>("observation"));
         complicationColumn.setCellValueFactory(new PropertyValueFactory<>("complication"));
 
         patientMedicalHistoryTable.getColumns().addAll(medHisIdColumn, patientIdColumn, staffIdColumn, dateColumn,
-                timeColumn,
-                resultColumn, observationColumn, complicationColumn);
+                timeColumn, resultColumn, observationColumn, complicationColumn);
 
         patientMedicalHistoryTable.setItems(medicalHistoryDataList);
     }
