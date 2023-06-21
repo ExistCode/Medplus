@@ -49,30 +49,54 @@ public class add_procedure_controller {
 
     }
 
+    // @FXML
+    // void addProcedure(MouseEvent event) throws IOException {
+    // String errorMessage = validateInput();
+
+    // if (errorMessage == "") {
+    // List<Procedure> procedureList =
+    // ProcedureData.fetchProcedureDataFromDatabase();
+    // System.out.println(procedureList.get(0).getProcedureId());
+    // Int
+
+    // String newProcedureIdFormatted = String.format("PD%03d", newProcedureId);
+
+    // Procedure newProcedure = new Procedure(newProcedureIdFormatted,
+    // patientNameTextField.getText(),
+    // staffIDTextField.getText(),
+    // dateDatePicker.getValue(),
+    // timeTextField.getText(),
+    // procedureTypeTextField.getText(),
+    // procedureDescriptionTextField.getText());
+
+    // ProcedureData.addNewProcedure(newProcedure);
+    // App.setRoot("search_procedure_screen");
+    // } else {
+    // // Show error message
+    // System.out.println(errorMessage);
+    // }
+    // }
     @FXML
     void addProcedure(MouseEvent event) throws IOException {
         String errorMessage = validateInput();
 
-        if (errorMessage == "") {
+        if (errorMessage.isEmpty()) {
             List<Procedure> procedureList = ProcedureData.fetchProcedureDataFromDatabase();
             int newProcedureId = Integer
-                    .parseInt(procedureList.get(procedureList.size() - 1).getProcedureId().substring(1))
+                    .parseInt(procedureList.get(procedureList.size() - 1).getProcedureId().substring(2))
                     + 1;
-            System.out.println(newProcedureId);
             String newProcedureIdFormatted = String.format("PD%03d", newProcedureId);
 
             Procedure newProcedure = new Procedure(newProcedureIdFormatted, patientNameTextField.getText(),
-                    staffIDTextField.getText(),
-                    dateDatePicker.getValue(),
-                    timeTextField.getText(),
-                    procedureTypeTextField.getText(),
-                    procedureDescriptionTextField.getText());
+                    staffIDTextField.getText(), dateDatePicker.getValue(), timeTextField.getText(),
+                    procedureTypeTextField.getText(), procedureDescriptionTextField.getText());
 
             ProcedureData.addNewProcedure(newProcedure);
             App.setRoot("search_procedure_screen");
         } else {
             // Show error message
             System.out.println(errorMessage);
+            errorMessageDisplay.setText(errorMessage);
         }
     }
 

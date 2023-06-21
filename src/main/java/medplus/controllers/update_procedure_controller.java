@@ -56,7 +56,7 @@ public class update_procedure_controller {
         if (errorMessage == "") {
             List<Procedure> procedureList = ProcedureData.fetchProcedureDataFromDatabase();
             int newProcedureId = Integer
-                    .parseInt(procedureList.get(procedureList.size() - 1).getProcedureId().substring(1))
+                    .parseInt(procedureList.get(procedureList.size() - 1).getProcedureId().substring(2))
                     + 1;
             String newProcedureIdFormatted = String.format("PD%03d", newProcedureId);
 
