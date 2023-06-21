@@ -228,9 +228,6 @@ public class patient_details_controller extends patient_controller {
         System.out.println("\nPatient Id: " + patientId);
         ObservableList<MedicalHistoryTableDataModel> medicalHistoryDataList = MedicalHistoryTableDataModel
                 .convertMedicalHistoryDataToTableDataModel(patientId);
-        // for (MedicalHistoryTableDataModel medhis : medicalHistoryDataList) {
-        // System.out.println(medhis.getObservation());
-        // }
 
         // Clear existing columns before adding new ones
         patientMedicalHistoryTable.getColumns().clear();

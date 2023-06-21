@@ -3,8 +3,6 @@ package medplus.controllers;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.time.LocalTime;
-import java.time.format.DateTimeFormatter;
-import java.time.format.FormatStyle;
 
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -17,12 +15,13 @@ import javafx.scene.text.Text;
 import medplus.App;
 import medplus.data.PatientData;
 import medplus.data.StaffData;
+import medplus.tableModels.AppointmentTableDataModel;
 import medplus.tableModels.MedicalHistoryTableDataModel;
 
 public class staff_details_controller {
     // Changes this to AppointmentTableDataModel
     @FXML
-    private TableView<String> appointmentTable;
+    private TableView<AppointmentTableDataModel> appointmentTable;
     @FXML
     private Pane deleteStaffButton;
     @FXML
@@ -134,20 +133,40 @@ public class staff_details_controller {
 
     @FXML
     void editStaffDetails(MouseEvent event) throws IOException {
-        // PatientData.initPatientData.setPatientId(PatientData.initPatientData.getPatientId());
-        // PatientData.initPatientData.setPatientName(PatientData.initPatientData.getPatientName());
-        // PatientData.initPatientData.setPatientNationalId("6789012345");
-        // PatientData.initPatientData.setPatientGender(PatientData.initPatientData.getPatientGender());
-        // PatientData.initPatientData.setPatientDateOfBirth(PatientData.initPatientData.getPatientDateOfBirth());
-        // PatientData.initPatientData.setPatientAge(PatientData.initPatientData.getPatientAge());
-        // PatientData.initPatientData.setPatientHeight(PatientData.initPatientData.getPatientHeight());
-        // PatientData.initPatientData.setPatientWeight(PatientData.initPatientData.getPatientWeight());
-        // PatientData.initPatientData.setPatientBloodType(PatientData.initPatientData.getPatientBloodType());
-        // PatientData.initPatientData.setPatientAddress("Miami");
-        // PatientData.initPatientData.setPatientContactNumber("60238343422");
-
         App.setRoot("update_staff_screen");
 
+    }
+
+    @FXML
+    public void initializeAppointmentTable() {
+        System.out.println("\nEnter Initialize Appointment Table");
+        String staffId = StaffData.initStaffData.getStaffId();
+        System.out.println("\nStaff Id: " + staffId);
+        ObservableList<AppointmentTableDataModel> appointmentDataList = AppointmentTableDataModel
+                .convertAppointmentDataToTableDataModel(staffId);
+
+        // Clear existing columns before adding new ones
+        appointmentTable.getColumns().clear();
+        TableColumn<AppointmentTableDataModel, String> appointmentIdColumn = new TableColumn<>("Appointment ID");
+        TableColumn<AppointmentTableDataModel, String> staffIdColumn = new TableColumn<>("Staff ID");
+        TableColumn<AppointmentTableDataModel, String> patientIdColumn = new TableColumn<>("Patient ID");
+        TableColumn<AppointmentTableDataModel, String> roomNumColumn = new TableColumn<>("Room");
+        TableColumn<AppointmentTableDataModel, LocalDate> dateColumn = new TableColumn<>("Date");
+        TableColumn<AppointmentTableDataModel, LocalTime> timeColumn = new TableColumn<>("Time");
+        TableColumn<AppointmentTableDataModel, String> descriptionColumn = new TableColumn<>("Description");
+
+        appointmentIdColumn.setCellValueFactory(new PropertyValueFactory<>("appointmentId"));
+        staffIdColumn.setCellValueFactory(new PropertyValueFactory<>("staffId"));
+        patientIdColumn.setCellValueFactory(new PropertyValueFactory<>("patientId"));
+        roomNumColumn.setCellValueFactory(new PropertyValueFactory<>("roomNum"));
+        dateColumn.setCellValueFactory(new PropertyValueFactory<>("date"));
+        timeColumn.setCellValueFactory(new PropertyValueFactory<>("time"));
+        descriptionColumn.setCellValueFactory(new PropertyValueFactory<>("description"));
+
+        appointmentTable.getColumns().addAll(appointmentIdColumn, staffIdColumn, patientIdColumn, roomNumColumn,
+                dateColumn, timeColumn, descriptionColumn);
+
+        appointmentTable.setItems(appointmentDataList);
     }
 
     @FXML
@@ -160,6 +179,8 @@ public class staff_details_controller {
         staffBirthday.setText(StaffData.initStaffData.getStaffContactNumber());
         staffDepartment.setText(StaffData.initStaffData.getStaffDepartment());
         staffSpecialty.setText(StaffData.initStaffData.getStaffJobTitle());
+
+        initializeAppointmentTable();
 
     }
 

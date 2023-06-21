@@ -162,13 +162,6 @@ public class patient_controller {
                         PatientData.initPatientData.setPatientBloodType(selectedPatient.getBloodType());
                         PatientData.initPatientData.setPatientHeight(selectedPatient.getHeight());
                         PatientData.initPatientData.setPatientWeight(selectedPatient.getWeight());
-
-                        System.out.println(PatientData.initPatientData.getPatientId());
-                        System.out.println(PatientData.initPatientData.getPatientGender());
-                        System.out.println(PatientData.initPatientData.getPatientDateOfBirth());
-                        System.out.println(PatientData.initPatientData.getPatientBloodType());
-                        System.out.println(PatientData.initPatientData.getPatientHeight());
-                        System.out.println(PatientData.initPatientData.getPatientWeight());
                         App.setRoot("patients_details_screen_analysis");
 
                     } catch (IOException e) {
