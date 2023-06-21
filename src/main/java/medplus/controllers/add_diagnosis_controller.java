@@ -3,7 +3,10 @@ package medplus.controllers;
 import java.io.IOException;
 import java.util.List;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
@@ -13,6 +16,8 @@ import javafx.scene.text.Text;
 import medplus.App;
 import medplus.data.DiagnosisData;
 import medplus.models.Diagnosis;
+import medplus.tableModels.PatientTableDataModel;
+import medplus.tableModels.StaffTableDataModel;
 
 public class add_diagnosis_controller {
 
@@ -35,7 +40,39 @@ public class add_diagnosis_controller {
     private TextField staffIDTextField;
 
     @FXML
+    private ComboBox<String> patientIdComboBox;
+
+    @FXML
+    private ComboBox<String> staffIdComboBox;
+
+    @FXML
     private Text errorMessageDisplay;
+
+    ObservableList<String> fetchPatientName() {
+        ObservableList<PatientTableDataModel> patientDataList = PatientTableDataModel
+                .convertPatientDataToPatientTableDataModel();
+        ObservableList<String> patientId = FXCollections.observableArrayList();
+        for (PatientTableDataModel patient : patientDataList) {
+            patientId.add(patient.getName());
+        }
+        return patientId;
+    }
+
+    ObservableList<String> fetchStaffId() {
+        ObservableList<StaffTableDataModel> staffDataList = StaffTableDataModel
+                .convertStaffDataToStaffTableDataModel();
+        ObservableList<String> staffId = FXCollections.observableArrayList();
+        for (StaffTableDataModel staff : staffDataList) {
+            staffId.add(staff.getStaffId());
+        }
+        return staffId;
+    }
+
+    @FXML
+    public void initialize() {
+        patientIdComboBox.setItems(fetchPatientName());
+        staffIdComboBox.setItems(fetchStaffId());
+    }
 
     @FXML
     void backToSearch(MouseEvent event) throws IOException {
@@ -48,12 +85,14 @@ public class add_diagnosis_controller {
 
         if (errorMessage == "") {
             List<Diagnosis> diagnosisList = DiagnosisData.fetchDiagnosisDataFromDatabase();
-            int newDiagnosisId = Integer.parseInt(diagnosisList.get(diagnosisList.size() - 1).getDiagnosisId().substring(1))
+            int newDiagnosisId = Integer
+                    .parseInt(diagnosisList.get(diagnosisList.size() - 1).getDiagnosisId().substring(1))
                     + 1;
             String newDiagnosisIdFormatted = String.format("D%03d", newDiagnosisId);
 
-            Diagnosis newDiagnosis = new Diagnosis(newDiagnosisIdFormatted, patientNameTextField.getText(),
-                    staffIDTextField.getText(),
+            Diagnosis newDiagnosis = new Diagnosis(newDiagnosisIdFormatted,
+                    patientIdComboBox.getSelectionModel().getSelectedItem(),
+                    staffIdComboBox.getSelectionModel().getSelectedItem(),
                     dateOfBirthSelector.getValue(),
                     medAmountTextField.getText());
             DiagnosisData.addNewDiagnosis(newDiagnosis);
@@ -67,8 +106,8 @@ public class add_diagnosis_controller {
     private String validateInput() {
         String errorMessage = "";
 
-        if (patientNameTextField.getText().isEmpty() || staffIDTextField.getText().isEmpty()
-                || dateOfBirthSelector.getValue() == null || medAmountTextField.getText().isEmpty()){
+        if (patientIdComboBox.getSelectionModel().isEmpty() || staffIdComboBox.getSelectionModel().isEmpty()
+                || dateOfBirthSelector.getValue() == null || medAmountTextField.getText().isEmpty()) {
             errorMessage = "Please make sure all fields are filled with the appropriate type.";
             System.out.println(errorMessage);
             errorMessageDisplay.setText(errorMessage);

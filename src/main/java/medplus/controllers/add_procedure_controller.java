@@ -58,6 +58,7 @@ public class add_procedure_controller {
             int newProcedureId = Integer
                     .parseInt(procedureList.get(procedureList.size() - 1).getProcedureId().substring(1))
                     + 1;
+            System.out.println(newProcedureId);
             String newProcedureIdFormatted = String.format("PD%03d", newProcedureId);
 
             Procedure newProcedure = new Procedure(newProcedureIdFormatted, patientNameTextField.getText(),

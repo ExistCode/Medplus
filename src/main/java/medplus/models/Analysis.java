@@ -12,7 +12,7 @@ public class Analysis {
     private String testInformation;
 
     // Constructor
-    public Analysis(String aId, String pName, String sId, String testType, String summary, LocalDate d,  String info) {
+    public Analysis(String aId, String pName, String sId, String testType, String summary, LocalDate d, String info) {
         analysisId = aId;
         patientName = pName;
         staffId = sId;

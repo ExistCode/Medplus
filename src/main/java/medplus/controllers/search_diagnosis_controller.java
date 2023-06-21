@@ -98,7 +98,7 @@ public class search_diagnosis_controller {
     void switchToAddScreen(MouseEvent event) throws IOException {
         App.setRoot("add_diagnosis_screen");
     }
-    //cannot function
+    // cannot function
 
     @FXML
     void switchToUpdateScreen(MouseEvent event) throws IOException {
@@ -120,7 +120,8 @@ public class search_diagnosis_controller {
 
     @FXML
     public void initialize() {
-        ObservableList<DiagnosisTableDataModel> diagnosisDataList = DiagnosisTableDataModel.convertDiagnosisDataToDiagnosisTableDataModel();
+        ObservableList<DiagnosisTableDataModel> diagnosisDataList = DiagnosisTableDataModel
+                .convertDiagnosisDataToDiagnosisTableDataModel();
 
         TableColumn diagnosisIdColumn = new TableColumn("Diagnosis ID");
         TableColumn patientNameColumn = new TableColumn("Patient Name");
@@ -128,7 +129,8 @@ public class search_diagnosis_controller {
         TableColumn dateColumn = new TableColumn("Diagnosis Date");
         TableColumn sicknessColumn = new TableColumn("Sickness");
 
-        diagnosisTable.getColumns().addAll(diagnosisIdColumn, patientNameColumn, staffIdColumn, dateColumn, sicknessColumn);
+        diagnosisTable.getColumns().addAll(diagnosisIdColumn, patientNameColumn, staffIdColumn, dateColumn,
+                sicknessColumn);
 
         // Set cell value factories for each TableColumn
         diagnosisIdColumn.setCellValueFactory(new PropertyValueFactory<>("diagnosisId"));
@@ -160,4 +162,3 @@ public class search_diagnosis_controller {
         });
     }
 }
-

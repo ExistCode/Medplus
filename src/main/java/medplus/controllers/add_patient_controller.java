@@ -23,7 +23,6 @@ import medplus.data.PatientData;
 import medplus.models.Patient;
 
 public class add_patient_controller {
-    ArrayList<String> bloodTypeOption = new ArrayList<String>();
     ObservableList<String> bloodTypeOptions = FXCollections.observableArrayList(
             "A-",
             "A+",
@@ -99,7 +98,7 @@ public class add_patient_controller {
                     addressTextField.getText(),
                     contactNumberTextField.getText());
             PatientData.addNewPatient(newPatient);
-            PatientData.initPatientData.setPatientName(nameTextField.getText());
+            PatientData.initPatientData.setPatientId(nameTextField.getText());
             PatientData.initPatientData.setPatientGender(Gender.getSelectionModel().getSelectedItem());
             PatientData.initPatientData.setPatientDateOfBirth(dateOfBirth);
             PatientData.initPatientData

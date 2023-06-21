@@ -12,6 +12,7 @@ import java.time.LocalTime;
 import java.util.List;
 
 public class MedicalHistoryTableDataModel {
+    private SimpleStringProperty medHisId;
     private SimpleStringProperty patientId;
     private SimpleStringProperty staffId;
     private SimpleObjectProperty<LocalDate> date;
@@ -20,8 +21,10 @@ public class MedicalHistoryTableDataModel {
     private SimpleStringProperty observation;
     private SimpleStringProperty complication;
 
-    public MedicalHistoryTableDataModel(String patientId, String staffId, LocalDate date, LocalTime time,
+    public MedicalHistoryTableDataModel(String medHisId, String patientId, String staffId, LocalDate date,
+            LocalTime time,
             String result, String observation, String complication) {
+        this.medHisId = new SimpleStringProperty(medHisId);
         this.patientId = new SimpleStringProperty(patientId);
         this.staffId = new SimpleStringProperty(staffId);
         this.date = new SimpleObjectProperty<>(date);
@@ -36,6 +39,7 @@ public class MedicalHistoryTableDataModel {
         ObservableList<MedicalHistoryTableDataModel> convertedList = FXCollections.observableArrayList();
 
         for (int i = 0; i < initialMedicalHistoryList.size(); i++) {
+            String medHisId = initialMedicalHistoryList.get(i).getMedHisId();
             String patientId = initialMedicalHistoryList.get(i).getPatientId();
             String staffId = initialMedicalHistoryList.get(i).getStaffId();
             LocalDate date = initialMedicalHistoryList.get(i).getDate();
@@ -44,11 +48,24 @@ public class MedicalHistoryTableDataModel {
             String observation = initialMedicalHistoryList.get(i).getObservation();
             String complication = initialMedicalHistoryList.get(i).getComplication();
 
-            convertedList.add(new MedicalHistoryTableDataModel(patientId, staffId, date, time, result, observation,
-                    complication));
+            convertedList
+                    .add(new MedicalHistoryTableDataModel(medHisId, patientId, staffId, date, time, result, observation,
+                            complication));
         }
 
         return convertedList;
+    }
+
+    public String getMedHisId() {
+        return medHisId.get();
+    }
+
+    public SimpleStringProperty medHisIdProperty() {
+        return medHisId;
+    }
+
+    public void setMedHisId(String medHisId) {
+        this.medHisId.set(medHisId);
     }
 
     public String getPatientId() {

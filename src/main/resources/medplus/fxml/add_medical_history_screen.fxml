@@ -20,17 +20,17 @@
             <Font name="SF Pro Rounded Bold" size="32.0" />
          </font>
       </Text>
-      <Text fill="#089bab" layoutX="154.0" layoutY="202.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Patient Name">
+      <Text fill="#089bab" layoutX="154.0" layoutY="202.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Patient ID">
          <font>
             <Font name="SF Pro Rounded Bold" size="24.0" />
          </font>
       </Text>
-      <TextField fx:id="patientNameTextField" layoutX="154.0" layoutY="219.0" prefHeight="60.0" prefWidth="450.0" promptText="Enter Patient Name" style="-fx-background-color: white; -fx-background-radius: 16; -fx-border-radius: 16; -fx-border-color: #089bab;">
+      <TextField fx:id="patientIdTextField" editable="false" layoutX="154.0" layoutY="219.0" prefHeight="60.0" prefWidth="450.0" promptText="Enter Patient Name" style="-fx-background-color: white; -fx-background-radius: 16; -fx-border-radius: 16; -fx-border-color: #089bab;">
          <font>
             <Font name="SF Pro Text Semibold" size="24.0" />
          </font>
       </TextField>
-      <TextField fx:id="summaryTextField" layoutX="716.0" layoutY="345.0" prefHeight="60.0" prefWidth="450.0" promptText="Enter result here" style="-fx-background-color: white; -fx-background-radius: 16; -fx-border-radius: 16; -fx-border-color: #089bab;">
+      <TextField fx:id="resultTextField" layoutX="716.0" layoutY="345.0" prefHeight="60.0" prefWidth="450.0" promptText="Enter result here" style="-fx-background-color: white; -fx-background-radius: 16; -fx-border-radius: 16; -fx-border-color: #089bab;">
          <font>
             <Font name="SF Pro Text Semibold" size="24.0" />
          </font>
@@ -40,7 +40,7 @@
             <Font name="SF Pro Text Semibold" size="24.0" />
          </font>
       </TextField>
-      <Text fill="#089bab" layoutX="716.0" layoutY="201.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Staff ID">
+      <Text fill="#089bab" layoutX="716.0" layoutY="201.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Attending Staff ID">
          <font>
             <Font name="SF Pro Rounded Bold" size="24.0" />
          </font>
@@ -50,7 +50,7 @@
             <Font name="SF Pro Rounded Bold" size="24.0" />
          </font>
       </Text>
-      <Pane fx:id="addAnalysisButton" layoutX="460.0" layoutY="598.0" prefHeight="90.0" prefWidth="359.0" style="-fx-background-color: FEAD54; -fx-background-radius: 40;">
+      <Pane fx:id="addMedHisButton" layoutX="460.0" layoutY="598.0" onMouseClicked="#addNewMedHis" prefHeight="90.0" prefWidth="359.0" style="-fx-background-color: FEAD54; -fx-background-radius: 40;">
          <children>
             <Text fill="WHITE" layoutX="37.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add Medical History" textAlignment="CENTER">
                <font>
@@ -64,13 +64,23 @@
             <Font name="SF Pro Rounded Bold" size="24.0" />
          </font>
       </Text>
-      <DatePicker fx:id="dateAnalysisDatePicker" layoutX="162.0" layoutY="342.0" prefHeight="60.0" prefWidth="450.0" promptText="YYYY-MM-DD" style="-fx-background-color: white; -fx-border-radius: 16; -fx-background-radius: 16; -fx-font-size: 24;" />
-      <TextField fx:id="testInfoTextField" layoutX="162.0" layoutY="472.0" prefHeight="60.0" prefWidth="1004.0" promptText="Enter your complication details here" style="-fx-background-color: white; -fx-background-radius: 16; -fx-border-radius: 16; -fx-border-color: #089bab;">
+      <DatePicker fx:id="medHisDatePicker" layoutX="162.0" layoutY="342.0" prefHeight="60.0" prefWidth="450.0" promptText="YYYY-MM-DD" style="-fx-background-color: white; -fx-border-radius: 16; -fx-background-radius: 16; -fx-font-size: 24;" />
+      <TextField fx:id="complicationTextField" layoutX="716.0" layoutY="469.0" prefHeight="60.0" prefWidth="450.0" promptText="Enter your complication details here" style="-fx-background-color: white; -fx-background-radius: 16; -fx-border-radius: 16; -fx-border-color: #089bab;">
          <font>
             <Font name="SF Pro Text Semibold" size="24.0" />
          </font>
       </TextField>
-      <Text fill="#089bab" layoutX="160.0" layoutY="447.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Complication">
+      <Text fill="#089bab" layoutX="716.0" layoutY="449.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Complication">
+         <font>
+            <Font name="SF Pro Rounded Bold" size="24.0" />
+         </font>
+      </Text>
+      <TextField fx:id="observationTextField" layoutX="162.0" layoutY="469.0" prefHeight="60.0" prefWidth="450.0" promptText="Enter your observation details here" style="-fx-background-color: white; -fx-background-radius: 16; -fx-border-radius: 16; -fx-border-color: #089bab;">
+         <font>
+            <Font name="SF Pro Text Semibold" size="24.0" />
+         </font>
+      </TextField>
+      <Text fill="#089bab" layoutX="162.0" layoutY="449.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Observation">
          <font>
             <Font name="SF Pro Rounded Bold" size="24.0" />
          </font>

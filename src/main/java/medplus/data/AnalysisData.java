@@ -32,14 +32,14 @@ public class AnalysisData {
                         while ((line = reader.readLine()) != null) {
                                 String[] analysisData = line.split(",");
                                 String analysisId = analysisData[0].trim();
-                                String patientName = analysisData[1].trim();
+                                String patientId = analysisData[1].trim();
                                 String staffId = analysisData[2].trim();
                                 String typeOfTest = analysisData[3].trim();
                                 String resultSummary = analysisData[4].trim();
                                 LocalDate date = LocalDate.parse(analysisData[5].trim());
                                 String testInformation = analysisData[6].trim();
 
-                                Analysis analysis = new Analysis(analysisId, patientName, staffId, typeOfTest,
+                                Analysis analysis = new Analysis(analysisId, patientId, staffId, typeOfTest,
                                                 resultSummary, date, testInformation);
                                 analysisList.add(analysis);
                         }
@@ -138,7 +138,10 @@ public class AnalysisData {
                 try {
                         BufferedReader reader = new BufferedReader(new FileReader(fileName));
                         while ((line = reader.readLine()) != null) {
+
                                 if (line.contains(newAnalysisData.getAnalysisId())) {
+                                        System.out.println(newAnalysisData.getAnalysisId());
+
                                         fetchedAnalysisListAfterDeletion.add(newAnalysisData.getAnalysisId() + ","
 
                                                         + newAnalysisData.getPatientName() + ","
@@ -147,6 +150,7 @@ public class AnalysisData {
                                                         + newAnalysisData.getResultSummary() + ","
                                                         + newAnalysisData.getDate() + ","
                                                         + newAnalysisData.getTestInformation());
+
                                 } else {
                                         fetchedAnalysisListAfterDeletion.add(line);
                                 }

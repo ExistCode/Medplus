@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
@@ -25,11 +26,6 @@
             <Font name="Verdana Bold" size="32.0" />
          </font>
       </Text>
-      <TextField fx:id="patientNameTextField" layoutX="154.0" layoutY="219.0" prefHeight="60.0" prefWidth="450.0" promptText="Enter your full name" style="-fx-background-color: white; -fx-background-radius: 16; -fx-border-radius: 16; -fx-border-color: #089bab;">
-         <font>
-            <Font name="Verdana" size="24.0" />
-         </font>
-      </TextField>
       <Text fill="#089bab" layoutX="154.0" layoutY="332.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Start of Treatment Date">
          <font>
             <Font name="Verdana Bold" size="32.0" />
@@ -45,7 +41,7 @@
             <Font name="Verdana Bold" size="32.0" />
          </font>
       </Text>
-      <Pane fx:id="updateTreatmentButton" layoutX="500.0" layoutY="630.0" prefHeight="60.0" prefWidth="270.0" style="-fx-background-color: FEAD54; -fx-background-radius: 40;">
+      <Pane fx:id="updateTreatmentButton" layoutX="500.0" layoutY="624.0" onMouseClicked="#updateTreatment" prefHeight="60.0" prefWidth="270.0" style="-fx-background-color: FEAD54; -fx-background-radius: 40;">
          <children>
             <Text fill="WHITE" layoutX="15.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Update Treatment">
                <font>
@@ -64,12 +60,14 @@
             <Font name="Verdana" size="24.0" />
          </font>
       </TextField>
-      <DatePicker fx:id="dateEndDatePicker" layoutX="716.0" layoutY="345.0" prefHeight="55.0" prefWidth="464.0" promptText="YYYY-MM-DD" style="-fx-background-color: white; -fx-border-radius: 16; -fx-background-radius: 16; -fx-font-size: 24;" />
+      <DatePicker fx:id="dateEndDatePicker" layoutX="716.0" layoutY="345.0" prefHeight="60.0" prefWidth="450.0" promptText="YYYY-MM-DD" style="-fx-background-color: white; -fx-border-radius: 16; -fx-background-radius: 16; -fx-font-size: 24;" />
       <DatePicker fx:id="dateStartDatePicker" layoutX="154.0" layoutY="345.0" prefHeight="60.0" prefWidth="450.0" promptText="YYYY-MM-DD" style="-fx-background-color: white; -fx-border-radius: 16; -fx-background-radius: 16; -fx-font-size: 24;" />
-      <TextField fx:id="staffIDTextField" layoutX="716.0" layoutY="219.0" prefHeight="55.0" prefWidth="464.0" promptText="Enter your staff ID" style="-fx-background-color: white; -fx-background-radius: 16; -fx-border-radius: 16; -fx-border-color: #089bab;">
+      <Text fx:id="errorMessageDisplay" fill="#f9988b" layoutX="4.0" layoutY="708.0" strokeType="OUTSIDE" strokeWidth="0.0" text=" " textAlignment="CENTER" wrappingWidth="1271.199951171875">
          <font>
-            <Font name="Verdana" size="24.0" />
+            <Font size="16.0" />
          </font>
-      </TextField>
+      </Text>
+      <ComboBox fx:id="patientIdComboBox" layoutX="154.0" layoutY="219.0" prefHeight="60.0" prefWidth="450.0" promptText="Patient Name" style="-fx-border-color: #089bab; -fx-background-color: white; -fx-background-radius: 16; -fx-border-radius: 16; -fx-font-size: 24;" />
+      <ComboBox fx:id="staffIdComboBox" layoutX="716.0" layoutY="219.0" prefHeight="60.0" prefWidth="450.0" promptText="Staff Id" style="-fx-border-color: #089bab; -fx-background-color: white; -fx-background-radius: 16; -fx-border-radius: 16; -fx-font-size: 24;" />
    </children>
 </Pane>
