@@ -3,10 +3,14 @@ package medplus.controllers;
 import java.io.IOException;
 
 import javafx.collections.ObservableList;
+import javafx.collections.transformation.FilteredList;
+import javafx.collections.transformation.SortedList;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.Labeled;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
@@ -18,6 +22,9 @@ public class search_diagnosis_controller {
 
     @FXML
     private Pane addButton;
+
+    @FXML
+    private TextField searchDiagnosisText;
 
     @FXML
     private Button analysisButton;
@@ -48,6 +55,9 @@ public class search_diagnosis_controller {
 
     @FXML
     private Pane updateButton;
+
+    @FXML
+    private TableView<DiagnosisTableDataModel> diagnosisTable;
 
     @FXML
     void changedToAnalysis(MouseEvent event) throws IOException {
@@ -102,11 +112,24 @@ public class search_diagnosis_controller {
 
     @FXML
     void switchToUpdateScreen(MouseEvent event) throws IOException {
-        App.setRoot("update_diagnosis_screen");
-    }
+        DiagnosisTableDataModel selectedDiagnosis = diagnosisTable.getSelectionModel().getSelectedItem();
+        if (selectedDiagnosis != null) {
+            try {
+                DiagnosisData.initdiagnosisData.setDiagnosisId(selectedDiagnosis.getDiagnosisId());
+                DiagnosisData.initdiagnosisData.setPatientName(selectedDiagnosis.getPatientName());
+                DiagnosisData.initdiagnosisData.setStaffId(selectedDiagnosis.getStaffId());
+                DiagnosisData.initdiagnosisData.setDate(selectedDiagnosis.getDate());
+                DiagnosisData.initdiagnosisData.setDiagnosis(selectedDiagnosis.getDiagnosis());
 
-    @FXML
-    private TableView<DiagnosisTableDataModel> diagnosisTable;
+                App.setRoot("update_diagnosis_screen");
+
+            } catch (IOException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+
+        }
+    }
 
     @FXML
     void deleteRow(MouseEvent event) {
@@ -118,6 +141,9 @@ public class search_diagnosis_controller {
 
     }
 
+    /**
+     * 
+     */
     @FXML
     public void initialize() {
         ObservableList<DiagnosisTableDataModel> diagnosisDataList = DiagnosisTableDataModel
@@ -127,21 +153,48 @@ public class search_diagnosis_controller {
         TableColumn patientNameColumn = new TableColumn("Patient Name");
         TableColumn staffIdColumn = new TableColumn("Staff ID");
         TableColumn dateColumn = new TableColumn("Diagnosis Date");
-        TableColumn sicknessColumn = new TableColumn("Sickness");
+        TableColumn diagnosisColumn = new TableColumn("Diagnosis");
 
         diagnosisTable.getColumns().addAll(diagnosisIdColumn, patientNameColumn, staffIdColumn, dateColumn,
-                sicknessColumn);
+                diagnosisColumn);
 
         // Set cell value factories for each TableColumn
         diagnosisIdColumn.setCellValueFactory(new PropertyValueFactory<>("diagnosisId"));
         patientNameColumn.setCellValueFactory(new PropertyValueFactory<>("patientName"));
         staffIdColumn.setCellValueFactory(new PropertyValueFactory<>("staffId"));
         dateColumn.setCellValueFactory(new PropertyValueFactory<>("date"));
-        sicknessColumn.setCellValueFactory(new PropertyValueFactory<>("sickness"));
-
+        diagnosisColumn.setCellValueFactory(new PropertyValueFactory<>("diagnosis"));
         diagnosisTable.setItems(diagnosisDataList);
 
-        diagnosisTable.setOnMouseClicked(event -> {
+        FilteredList<DiagnosisTableDataModel> filteredData = new FilteredList<>(diagnosisDataList, b -> true);
+        searchDiagnosisText.textProperty().addListener((observable, oldvalue, newvalue) -> {
+            filteredData.setPredicate(DiagnosisTableDataModel -> {
+                if (newvalue.isEmpty() || newvalue.isBlank() || newvalue == null) {
+                    return true;
+                }
+
+                String searchKeyword = newvalue.toLowerCase();
+                if (DiagnosisTableDataModel.getPatientName().toLowerCase().indexOf(searchKeyword) > -1) {
+                    return true;
+                } else if (DiagnosisTableDataModel.getDiagnosisId().toLowerCase().indexOf(searchKeyword) > -1) {
+                    return true;
+                } else if (DiagnosisTableDataModel.getStaffId().toLowerCase().indexOf(searchKeyword) > -1) {
+                    return true;
+                } else if (DiagnosisTableDataModel.getDate().toString().toLowerCase().indexOf(searchKeyword) > -1) {
+                    return true;
+                } else if (DiagnosisTableDataModel.getDiagnosis().toLowerCase().indexOf(searchKeyword) > -1) {
+                    return true;
+                } else {
+                    return false;
+                }
+            });
+        });
+        SortedList<DiagnosisTableDataModel> sortedDiagnosisData = new SortedList<>(filteredData);
+        sortedDiagnosisData.comparatorProperty().bind(diagnosisTable.comparatorProperty());
+        diagnosisTable.setItems(sortedDiagnosisData);
+
+
+        /*diagnosisTable.setOnMouseClicked(event -> {
             if (event.getClickCount() == 2) {
                 DiagnosisTableDataModel selectedDiagnosis = diagnosisTable.getSelectionModel().getSelectedItem();
                 if (selectedDiagnosis != null) {
@@ -150,15 +203,15 @@ public class search_diagnosis_controller {
                     DiagnosisData.initdiagnosisData.setPatientName(selectedDiagnosis.getPatientName());
                     DiagnosisData.initdiagnosisData.setStaffId(selectedDiagnosis.getStaffId());
                     DiagnosisData.initdiagnosisData.setDate(selectedDiagnosis.getDate());
-                    DiagnosisData.initdiagnosisData.setSickness(selectedDiagnosis.getSickness());
+                    DiagnosisData.initdiagnosisData.setDiagnosis(selectedDiagnosis.getDiagnosis());
 
                     System.out.println(DiagnosisData.initdiagnosisData.getDiagnosisId());
                     System.out.println(DiagnosisData.initdiagnosisData.getPatientName());
                     System.out.println(DiagnosisData.initdiagnosisData.getStaffId());
                     System.out.println(DiagnosisData.initdiagnosisData.getDate());
-                    System.out.println(DiagnosisData.initdiagnosisData.getSickness());
+                    System.out.println(DiagnosisData.initdiagnosisData.getDiagnosis());
                 }
             }
-        });
+        }); */
     }
 }

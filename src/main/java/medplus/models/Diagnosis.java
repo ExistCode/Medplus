@@ -8,15 +8,18 @@ public class Diagnosis {
     private String patientName;
     private String staffId;
     private LocalDate date;
-    private String sickness;
+    private String diagnosis;
 
     // Constructor
-    public Diagnosis(String dId, String pName, String sId, LocalDate d, String s) {
+    public Diagnosis(String dId, String pName, String sId, LocalDate d, String ds) {
         diagnosisId = dId;
         patientName = pName;
         staffId = sId;
         date = d;
-        sickness = s;
+        diagnosis = ds;
+    }
+
+    public Diagnosis(String diagnosisId2, String patientName2, String staffId2, LocalDate date2, Diagnosis diagnosis2) {
     }
 
     // Setter functions
@@ -36,8 +39,8 @@ public class Diagnosis {
         date = d;
     }
 
-    public void setSickness(String s) {
-        sickness = s;
+    public void setDiagnosis(String ds) {
+        diagnosis = ds;
     }
 
     // Getter functions
@@ -57,7 +60,7 @@ public class Diagnosis {
         return date;
     }
 
-    public String getSickness() {
-        return sickness;
+    public String getDiagnosis() {
+        return diagnosis;
     }
 }

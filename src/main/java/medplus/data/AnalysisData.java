@@ -2,9 +2,6 @@ package medplus.data;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
-
-import javafx.scene.paint.Stop;
 
 import java.time.LocalDate;
 import java.io.*;

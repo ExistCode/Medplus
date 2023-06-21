@@ -1,2 +1,3 @@
 Medicine ID,Patient Name,Doctor ID,Medicine Name,Amount,Dose Detail
 M002,John Doe,S001,amoxilin,1,-
+M003,Emily Johnson,S004,ABCDE,2,2per day

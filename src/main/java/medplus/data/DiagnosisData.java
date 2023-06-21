@@ -7,6 +7,7 @@ import java.util.Scanner;
 import java.time.LocalDate;
 import java.io.*;
 
+import medplus.models.Analysis;
 import medplus.models.Diagnosis;
 
 public class DiagnosisData {
@@ -33,11 +34,11 @@ public class DiagnosisData {
                                 String patientName = diagnosisData[1].trim();
                                 String staffId = diagnosisData[2].trim();
                                 LocalDate date = LocalDate.parse(diagnosisData[3].trim());
-                                String sickness = diagnosisData[4].trim();
+                                String diagnosis = diagnosisData[4].trim();
                                 
 
-                                Diagnosis diagnosis = new Diagnosis(diagnosisId, patientName, staffId, date, sickness);
-                                diagnosisList.add(diagnosis);
+                                Diagnosis ds = new Diagnosis(diagnosisId, patientName, staffId, date, diagnosis);
+                                diagnosisList.add(ds);
                         }
 
                         reader.close();
@@ -54,7 +55,7 @@ public class DiagnosisData {
                 try {
                         if (database.createNewFile()) {
                                 FileWriter writer = new FileWriter(fileName, true);
-                                writer.append("Diagnosis ID, Patient Name, Staff ID, Date, Sickness");
+                                writer.append("Diagnosis ID, Patient Name, Staff ID, Date, Diagnosis");
                                 writer.append("\n");
                                 writer.close();
                                 System.out.println("File created successfully!");
@@ -75,7 +76,7 @@ public class DiagnosisData {
                                         newDiagnosis.getPatientName(),
                                         newDiagnosis.getStaffId(),
                                         newDiagnosis.getDate(),
-                                        newDiagnosis.getSickness());
+                                        newDiagnosis.getDiagnosis());
 
                         writer.append(diagnosisData);
                         writer.append("\n");
@@ -125,22 +126,28 @@ public class DiagnosisData {
                 }
         }
 
-        public static void updateDiagnosis(ArrayList<String> arrayList, Scanner input) {
+        public static void updateDiagnosis(Diagnosis newDiagnosisData) {
+                ArrayList<String> fetchedDiagnosisListAfterDeletion = new ArrayList<>();
+                String line;
+
                 try {
                         BufferedReader reader = new BufferedReader(new FileReader(fileName));
-                        System.out.println("Please enter the diagnosis ID or keyword to update the record:");
-                        String searchKey = input.next();
-                        String line;
                         while ((line = reader.readLine()) != null) {
-                                if (line.contains(searchKey)) {
-                                        System.out.println("Enter the attribute value you want to change:");
-                                        String oldValue = input.next();
-                                        System.out.println("Enter the new attribute value:");
-                                        String newValue = input.next();
-                                        arrayList.add(line.replace(oldValue, newValue));
+
+                                if (line.contains(newDiagnosisData.getDiagnosisId())) {
+                                        System.out.println(newDiagnosisData.getDiagnosisId());
+
+                                        fetchedDiagnosisListAfterDeletion.add(newDiagnosisData.getDiagnosisId() + ","
+
+                                                        + newDiagnosisData.getPatientName() + ","
+                                                        + newDiagnosisData.getStaffId() + ","
+                                                        + newDiagnosisData.getDate() + ","
+                                                        + newDiagnosisData.getDiagnosis());
+
                                 } else {
-                                        arrayList.add(line);
+                                        fetchedDiagnosisListAfterDeletion.add(line);
                                 }
+
                         }
                         reader.close();
                 } catch (IOException e) {
@@ -149,8 +156,8 @@ public class DiagnosisData {
 
                 try {
                         FileWriter writer = new FileWriter(fileName);
-                        for (int i = 0; i < arrayList.size(); i++) {
-                                writer.append(arrayList.get(i));
+                        for (int i = 0; i < fetchedDiagnosisListAfterDeletion.size(); i++) {
+                                writer.append(fetchedDiagnosisListAfterDeletion.get(i));
                                 writer.append("\n");
                         }
                         writer.close();

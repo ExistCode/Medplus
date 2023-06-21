@@ -28,19 +28,13 @@ public class add_diagnosis_controller {
     private ImageView backButton;
 
     @FXML
-    private DatePicker dateOfBirthSelector;
+    private DatePicker dateOfDiagnosisSelector;
 
     @FXML
-    private TextField medAmountTextField;
+    private TextField diagnosisTextField;
 
     @FXML
-    private TextField patientNameTextField;
-
-    @FXML
-    private TextField staffIDTextField;
-
-    @FXML
-    private ComboBox<String> patientIdComboBox;
+    private ComboBox<String> patientNameComboBox;
 
     @FXML
     private ComboBox<String> staffIdComboBox;
@@ -70,7 +64,7 @@ public class add_diagnosis_controller {
 
     @FXML
     public void initialize() {
-        patientIdComboBox.setItems(fetchPatientName());
+        patientNameComboBox.setItems(fetchPatientName());
         staffIdComboBox.setItems(fetchStaffId());
     }
 
@@ -85,15 +79,15 @@ public class add_diagnosis_controller {
 
         if (errorMessage == "") {
             List<Diagnosis> diagnosisList = DiagnosisData.fetchDiagnosisDataFromDatabase();
-            int newDiagnosisId = Integer
-                    .parseInt(diagnosisList.get(diagnosisList.size() - 1).getDiagnosisId().substring(1))
+            int newDiagnosisId = Integer.parseInt(diagnosisList.get(diagnosisList.size() - 1).getDiagnosisId().substring(1))
                     + 1;
             String newDiagnosisIdFormatted = String.format("D%03d", newDiagnosisId);
 
-            Diagnosis newDiagnosis = new Diagnosis(newDiagnosisIdFormatted, patientIdComboBox.getSelectionModel().getSelectedItem(),
+            Diagnosis newDiagnosis = new Diagnosis(newDiagnosisIdFormatted, 
+                    patientNameComboBox.getSelectionModel().getSelectedItem(),
                     staffIdComboBox.getSelectionModel().getSelectedItem(),
-                    dateOfBirthSelector.getValue(),
-                    medAmountTextField.getText());
+                    dateOfDiagnosisSelector.getValue(),
+                    diagnosisTextField.getText());
             DiagnosisData.addNewDiagnosis(newDiagnosis);
             App.setRoot("search_diagnosis_screen");
         } else {
@@ -105,8 +99,8 @@ public class add_diagnosis_controller {
     private String validateInput() {
         String errorMessage = "";
 
-        if (patientIdComboBox.getSelectionModel().isEmpty() || staffIdComboBox.getSelectionModel().isEmpty()
-                || dateOfBirthSelector.getValue() == null || medAmountTextField.getText().isEmpty()) {
+        if (patientNameComboBox.getSelectionModel().isEmpty() || staffIdComboBox.getSelectionModel().isEmpty()
+                || dateOfDiagnosisSelector.getValue() == null || diagnosisTextField.getText().isEmpty()) {
             errorMessage = "Please make sure all fields are filled with the appropriate type.";
             System.out.println(errorMessage);
             errorMessageDisplay.setText(errorMessage);

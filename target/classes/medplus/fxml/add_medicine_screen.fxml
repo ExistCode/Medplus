@@ -24,7 +24,7 @@
             <Font name="Verdana Bold" size="28.0" />
          </font>
       </Text>
-      <Text fill="#089bab" layoutX="716.0" layoutY="201.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Doctor ID">
+      <Text fill="#089bab" layoutX="716.0" layoutY="201.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Staff ID">
          <font>
             <Font name="Verdana Bold" size="28.0" />
          </font>

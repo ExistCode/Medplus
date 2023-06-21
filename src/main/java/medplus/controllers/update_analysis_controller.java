@@ -2,7 +2,6 @@ package medplus.controllers;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.List;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -16,7 +15,6 @@ import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
 import medplus.App;
 import medplus.data.AnalysisData;
-import medplus.data.PatientData;
 import medplus.models.Analysis;
 import medplus.tableModels.PatientTableDataModel;
 import medplus.tableModels.StaffTableDataModel;
@@ -24,8 +22,10 @@ import medplus.tableModels.StaffTableDataModel;
 public class update_analysis_controller {
     @FXML
     private ComboBox<String> staffIdComboBox;
+
     @FXML
-    private ComboBox<String> patientIdComboBox;
+    private ComboBox<String> patientNameComboBox;
+
     ArrayList<String> analysisTypeOption = new ArrayList<String>();
     ObservableList<String> analysisTypeOptions = FXCollections.observableArrayList(
             "Bioblood Analysis",
@@ -45,16 +45,11 @@ public class update_analysis_controller {
     private DatePicker dateAnalysisDatePicker;
 
     @FXML
-    private TextField patientNameTextField;
-
-    @FXML
-    private TextField staffIDTextField;
-
-    @FXML
     private TextField testInformationTextField;
 
     @FXML
     private Pane updateAnalysisButton;
+
     @FXML
     private Text errorMessageDisplay;
 
@@ -65,16 +60,15 @@ public class update_analysis_controller {
 
     @FXML
     public void initialize() {
-        patientIdComboBox.setValue(AnalysisData.initanalysisData.getPatientName());
+        patientNameComboBox.setValue(AnalysisData.initanalysisData.getPatientName());
         staffIdComboBox.setValue(AnalysisData.initanalysisData.getStaffId());
         analysisTypeComboBox.setValue(AnalysisData.initanalysisData.getTypeOfTest());
         ResultsTextField.setText(AnalysisData.initanalysisData.getResultSummary());
         dateAnalysisDatePicker.setValue(AnalysisData.initanalysisData.getDate());
         testInformationTextField.setText(AnalysisData.initanalysisData.getTestInformation());
         analysisTypeComboBox.setItems(analysisTypeOptions);
-        patientIdComboBox.setItems(fetchPatientName());
+        patientNameComboBox.setItems(fetchPatientName());
         staffIdComboBox.setItems(fetchStaffId());
-
     }
 
     @FXML
@@ -89,7 +83,7 @@ public class update_analysis_controller {
             // String newAnalysisIdFormatted = String.format("A%03d", newAnalysisId);
 
             Analysis newAnalysis = new Analysis(AnalysisData.initanalysisData.getAnalysisId(),
-                    patientIdComboBox.getSelectionModel().getSelectedItem(),
+                    patientNameComboBox.getSelectionModel().getSelectedItem(),
                     staffIdComboBox.getSelectionModel().getSelectedItem(),
                     analysisTypeComboBox.getSelectionModel().getSelectedItem(),
                     ResultsTextField.getText(),
@@ -108,7 +102,7 @@ public class update_analysis_controller {
     private String validateInput() {
         String errorMessage = "";
 
-        if (patientIdComboBox.getSelectionModel().isEmpty() || staffIdComboBox.getSelectionModel().isEmpty()
+        if (patientNameComboBox.getSelectionModel().isEmpty() || staffIdComboBox.getSelectionModel().isEmpty()
                 || analysisTypeComboBox.getSelectionModel().isEmpty() || ResultsTextField.getText().isEmpty()
                 || dateAnalysisDatePicker.getValue() == null || testInformationTextField.getText().isEmpty()) {
             errorMessage = "Please make sure all fields are filled with the appropriate type.";
@@ -121,11 +115,11 @@ public class update_analysis_controller {
     ObservableList<String> fetchPatientName() {
         ObservableList<PatientTableDataModel> patientDataList = PatientTableDataModel
                 .convertPatientDataToPatientTableDataModel();
-        ObservableList<String> patientId = FXCollections.observableArrayList();
+        ObservableList<String> patientName = FXCollections.observableArrayList();
         for (PatientTableDataModel patient : patientDataList) {
-            patientId.add(patient.getName());
+            patientName.add(patient.getName());
         }
-        return patientId;
+        return patientName;
     }
 
     ObservableList<String> fetchStaffId() {
