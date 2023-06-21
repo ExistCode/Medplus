@@ -79,11 +79,12 @@ public class add_diagnosis_controller {
 
         if (errorMessage == "") {
             List<Diagnosis> diagnosisList = DiagnosisData.fetchDiagnosisDataFromDatabase();
-            int newDiagnosisId = Integer.parseInt(diagnosisList.get(diagnosisList.size() - 1).getDiagnosisId().substring(1))
+            int newDiagnosisId = Integer
+                    .parseInt(diagnosisList.get(diagnosisList.size() - 1).getDiagnosisId().substring(1))
                     + 1;
             String newDiagnosisIdFormatted = String.format("D%03d", newDiagnosisId);
 
-            Diagnosis newDiagnosis = new Diagnosis(newDiagnosisIdFormatted, 
+            Diagnosis newDiagnosis = new Diagnosis(newDiagnosisIdFormatted,
                     patientNameComboBox.getSelectionModel().getSelectedItem(),
                     staffIdComboBox.getSelectionModel().getSelectedItem(),
                     dateOfDiagnosisSelector.getValue(),

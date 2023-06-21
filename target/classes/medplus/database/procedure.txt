@@ -1,0 +1,5 @@
+Procedure ID,Patient Name,Staff ID,Date,Time,Procedure Type,Procedure Description
+PD001,Lim Chuan Zhe,S001,2023-01-01,12:12:12,Chemotherapy,Administering medications to treat cancer
+PD002,Hans,S009,2023-06-10,12:30:19,-,-
+PD003,Hans,S009,2023-06-09,12:30:40,-,-
+PD004,Hans,S009,2023-06-09,12:30:40,Sick,-

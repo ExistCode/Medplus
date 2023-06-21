@@ -124,6 +124,7 @@ public class search_screen_controller {
 
                 App.setRoot("update_analysis_screen");
 
+
             } catch (IOException e) {
                 // TODO Auto-generated catch block
                 e.printStackTrace();

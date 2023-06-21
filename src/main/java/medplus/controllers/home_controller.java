@@ -3,6 +3,7 @@ package medplus.controllers;
 import java.io.IOException;
 import java.text.Format;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -12,10 +13,16 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
 import medplus.App;
+import medplus.data.AppointmentData;
 import medplus.data.PatientData;
+import medplus.data.RoomData;
 import medplus.data.StaffData;
+import medplus.data.TreatmentData;
+import medplus.models.Appointment;
 import medplus.models.Patient;
+import medplus.models.Room;
 import medplus.models.Staff;
+import medplus.models.Treatment;
 
 public class home_controller {
     private int numOfDoctor;
@@ -64,7 +71,21 @@ public class home_controller {
     private Pane seeDetails;
     @FXML
     private Pane seeDetailsSecond;
+    @FXML
+    private Text firstAppointmentDetails;
 
+    @FXML
+    private Text firstAppointmentStaffName;
+    @FXML
+    private Text firstPatientNameAppointment;
+    @FXML
+    private Text secondAppointmentDetails;
+
+    @FXML
+    private Text secondAppointmentStaffName;
+
+    @FXML
+    private Text secondPatientNameAppointment;
     @FXML
     private Pane seeDetailsThird;
 
@@ -112,6 +133,9 @@ public class home_controller {
         datetime.setText(strDate);
         List<Patient> initialPatientList = PatientData.fetchPatientDataFromDatabase();
         List<Staff> initialStaffList = StaffData.fetchStaffDataFromDatabase();
+
+        List<Appointment> initialAppointmentList = AppointmentData.fetchAllAppointmentDataFromDatabase();
+        List<Room> initialRoomList = RoomData.fetchRoomDataFromDatabase();
         numOfPatients.setText(Integer.toString(initialPatientList.size()));
         numOfStaffs.setText(Integer.toString(initialStaffList.size()));
         // To get the number of staff
@@ -127,9 +151,12 @@ public class home_controller {
             }
 
         }
+
+        numOfAppointments.setText(Integer.toString(initialAppointmentList.size()));
         numOfDoctors.setText(Integer.toString(numOfDoctor));
         numOfNurses.setText(Integer.toString(numOfNurse));
         numOfAdmin.setText(Integer.toString(numOfAdmins));
+        numOfRooms.setText(Integer.toString(initialRoomList.size()));
         List<Patient> patientList = getLatestThreePatients();
         firstPatientsNames.setText(patientList.get(0).getPatientName());
         firstPatientGender.setText(patientList.get(0).getPatientGender());
@@ -143,6 +170,14 @@ public class home_controller {
         thirdPatientGender.setText(patientList.get(2).getPatientGender());
         thirdPatientDateOfBirth.setText(patientList.get(2).getPatientDateOfBirth().toString());
         ThirdPatientAddress.setText(patientList.get(2).getPatientAddress());
+        firstPatientNameAppointment.setText(getLatest2Treatments().get(1).getPatientName());
+        secondPatientNameAppointment.setText(getLatest2Treatments().get(0).getPatientName());
+        firstAppointmentDetails.setText(
+                getLatest2Treatments().get(1).getTreatmentInfo());
+        firstAppointmentStaffName.setText(getLatest2Treatments().get(1).getStaffId());
+        secondAppointmentDetails.setText(
+                getLatest2Treatments().get(0).getTreatmentInfo());
+        secondAppointmentStaffName.setText(getLatest2Treatments().get(0).getStaffId());
 
     }
 
@@ -180,6 +215,22 @@ public class home_controller {
         }
 
         return lastThreePatientList;
+
+    }
+
+    public static List<Treatment> getLatest2Treatments() {
+        List<Treatment> lastTwoTreatmentList = new ArrayList<>();
+        List<Treatment> originalTreatmentList = TreatmentData.fetchTreatmentDataFromDatabase();
+
+        for (Treatment tre : originalTreatmentList) {
+            if (tre.getStartDate().equals(LocalDate.now())) {
+                System.out.println(tre.getTreatmentId());
+                lastTwoTreatmentList.add(tre);
+
+            }
+        }
+
+        return lastTwoTreatmentList;
 
     }
 
