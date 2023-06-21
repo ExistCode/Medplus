@@ -27,6 +27,9 @@ import medplus.tableModels.PatientTableDataModel;
 
 public class patient_controller {
 
+    private ObservableList tableItems;
+    private FilteredList filteredTableItems;
+
     //
 
     @FXML
@@ -226,3 +229,22 @@ public class patient_controller {
     }
 
 }
+
+    private void wrapListAndAddFiltering() {
+        // Wrap ObservableList into FilteredList
+        filteredTableItems = new FilteredList<>(tableItems, p -> true);
+
+        // Add change listener to searchField component to filter the table view
+        searchButton.textProperty().addListener((observable, oldValue, newValue) -> {
+            filteredTableItems.setPredicate(item -> {
+                if (newValue == null || newValue.isEmpty()) {
+                    return true;
+                }
+                String query = newValue.toLowerCase();
+                if (item.getName().toLowerCase().contains(query)) {
+                    return true;
+                }
+                return false;
+            });
+        });
+    }

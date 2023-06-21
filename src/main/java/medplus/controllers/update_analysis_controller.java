@@ -16,7 +16,6 @@ import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
 import medplus.App;
 import medplus.data.AnalysisData;
-import medplus.data.PatientData;
 import medplus.models.Analysis;
 
 public class update_analysis_controller {

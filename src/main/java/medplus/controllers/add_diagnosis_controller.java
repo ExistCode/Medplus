@@ -1,8 +1,6 @@
 package medplus.controllers;
 
 import java.io.IOException;
-import java.time.LocalDate;
-import java.time.Period;
 import java.util.List;
 
 import javafx.fxml.FXML;
@@ -14,9 +12,7 @@ import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
 import medplus.App;
 import medplus.data.DiagnosisData;
-import medplus.data.PatientData;
 import medplus.models.Diagnosis;
-import medplus.models.Patient;
 
 public class add_diagnosis_controller {
 

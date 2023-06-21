@@ -1,25 +1,24 @@
 package medplus.models;
 
 import java.time.LocalDate;
-import java.time.LocalTime;
 
 public class Procedure {
     private String procedureId;
-    private String patientId;
-    private String doctorId;
+    private String patientName;
+    private String staffId;
     private LocalDate date;
-    private LocalTime time;
-    private String type;
+    private String time;
+    private String procedureType;
     private String description;
 
     // Constructor
-    public Procedure(String pId, String ptId, String drId, LocalDate dt, LocalTime tm, String typ, String desc) {
+    public Procedure(String pId, String pName, String stfId, LocalDate dt, String tm, String pt, String desc) {
         procedureId = pId;
-        patientId = ptId;
-        doctorId = drId;
+        patientName = pName;
+        staffId = stfId;
         date = dt;
         time = tm;
-        type = typ;
+        procedureType = pt;
         description = desc;
     }
 
@@ -28,24 +27,24 @@ public class Procedure {
         procedureId = pId;
     }
 
-    public void setPatientId(String ptId) {
-        patientId = ptId;
+    public void setPatientName(String pName) {
+        patientName = pName;
     }
 
-    public void setDoctorId(String drId) {
-        doctorId = drId;
+    public void setStaffId(String stfId) {
+        staffId = stfId;
     }
 
     public void setDate(LocalDate dt) {
         date = dt;
     }
 
-    public void setTime(LocalTime tm) {
+    public void setTime(String tm) {
         time = tm;
     }
 
     public void setType(String typ) {
-        type = typ;
+        procedureType = typ;
     }
 
     public void setDescription(String desc) {
@@ -57,24 +56,24 @@ public class Procedure {
         return procedureId;
     }
 
-    public String getPatientId() {
-        return patientId;
+    public String getPatientName() {
+        return patientName;
     }
 
-    public String getDoctorId() {
-        return doctorId;
+    public String getStaffId() {
+        return staffId;
     }
 
     public LocalDate getDate() {
         return date;
     }
 
-    public LocalTime getTime() {
+    public String getTime() {
         return time;
     }
 
     public String getType() {
-        return type;
+        return procedureType;
     }
 
     public String getDescription() {

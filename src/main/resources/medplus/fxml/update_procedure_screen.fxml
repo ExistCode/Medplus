@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
@@ -31,12 +30,12 @@
             <Font name="Verdana" size="24.0" />
          </font>
       </TextField>
-      <Text fill="#089bab" layoutX="154.0" layoutY="332.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Start of Procedure Date">
+      <Text fill="#089bab" layoutX="154.0" layoutY="332.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date">
          <font>
             <Font name="Verdana Bold" size="28.0" />
          </font>
       </Text>
-      <Text fill="#089bab" layoutX="716.0" layoutY="201.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Doctor ID">
+      <Text fill="#089bab" layoutX="716.0" layoutY="201.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Staff ID">
          <font>
             <Font name="Verdana Bold" size="28.0" />
          </font>
@@ -46,14 +45,14 @@
             <Font name="Verdana Bold" size="28.0" />
          </font>
       </Text>
-      <TextField fx:id="procedureTimeTextField" layoutX="716.0" layoutY="345.0" prefHeight="60.0" prefWidth="450.0" promptText="HH:MM:SS" style="-fx-background-color: white; -fx-background-radius: 16; -fx-border-radius: 16; -fx-border-color: #089bab;">
+      <TextField fx:id="timeTextField" layoutX="716.0" layoutY="345.0" prefHeight="60.0" prefWidth="450.0" promptText="HH:MM:SS" style="-fx-background-color: white; -fx-background-radius: 16; -fx-border-radius: 16; -fx-border-color: #089bab;">
          <font>
             <Font name="Verdana" size="24.0" />
          </font>
       </TextField>
-      <Pane fx:id="updateProcedureButton" layoutX="500.0" layoutY="630.0" prefHeight="60.0" prefWidth="270.0" style="-fx-background-color: FEAD54; -fx-background-radius: 40;">
+      <Pane fx:id="updateProcedureButton" layoutX="600.0" layoutY="630.0" onMouseClicked="#updateProcedure" prefHeight="60.0" prefWidth="140.0" style="-fx-background-color: FEAD54; -fx-background-radius: 40;">
          <children>
-            <Text fill="WHITE" layoutX="15.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Update Procedure">
+            <Text fill="WHITE" layoutX="20.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Update">
                <font>
                   <Font name="Verdana Bold" size="24.0" />
                </font>
@@ -65,19 +64,28 @@
             <Font name="Verdana Bold" size="28.0" />
          </font>
       </Text>
-      <TextField fx:id="procedureDetailsTextField" layoutX="716.0" layoutY="472.0" prefHeight="60.0" prefWidth="450.0" promptText="Enter Procedure Details Here" style="-fx-background-color: white; -fx-background-radius: 16; -fx-border-radius: 16; -fx-border-color: #089bab;">
+      <TextField fx:id="procedureDescriptionTextField" layoutX="716.0" layoutY="472.0" prefHeight="60.0" prefWidth="450.0" promptText="Enter Procedure Description Here" style="-fx-background-color: white; -fx-background-radius: 16; -fx-border-radius: 16; -fx-border-color: #089bab;">
          <font>
             <Font name="Verdana" size="24.0" />
          </font>
       </TextField>
-      <Text fill="#089bab" layoutX="716.0" layoutY="458.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Procedure Details">
+      <Text fill="#089bab" layoutX="716.0" layoutY="458.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Procedure Description">
          <font>
             <Font name="Verdana Bold" size="28.0" />
          </font>
       </Text>
-      <DatePicker fx:id="procedureDatePicker" layoutX="154.0" layoutY="345.0" prefHeight="60.0" prefWidth="450.0" promptText="YYYY-MM-DD" style="-fx-background-color: white; -fx-border-radius: 16; -fx-background-radius: 16; -fx-font-size: 24;" />
-      <ComboBox fx:id="procedureComboBox" layoutX="154.0" layoutY="472.0" prefHeight="60.0" prefWidth="450.0" promptText="Blood Test" style="-fx-background-color: white; -fx-border-color: #089bab; -fx-background-radius: 16; -fx-border-radius: 16; -fx-font-size: 24;" />
-      <TextField fx:id="doctorIDTextField" layoutX="716.0" layoutY="219.0" prefHeight="60.0" prefWidth="450.0" promptText="Enter Doctor ID" style="-fx-background-color: white; -fx-background-radius: 16; -fx-border-radius: 16; -fx-border-color: #089bab;">
+      <DatePicker fx:id="dateDatePicker" layoutX="154.0" layoutY="345.0" prefHeight="60.0" prefWidth="450.0" promptText="YYYY-MM-DD" style="-fx-background-color: white; -fx-border-radius: 16; -fx-background-radius: 16; -fx-font-size: 24;" />
+      <TextField fx:id="staffIDTextField" layoutX="716.0" layoutY="219.0" prefHeight="60.0" prefWidth="450.0" promptText="Enter Staff ID" style="-fx-background-color: white; -fx-background-radius: 16; -fx-border-radius: 16; -fx-border-color: #089bab;">
+         <font>
+            <Font name="Verdana" size="24.0" />
+         </font>
+      </TextField>
+      <Text fx:id="errorMessageDisplay" fill="#f9988b" layoutX="10.0" layoutY="710.0" strokeType="OUTSIDE" strokeWidth="0.0" text=" " textAlignment="CENTER" wrappingWidth="1257.1827697753906">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Text>
+      <TextField fx:id="procedureTypeTextField" layoutX="154.0" layoutY="472.0" prefHeight="60.0" prefWidth="450.0" promptText="Enter procedure type here" style="-fx-background-color: white; -fx-background-radius: 16; -fx-border-radius: 16; -fx-border-color: #089bab;">
          <font>
             <Font name="Verdana" size="24.0" />
          </font>
