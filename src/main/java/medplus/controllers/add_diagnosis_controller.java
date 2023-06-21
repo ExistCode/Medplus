@@ -90,7 +90,8 @@ public class add_diagnosis_controller {
                     + 1;
             String newDiagnosisIdFormatted = String.format("D%03d", newDiagnosisId);
 
-            Diagnosis newDiagnosis = new Diagnosis(newDiagnosisIdFormatted, patientIdComboBox.getSelectionModel().getSelectedItem(),
+            Diagnosis newDiagnosis = new Diagnosis(newDiagnosisIdFormatted,
+                    patientIdComboBox.getSelectionModel().getSelectedItem(),
                     staffIdComboBox.getSelectionModel().getSelectedItem(),
                     dateOfBirthSelector.getValue(),
                     medAmountTextField.getText());

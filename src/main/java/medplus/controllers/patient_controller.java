@@ -28,6 +28,9 @@ import medplus.tableModels.PatientTableDataModel;
 
 public class patient_controller {
 
+    private ObservableList tableItems;
+    private FilteredList filteredTableItems;
+
     //
 
     @FXML
@@ -247,5 +250,4 @@ public class patient_controller {
         sortedPatientData.comparatorProperty().bind(patientsTable.comparatorProperty());
         patientsTable.setItems(sortedPatientData);
     }
-
 }
