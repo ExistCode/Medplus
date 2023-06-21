@@ -71,3 +71,4 @@ MH069,P029,S033,2023-08-30,09:30,Influenza,Prescribed antiviral medication and a
 MH070,P030,S007,2023-07-30,15:20,Normal,Annual physical examination,none
 MH071,P030,S015,2023-09-22,10:00,Minor infection,Prescribed antibiotics,none
 MH072,P030,S034,2023-11-05,09:45,Normal,Follow-up appointment,none
+MH073,P031,S005,2023-06-08,17:25:56.285471,Not bad,-,-

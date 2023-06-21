@@ -20,7 +20,7 @@
                <children>
                   <Text fx:id="firstPatientsNames" layoutX="26.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" text="First patient name">
                      <font>
-                        <Font name="SF Pro Rounded Semibold" size="18.0" />
+                        <Font name="SF Pro Rounded Bold" size="18.0" />
                      </font>
                   </Text>
                   <Text fx:id="firstPatientGender" fill="#00000040" layoutX="26.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gender">
@@ -56,14 +56,14 @@
             </Pane>
             <Text fx:id="datetime" layoutX="39.0" layoutY="115.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
                <font>
-                  <Font name="System Bold" size="20.0" />
+                  <Font size="20.0" />
                </font>
             </Text>
             <Pane layoutX="31.0" layoutY="338.0" prefHeight="174.0" prefWidth="379.0" style="-fx-background-color: white; -fx-background-radius: 20;">
                <children>
                   <Text fx:id="SecondPatientsNames" layoutX="26.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2nd patient name">
                      <font>
-                        <Font name="SF Pro Rounded Semibold" size="18.0" />
+                        <Font name="SF Pro Rounded Bold" size="18.0" />
                      </font>
                   </Text>
                   <Text fx:id="SecondPatientGender" fill="#00000040" layoutX="26.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gender">
@@ -101,7 +101,7 @@
                <children>
                   <Text fx:id="thirdPatientsNames" layoutX="26.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" text="3rd patient name">
                      <font>
-                        <Font name="SF Pro Rounded Semibold" size="18.0" />
+                        <Font name="SF Pro Rounded Bold" size="18.0" />
                      </font>
                   </Text>
                   <Text fx:id="thirdPatientGender" fill="#00000040" layoutX="26.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gender">
@@ -226,7 +226,7 @@
                   <Font name="SF Pro Rounded Semibold" size="40.0" />
                </font>
             </Text>
-            <Text layoutX="11.0" layoutY="93.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Doctors" textAlignment="CENTER" wrappingWidth="165.77874755859375">
+            <Text fill="WHITE" layoutX="11.0" layoutY="93.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Doctors" textAlignment="CENTER" wrappingWidth="165.77874755859375">
                <font>
                   <Font name="SF Pro Text Regular" size="20.0" />
                </font>
@@ -236,7 +236,7 @@
                   <Font name="SF Pro Rounded Semibold" size="40.0" />
                </font>
             </Text>
-            <Text layoutX="10.0" layoutY="181.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Nurses" textAlignment="CENTER" wrappingWidth="165.77874755859375">
+            <Text fill="WHITE" layoutX="10.0" layoutY="181.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Nurses" textAlignment="CENTER" wrappingWidth="165.77874755859375">
                <font>
                   <Font name="SF Pro Text Regular" size="20.0" />
                </font>
@@ -246,14 +246,14 @@
                   <Font name="SF Pro Rounded Semibold" size="40.0" />
                </font>
             </Text>
-            <Text layoutX="28.0" layoutY="275.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Administrative" wrappingWidth="177.27801513671875">
+            <Text fill="WHITE" layoutX="28.0" layoutY="275.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Administrative" wrappingWidth="177.27801513671875">
                <font>
                   <Font name="SF Pro Text Regular" size="20.0" />
                </font>
             </Text>
          </children>
       </Pane>
-      <Text fill="#f9988b" layoutX="696.0" layoutY="540.0" strokeType="OUTSIDE" strokeWidth="0.0" text="On-Going Treatment">
+      <Text fill="#f9988b" layoutX="696.0" layoutY="540.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Today's Treatment">
          <font>
             <Font name="SF Pro Display Semibold" size="24.0" />
          </font>
@@ -296,6 +296,44 @@
             <Text layoutX="-3.0" layoutY="108.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Rooms" textAlignment="CENTER" wrappingWidth="165.77874755859375">
                <font>
                   <Font name="SF Pro Text Regular" size="20.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+      <Pane layoutX="696.0" layoutY="563.0" prefHeight="60.0" prefWidth="562.0" style="-fx-background-color: EFF7F9; -fx-background-radius: 12;">
+         <children>
+            <Text fx:id="firstPatientNameAppointment" layoutX="-4.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Patient Name" textAlignment="CENTER" wrappingWidth="184.17954922381352">
+               <font>
+                  <Font name="Verdana Bold" size="20.0" />
+               </font>
+            </Text>
+            <Text fx:id="firstAppointmentDetails" layoutX="169.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Details" textAlignment="CENTER" wrappingWidth="231.79088777498805">
+               <font>
+                  <Font name="Verdana" size="16.0" />
+               </font>
+            </Text>
+            <Text fx:id="firstAppointmentStaffName" fill="#00000040" layoutX="386.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Staff Name" textAlignment="CENTER" wrappingWidth="176.23864168123805">
+               <font>
+                  <Font name="Verdana" size="16.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+      <Pane layoutX="696.0" layoutY="637.0" prefHeight="60.0" prefWidth="562.0" style="-fx-background-color: EFF7F9; -fx-background-radius: 12;">
+         <children>
+            <Text fx:id="secondPatientNameAppointment" layoutX="-4.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Patient Name" textAlignment="CENTER" wrappingWidth="184.17954922381352">
+               <font>
+                  <Font name="Verdana Bold" size="20.0" />
+               </font>
+            </Text>
+            <Text fx:id="secondAppointmentDetails" layoutX="169.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Details" textAlignment="CENTER" wrappingWidth="231.79088777498805">
+               <font>
+                  <Font name="Verdana" size="16.0" />
+               </font>
+            </Text>
+            <Text fx:id="secondAppointmentStaffName" fill="#00000040" layoutX="386.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Staff Name" textAlignment="CENTER" wrappingWidth="176.23864168123805">
+               <font>
+                  <Font name="Verdana" size="16.0" />
                </font>
             </Text>
          </children>
