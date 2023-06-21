@@ -129,7 +129,7 @@ public class search_medicine_controller {
             try {
                 MedicineData.initMedicineData.setMedicineId(selectedMedicine.getMedicineId());
                 MedicineData.initMedicineData.setPatientName(selectedMedicine.getPatientName());
-                MedicineData.initMedicineData.setDoctorId(selectedMedicine.getDoctorId());
+                MedicineData.initMedicineData.setStaffId(selectedMedicine.getDoctorId());
                 MedicineData.initMedicineData.setMedicineName(selectedMedicine.getMedicineName());
                 MedicineData.initMedicineData.setAmount(selectedMedicine.getAmount());
                 MedicineData.initMedicineData.setDoseDetail(selectedMedicine.getDoseDetail());
@@ -150,18 +150,18 @@ public class search_medicine_controller {
 
         TableColumn medicineIdColumn = new TableColumn("Medicine ID");
         TableColumn patientNameColumn = new TableColumn("Patient Name");
-        TableColumn doctorIdColumn = new TableColumn("Doctor ID");
+        TableColumn staffIdColumn = new TableColumn("Staff ID");
         TableColumn medicineNameColumn = new TableColumn("Medicine Name");
         TableColumn amountColumn = new TableColumn("Amount");
         TableColumn doseDetailColumn = new TableColumn("Dose Detail");
 
-        medicineTable.getColumns().addAll(medicineIdColumn, patientNameColumn, doctorIdColumn, medicineNameColumn,
+        medicineTable.getColumns().addAll(medicineIdColumn, patientNameColumn, staffIdColumn, medicineNameColumn,
                 amountColumn, doseDetailColumn);
 
         // Set cell value factories for each TableColumn
         medicineIdColumn.setCellValueFactory(new PropertyValueFactory<>("medicineId"));
         patientNameColumn.setCellValueFactory(new PropertyValueFactory<>("patientName"));
-        doctorIdColumn.setCellValueFactory(new PropertyValueFactory<>("doctorId"));
+        staffIdColumn.setCellValueFactory(new PropertyValueFactory<>("doctorId"));
         medicineNameColumn.setCellValueFactory(new PropertyValueFactory<>("medicineName"));
         amountColumn.setCellValueFactory(new PropertyValueFactory<>("amount"));
         doseDetailColumn.setCellValueFactory(new PropertyValueFactory<>("doseDetail"));
@@ -174,13 +174,13 @@ public class search_medicine_controller {
                 if (selectedMedicine != null) {
 
                     MedicineData.initMedicineData.setPatientName(selectedMedicine.getPatientName());
-                    MedicineData.initMedicineData.setDoctorId(selectedMedicine.getDoctorId());
+                    MedicineData.initMedicineData.setStaffId(selectedMedicine.getDoctorId());
                     MedicineData.initMedicineData.setMedicineName(selectedMedicine.getMedicineName());
                     MedicineData.initMedicineData.setAmount(selectedMedicine.getAmount());
                     MedicineData.initMedicineData.setDoseDetail(selectedMedicine.getDoseDetail());
 
                     System.out.println(MedicineData.initMedicineData.getPatientName());
-                    System.out.println(MedicineData.initMedicineData.getDoctorId());
+                    System.out.println(MedicineData.initMedicineData.getStaffId());
                     System.out.println(MedicineData.initMedicineData.getMedicineName());
                     System.out.println(MedicineData.initMedicineData.getAmount());
                     System.out.println(MedicineData.initMedicineData.getDoseDetail());

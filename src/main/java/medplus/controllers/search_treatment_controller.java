@@ -150,18 +150,18 @@ public class search_treatment_controller {
 
         TableColumn treatmentIdColumn = new TableColumn("Treatment ID");
         TableColumn patientNameColumn = new TableColumn("Patient Name");
-        TableColumn doctorIdColumn = new TableColumn("Doctor Id");
+        TableColumn staffIdColumn = new TableColumn("Staff ID");
         TableColumn startDateColumn = new TableColumn("Start Date");
         TableColumn endDateColumn = new TableColumn("End Date");
         TableColumn treatmentInfoColumn = new TableColumn("Treatment Info");
 
-        treatmentTable.getColumns().addAll(treatmentIdColumn, patientNameColumn, doctorIdColumn, startDateColumn,
+        treatmentTable.getColumns().addAll(treatmentIdColumn, patientNameColumn, staffIdColumn, startDateColumn,
                 endDateColumn, treatmentInfoColumn);
 
         // Set cell value factories for each TableColumn
         treatmentIdColumn.setCellValueFactory(new PropertyValueFactory<>("treatmentId"));
         patientNameColumn.setCellValueFactory(new PropertyValueFactory<>("patientName"));
-        doctorIdColumn.setCellValueFactory(new PropertyValueFactory<>("doctorId"));
+        staffIdColumn.setCellValueFactory(new PropertyValueFactory<>("doctorId"));
         startDateColumn.setCellValueFactory(new PropertyValueFactory<>("startDate"));
         endDateColumn.setCellValueFactory(new PropertyValueFactory<>("endDate"));
         treatmentInfoColumn.setCellValueFactory(new PropertyValueFactory<>("treatmentInfo"));

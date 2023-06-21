@@ -3,16 +3,16 @@ package medplus.models;
 public class Medicine {
     private String medicineId;
     private String patientName;
-    private String doctorId;
+    private String staffId;
     private String medicineName;
     private String amount;
     private String doseDetail;
 
     // Constructor
-    public Medicine(String mId, String pName, String dId, String mName, String amt, String dose) {
+    public Medicine(String mId, String pName, String sId, String mName, String amt, String dose) {
         medicineId = mId;
         patientName = pName;
-        doctorId = dId;
+        staffId = sId;
         medicineName = mName;
         amount = amt;
         doseDetail = dose;
@@ -27,8 +27,8 @@ public class Medicine {
         patientName = pName;
     }
 
-    public void setDoctorId(String dId) {
-        doctorId = dId;
+    public void setStaffId(String sId) {
+        staffId = sId;
     }
 
     public void setMedicineName(String mName){
@@ -52,8 +52,8 @@ public class Medicine {
         return patientName;
     }
 
-    public String getDoctorId() {
-        return doctorId;
+    public String getStaffId() {
+        return staffId;
     }
 
     public String getMedicineName(){

@@ -2,7 +2,10 @@ package medplus.controllers;
 
 import java.io.IOException;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
@@ -12,6 +15,8 @@ import javafx.scene.text.Text;
 import medplus.App;
 import medplus.data.TreatmentData;
 import medplus.models.Treatment;
+import medplus.tableModels.PatientTableDataModel;
+import medplus.tableModels.StaffTableDataModel;
 
 public class update_treatment_controller {
 
@@ -19,16 +24,15 @@ public class update_treatment_controller {
     private ImageView backButton;
 
     @FXML
+    private ComboBox<String> staffIdComboBox;
+    @FXML
+    private ComboBox<String> patientIdComboBox;
+
+    @FXML
     private DatePicker dateEndDatePicker;
 
     @FXML
     private DatePicker dateStartDatePicker;
-
-    @FXML
-    private TextField patientNameTextField;
-
-    @FXML
-    private TextField staffIDTextField;
 
     @FXML
     private TextField treatmentDetailsTextField;
@@ -50,8 +54,8 @@ public class update_treatment_controller {
 
         if (errorMessage == "") {
 
-            Treatment newTreatment = new Treatment(TreatmentData.initTreatmentData.getTreatmentId(), patientNameTextField.getText(),
-                    staffIDTextField.getText(),
+            Treatment newTreatment = new Treatment(TreatmentData.initTreatmentData.getTreatmentId(), patientIdComboBox.getSelectionModel().getSelectedItem(),
+                    staffIdComboBox.getSelectionModel().getSelectedItem(),
                     dateStartDatePicker.getValue(),
                     dateEndDatePicker.getValue(),
                     treatmentDetailsTextField.getText());
@@ -66,7 +70,7 @@ public class update_treatment_controller {
     private String validateInput() {
         String errorMessage = "";
 
-        if (patientNameTextField.getText().isEmpty() || staffIDTextField.getText().isEmpty()
+        if (patientIdComboBox.getSelectionModel().isEmpty() || staffIdComboBox.getSelectionModel().isEmpty()
                 || dateStartDatePicker.getValue() == null || dateEndDatePicker.getValue() == null
                 || treatmentDetailsTextField.getText().isEmpty()) {
             errorMessage = "Please make sure all fields are filled with the appropriate type.";
@@ -79,10 +83,33 @@ public class update_treatment_controller {
 
     @FXML
     public void initialize() {
-        patientNameTextField.setText(TreatmentData.initTreatmentData.getPatientName());
-        staffIDTextField.setText(TreatmentData.initTreatmentData.getDoctorId());
+        patientIdComboBox.setValue(TreatmentData.initTreatmentData.getPatientName());
+        staffIdComboBox.setValue(TreatmentData.initTreatmentData.getDoctorId());
         dateStartDatePicker.setValue(TreatmentData.initTreatmentData.getStartDate());
         dateEndDatePicker.setValue(TreatmentData.initTreatmentData.getEndDate());
         treatmentDetailsTextField.setText(TreatmentData.initTreatmentData.getTreatmentInfo());
+        patientIdComboBox.setItems(fetchPatientName());
+        staffIdComboBox.setItems(fetchStaffId());
+    }
+
+    ObservableList<String> fetchPatientName() {
+        ObservableList<PatientTableDataModel> patientDataList = PatientTableDataModel
+                .convertPatientDataToPatientTableDataModel();
+        ObservableList<String> patientId = FXCollections.observableArrayList();
+        for (PatientTableDataModel patient : patientDataList) {
+            patientId.add(patient.getName());
+            System.out.println("done ga");
+        }
+        return patientId;
+    }
+
+    ObservableList<String> fetchStaffId() {
+        ObservableList<StaffTableDataModel> staffDataList = StaffTableDataModel
+                .convertStaffDataToStaffTableDataModel();
+        ObservableList<String> staffId = FXCollections.observableArrayList();
+        for (StaffTableDataModel staff : staffDataList) {
+            staffId.add(staff.getStaffId());
+        }
+        return staffId;
     }
 }
