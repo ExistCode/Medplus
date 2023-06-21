@@ -1,2 +1,2 @@
 Medicine ID,Patient Name,Doctor ID,Medicine Name,Amount,Dose Detail
-M001,Lim Chuan Zhe,D001,hfusj,50mg x10,2 pills,
+M002,John Doe,S001,amoxilin,1,-
