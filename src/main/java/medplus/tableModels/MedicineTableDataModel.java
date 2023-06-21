@@ -30,7 +30,7 @@ public class MedicineTableDataModel {
         for (int i = 0; i < initialMedicineList.size(); i++) {
             String medicineId = initialMedicineList.get(i).getMedicineId();
             String patientName = initialMedicineList.get(i).getPatientName();
-            String doctorId = initialMedicineList.get(i).getDoctorId();
+            String doctorId = initialMedicineList.get(i).getStaffId();
             String amount = initialMedicineList.get(i).getAmount();
             String doseDetail = initialMedicineList.get(i).getDoseDetail();
 

@@ -65,7 +65,7 @@ public class MedicineData {
                         String medicineData = String.format("%s,%s,%s,%s,%s,%s",
                                         newMedicine.getMedicineId(),
                                         newMedicine.getPatientName(),
-                                        newMedicine.getDoctorId(),
+                                        newMedicine.getStaffId(),
                                         newMedicine.getMedicineName(),
                                         newMedicine.getAmount(),
                                         newMedicine.getDoseDetail());
@@ -122,7 +122,7 @@ public class MedicineData {
                                 if (line.contains(newMedicineData.getMedicineId())) {
                                         fetchedMedicineListAfterDeletion.add(newMedicineData.getMedicineId() + ","
                                                         + newMedicineData.getPatientName() + ","
-                                                        + newMedicineData.getDoctorId() + ","
+                                                        + newMedicineData.getStaffId() + ","
                                                         + newMedicineData.getMedicineName() + ","
                                                         + newMedicineData.getAmount() + ","
                                                         + newMedicineData.getDoseDetail() + ",");
