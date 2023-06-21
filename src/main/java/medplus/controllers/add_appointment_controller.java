@@ -92,7 +92,8 @@ public class add_appointment_controller {
     }
 
     @FXML
-    void backToSearch(MouseEvent event) {
+    void backToSearch(MouseEvent event) throws IOException {
+        App.setRoot("staff_details_analysis_screen");
 
     }
 

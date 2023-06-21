@@ -17,6 +17,7 @@ import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
 import medplus.App;
 import medplus.data.AppointmentData;
+import medplus.data.MedicalHistoryData;
 import medplus.data.PatientData;
 import medplus.data.StaffData;
 import medplus.tableModels.AppointmentTableDataModel;
@@ -146,8 +147,19 @@ public class staff_details_controller {
     }
 
     @FXML
-    void updateAppointment(MouseEvent event) {
+    void updateAppointment(MouseEvent event) throws IOException {
+        AppointmentTableDataModel selectedAppointment = appointmentTable.getSelectionModel().getSelectedItem();
+        if (selectedAppointment != null) {
+            AppointmentData.initAppointmentData.setAppointmentId(selectedAppointment.getAppointmentId());
+            AppointmentData.initAppointmentData.setStaffId(selectedAppointment.getStaffId());
+            AppointmentData.initAppointmentData.setPatientId(selectedAppointment.getPatientId());
+            AppointmentData.initAppointmentData.setRoomNum(selectedAppointment.getRoomNum());
+            AppointmentData.initAppointmentData.setDate(selectedAppointment.getDate());
+            AppointmentData.initAppointmentData.setTime(selectedAppointment.getTime());
+            AppointmentData.initAppointmentData.setDescription(selectedAppointment.getDescription());
 
+            App.setRoot("update_appointment_screen");
+        }
     }
 
     @FXML
