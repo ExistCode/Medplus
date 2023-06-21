@@ -143,7 +143,15 @@ public class staff_details_controller {
 
     @FXML
     void deleteAppointment(MouseEvent event) {
+        AppointmentTableDataModel selectedAppointment = appointmentTable.getSelectionModel().getSelectedItem();
 
+        if (selectedAppointment != null) {
+
+            appointmentTable.getItems().remove(selectedAppointment);
+
+            String selectedRowId = selectedAppointment.getAppointmentId().toString();
+            AppointmentData.deleteAppointmentById(selectedRowId);
+        }
     }
 
     @FXML
