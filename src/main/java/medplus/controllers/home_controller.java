@@ -238,6 +238,7 @@ public class home_controller {
     void seePatientsDetails1(MouseEvent event) throws IOException {
         List<Patient> patientList = getLatestThreePatients();
 
+        PatientData.initPatientData.setPatientId(patientList.get(0).getPatientId());
         PatientData.initPatientData.setPatientName(patientList.get(0).getPatientName());
         PatientData.initPatientData.setPatientGender(patientList.get(0).getPatientGender());
 
@@ -253,6 +254,8 @@ public class home_controller {
     void seePatientsDetails2(MouseEvent event) throws IOException {
         List<Patient> patientList = getLatestThreePatients();
 
+        PatientData.initPatientData.setPatientId(patientList.get(1).getPatientId());
+
         PatientData.initPatientData.setPatientName(patientList.get(1).getPatientName());
         PatientData.initPatientData.setPatientGender(patientList.get(1).getPatientGender());
 
@@ -267,6 +270,8 @@ public class home_controller {
     @FXML
     void seePatientsDetails3(MouseEvent event) throws IOException {
         List<Patient> patientList = getLatestThreePatients();
+
+        PatientData.initPatientData.setPatientId(patientList.get(2).getPatientId());
 
         PatientData.initPatientData.setPatientName(patientList.get(2).getPatientName());
         PatientData.initPatientData.setPatientGender(patientList.get(2).getPatientGender());
