@@ -129,7 +129,7 @@ public class search_medicine_controller {
             try {
                 MedicineData.initMedicineData.setMedicineId(selectedMedicine.getMedicineId());
                 MedicineData.initMedicineData.setPatientName(selectedMedicine.getPatientName());
-                MedicineData.initMedicineData.setStaffId(selectedMedicine.getDoctorId());
+                MedicineData.initMedicineData.setStaffId(selectedMedicine.getStaffId());
                 MedicineData.initMedicineData.setMedicineName(selectedMedicine.getMedicineName());
                 MedicineData.initMedicineData.setAmount(selectedMedicine.getAmount());
                 MedicineData.initMedicineData.setDoseDetail(selectedMedicine.getDoseDetail());
@@ -174,7 +174,7 @@ public class search_medicine_controller {
                 if (selectedMedicine != null) {
 
                     MedicineData.initMedicineData.setPatientName(selectedMedicine.getPatientName());
-                    MedicineData.initMedicineData.setStaffId(selectedMedicine.getDoctorId());
+                    MedicineData.initMedicineData.setStaffId(selectedMedicine.getStaffId());
                     MedicineData.initMedicineData.setMedicineName(selectedMedicine.getMedicineName());
                     MedicineData.initMedicineData.setAmount(selectedMedicine.getAmount());
                     MedicineData.initMedicineData.setDoseDetail(selectedMedicine.getDoseDetail());

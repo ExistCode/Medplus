@@ -34,12 +34,12 @@
             <Insets left="25.0" />
          </padding>
          <font>
-            <Font name="SF Pro Rounded Bold" size="20.0" />
+            <Font name="SF Pro Rounded Bold" size="16.0" />
          </font>
       </TextField>
       <PasswordField fx:id="Password" layoutX="557.0" layoutY="403.0" prefHeight="66.0" prefWidth="528.0" promptText="Please enter your password" style="-fx-background-radius: 10;">
          <font>
-            <Font name="SF Pro Rounded Bold" size="20.0" />
+            <Font name="SF Pro Rounded Bold" size="16.0" />
          </font>
          <padding>
             <Insets left="25.0" />

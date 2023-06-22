@@ -72,3 +72,5 @@ MH070,P030,S007,2023-07-30,15:20,Normal,Annual physical examination,none
 MH071,P030,S015,2023-09-22,10:00,Minor infection,Prescribed antibiotics,none
 MH072,P030,S034,2023-11-05,09:45,Normal,Follow-up appointment,none
 MH073,P031,S005,2023-06-08,17:25:56.285471,Not bad,-,-
+MH074,P009,S010,2023-06-14,10:45:54.210848,Good,-,-
+MH075,P009,S006,2023-06-09,10:51:41.947924,-,-,-

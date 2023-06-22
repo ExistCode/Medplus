@@ -21,8 +21,8 @@ T019,Sophia Thompson,S005,2023-06-17,2023-06-23,Health screening
 T020,William Brown,S004,2023-06-14,2023-06-19,Lab tests
 T021,Isabella Anderson,S005,2023-06-16,2023-06-22,Regular check-up
 T022,James Davis,S003,2023-06-20,2023-06-25,Medication adjustment
-T023,Emily Garcia,S004,2023-06-22,2023-06-29,Physiotherapy
-T024,Liam Wilson,S005,2023-06-21,2023-07-01,General consultation
+T023,Dylan Eu,S004,2023-06-22,2023-06-23,Good,
+T024,Liam Wilson,S005,2023-06-22,2023-07-01,General consultation
 T025,Sophia Lee,S003,2023-06-21,2023-06-26,Follow-up appointment
 T026,William Davis,S004,2023-06-24,2023-06-30,X-ray examination
 T027,Isabella Wilson,S005,2023-06-28,2023-07-04,Physical therapy
