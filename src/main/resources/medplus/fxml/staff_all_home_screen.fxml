@@ -17,7 +17,7 @@
                   <Font name="SF Pro Text Bold" size="32.0" />
                </font>
             </Text>
-            <Text fill="#00000040" layoutX="43.0" layoutY="108.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Access every staff detail here!">
+            <Text fill="#00000040" layoutX="43.0" layoutY="108.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Double click to view staff's details!">
                <font>
                   <Font name="SF Pro Display Semibold" size="20.0" />
                </font>

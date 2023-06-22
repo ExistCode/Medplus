@@ -150,7 +150,7 @@
             </Pane>
          </children>
       </Pane>
-      <Text fill="#089bab" layoutX="251.0" layoutY="358.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Medical History">
+      <Text fill="#089bab" layoutX="252.0" layoutY="371.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Medical History">
          <font>
             <Font name="SF Pro Text Bold" size="28.0" />
          </font>

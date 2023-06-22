@@ -64,6 +64,7 @@ public class update_medical_history_controller {
         } else {
             System.out.println(errorMessage);
         }
+
     }
 
     private String validateInput() {

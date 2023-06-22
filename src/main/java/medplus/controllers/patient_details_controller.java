@@ -299,7 +299,6 @@ public class patient_details_controller extends patient_controller {
 
         // Set cell value factories for each TableColumn
         analysisIdColumn.setCellValueFactory(new PropertyValueFactory<>("analysisId"));
-        // nameColumn.setCellValueFactory(new PropertyValueFactory<>("patientName"));
         staffIdColumn.setCellValueFactory(new PropertyValueFactory<>("staffId"));
         dateColumn.setCellValueFactory(new PropertyValueFactory<>("date"));
         TypeColumn.setCellValueFactory(new PropertyValueFactory<>("typeOfTest"));
