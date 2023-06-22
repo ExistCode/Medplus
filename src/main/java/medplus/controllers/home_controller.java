@@ -237,6 +237,7 @@ public class home_controller {
     @FXML
     void seePatientsDetails1(MouseEvent event) throws IOException {
         List<Patient> patientList = getLatestThreePatients();
+        PatientData.initPatientData.setPatientId(patientList.get(0).getPatientId());
 
         PatientData.initPatientData.setPatientId(patientList.get(0).getPatientId());
         PatientData.initPatientData.setPatientName(patientList.get(0).getPatientName());

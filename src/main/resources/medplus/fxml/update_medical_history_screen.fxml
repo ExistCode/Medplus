@@ -76,7 +76,7 @@
             <Font name="SF Pro Rounded Bold" size="24.0" />
          </font>
       </Text>
-      <ComboBox fx:id="patientIdComboBox" layoutX="154.0" layoutY="219.0" prefHeight="60.0" prefWidth="450.0" promptText="Patient Name" style="-fx-border-color: #089bab; -fx-background-color: white; -fx-background-radius: 16; -fx-border-radius: 16; -fx-font-size: 24;" />
+      <ComboBox fx:id="patientIdComboBox" layoutX="154.0" layoutY="219.0" prefHeight="60.0" prefWidth="450.0" promptText="Patient Id" style="-fx-border-color: #089bab; -fx-background-color: white; -fx-background-radius: 16; -fx-border-radius: 16; -fx-font-size: 24;" />
       <ComboBox fx:id="staffIdComboBox" layoutX="716.0" layoutY="219.0" prefHeight="60.0" prefWidth="450.0" promptText="Staff Id" style="-fx-border-color: #089bab; -fx-background-color: white; -fx-background-radius: 16; -fx-border-radius: 16; -fx-font-size: 24;" />
    </children>
 </Pane>

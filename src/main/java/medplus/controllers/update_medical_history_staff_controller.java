@@ -18,8 +18,7 @@ import medplus.models.MedicalHistory;
 import medplus.tableModels.PatientTableDataModel;
 import medplus.tableModels.StaffTableDataModel;
 
-public class update_medical_history_controller {
-
+public class update_medical_history_staff_controller {
     @FXML
     private ImageView backButton;
 
@@ -60,11 +59,10 @@ public class update_medical_history_controller {
                     complicationTextField.getText());
 
             MedicalHistoryData.updateMedicalHistory(updatedMedHis);
-            App.setRoot("patients_details_screen_analysis");
+            App.setRoot("staff_details_analysis_screen");
         } else {
             System.out.println(errorMessage);
         }
-
     }
 
     private String validateInput() {
@@ -83,7 +81,7 @@ public class update_medical_history_controller {
 
     @FXML
     void backToSearch(MouseEvent event) throws IOException {
-        App.setRoot("patients_details_screen_analysis");
+        App.setRoot("staff_details_analysis_screen");
     }
 
     @FXML
@@ -117,5 +115,4 @@ public class update_medical_history_controller {
         }
         return staffId;
     }
-
 }

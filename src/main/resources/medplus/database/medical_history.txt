@@ -13,7 +13,6 @@ MH011,P005,S031,2023-11-30,10:45,Fractured bone,Applied a cast and provided pain
 MH012,P006,S011,2023-07-12,13:00,Normal,Prescribed medication refill,none
 MH013,P006,S024,2023-09-20,11:30,Allergic reaction,Administered antihistamines and monitored for improvement,none
 MH014,P007,S014,2023-06-25,12:15,Normal,Conducted laboratory tests,none
-MH015,P007,S033,2023-08-10,09:45,Influenza,Prescribed antiviral medication and advised rest,none
 MH016,P008,S007,2023-07-30,15:20,Normal,Annual physical examination,none
 MH017,P008,S015,2023-09-22,10:00,Minor infection,Prescribed antibiotics,none
 MH018,P009,S002,2023-06-28,13:45,Normal,Prescribed medication refill,none
@@ -28,7 +27,7 @@ MH026,P011,S021,2023-11-25,10:15,Normal,Annual dental check-up,none
 MH027,P012,S015,2023-07-20,09:00,Normal,Scheduled surgery,none
 MH028,P012,S002,2023-09-05,12:30,Abdominal pain,Performed diagnostic tests to identify the cause,none
 MH029,P012,S034,2023-10-28,16:30,Normal,Follow-up appointment,none
-MH030,P013,S010,2023-08-05,13:45,Normal,Prescribed medication refill,none
+MH030,P013,S010,2023-08-05,14:22:13.967981,Normal,Prescribed medication refill,no
 MH031,P013,S024,2023-10-10,11:30,Allergic reaction,Administered antihistamines and monitored for improvement,none
 MH032,P014,S014,2023-07-02,12:30,Normal,Conducted laboratory tests,none
 MH033,P014,S033,2023-09-15,10:45,Influenza,Prescribed antiviral medication and advised rest,none
@@ -52,7 +51,7 @@ MH050,P021,S024,2023-11-05,09:30,Normal,Follow-up appointment,none
 MH051,P022,S012,2023-07-23,11:30,Normal,Dental cleaning and check-up,none
 MH052,P022,S014,2023-09-15,14:00,Cavity,Performed a filling procedure,none
 MH053,P022,S034,2023-11-01,09:45,Normal,Follow-up appointment,none
-MH054,P023,S010,2023-08-10,13:45,Normal,Prescribed medication refill,none
+MH054,P023,S010,2023-08-10,14:19:34.210776,Normal,Prescribed medication refill,no
 MH055,P023,S024,2023-10-15,11:30,Allergic reaction,Administered antihistamines and monitored for improvement,none
 MH056,P024,S014,2023-07-08,12:30,Normal,Conducted laboratory tests,none
 MH057,P024,S033,2023-09-21,11:00,Influenza,Prescribed antiviral medication and advised rest,none
@@ -71,6 +70,3 @@ MH069,P029,S033,2023-08-30,09:30,Influenza,Prescribed antiviral medication and a
 MH070,P030,S007,2023-07-30,15:20,Normal,Annual physical examination,none
 MH071,P030,S015,2023-09-22,10:00,Minor infection,Prescribed antibiotics,none
 MH072,P030,S034,2023-11-05,09:45,Normal,Follow-up appointment,none
-MH073,P031,S005,2023-06-08,17:25:56.285471,Not bad,-,-
-MH074,P009,S010,2023-06-14,10:45:54.210848,Good,-,-
-MH075,P009,S006,2023-06-09,10:51:41.947924,-,-,-
