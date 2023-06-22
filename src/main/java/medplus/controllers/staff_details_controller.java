@@ -172,6 +172,17 @@ public class staff_details_controller {
 
     @FXML
     void deleteMedicalHistory(MouseEvent event) {
+        MedicalHistoryTableDataModel selectedMedHis = medicalHistoryTable.getSelectionModel().getSelectedItem();
+
+        if (selectedMedHis != null) {
+
+            medicalHistoryTable.getItems().remove(selectedMedHis);
+            // staffTable.setItems(filteringList());
+
+            String selectedRowId = selectedMedHis.getMedHisId().toString();
+            System.out.println("\n selectedRowid: " + selectedRowId);
+            MedicalHistoryData.deleteMedicalHistoryById(selectedRowId);
+        }
 
     }
 
@@ -181,8 +192,20 @@ public class staff_details_controller {
     }
 
     @FXML
-    void switchToUpdateScreen(MouseEvent event) {
+    void switchToUpdateScreen(MouseEvent event) throws IOException {
+        MedicalHistoryTableDataModel selectedMedHis = medicalHistoryTable.getSelectionModel()
+                .getSelectedItem();
+        System.out.println("\nClicked Observation: " + selectedMedHis.getObservation());
+        MedicalHistoryData.initMedicalHistoryData.setMedicalHistoryId(selectedMedHis.getMedHisId());
+        MedicalHistoryData.initMedicalHistoryData.setPatientId(selectedMedHis.getPatientId());
+        MedicalHistoryData.initMedicalHistoryData.setStaffId(selectedMedHis.getStaffId());
+        MedicalHistoryData.initMedicalHistoryData.setDate(selectedMedHis.getDate());
+        MedicalHistoryData.initMedicalHistoryData.setTime(selectedMedHis.getTime());
+        MedicalHistoryData.initMedicalHistoryData.setResult(selectedMedHis.getResult());
+        MedicalHistoryData.initMedicalHistoryData.setObservation(selectedMedHis.getObservation());
+        MedicalHistoryData.initMedicalHistoryData.setComplication(selectedMedHis.getComplication());
 
+        App.setRoot("update_medical_history_staff_screen");
     }
 
     @FXML
