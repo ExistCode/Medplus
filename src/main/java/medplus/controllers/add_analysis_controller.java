@@ -21,6 +21,7 @@ import medplus.tableModels.PatientTableDataModel;
 import medplus.tableModels.StaffTableDataModel;
 
 public class add_analysis_controller {
+
     @FXML
     private ComboBox<String> staffIdComboBox;
 
@@ -33,7 +34,7 @@ public class add_analysis_controller {
 
     @FXML
     private ComboBox<String> patientNameComboBox;
-    
+
     @FXML
     private Pane addAnalysisButton;
 
@@ -109,8 +110,10 @@ public class add_analysis_controller {
     @FXML
     public void initialize() {
         analysisType.setItems(analysisTypeOptions);
-        patientNameComboBox.setItems(fetchPatientName());
+        System.out.println(fetchPatientName());
         staffIdComboBox.setItems(fetchStaffId());
+        patientNameComboBox.setItems(fetchPatientName());
+
     }
 
     ObservableList<String> fetchPatientName() {

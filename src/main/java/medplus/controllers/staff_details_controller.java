@@ -244,6 +244,57 @@ public class staff_details_controller {
         staffSpecialty.setText(StaffData.initStaffData.getStaffJobTitle());
 
         initializeAppointmentTable();
+        initializeMedicalHistoryTable();
 
+    }
+
+    @FXML
+    public void initializeMedicalHistoryTable() {
+        System.out.println("\nEnter Initialize Medical History Table");
+        String staffId = StaffData.initStaffData.getStaffId();
+        System.out.println("\nPatient Id: " + staffId);
+        ObservableList<MedicalHistoryTableDataModel> medicalHistoryDataList = MedicalHistoryTableDataModel
+                .convertMedicalHistoryDataToTableDataModel(staffId);
+
+        // Clear existing columns before adding new ones
+        medicalHistoryTable.getColumns().clear();
+        TableColumn<MedicalHistoryTableDataModel, String> medHisIdColumn = new TableColumn<>("History ID");
+        TableColumn<MedicalHistoryTableDataModel, String> patientIdColumn = new TableColumn<>("Patient ID");
+        TableColumn<MedicalHistoryTableDataModel, String> staffIdColumn = new TableColumn<>("Staff ID");
+        TableColumn<MedicalHistoryTableDataModel, LocalDate> dateColumn = new TableColumn<>("Date");
+        TableColumn<MedicalHistoryTableDataModel, LocalTime> timeColumn = new TableColumn<>("Time");
+        TableColumn<MedicalHistoryTableDataModel, String> resultColumn = new TableColumn<>("Result");
+        TableColumn<MedicalHistoryTableDataModel, String> observationColumn = new TableColumn<>("Observation");
+        TableColumn<MedicalHistoryTableDataModel, String> complicationColumn = new TableColumn<>("Complication");
+
+        medHisIdColumn.setCellValueFactory(new PropertyValueFactory<>("medHisId"));
+
+        patientIdColumn.setCellValueFactory(new PropertyValueFactory<>("patientId"));
+        staffIdColumn.setCellValueFactory(new PropertyValueFactory<>("staffId"));
+        dateColumn.setCellValueFactory(new PropertyValueFactory<>("date"));
+
+        // Customize the cell value factory for timeColumn to display only hour and
+        // minute
+        timeColumn.setCellValueFactory(new PropertyValueFactory<>("time"));
+        timeColumn.setCellFactory(column -> new TableCell<MedicalHistoryTableDataModel, LocalTime>() {
+            @Override
+            protected void updateItem(LocalTime time, boolean empty) {
+                super.updateItem(time, empty);
+                if (empty || time == null) {
+                    setText(null);
+                } else {
+                    setText(time.format(DateTimeFormatter.ofPattern("HH:mm")));
+                }
+            }
+        });
+
+        resultColumn.setCellValueFactory(new PropertyValueFactory<>("result"));
+        observationColumn.setCellValueFactory(new PropertyValueFactory<>("observation"));
+        complicationColumn.setCellValueFactory(new PropertyValueFactory<>("complication"));
+
+        medicalHistoryTable.getColumns().addAll(medHisIdColumn, patientIdColumn, staffIdColumn, dateColumn,
+                timeColumn, resultColumn, observationColumn, complicationColumn);
+
+        medicalHistoryTable.setItems(medicalHistoryDataList);
     }
 }

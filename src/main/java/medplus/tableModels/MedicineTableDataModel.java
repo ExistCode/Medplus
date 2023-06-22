@@ -12,13 +12,16 @@ public class MedicineTableDataModel {
     private SimpleStringProperty medicineId;
     private SimpleStringProperty patientName;
     private SimpleStringProperty doctorId;
+    private SimpleStringProperty medicineName;
     private SimpleStringProperty amount;
     private SimpleStringProperty doseDetail;
 
-    public MedicineTableDataModel(String medicineId, String patientName, String doctorId, String amount, String doseDetail) {
+    public MedicineTableDataModel(String medicineId, String medicineName, String patientName, String doctorId,
+            String amount, String doseDetail) {
         this.medicineId = new SimpleStringProperty(medicineId);
         this.patientName = new SimpleStringProperty(patientName);
         this.doctorId = new SimpleStringProperty(doctorId);
+        this.medicineName = new SimpleStringProperty(medicineName);
         this.amount = new SimpleStringProperty(amount);
         this.doseDetail = new SimpleStringProperty(doseDetail);
     }
@@ -31,11 +34,12 @@ public class MedicineTableDataModel {
             String medicineId = initialMedicineList.get(i).getMedicineId();
             String patientName = initialMedicineList.get(i).getPatientName();
             String doctorId = initialMedicineList.get(i).getStaffId();
+            String medicineName = initialMedicineList.get(i).getMedicineName();
             String amount = initialMedicineList.get(i).getAmount();
             String doseDetail = initialMedicineList.get(i).getDoseDetail();
 
             convertedList.add(
-                    new MedicineTableDataModel(medicineId, patientName, doctorId, amount, doseDetail));
+                    new MedicineTableDataModel(medicineId, medicineName, patientName, doctorId, amount, doseDetail));
         }
 
         return convertedList;
@@ -65,7 +69,7 @@ public class MedicineTableDataModel {
         this.patientName.set(patientName);
     }
 
-    public String getDoctorId() {
+    public String getStaffId() {
         return doctorId.get();
     }
 
@@ -75,6 +79,18 @@ public class MedicineTableDataModel {
 
     public void setDoctorId(String doctorId) {
         this.doctorId.set(doctorId);
+    }
+
+    public String getMedicineName() {
+        return medicineName.get();
+    }
+
+    public SimpleStringProperty medicineNameProperty() {
+        return medicineName;
+    }
+
+    public void setMedicineName(String medicineName) {
+        this.medicineName.set(medicineName);
     }
 
     public String getAmount() {
@@ -100,9 +116,4 @@ public class MedicineTableDataModel {
     public void setDoseDetail(String doseDetail) {
         this.doseDetail.set(doseDetail);
     }
-
-    public String getMedicineName() {
-        return null;
-    }
-
 }

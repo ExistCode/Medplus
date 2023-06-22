@@ -18,7 +18,7 @@ public class App extends Application {
     @Override
     public void start(Stage stage) throws IOException {
 
-        scene = new Scene(loadFXML("add_procedure_screen"), 1280, 720);
+        scene = new Scene(loadFXML("login_screen"), 1280, 720);
         // scene.getStylesheets().add(App.class.getResource("css/style.css").toExternalForm());
         stage.setResizable(false);
         stage.setScene(scene);
