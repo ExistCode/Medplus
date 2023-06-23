@@ -223,7 +223,7 @@ public class home_controller {
         List<Treatment> originalTreatmentList = TreatmentData.fetchTreatmentDataFromDatabase();
 
         for (Treatment tre : originalTreatmentList) {
-            if (tre.getStartDate().equals(LocalDate.now())) {
+            if (tre.getStartDate().isAfter(LocalDate.now())) {
                 System.out.println(tre.getTreatmentId());
                 lastTwoTreatmentList.add(tre);
 

@@ -253,7 +253,7 @@
             </Text>
          </children>
       </Pane>
-      <Text fill="#f9988b" layoutX="696.0" layoutY="540.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Today's Treatment">
+      <Text fill="#f9988b" layoutX="696.0" layoutY="540.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Upcoming's Treatment">
          <font>
             <Font name="SF Pro Display Semibold" size="24.0" />
          </font>
