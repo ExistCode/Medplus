@@ -1,25 +1,41 @@
 Staff ID,Name,National ID,Email,Date of Birth,Age,Contact Number,Job Title,Department
-S001,John Doe,12347483,johndoe@medplus.com,2023-06-08,0,1234567890,Resident Doctor,Doctor
-S002,Jane Smith,0987654321,janesmith@medplus.com,1975-09-21,47,0987654321,Senior Nurse,Nurse
-S004,Sarah Williams,0123456789,sarahwilliams@medplus.com,1990-12-12,33,0123456789,Head Nurse,Nurse
-S005,Michael Brown,5432109876,michaelbrown@medplus.com,1975-07-03,48,5432109876,Administrator,Administration
-S006,Emily Johnson,4567890123,emilyjohnson@medplus.com,1988-11-25,34,4567890123,Anesthetist,Doctor
-S007,Robert Davis,7890123456,robertdavis@medplus.com,1980-02-10,43,7890123456,Senior Physician,Doctor
-S008,Linda Wilson,2345678901,lindawilson@medplus.com,1995-06-18,28,2345678901,Head Nurse,Nurse
-S010,Sophia Martinez,9012345678,sophiamartinez@medplus.com,1990-04-30,33,9012345678,Resident Dentist,Doctor
-S011,William Johnson,3456789012,williamjohnson@medplus.com,1985-08-20,38,3456789012,Pharmacist,Administration
-S012,Amanda Thompson,6789012345,amandathompson@medplus.com,1988-12-02,34,6789012345,Occupational Therapist,Administration
-S013,Matthew Harris,9012345678,matthewharris@medplus.com,1992-06-15,31,9012345678,Physiotherapist,Administration
-S014,Olivia Wilson,1234567890,oliviawilson@medplus.com,1997-03-10,26,1234567890,Medical Laboratory Technician,Administration
-S015,Andrew Martin,4567890123,andrewmartin@medplus.com,1984-09-08,39,4567890123,Senior Surgeon,Doctor
-S017,Victoria Lee,985645123,victorialee@medplus.com,1983-07-25,40,985645123,Radiologist,Administration
-S019,Isabella Martinez,6547983215,isabellamartinez@medplus.com,1990-11-11,33,6547983215,Resident Physician,Doctor
-S020,Josephine Garcia,1437896521,josephinegarcia@medplus.com,1986-04-03,37,1437896521,Neurologist,Doctor
-S021,Daniel Thomas,6549812376,danielthomas@medplus.com,1980-09-29,43,6549812376,Senior Pharmacist,Administration
-S024,Grace Johnson,7412589630,gracejohnson@medplus.com,1987-05-23,36,7412589630,Senior Nurse,Nurse
-S025,Benjamin Wilson,9638527410,benjaminwilson@medplus.com,1995-10-01,28,9638527410,Medical Records Clerk,Administration
-S026,Natalie Walker,9517538524,nataliewalker@medplus.com,1991-08-14,32,9517538524,Psychiatrist,Administration
-S027,Jonathan Thompson,3698521470,jonathanthompson@medplus.com,1981-02-07,42,3698521470,Head Surgeon,Doctor
-S029,David Martinez,1478523690,davidmartinez@medplus.com,1989-09-16,34,1478523690,Orthopedic Surgeon,Doctor
-S030,Emma Adams,6549871230,emmaadams@medplus.com,1988-11-05,35,6549871230,Administrator,Administration
-S031,Dylan Eu,01902,Kajang,2023-06-08,0,09120920,Resident Doctor,Doctor
+S001,John Doe,9012345678,johndoe@medplus.com,1985-06-15,38,60123456789,Resident Doctor,Internal Medicine
+S002,Lisa Tan,8012345678,lisatan@medplus.com,1990-09-20,33,60123456790,Staff Nurse,Pediatrics
+S003,Muhammad Ali,7012345678,muhammadali@medplus.com,1978-11-02,45,60123456791,Surgeon,Surgery
+S004,Siti Rahmah,6012345678,sitirahmah@medplus.com,1982-03-25,41,60123456792,Pharmacist,Pharmacy
+S005,Agus Santoso,5012345678,agussantoso@medplus.com,1995-07-10,28,62812345678,Physical Therapist,Rehabilitation
+S006,Putri Dewi,4012345678,putridewi@medplus.com,1998-12-05,25,62812345679,Medical Technologist,Laboratory
+S007,Rahim Abdullah,3012345678,rahimabdullah@medplus.com,1980-02-10,43,60123456793,Anesthesiologist,Anesthesiology
+S008,Nurul Azizah,2012345678,nurulazizah@medplus.com,1993-04-12,30,60123456794,Physiotherapist,Rehabilitation
+S009,Ahmad bin Ismail,1012345678,ahmadismail@medplus.com,1975-08-23,48,60123456795,General Practitioner,Family Medicine
+S010,Sarah Lim,0123456789,sarahlim@medplus.com,1997-01-05,26,60123456796,Dietitian,Nutrition
+S011,Harianto Tanuwijaya,1123456789,hariantotanuwijaya@medplus.com,1988-10-18,35,62812345680,Psychologist,Mental Health
+S012,Siti Fatimah,2123456789,sitifatimah@medplus.com,1991-12-03,32,60123456797,Radiographer,Radiology
+S013,Mohd Azman,3123456789,mohdazman@medplus.com,1979-03-28,44,60123456798,Optometrist,Ophthalmology
+S014,Lina Susanti,4123456789,linasusanti@medplus.com,1983-05-14,40,62812345681,Occupational Therapist,Rehabilitation
+S015,Muhammad Hakim,5123456789,muhammadhakim@medplus.com,1994-09-08,29,60123456799,Cardiologist,Cardiology
+S016,Kartini Putri,6123456789,kartiniputri@medplus.com,1999-07-02,24,62812345682,Speech Therapist,Speech Therapy
+S017,John Abdullah,7123456789,johnabdullah@medplus.com,1977-12-20,46,60123456800,Orthopedic Surgeon,Orthopedics
+S018,Sarah Lee,8123456789,sarahlee@medplus.com,1992-02-15,31,60123456801,Pharmacist,Pharmacy
+S019,Aziz bin Ahmad,9123456789,azizahmad@medplus.com,1974-04-05,49,60123456802,Medical Officer,Internal Medicine
+S020,Nora Cheong,0223456789,noracheong@medplus.com,1996-06-25,27,60123456803,Resident Doctor,Family Medicine
+S021,Irfan Wijaya,1223456789,irfanwijaya@medplus.com,1987-09-10,36,62812345683,Surgeon,Surgery
+S022,Puteri Amani,2223456789,puteriamani@medplus.com,1990-11-05,33,62812345684,Staff Nurse,Obstetrics and Gynecology
+S023,Steven Davis,3223456789,stevendavis@medplus.com,1978-01-20,45,60123456804,Anesthesiologist,Anesthesiology
+S024,Nadia Azman,4223456789,nadiaazman@medplus.com,1993-03-14,30,60123456805,Physiotherapist,Rehabilitation
+S025,Rahman bin Harun,5223456789,rahmanharun@medplus.com,1976-07-23,47,60123456806,Pharmacist,Pharmacy
+S026,Linda Dewi,6223456789,lindadewi@medplus.com,1998-09-05,25,62812345685,Medical Technologist,Laboratory
+S027,Ahmad Shah,7223456789,ahmadshah@medplus.com,1982-11-02,41,60123456807,General Practitioner,Family Medicine
+S028,Rosmah Lee,8223456789,rosmahlee@medplus.com,1995-01-25,28,60123456808,Pharmacist,Pharmacy
+S029,Harun bin Ismail,9223456789,harunismail@medplus.com,1973-03-08,50,60123456809,Psychiatrist,Psychiatry
+S030,Aisyah Tan,0323456789,aisyahtan@medplus.com,1997-05-12,26,60123456810,Dentist,Dentistry
+S031,Ahmad Malik,1323456789,ahmadmalik@medplus.com,1984-08-17,39,60123456811,Resident Doctor,Internal Medicine
+S032,Siti Nurul,2323456789,sitinurul@medplus.com,1991-10-22,32,60123456812,Staff Nurse,Obstetrics and Gynecology
+S033,Muhammad Faisal,3323456789,muhammadfaisal@medplus.com,1977-12-05,46,60123456813,Cardiologist,Cardiology
+S034,Laila Susanto,4323456789,lailasusanto@medplus.com,1983-02-28,40,62812345686,Pharmacist,Pharmacy
+S035,Ahmad Ali,5323456789,ahmadali@medplus.com,1992-06-15,31,60123456814,Orthopedic Surgeon,Orthopedics
+S036,Ratna Sari,6323456789,ratnasari@medplus.com,1996-09-20,27,62812345687,Physiotherapist,Rehabilitation
+S037,Mohammad Hanif,7323456789,mohammadhanif@medplus.com,1979-11-10,44,60123456815,Anesthesiologist,Anesthesiology
+S038,Sarah Abdullah,8323456789,sarahabdullah@medplus.com,1994-01-12,29,60123456816,Radiographer,Radiology
+S039,Ahmad bin Hassan,9323456789,ahmadhassan@medplus.com,1975-05-23,48,60123456817,General Practitioner,Family Medicine
+S040,Nurul Indah,0423456789,nurulindah@medplus.com,1998-07-05,25,60123456818,Nurse Practitioner,Internal Medicine
