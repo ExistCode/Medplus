@@ -1,41 +1,41 @@
 Diagnosis ID,Patient Name,Staff ID,Date,Diagnosis
-D001, Ahmad Abdullah, S004, 2023-02-15, Pregnancy
-D002, Lim Mei Ling, S006, 2023-01-23, Eczema
-D003, Siti Nur Azizah, S008, 2023-03-10, Pediatric Asthma
-D004, Mohammad Ali, S010, 2023-05-08, Depression
-D005, Chen Wei, S011, 2023-02-27, Migraine
-D006, Nurul Indah, S009, 2023-03-31, Glaucoma
-D007, Rajesh Kumar, S005, 2023-04-17, Arrhythmia
-D008, Anita Dewi, S002, 2023-01-18, Influenza
-D009, Lee Joon-ho, S004, 2023-02-07, Polycystic Ovary Syndrome
-D010, Novi Susanti, S006, 2023-05-19, Psoriasis
-D011, Ahmad Ibrahim, S011, 2023-06-06, Epilepsy
-D012, Cindy Chen, S002, 2023-04-01, Common Cold
-D013, Ahmad Hidayat, S010, 2023-05-13, Anxiety Disorder
-D014, Aisyah Zahra, S008, 2023-03-21, Attention Deficit Hyperactivity Disorder (ADHD)
-D015, David Tan, S005, 2023-01-09, Hypertension
-D016, Siti Rahayu, S006, 2023-06-19, Acne
-D017, Mohammad Hassan, S011, 2023-04-11, Parkinson's Disease
-D018, Lee Min-jung, S004, 2023-03-07, Urinary Tract Infection (UTI)
-D019, Rajesh Patel, S007, 2023-01-30, Sinusitis
-D020, Anita Fitriani, S008, 2023-02-21, Asthma
-D021, Mohammad Yusuf, S005, 2023-06-12, Coronary Artery Disease
-D022, Wong Li Ling, S006, 2023-03-25, Dermatitis
-D023, Rahma Dewi, S010, 2023-05-26, Bipolar Disorder
-D024, Ahmad Rizal, S009, 2023-04-06, Cataracts
-D025, Chen Ming, S006, 2023-02-09, Psoriasis
-D026, Siti Rahma, S008, 2023-06-14, Allergies
-D027, Rajendra Kumar, S011, 2023-03-03, Stroke
-D028, Anita Devi, S002, 2023-04-21, Sinusitis
-D029, Lee Min-ho, S007, 2023-01-16, Tonsillitis
-D030, Ayu Suryani, S009, 2023-05-01, Macular Degeneration
-D031, Ahmad Abdullah, S004, 2023-02-02, Gestational Diabetes
-D032, Lim Mei Ling, S006, 2023-01-12, Rosacea
-D033, Siti Nur Azizah, S008, 2023-03-28, Bronchitis
-D034, Mohammad Ali, S010, 2023-05-20, Schizophrenia
-D035, Chen Wei, S011, 2023-02-13, Cluster Headaches
-D036, Nurul Indah, S009, 2023-03-17, Glaucoma
-D037, Rajesh Kumar, S005, 2023-04-30, Atrial Fibrillation
-D038, Anita Dewi, S002, 2023-01-22, Pneumonia
-D039, Lee Joon-ho, S004, 2023-02-18, Endometriosis
-D040, Novi Susanti, S006, 2023-05-03, Eczema
+D001,Ahmad Abdullah,S004,2023-01-15,Appendicitis
+D002,Emily Tan,S008,2023-02-28,Common Cold
+D003,Anita Devi,S011,2023-03-19,Migraine
+D004,Steven Tan,S009,2023-04-02,Cataracts
+D005,Sarah Wong,S004,2023-05-05,Polycystic Ovary Syndrome
+D006,Mohammad Ali,S002,2023-06-11,Influenza
+D007,Richard Teo,S011,2023-07-08,Epilepsy
+D008,Melissa Ng,S006,2023-08-21,Acne Vulgaris
+D009,David Lim,S005,2023-09-14,Arrhythmia
+D010,Sarah Wong,S004,2023-10-03,Ovarian Cancer
+D011,Emily Tan,S008,2023-11-29,Anxiety Disorder
+D012,Natalie Tan,S016,2023-12-17,Foot Sprain
+D013,John Doe,S001,2024-01-22,Conjunctivitis
+D014,Jessica Koh,S008,2024-02-11,Attention Deficit Hyperactivity Disorder
+D015,Ahmad Ibrahim,S002,2024-03-07,Asthma
+D016,Samantha Chia,S014,2024-04-29,Malocclusion
+D017,David Lim,S005,2024-05-14,Myocardial Infarction
+D018,Richard Teo,S011,2024-06-23,Multiple Sclerosis
+D019,Melissa Ng,S006,2024-07-19,Eczema
+D020,Steven Tan,S009,2024-08-26,Glaucoma
+D021,Emily Tan,S008,2024-09-02,Depression
+D022,David Lim,S005,2024-10-11,Hypertension
+D023,Sarah Wong,S004,2024-11-07,Endometriosis
+D024,Ahmad Abdullah,S004,2024-12-13,Gestational Diabetes
+D025,Mohammad Ali,S002,2025-01-18,Common Cold
+D026,Emily Tan,S008,2025-02-23,Social Anxiety Disorder
+D027,Richard Teo,S011,2025-03-11,Parkinson's Disease
+D028,Melissa Ng,S006,2025-04-27,Psoriasis
+D029,David Lim,S005,2025-05-06,Hypertrophic Cardiomyopathy
+D030,Sarah Wong,S004,2025-06-15,Pelvic Inflammatory Disease
+D031,Steven Tan,S009,2025-07-21,Retinal Detachment
+D032,Ahmad Abdullah,S004,2025-08-30,Gestational Hypertension
+D033,Emily Tan,S008,2025-09-18,Bipolar Disorder
+D034,Melissa Ng,S006,2025-10-27,Contact Dermatitis
+D035,Richard Teo,S011,2025-11-15,Cerebral Palsy
+D036,David Lim,S005,2025-12-24,Coronary Artery Disease
+D037,Steven Tan,S009,2026-01-09,Macular Degeneration
+D038,Sarah Wong,S004,2026-02-13,Fibroids
+D039,Ahmad Abdullah,S004,2026-03-20,Pregnancy-induced Hypertension
+D040,Emily Tan,S008,2026-04-05,Panic Disorder
