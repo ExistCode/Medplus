@@ -24,9 +24,9 @@ T022,James Davis,S003,2023-06-20,2023-06-25,Medication adjustment
 T023,Dylan Eu,S004,2023-06-22,2023-06-23,Good,
 T024,Liam Wilson,S005,2023-06-22,2023-07-01,General consultation
 T025,Sophia Lee,S003,2023-06-21,2023-06-26,Follow-up appointment
-T026,William Davis,S004,2023-06-24,2023-06-30,X-ray examination
+T026,William Davis,S004,2023-06-23,2023-06-30,X-ray examination
 T027,Isabella Wilson,S005,2023-06-28,2023-07-04,Physical therapy
-T028,James Anderson,S004,2023-06-29,2023-07-05,Prescription refill
+T028,James Anderson,S004,2023-06-23,2023-07-05,Prescription refill
 T029,Emily Garcia,S003,2023-06-26,2023-07-01,Regular check-up
 T030,Liam Wilson,S005,2023-06-30,2023-07-06,Health screening
 T031,Benjamin Tan Wei Keong,S006,2023-06-01,2023-06-03,-
