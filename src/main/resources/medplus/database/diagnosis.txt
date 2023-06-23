@@ -1,5 +1,41 @@
 Diagnosis ID,Patient Name,Staff ID,Date,Diagnosis
-D001,Benjamin Tan Wei Keong,S002,2023-06-04,Fever
-D002,Hans Andreanto,S002,2023-04-26,Headache
-D004,Cheng You You,S001,2023-04-11,Fewer,Headache
-D005,Emily Johnson,S007,2023-06-03,Fever
+D001, Ahmad Abdullah, S004, 2023-02-15, Pregnancy
+D002, Lim Mei Ling, S006, 2023-01-23, Eczema
+D003, Siti Nur Azizah, S008, 2023-03-10, Pediatric Asthma
+D004, Mohammad Ali, S010, 2023-05-08, Depression
+D005, Chen Wei, S011, 2023-02-27, Migraine
+D006, Nurul Indah, S009, 2023-03-31, Glaucoma
+D007, Rajesh Kumar, S005, 2023-04-17, Arrhythmia
+D008, Anita Dewi, S002, 2023-01-18, Influenza
+D009, Lee Joon-ho, S004, 2023-02-07, Polycystic Ovary Syndrome
+D010, Novi Susanti, S006, 2023-05-19, Psoriasis
+D011, Ahmad Ibrahim, S011, 2023-06-06, Epilepsy
+D012, Cindy Chen, S002, 2023-04-01, Common Cold
+D013, Ahmad Hidayat, S010, 2023-05-13, Anxiety Disorder
+D014, Aisyah Zahra, S008, 2023-03-21, Attention Deficit Hyperactivity Disorder (ADHD)
+D015, David Tan, S005, 2023-01-09, Hypertension
+D016, Siti Rahayu, S006, 2023-06-19, Acne
+D017, Mohammad Hassan, S011, 2023-04-11, Parkinson's Disease
+D018, Lee Min-jung, S004, 2023-03-07, Urinary Tract Infection (UTI)
+D019, Rajesh Patel, S007, 2023-01-30, Sinusitis
+D020, Anita Fitriani, S008, 2023-02-21, Asthma
+D021, Mohammad Yusuf, S005, 2023-06-12, Coronary Artery Disease
+D022, Wong Li Ling, S006, 2023-03-25, Dermatitis
+D023, Rahma Dewi, S010, 2023-05-26, Bipolar Disorder
+D024, Ahmad Rizal, S009, 2023-04-06, Cataracts
+D025, Chen Ming, S006, 2023-02-09, Psoriasis
+D026, Siti Rahma, S008, 2023-06-14, Allergies
+D027, Rajendra Kumar, S011, 2023-03-03, Stroke
+D028, Anita Devi, S002, 2023-04-21, Sinusitis
+D029, Lee Min-ho, S007, 2023-01-16, Tonsillitis
+D030, Ayu Suryani, S009, 2023-05-01, Macular Degeneration
+D031, Ahmad Abdullah, S004, 2023-02-02, Gestational Diabetes
+D032, Lim Mei Ling, S006, 2023-01-12, Rosacea
+D033, Siti Nur Azizah, S008, 2023-03-28, Bronchitis
+D034, Mohammad Ali, S010, 2023-05-20, Schizophrenia
+D035, Chen Wei, S011, 2023-02-13, Cluster Headaches
+D036, Nurul Indah, S009, 2023-03-17, Glaucoma
+D037, Rajesh Kumar, S005, 2023-04-30, Atrial Fibrillation
+D038, Anita Dewi, S002, 2023-01-22, Pneumonia
+D039, Lee Joon-ho, S004, 2023-02-18, Endometriosis
+D040, Novi Susanti, S006, 2023-05-03, Eczema
