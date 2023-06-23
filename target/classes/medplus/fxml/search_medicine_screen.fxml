@@ -22,7 +22,7 @@
                   </ImageView>
                   <Text fill="WHITE" layoutX="9.0" layoutY="106.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dashboard">
                      <font>
-                        <Font name="Verdana" size="16.0" />
+                        <Font name="SF Pro Rounded Semibold" size="16.0" />
                      </font>
                   </Text>
                </children>
@@ -36,7 +36,7 @@
                   </ImageView>
                   <Text fill="WHITE" layoutX="21.0" layoutY="114.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Patients">
                      <font>
-                        <Font name="Verdana" size="16.0" />
+                        <Font name="SF Pro Rounded Semibold" size="16.0" />
                      </font>
                   </Text>
                </children>
@@ -50,7 +50,7 @@
                   </ImageView>
                   <Text fill="WHITE" layoutX="31.0" layoutY="117.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Staff">
                      <font>
-                        <Font name="Verdana" size="16.0" />
+                        <Font name="SF Pro Rounded Semibold" size="16.0" />
                      </font>
                   </Text>
                </children>
@@ -64,7 +64,7 @@
                   </ImageView>
                   <Text fill="#089bab" layoutX="24.0" layoutY="110.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Search">
                      <font>
-                        <Font name="Verdana" size="16.0" />
+                        <Font name="SF Pro Rounded Semibold" size="16.0" />
                      </font>
                   </Text>
                </children>
