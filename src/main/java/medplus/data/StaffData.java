@@ -76,10 +76,10 @@ public class StaffData {
             FileWriter writer = new FileWriter(fileName, true);
             String staffData = String.format("%s,%s,%s,%s,%s,%d,%s,%s,%s",
                     newStaff.getStaffId(),
-                    newStaff.getStaffName(),
+                    newStaff.getName(),
                     newStaff.getStaffNationalId(),
                     newStaff.getStaffEmail(),
-                    newStaff.getStaffDateOfBirth(),
+                    newStaff.getDateOfBirth(),
                     newStaff.getStaffAge(),
                     newStaff.getStaffContactNumber(),
                     newStaff.getStaffJobTitle(),
@@ -210,9 +210,9 @@ public class StaffData {
             BufferedReader reader = new BufferedReader(new FileReader(fileName));
             while ((line = reader.readLine()) != null) {
                 if (line.contains(newStaffData.getStaffId())) {
-                    fetchedStaffListAfterDeletion.add(newStaffData.getStaffId() + "," + newStaffData.getStaffName()
+                    fetchedStaffListAfterDeletion.add(newStaffData.getStaffId() + "," + newStaffData.getName()
                             + "," + newStaffData.getStaffNationalId() + "," + newStaffData.getStaffEmail() + ","
-                            + newStaffData.getStaffDateOfBirth() + "," + newStaffData.getStaffAge() + ","
+                            + newStaffData.getDateOfBirth() + "," + newStaffData.getStaffAge() + ","
                             + newStaffData.getStaffContactNumber() + "," + newStaffData.getStaffJobTitle() + ","
                             + newStaffData.getStaffDepartment());
                 }

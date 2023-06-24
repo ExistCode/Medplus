@@ -150,10 +150,10 @@ public class staff_controller {
         if (selectedStaff != null) {
             try {
                 StaffData.initStaffData.setStaffId(selectedStaff.getStaffId());
-                StaffData.initStaffData.setStaffName(selectedStaff.getName());
+                StaffData.initStaffData.setName(selectedStaff.getName());
                 StaffData.initStaffData.setStaffNationalId("12347483");
                 StaffData.initStaffData.seStafftEmail(selectedStaff.getEmail());
-                StaffData.initStaffData.seStafftDateOfBirth(null);
+                StaffData.initStaffData.setDateOfBirth(null);
                 StaffData.initStaffData.setStaffAge(30);
                 StaffData.initStaffData.setStaffContactNumber(selectedStaff.getContactNumber());
                 StaffData.initStaffData.setStaffJobTitle(selectedStaff.getJobTitle());
@@ -208,10 +208,10 @@ public class staff_controller {
 
                     try {
                         StaffData.initStaffData.setStaffId(selectedStaff.getStaffId());
-                        StaffData.initStaffData.setStaffName(selectedStaff.getName());
+                        StaffData.initStaffData.setName(selectedStaff.getName());
                         StaffData.initStaffData.setStaffNationalId("12347483");
                         StaffData.initStaffData.seStafftEmail(selectedStaff.getEmail());
-                        StaffData.initStaffData.seStafftDateOfBirth(null);
+                        StaffData.initStaffData.setDateOfBirth(null);
                         StaffData.initStaffData.setStaffAge(30);
                         StaffData.initStaffData.setStaffContactNumber(selectedStaff.getContactNumber());
                         StaffData.initStaffData.setStaffJobTitle(selectedStaff.getJobTitle());
@@ -224,14 +224,14 @@ public class staff_controller {
                         // StaffData.initStaffData.setStaffJobTitle(selectedStaff.getJobTitle());
                         //
 
-                        System.out.println(StaffData.initStaffData.getStaffName());
+                        System.out.println(StaffData.initStaffData.getName());
                         System.out.println(StaffData.initStaffData.getStaffEmail());
                         System.out.println(StaffData.initStaffData.getStaffContactNumber());
                         System.out.println(StaffData.initStaffData.getStaffDepartment());
                         System.out.println(StaffData.initStaffData.getStaffJobTitle());
                         System.out.println("Keklik");
 
-                        App.setRoot("staff_details_analysis_screen");
+                        App.setRoot("staff_details_screen");
 
                     } catch (IOException e) {
                         // TODO Auto-generated catch block

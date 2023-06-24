@@ -43,9 +43,9 @@ public class PatientTableDataModel {
 
         for (int i = 0; i < initialPatientList.size(); i++) {
             String patientId = initialPatientList.get(i).getPatientId();
-            String name = initialPatientList.get(i).getPatientName();
+            String name = initialPatientList.get(i).getName();
             String gender = initialPatientList.get(i).getPatientGender();
-            LocalDate dateOfBirth = initialPatientList.get(i).getPatientDateOfBirth();
+            LocalDate dateOfBirth = initialPatientList.get(i).getDateOfBirth();
             String bloodType = initialPatientList.get(i).getPatientBloodType();
             int age = initialPatientList.get(i).getPatientAge();
             double weight = initialPatientList.get(i).getPatientWeight();

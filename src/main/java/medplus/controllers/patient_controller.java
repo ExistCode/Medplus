@@ -110,10 +110,10 @@ public class patient_controller {
         if (selectedPatient != null) {
             try {
                 PatientData.initPatientData.setPatientId(selectedPatient.getPatientId());
-                PatientData.initPatientData.setPatientName(selectedPatient.getName());
+                PatientData.initPatientData.setName(selectedPatient.getName());
                 PatientData.initPatientData.setPatientNationalId("6789012345");
                 PatientData.initPatientData.setPatientGender(selectedPatient.getGender());
-                PatientData.initPatientData.setPatientDateOfBirth(selectedPatient.getDateOfBirth());
+                PatientData.initPatientData.setDateOfBirth(selectedPatient.getDateOfBirth());
                 PatientData.initPatientData.setPatientAge(selectedPatient.getAge());
                 PatientData.initPatientData.setPatientHeight(selectedPatient.getHeight());
                 PatientData.initPatientData.setPatientWeight(selectedPatient.getWeight());
@@ -159,9 +159,9 @@ public class patient_controller {
 
                     try {
                         PatientData.initPatientData.setPatientId(selectedPatient.getPatientId());
-                        PatientData.initPatientData.setPatientName(selectedPatient.getName());
+                        PatientData.initPatientData.setName(selectedPatient.getName());
                         PatientData.initPatientData.setPatientGender(selectedPatient.getGender());
-                        PatientData.initPatientData.setPatientDateOfBirth(selectedPatient.getDateOfBirth());
+                        PatientData.initPatientData.setDateOfBirth(selectedPatient.getDateOfBirth());
                         PatientData.initPatientData.setPatientBloodType(selectedPatient.getBloodType());
                         PatientData.initPatientData.setPatientHeight(selectedPatient.getHeight());
                         PatientData.initPatientData.setPatientWeight(selectedPatient.getWeight());

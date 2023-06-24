@@ -79,8 +79,13 @@ public class update_staff_controller {
                     jobTitleTextField.getText(),
                     departmentBox.getSelectionModel().getSelectedItem());
             StaffData.updateStaffData(newStaff);
-
-            App.setRoot("staff_all_home_screen");
+            StaffData.initStaffData.setStaffId(StaffData.initStaffData.getStaffId());
+            StaffData.initStaffData.setName(nameTextField.getText());
+            StaffData.initStaffData.seStafftEmail(emailTextField.getText());
+            StaffData.initStaffData.setStaffContactNumber(contactNumberTextField.getText());
+            StaffData.initStaffData.setStaffDepartment(departmentBox.getSelectionModel().getSelectedItem());
+            StaffData.initStaffData.setStaffJobTitle(jobTitleTextField.getText());
+            App.setRoot("staff_details_screen");
 
         } else {
             // Printing error message
@@ -106,11 +111,11 @@ public class update_staff_controller {
 
     @FXML
     public void initialize() {
-        nameTextField.setText(StaffData.initStaffData.getStaffName());
+        nameTextField.setText(StaffData.initStaffData.getName());
         nationalIdTextField.setText(StaffData.initStaffData.getStaffNationalId());
         emailTextField.setText(StaffData.initStaffData.getStaffEmail());
         contactNumberTextField.setText(StaffData.initStaffData.getStaffContactNumber());
-        dateOfBirthSelector.setValue(StaffData.initStaffData.getStaffDateOfBirth());
+        dateOfBirthSelector.setValue(StaffData.initStaffData.getDateOfBirth());
         jobTitleTextField.setText(StaffData.initStaffData.getStaffJobTitle());
         departmentBox.getSelectionModel().select(StaffData.initStaffData.getStaffDepartment());
         ageTextField.setText(String.valueOf(StaffData.initStaffData.getStaffAge()));

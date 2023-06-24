@@ -100,7 +100,7 @@ public class add_patient_controller {
             PatientData.addNewPatient(newPatient);
             PatientData.initPatientData.setPatientId(nameTextField.getText());
             PatientData.initPatientData.setPatientGender(Gender.getSelectionModel().getSelectedItem());
-            PatientData.initPatientData.setPatientDateOfBirth(dateOfBirth);
+            PatientData.initPatientData.setDateOfBirth(dateOfBirth);
             PatientData.initPatientData
                     .setPatientBloodType(bloodType.getSelectionModel().getSelectedItem());
             PatientData.initPatientData.setPatientHeight(Double.parseDouble(heightTextField.getText()));

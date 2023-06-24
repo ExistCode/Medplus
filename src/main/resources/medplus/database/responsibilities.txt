@@ -1,0 +1,28 @@
+responsibilityId,responsibilityName,responsibilityDescription,staffId
+RS001,Patient Registration,Register patients and gather necessary information for their records,S023
+RS002,Insurance Verification,Verify insurance coverage and process claims,S024
+RS003,Appointment Scheduling,Schedule patient appointments and manage the appointment calendar,S023
+RS004,Medical Billing and Coding,Handle medical billing and coding tasks for accurate reimbursement,S024
+RS005,Health Records Management,Maintain and update electronic health records and ensure their confidentiality,S023
+RS006,Financial Management,Assist in managing the financial aspects of healthcare operations,S024
+RS007,Inventory Control,Monitor and manage inventory of medical supplies and equipment,S023
+RS008,Policy and Procedure Compliance,Ensure compliance with healthcare regulations and internal policies,S024
+RS009,Quality Assurance,Conduct quality assurance audits and implement improvement measures,S023
+RS010,Staff Training and Development,Coordinate and facilitate training programs for healthcare staff,S024
+RS011,Medical Transcription,Transcribe medical records and documents,S023
+RS012,Hospital Administration,Manage hospital operations and administrative tasks,S024
+RS013,Health Information Management,Oversee the organization and security of health information systems,S023
+RS014,Strategic Planning,Assist in developing and implementing strategic plans for healthcare facilities,S024
+RS015,Budget Planning and Analysis,Assist in budget planning and financial analysis for healthcare organizations,S023
+RS016,Healthcare Compliance,Ensure adherence to legal and regulatory requirements in healthcare settings,S024
+RS017,Healthcare Marketing and Public Relations,Support marketing and public relations efforts for healthcare facilities,S023
+RS018,Healthcare IT Support,Provide technical support and troubleshooting for healthcare information systems,S024
+RS019,Facilities Management,Oversee maintenance and operations of healthcare facilities and equipment,S023
+RS020,Project Management,Coordinate and manage projects related to healthcare services and initiatives,S024
+RS021,Human Resources Coordination,Assist in recruitment and HR processes for healthcare staff,S023
+RS022,Data Analysis and Reporting,Analyze healthcare data and generate reports for decision-making purposes,S024
+RS023,Healthcare Ethics and Compliance,Promote ethical practices and ensure compliance in healthcare organizations,S023
+RS024,Healthcare Policy Analysis,Research and analyze healthcare policies and their impact on healthcare delivery,S024
+RS025,Risk Management,Identify and mitigate risks in healthcare settings to ensure patient safety,S023
+RS026,Healthcare Facility Accreditation,Facilitate and manage the accreditation process for healthcare facilities,S024
+RS027,Healthcare Administration Research,Conduct research on healthcare administration topics and trends,S023

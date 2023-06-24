@@ -132,9 +132,9 @@ public class update_patient_controller {
      */
     @FXML
     public void initialize() {
-        fullNameTextField.setText(PatientData.initPatientData.getPatientName());
+        fullNameTextField.setText(PatientData.initPatientData.getName());
         nationalIdTextField.setText(PatientData.initPatientData.getPatientNationalId());
-        dateOfBirthPicker.setValue(PatientData.initPatientData.getPatientDateOfBirth());
+        dateOfBirthPicker.setValue(PatientData.initPatientData.getDateOfBirth());
         contactNumberTextField.setText(PatientData.initPatientData.getPatientContactNumber());
         addressTextField.setText(PatientData.initPatientData.getPatientAddress());
         genderComboBox.setValue(PatientData.initPatientData.getPatientGender());

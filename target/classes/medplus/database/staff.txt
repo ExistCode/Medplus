@@ -1,25 +1,28 @@
 Staff ID,Name,National ID,Email,Date of Birth,Age,Contact Number,Job Title,Department
-S001,John Doe,12347483,johndoe@medplus.com,2023-06-08,0,1234567890,Resident Doctor,Doctor
-S002,Jane Smith,0987654321,janesmith@medplus.com,1975-09-21,47,0987654321,Senior Nurse,Nurse
-S004,Sarah Williams,0123456789,sarahwilliams@medplus.com,1990-12-12,33,0123456789,Head Nurse,Nurse
-S005,Michael Brown,5432109876,michaelbrown@medplus.com,1975-07-03,48,5432109876,Administrator,Administration
-S006,Emily Johnson,4567890123,emilyjohnson@medplus.com,1988-11-25,34,4567890123,Anesthetist,Doctor
-S007,Robert Davis,7890123456,robertdavis@medplus.com,1980-02-10,43,7890123456,Senior Physician,Doctor
-S008,Linda Wilson,2345678901,lindawilson@medplus.com,1995-06-18,28,2345678901,Head Nurse,Nurse
-S010,Sophia Martinez,9012345678,sophiamartinez@medplus.com,1990-04-30,33,9012345678,Resident Dentist,Doctor
-S011,William Johnson,3456789012,williamjohnson@medplus.com,1985-08-20,38,3456789012,Pharmacist,Administration
-S012,Amanda Thompson,6789012345,amandathompson@medplus.com,1988-12-02,34,6789012345,Occupational Therapist,Administration
-S013,Matthew Harris,9012345678,matthewharris@medplus.com,1992-06-15,31,9012345678,Physiotherapist,Administration
-S014,Olivia Wilson,1234567890,oliviawilson@medplus.com,1997-03-10,26,1234567890,Medical Laboratory Technician,Administration
-S015,Andrew Martin,4567890123,andrewmartin@medplus.com,1984-09-08,39,4567890123,Senior Surgeon,Doctor
-S017,Victoria Lee,985645123,victorialee@medplus.com,1983-07-25,40,985645123,Radiologist,Administration
-S019,Isabella Martinez,6547983215,isabellamartinez@medplus.com,1990-11-11,33,6547983215,Resident Physician,Doctor
-S020,Josephine Garcia,1437896521,josephinegarcia@medplus.com,1986-04-03,37,1437896521,Neurologist,Doctor
-S021,Daniel Thomas,6549812376,danielthomas@medplus.com,1980-09-29,43,6549812376,Senior Pharmacist,Administration
-S024,Grace Johnson,7412589630,gracejohnson@medplus.com,1987-05-23,36,7412589630,Senior Nurse,Nurse
-S025,Benjamin Wilson,9638527410,benjaminwilson@medplus.com,1995-10-01,28,9638527410,Medical Records Clerk,Administration
-S026,Natalie Walker,9517538524,nataliewalker@medplus.com,1991-08-14,32,9517538524,Psychiatrist,Administration
-S027,Jonathan Thompson,3698521470,jonathanthompson@medplus.com,1981-02-07,42,3698521470,Head Surgeon,Doctor
-S029,David Martinez,1478523690,davidmartinez@medplus.com,1989-09-16,34,1478523690,Orthopedic Surgeon,Doctor
-S030,Emma Adams,6549871230,emmaadams@medplus.com,1988-11-05,35,6549871230,Administrator,Administration
-S031,Dylan Eu,01902,Kajang,2023-06-08,0,09120920,Resident Doctor,Doctor
+S001,John Doe,9012345678,johndoe@medplus.com,1985-06-15,38,60123456789,Resident Doctor,Doctor
+S002,Emily Tan,9012345679,emilytan@medplus.com,1987-09-23,35,60123456780,General Practitioner,Doctor
+S003,Michael Lee,12347483,michaellee@medplus.com,2023-06-09,0,60123456781,Surgeon,Doctor
+S004,Sarah Wrong,12347483,sarahwong@medplus.com,1988-06-16,35,60123456782,Obstetrician,Doctor
+S005,David Lim,9012345682,davidlim@medplus.com,1978-08-29,44,60123456783,Cardiologist,Doctor
+S006,Melissa Ng,9012345683,melissang@medplus.com,1983-02-18,39,60123456784,Dermatologist,Doctor
+S007,Andrew Liew,9012345684,andrewliew@medplus.com,1982-07-06,41,60123456785,ENT Specialist,Doctor
+S008,Jessica Koh,9012345685,jessicakoh@medplus.com,1989-04-05,33,60123456786,Pediatrician,Doctor
+S009,Steven Tan,9012345686,steventan@medplus.com,1975-12-01,47,60123456787,Ophthalmologist,Doctor
+S010,Lisa Chong,9012345687,lisachong@medplus.com,1981-10-14,41,60123456788,Psychiatrist,Doctor
+S011,Richard Teo,9012345688,richardteo@medplus.com,1984-03-28,39,60123456789,Neurologist,Doctor
+S012,Amy Yap,9012345689,amyyap@medplus.com,1986-09-07,37,60123456780,Anesthesiologist,Doctor
+S013,Jason Lim,9012345690,jasonlim@medplus.com,1992-05-19,31,60123456781,Radiologist,Doctor
+S014,Samantha Chia,9012345691,samanthachia@medplus.com,1988-01-09,35,60123456782,Orthodontist,Doctor
+S015,Patrick Goh,9012345692,patrickgoh@medplus.com,1987-07-22,36,60123456783,Physiotherapist,Nurse
+S016,Natalie Tan,9012345693,natalietan@medplus.com,1991-11-03,30,60123456784,Nurse,Nurse
+S017,Benjamin Low,9012345694,benjaminlow@medplus.com,1979-01-31,44,60123456785,Pharmacist,Nurse
+S018,Michelle Chin,9012345695,michellechin@medplus.com,1993-06-25,28,60123456786,Laboratory Technologist,Nurse
+S019,Kevin Lee,9012345696,kevinlee@medplus.com,1984-04-17,39,60123456787,Physician Assistant,Doctor
+S020,Jennifer Lim,9012345697,jenniferlim@medplus.com,1985-12-28,37,60123456788,Occupational Therapist,Nurse
+S021,William Tan,9012345698,williamtan@medplus.com,1990-08-14,33,60123456789,Dietitian,Nurse
+S022,Alice Ng,9012345699,aliceng@medplus.com,1982-02-25,41,60123456780,Medical Worker,Nurse
+S023,Kenneth Chong,12347483,kennethchong@medplus.com,2023-06-02,0,60123456781,Transcriptionists,Administration
+S024,Grace Lim,9012345701,gracelim@medplus.com,1995-02-07,28,60123456782,Hospital Administrator,Administration
+S025,Daniel Wong,9012345702,danielwong@medplus.com,1988-06-30,35,60123456783,Phlebotomist,Nurse
+S026,Stephanie Tan,9012345703,stephanietan@medplus.com,1993-03-08,30,60123456784,Medical Laboratory Technologist,Nurse
+S027,Brian Lim,9012345704,brianlim@medplus.com,1991-09-17,32,60123456785,Medical Technologist,Nurse
