@@ -18,7 +18,6 @@ import medplus.App;
 import medplus.data.AnalysisData;
 import medplus.tableModels.AnalysisTableDataModel;
 
-
 public class search_screen_controller {
 
     @FXML
@@ -123,7 +122,6 @@ public class search_screen_controller {
                 AnalysisData.initanalysisData.setTestInformation(selectedAnalysis.getTestInformation());
 
                 App.setRoot("update_analysis_screen");
-
 
             } catch (IOException e) {
                 // TODO Auto-generated catch block

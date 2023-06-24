@@ -230,14 +230,14 @@ public class staff_nurse_controller {
 
                     try {
 
-                        StaffData.initStaffData.setStaffName(selectedStaff.getName());
+                        StaffData.initStaffData.setName(selectedStaff.getName());
                         StaffData.initStaffData.seStafftEmail(selectedStaff.getEmail());
                         StaffData.initStaffData.setStaffContactNumber(selectedStaff.getContactNumber());
                         StaffData.initStaffData.setStaffDepartment(selectedStaff.getDepartment());
                         StaffData.initStaffData.setStaffJobTitle(selectedStaff.getJobTitle());
                         //
 
-                        System.out.println(StaffData.initStaffData.getStaffName());
+                        System.out.println(StaffData.initStaffData.getName());
                         System.out.println(StaffData.initStaffData.getStaffEmail());
                         System.out.println(StaffData.initStaffData.getStaffContactNumber());
                         System.out.println(StaffData.initStaffData.getStaffDepartment());

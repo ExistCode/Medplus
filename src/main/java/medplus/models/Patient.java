@@ -2,7 +2,7 @@ package medplus.models;
 
 import java.time.LocalDate;
 
-public class Patient {
+public class Patient implements Person {
     private String patientId;
     private String name;
     private String nationalId;
@@ -36,7 +36,7 @@ public class Patient {
         patientId = pId;
     }
 
-    public void setPatientName(String n) {
+    public void setName(String n) {
         name = n;
     }
 
@@ -48,7 +48,7 @@ public class Patient {
         gender = g;
     }
 
-    public void setPatientDateOfBirth(LocalDate dob) {
+    public void setDateOfBirth(LocalDate dob) {
         dateOfBirth = dob;
     }
 
@@ -86,7 +86,7 @@ public class Patient {
         return nationalId;
     }
 
-    public String getPatientName() {
+    public String getName() {
         return name;
     }
 
@@ -94,7 +94,7 @@ public class Patient {
         return gender;
     }
 
-    public LocalDate getPatientDateOfBirth() {
+    public LocalDate getDateOfBirth() {
         return dateOfBirth;
     }
 

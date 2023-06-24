@@ -164,10 +164,10 @@ public class patient_details_treatment_controller {
     @FXML
     void editPatientDetails(MouseEvent event) throws IOException {
         PatientData.initPatientData.setPatientId(PatientData.initPatientData.getPatientId());
-        PatientData.initPatientData.setPatientName(PatientData.initPatientData.getPatientName());
+        PatientData.initPatientData.setName(PatientData.initPatientData.getName());
         PatientData.initPatientData.setPatientNationalId("6789012345");
         PatientData.initPatientData.setPatientGender(PatientData.initPatientData.getPatientGender());
-        PatientData.initPatientData.setPatientDateOfBirth(PatientData.initPatientData.getPatientDateOfBirth());
+        PatientData.initPatientData.setDateOfBirth(PatientData.initPatientData.getDateOfBirth());
         PatientData.initPatientData.setPatientAge(PatientData.initPatientData.getPatientAge());
         PatientData.initPatientData.setPatientHeight(PatientData.initPatientData.getPatientHeight());
         PatientData.initPatientData.setPatientWeight(PatientData.initPatientData.getPatientWeight());
@@ -190,8 +190,8 @@ public class patient_details_treatment_controller {
         // Format f = new SimpleDateFormat("dd MMM yy");
         // String strDate = PatientData.initPatientData.getPatientDateOfBirth()
         // .format(DateTimeFormatter.ofLocalizedDate(FormatStyle.LONG));
-        System.out.println(PatientData.initPatientData.getPatientName());
-        patientsNameText.setText(PatientData.initPatientData.getPatientName());
+        System.out.println(PatientData.initPatientData.getName());
+        patientsNameText.setText(PatientData.initPatientData.getName());
         GenderText.setText(PatientData.initPatientData.getPatientGender());
         // dateOfBirthText.setText(strDate);
         // dateOfBirthText.setText(PatientData.initpatientData.getPatientDateOfBirth().toString());
@@ -258,7 +258,7 @@ public class patient_details_treatment_controller {
 
         for (TreatmentTableDataModel treatment : treatmentDataList) {
             System.out.println(treatment.getPatientName());
-            if (treatment.getPatientName().equalsIgnoreCase(PatientData.initPatientData.getPatientName())) {
+            if (treatment.getPatientName().equalsIgnoreCase(PatientData.initPatientData.getName())) {
                 patientTreatmentTable.add(treatment);
             }
         }

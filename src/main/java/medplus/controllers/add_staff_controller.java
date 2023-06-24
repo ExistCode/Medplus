@@ -80,7 +80,7 @@ public class add_staff_controller {
                     jobTitleTextField.getText(),
                     departmentBox.getSelectionModel().getSelectedItem());
             StaffData.addNewStaff(newStaff);
-            StaffData.initStaffData.setStaffName(nameTextField.getText());
+            StaffData.initStaffData.setName(nameTextField.getText());
             StaffData.initStaffData.seStafftEmail(emailTextField.getText());
             StaffData.initStaffData.setStaffContactNumber(contactNumberTextField.getText());
             StaffData.initStaffData.setStaffDepartment(departmentBox.getSelectionModel().getSelectedItem());

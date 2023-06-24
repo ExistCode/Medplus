@@ -34,7 +34,7 @@ public class StaffTableDataModel {
 
         for (int i = 0; i < initialStaffList.size(); i++) {
             String staffId = initialStaffList.get(i).getStaffId();
-            String name = initialStaffList.get(i).getStaffName();
+            String name = initialStaffList.get(i).getName();
             String jobTitle = initialStaffList.get(i).getStaffJobTitle();
             String department = initialStaffList.get(i).getStaffDepartment();
             String email = initialStaffList.get(i).getStaffEmail();

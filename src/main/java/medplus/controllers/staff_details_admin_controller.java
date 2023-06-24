@@ -182,7 +182,7 @@ public class staff_details_admin_controller {
 
     @FXML
     public void initialize() {
-        staffName.setText(StaffData.initStaffData.getStaffName());
+        staffName.setText(StaffData.initStaffData.getName());
         staffGender.setText(StaffData.initStaffData.getStaffEmail());
         staffBirthday.setText(StaffData.initStaffData.getStaffContactNumber());
         staffDepartment.setText(StaffData.initStaffData.getStaffDepartment());

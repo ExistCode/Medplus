@@ -80,7 +80,7 @@ public class update_staff_controller {
                     departmentBox.getSelectionModel().getSelectedItem());
             StaffData.updateStaffData(newStaff);
             StaffData.initStaffData.setStaffId(StaffData.initStaffData.getStaffId());
-            StaffData.initStaffData.setStaffName(nameTextField.getText());
+            StaffData.initStaffData.setName(nameTextField.getText());
             StaffData.initStaffData.seStafftEmail(emailTextField.getText());
             StaffData.initStaffData.setStaffContactNumber(contactNumberTextField.getText());
             StaffData.initStaffData.setStaffDepartment(departmentBox.getSelectionModel().getSelectedItem());
@@ -111,11 +111,11 @@ public class update_staff_controller {
 
     @FXML
     public void initialize() {
-        nameTextField.setText(StaffData.initStaffData.getStaffName());
+        nameTextField.setText(StaffData.initStaffData.getName());
         nationalIdTextField.setText(StaffData.initStaffData.getStaffNationalId());
         emailTextField.setText(StaffData.initStaffData.getStaffEmail());
         contactNumberTextField.setText(StaffData.initStaffData.getStaffContactNumber());
-        dateOfBirthSelector.setValue(StaffData.initStaffData.getStaffDateOfBirth());
+        dateOfBirthSelector.setValue(StaffData.initStaffData.getDateOfBirth());
         jobTitleTextField.setText(StaffData.initStaffData.getStaffJobTitle());
         departmentBox.getSelectionModel().select(StaffData.initStaffData.getStaffDepartment());
         ageTextField.setText(String.valueOf(StaffData.initStaffData.getStaffAge()));

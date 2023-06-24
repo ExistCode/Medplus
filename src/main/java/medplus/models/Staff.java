@@ -4,7 +4,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Staff {
+public class Staff implements Person {
     private String staffId;
     private String name;
     private String nationalId;
@@ -33,7 +33,7 @@ public class Staff {
         staffId = sId;
     }
 
-    public void setStaffName(String n) {
+    public void setName(String n) {
         name = n;
     }
 
@@ -45,7 +45,7 @@ public class Staff {
         email = e;
     }
 
-    public void seStafftDateOfBirth(LocalDate dOB) {
+    public void setDateOfBirth(LocalDate dOB) {
         dateOfBirth = dOB;
     }
 
@@ -70,7 +70,7 @@ public class Staff {
         return staffId;
     }
 
-    public String getStaffName() {
+    public String getName() {
         return name;
     }
 
@@ -82,7 +82,7 @@ public class Staff {
         return email;
     }
 
-    public LocalDate getStaffDateOfBirth() {
+    public LocalDate getDateOfBirth() {
         return dateOfBirth;
     }
 

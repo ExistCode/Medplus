@@ -158,17 +158,17 @@ public class home_controller {
         numOfAdmin.setText(Integer.toString(numOfAdmins));
         numOfRooms.setText(Integer.toString(initialRoomList.size()));
         List<Patient> patientList = getLatestThreePatients();
-        firstPatientsNames.setText(patientList.get(0).getPatientName());
+        firstPatientsNames.setText(patientList.get(0).getName());
         firstPatientGender.setText(patientList.get(0).getPatientGender());
-        firstPatientsdateOfBirth.setText(patientList.get(0).getPatientDateOfBirth().toString());
+        firstPatientsdateOfBirth.setText(patientList.get(0).getDateOfBirth().toString());
         firstPatientsAddress.setText(patientList.get(0).getPatientAddress());
-        SecondPatientsNames.setText(patientList.get(1).getPatientName());
+        SecondPatientsNames.setText(patientList.get(1).getName());
         SecondPatientGender.setText(patientList.get(1).getPatientGender());
-        SecondPatientdateOfBirth.setText(patientList.get(1).getPatientDateOfBirth().toString());
+        SecondPatientdateOfBirth.setText(patientList.get(1).getDateOfBirth().toString());
         SecondPatientAddress.setText(patientList.get(1).getPatientAddress());
-        thirdPatientsNames.setText(patientList.get(2).getPatientName());
+        thirdPatientsNames.setText(patientList.get(2).getName());
         thirdPatientGender.setText(patientList.get(2).getPatientGender());
-        thirdPatientDateOfBirth.setText(patientList.get(2).getPatientDateOfBirth().toString());
+        thirdPatientDateOfBirth.setText(patientList.get(2).getDateOfBirth().toString());
         ThirdPatientAddress.setText(patientList.get(2).getPatientAddress());
         firstPatientNameAppointment.setText(getLatest2Treatments().get(1).getPatientName());
         secondPatientNameAppointment.setText(getLatest2Treatments().get(0).getPatientName());
@@ -211,7 +211,7 @@ public class home_controller {
         lastThreePatientList.add(1, originalPatientList.get(originalPatientList.size() - 2));
         lastThreePatientList.add(2, originalPatientList.get(originalPatientList.size() - 3));
         for (int i = 0; i < lastThreePatientList.size(); i++) {
-            System.out.println(lastThreePatientList.get(i).getPatientName());
+            System.out.println(lastThreePatientList.get(i).getName());
         }
 
         return lastThreePatientList;
@@ -240,10 +240,10 @@ public class home_controller {
         PatientData.initPatientData.setPatientId(patientList.get(0).getPatientId());
 
         PatientData.initPatientData.setPatientId(patientList.get(0).getPatientId());
-        PatientData.initPatientData.setPatientName(patientList.get(0).getPatientName());
+        PatientData.initPatientData.setName(patientList.get(0).getName());
         PatientData.initPatientData.setPatientGender(patientList.get(0).getPatientGender());
 
-        PatientData.initPatientData.setPatientDateOfBirth(patientList.get(0).getPatientDateOfBirth());
+        PatientData.initPatientData.setDateOfBirth(patientList.get(0).getDateOfBirth());
         PatientData.initPatientData.setPatientBloodType(patientList.get(0).getPatientBloodType());
         PatientData.initPatientData.setPatientHeight(patientList.get(0).getPatientHeight());
         PatientData.initPatientData.setPatientWeight(patientList.get(0).getPatientWeight());
@@ -257,10 +257,10 @@ public class home_controller {
 
         PatientData.initPatientData.setPatientId(patientList.get(1).getPatientId());
 
-        PatientData.initPatientData.setPatientName(patientList.get(1).getPatientName());
+        PatientData.initPatientData.setName(patientList.get(1).getName());
         PatientData.initPatientData.setPatientGender(patientList.get(1).getPatientGender());
 
-        PatientData.initPatientData.setPatientDateOfBirth(patientList.get(1).getPatientDateOfBirth());
+        PatientData.initPatientData.setDateOfBirth(patientList.get(1).getDateOfBirth());
         PatientData.initPatientData.setPatientBloodType(patientList.get(1).getPatientBloodType());
         PatientData.initPatientData.setPatientHeight(patientList.get(1).getPatientHeight());
         PatientData.initPatientData.setPatientWeight(patientList.get(1).getPatientWeight());
@@ -274,10 +274,10 @@ public class home_controller {
 
         PatientData.initPatientData.setPatientId(patientList.get(2).getPatientId());
 
-        PatientData.initPatientData.setPatientName(patientList.get(2).getPatientName());
+        PatientData.initPatientData.setName(patientList.get(2).getName());
         PatientData.initPatientData.setPatientGender(patientList.get(2).getPatientGender());
 
-        PatientData.initPatientData.setPatientDateOfBirth(patientList.get(2).getPatientDateOfBirth());
+        PatientData.initPatientData.setDateOfBirth(patientList.get(2).getDateOfBirth());
         PatientData.initPatientData.setPatientBloodType(patientList.get(2).getPatientBloodType());
         PatientData.initPatientData.setPatientHeight(patientList.get(2).getPatientHeight());
         PatientData.initPatientData.setPatientWeight(patientList.get(2).getPatientWeight());

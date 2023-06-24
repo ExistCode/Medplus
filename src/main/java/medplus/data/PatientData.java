@@ -72,10 +72,10 @@ public class PatientData {
                         FileWriter writer = new FileWriter(fileName, true);
                         String patientData = String.format("%s,%s,%s,%s,%s,%d,%.1f,%.1f,%s,%s,%s",
                                         newPatient.getPatientId(),
-                                        newPatient.getPatientName(),
+                                        newPatient.getName(),
                                         newPatient.getPatientNationalId(),
                                         newPatient.getPatientGender(),
-                                        newPatient.getPatientDateOfBirth(),
+                                        newPatient.getDateOfBirth(),
                                         newPatient.getPatientAge(),
                                         newPatient.getPatientHeight(),
                                         newPatient.getPatientWeight(),
@@ -134,10 +134,10 @@ public class PatientData {
                         while ((line = reader.readLine()) != null) {
                                 if (line.contains(newPatientData.getPatientId())) {
                                         fetchedPatientListAfterDeletion.add(newPatientData.getPatientId() + ","
-                                                        + newPatientData.getPatientName() + ","
+                                                        + newPatientData.getName() + ","
                                                         + newPatientData.getPatientNationalId() + ","
                                                         + newPatientData.getPatientGender() + ","
-                                                        + newPatientData.getPatientDateOfBirth() + ","
+                                                        + newPatientData.getDateOfBirth() + ","
                                                         + newPatientData.getPatientAge() + ","
                                                         + newPatientData.getPatientHeight() + ","
                                                         + newPatientData.getPatientWeight() + ","

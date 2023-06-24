@@ -254,8 +254,8 @@ public class staff_details_controller {
     public void initialize() {
         // Format f = new SimpleDateFormat("dd MMM yy");
 
-        System.out.println(PatientData.initPatientData.getPatientName());
-        staffName.setText(StaffData.initStaffData.getStaffName());
+        System.out.println(PatientData.initPatientData.getName());
+        staffName.setText(StaffData.initStaffData.getName());
         staffGender.setText(StaffData.initStaffData.getStaffEmail());
         staffBirthday.setText(StaffData.initStaffData.getStaffContactNumber());
         staffDepartment.setText(StaffData.initStaffData.getStaffDepartment());
