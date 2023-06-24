@@ -234,7 +234,7 @@ public class staff_admin_controller {
                         System.out.println(StaffData.initStaffData.getStaffJobTitle());
                         System.out.println("Keklik");
 
-                        App.setRoot("staff_details_analysis_screen");
+                        App.setRoot("staff_details_screen");
 
                     } catch (IOException e) {
                         // TODO Auto-generated catch block
