@@ -7,7 +7,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="medplus.controllers.staff_details_controller">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="medplus.controllers.staff_details_admin_controller">
    <children>
       <Pane layoutX="-4.0" prefHeight="722.0" prefWidth="203.0" style="-fx-background-color: #089bAB;">
          <children>
@@ -101,12 +101,12 @@
                   <Font name="SF Pro Rounded Semibold" size="16.0" />
                </font>
             </Text>
-            <Text fx:id="staffDepartment" layoutX="2.0" layoutY="151.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Department" textAlignment="CENTER" wrappingWidth="151.4765625">
+            <Text fx:id="staffDepartment" layoutY="151.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Department" textAlignment="CENTER" wrappingWidth="162.1643482663078">
                <font>
                   <Font name="SF Pro Text Semibold" size="13.0" />
                </font>
             </Text>
-            <Text fx:id="staffSpecialty" layoutX="122.0" layoutY="151.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Medical Transciptionists" textAlignment="CENTER" wrappingWidth="159.0">
+            <Text fx:id="staffSpecialty" layoutX="134.0" layoutY="151.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Medical Transciptionists" textAlignment="CENTER" wrappingWidth="159.0">
                <font>
                   <Font name="SF Pro Text Semibold" size="13.0" />
                </font>
@@ -141,24 +141,24 @@
             </Pane>
          </children>
       </Pane>
-      <Text fill="#089bab" layoutX="251.0" layoutY="365.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Patient Cases">
+      <Text fill="#089bab" layoutX="251.0" layoutY="365.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tasks">
          <font>
             <Font name="SF Pro Text Bold" size="28.0" />
          </font>
       </Text>
       <Pane layoutX="251.0" layoutY="387.0" prefHeight="288.0" prefWidth="981.0" style="-fx-background-color: EFF7F9; -fx-background-radius: 20;">
          <children>
-            <Pane fx:id="addNewMedicalHistory" layoutX="29.0" layoutY="20.0" onMouseClicked="#changedToAddMedicalHistory" prefHeight="47.0" prefWidth="190.0" style="-fx-background-color: FEAD54; -fx-background-radius: 12;">
+            <Pane fx:id="addNewTasks" layoutX="29.0" layoutY="20.0" onMouseClicked="#addNewTasks" prefHeight="47.0" prefWidth="190.0" style="-fx-background-color: FEAD54; -fx-background-radius: 12;">
                <children>
-                  <Text layoutX="20.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" text="+ New Patient Cases">
+                  <Text layoutX="50.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="+ New Tasks">
                      <font>
                         <Font name="SF Pro Display Semibold" size="16.0" />
                      </font>
                   </Text>
                </children>
             </Pane>
-            <TableView fx:id="medicalHistoryTable" layoutX="33.0" layoutY="74.0" prefHeight="187.0" prefWidth="920.0" style="-fx-background-color: transparent; -fx-background-radius: 16;" stylesheets="@../css/styles.css" />
-            <Pane fx:id="updateMedicalHistoryButton" layoutX="837.0" layoutY="20.0" onMouseClicked="#switchToUpdateScreen" prefHeight="48.0" prefWidth="52.0">
+            <TableView fx:id="tasksTable" layoutX="33.0" layoutY="74.0" prefHeight="187.0" prefWidth="920.0" style="-fx-background-color: transparent; -fx-background-radius: 16;" stylesheets="@../css/styles.css" />
+            <Pane fx:id="updateTasks" layoutX="837.0" layoutY="20.0" onMouseClicked="#updateTasks" prefHeight="48.0" prefWidth="52.0">
                <children>
                   <ImageView fitHeight="48.0" fitWidth="35.0" layoutX="8.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -167,7 +167,7 @@
                   </ImageView>
                </children>
             </Pane>
-            <Pane fx:id="deleteMedHis" layoutX="895.0" layoutY="20.0" onMouseClicked="#deleteMedicalHistory" prefHeight="48.0" prefWidth="52.0">
+            <Pane fx:id="deleteTasks" layoutX="895.0" layoutY="20.0" onMouseClicked="#deleteTasks" prefHeight="48.0" prefWidth="52.0">
                <children>
                   <ImageView fitHeight="48.0" fitWidth="35.0" layoutX="8.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -180,7 +180,7 @@
       </Pane>
       <Pane layoutX="614.0" layoutY="46.0" prefHeight="278.0" prefWidth="613.0" style="-fx-background-color: EFF7F9; -fx-background-radius: 20;">
          <children>
-            <Pane fx:id="addNewAppointmentButton" layoutX="413.0" layoutY="26.0" onMouseClicked="#addNewAppointment" prefHeight="32.0" prefWidth="81.0" style="-fx-background-color: FEAD54; -fx-background-radius: 12;">
+            <Pane fx:id="addNewResponsibilities" layoutX="413.0" layoutY="26.0" onMouseClicked="#addNewResponsibilities" prefHeight="32.0" prefWidth="81.0" style="-fx-background-color: FEAD54; -fx-background-radius: 12;">
                <children>
                   <Text layoutX="17.0" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="+ Add">
                      <font>
@@ -189,13 +189,13 @@
                   </Text>
                </children>
             </Pane>
-            <TableView fx:id="appointmentTable" layoutX="26.0" layoutY="70.0" prefHeight="185.0" prefWidth="562.0" style="-fx-background-color: transparent; -fx-background-radius: 16;" stylesheets="@../css/styles.css" />
-            <Text fill="#089bab" layoutX="26.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Appointment">
+            <TableView fx:id="responsibilitiesTable" layoutX="26.0" layoutY="70.0" prefHeight="185.0" prefWidth="562.0" style="-fx-background-color: transparent; -fx-background-radius: 16;" stylesheets="@../css/styles.css" />
+            <Text fill="#089bab" layoutX="26.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Responsbilities">
                <font>
                   <Font name="SF Pro Text Bold" size="24.0" />
                </font>
             </Text>
-            <Pane fx:id="updateAppointmentButton" layoutX="508.0" layoutY="31.0" onMouseClicked="#updateAppointment" prefHeight="30.0" prefWidth="30.0">
+            <Pane fx:id="updateResponsibilities" layoutX="508.0" layoutY="31.0" onMouseClicked="#updateResponsibilities" prefHeight="30.0" prefWidth="30.0">
                <children>
                   <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="-1.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -204,9 +204,9 @@
                   </ImageView>
                </children>
             </Pane>
-            <Pane fx:id="deleteAppointmentButton" layoutX="549.0" layoutY="31.0" onMouseClicked="#deleteAppointment" prefHeight="30.0" prefWidth="30.0">
+            <Pane fx:id="deleteResponsibilities" layoutX="549.0" layoutY="31.0" onMouseClicked="#deleteResponsibilities" prefHeight="30.0" prefWidth="30.0">
                <children>
-                  <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="-1.0" layoutY="-1.0" onMouseClicked="#deleteAppointment" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="-1.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../assets/icons/delete-button-90.png" />
                      </image>

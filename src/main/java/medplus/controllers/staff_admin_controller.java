@@ -111,21 +111,6 @@ public class staff_admin_controller {
     }
 
     @FXML
-    void changedToAnalysis(MouseEvent event) {
-
-    }
-
-    @FXML
-    void changedToDiagnosis(MouseEvent event) {
-
-    }
-
-    @FXML
-    void changedToTreatment(MouseEvent event) {
-
-    }
-
-    @FXML
     void deleteRow(MouseEvent event) {
         StaffTableDataModel selectedStaff = adminTable.getSelectionModel().getSelectedItem();
 
@@ -141,7 +126,27 @@ public class staff_admin_controller {
 
     @FXML
     void switchToUpdateScreen(MouseEvent event) throws IOException {
-        App.setRoot("update_staff_screen");
+        StaffTableDataModel selectedStaff = adminTable.getSelectionModel().getSelectedItem();
+        if (selectedStaff != null) {
+            try {
+                StaffData.initStaffData.setStaffId(selectedStaff.getStaffId());
+                StaffData.initStaffData.setStaffName(selectedStaff.getName());
+                StaffData.initStaffData.setStaffNationalId("12347483");
+                StaffData.initStaffData.seStafftEmail(selectedStaff.getEmail());
+                StaffData.initStaffData.seStafftDateOfBirth(null);
+                StaffData.initStaffData.setStaffAge(30);
+                StaffData.initStaffData.setStaffContactNumber(selectedStaff.getContactNumber());
+                StaffData.initStaffData.setStaffJobTitle(selectedStaff.getJobTitle());
+                StaffData.initStaffData.setStaffDepartment(selectedStaff.getDepartment());
+
+                App.setRoot("update_staff_screen");
+
+            } catch (IOException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+
+        }
 
     }
 
@@ -219,7 +224,7 @@ public class staff_admin_controller {
                 if (selectedStaff != null) {
 
                     try {
-
+                        StaffData.initStaffData.setStaffId(selectedStaff.getStaffId());
                         StaffData.initStaffData.setStaffName(selectedStaff.getName());
                         StaffData.initStaffData.seStafftEmail(selectedStaff.getEmail());
                         StaffData.initStaffData.setStaffContactNumber(selectedStaff.getContactNumber());
@@ -234,7 +239,7 @@ public class staff_admin_controller {
                         System.out.println(StaffData.initStaffData.getStaffJobTitle());
                         System.out.println("Keklik");
 
-                        App.setRoot("staff_details_screen");
+                        App.setRoot("staff_details_admin_screen");
 
                     } catch (IOException e) {
                         // TODO Auto-generated catch block

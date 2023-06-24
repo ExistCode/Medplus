@@ -59,13 +59,7 @@ public class update_staff_controller {
 
     @FXML
     void backToStaff(MouseEvent event) throws IOException {
-        StaffData.initStaffData.setStaffId(StaffData.initStaffData.getStaffId());
-        StaffData.initStaffData.setStaffName(nameTextField.getText());
-        StaffData.initStaffData.seStafftEmail(emailTextField.getText());
-        StaffData.initStaffData.setStaffContactNumber(contactNumberTextField.getText());
-        StaffData.initStaffData.setStaffDepartment(departmentBox.getSelectionModel().getSelectedItem());
-        StaffData.initStaffData.setStaffJobTitle(jobTitleTextField.getText());
-        App.setRoot("staff_details_analysis_screen");
+        App.setRoot("staff_all_home_screen");
 
     }
 
@@ -91,7 +85,7 @@ public class update_staff_controller {
             StaffData.initStaffData.setStaffContactNumber(contactNumberTextField.getText());
             StaffData.initStaffData.setStaffDepartment(departmentBox.getSelectionModel().getSelectedItem());
             StaffData.initStaffData.setStaffJobTitle(jobTitleTextField.getText());
-            App.setRoot("staff_details_analysis_screen");
+            App.setRoot("staff_details_screen");
 
         } else {
             // Printing error message

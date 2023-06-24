@@ -304,10 +304,10 @@
          <children>
             <Text fx:id="firstPatientNameAppointment" layoutX="14.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Patient Name" wrappingWidth="184.17954922381352">
                <font>
-                  <Font name="Verdana" size="20.0" />
+                  <Font name="Verdana" size="18.0" />
                </font>
             </Text>
-            <Text fx:id="firstAppointmentDetails" layoutX="169.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Details" textAlignment="CENTER" wrappingWidth="231.79088777498805">
+            <Text fx:id="firstAppointmentDetails" layoutX="169.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Details" textAlignment="CENTER" wrappingWidth="243.62109375">
                <font>
                   <Font name="Verdana" size="16.0" />
                </font>
@@ -323,10 +323,10 @@
          <children>
             <Text fx:id="secondPatientNameAppointment" layoutX="14.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Patient Name" wrappingWidth="184.17954922381352">
                <font>
-                  <Font name="Verdana" size="20.0" />
+                  <Font name="Verdana" size="18.0" />
                </font>
             </Text>
-            <Text fx:id="secondAppointmentDetails" layoutX="169.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Details" textAlignment="CENTER" wrappingWidth="231.79088777498805">
+            <Text fx:id="secondAppointmentDetails" layoutX="169.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Details" textAlignment="CENTER" wrappingWidth="243.62109375">
                <font>
                   <Font name="Verdana" size="16.0" />
                </font>

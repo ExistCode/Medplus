@@ -1,7 +1,7 @@
 Staff ID,Name,National ID,Email,Date of Birth,Age,Contact Number,Job Title,Department
 S001,John Doe,9012345678,johndoe@medplus.com,1985-06-15,38,60123456789,Resident Doctor,Doctor
 S002,Emily Tan,9012345679,emilytan@medplus.com,1987-09-23,35,60123456780,General Practitioner,Doctor
-S003,Michael Lee,9012345680,michaellee@medplus.com,1980-11-07,42,60123456781,Surgeon,Doctor
+S003,Michael Lee,12347483,michaellee@medplus.com,2023-06-09,0,60123456781,Surgeon,Doctor
 S004,Sarah Wrong,12347483,sarahwong@medplus.com,1988-06-16,35,60123456782,Obstetrician,Doctor
 S005,David Lim,9012345682,davidlim@medplus.com,1978-08-29,44,60123456783,Cardiologist,Doctor
 S006,Melissa Ng,9012345683,melissang@medplus.com,1983-02-18,39,60123456784,Dermatologist,Doctor
@@ -21,7 +21,7 @@ S019,Kevin Lee,9012345696,kevinlee@medplus.com,1984-04-17,39,60123456787,Physici
 S020,Jennifer Lim,9012345697,jenniferlim@medplus.com,1985-12-28,37,60123456788,Occupational Therapist,Nurse
 S021,William Tan,9012345698,williamtan@medplus.com,1990-08-14,33,60123456789,Dietitian,Nurse
 S022,Alice Ng,9012345699,aliceng@medplus.com,1982-02-25,41,60123456780,Medical Worker,Nurse
-S023,Kenneth Chong,9012345700,kennethchong@medplus.com,1983-09-10,38,60123456781,Medical Transcriptionist,Administration
+S023,Kenneth Chong,12347483,kennethchong@medplus.com,2023-06-02,0,60123456781,Transcriptionists,Administration
 S024,Grace Lim,9012345701,gracelim@medplus.com,1995-02-07,28,60123456782,Hospital Administrator,Administration
 S025,Daniel Wong,9012345702,danielwong@medplus.com,1988-06-30,35,60123456783,Phlebotomist,Nurse
 S026,Stephanie Tan,9012345703,stephanietan@medplus.com,1993-03-08,30,60123456784,Medical Laboratory Technologist,Nurse

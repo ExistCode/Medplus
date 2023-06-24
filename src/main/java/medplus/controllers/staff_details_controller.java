@@ -187,11 +187,6 @@ public class staff_details_controller {
     }
 
     @FXML
-    void editAppointment(MouseEvent event) {
-
-    }
-
-    @FXML
     void switchToUpdateScreen(MouseEvent event) throws IOException {
         MedicalHistoryTableDataModel selectedMedHis = medicalHistoryTable.getSelectionModel()
                 .getSelectedItem();
