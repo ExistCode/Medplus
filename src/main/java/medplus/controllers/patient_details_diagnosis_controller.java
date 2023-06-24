@@ -1,15 +1,8 @@
 package medplus.controllers;
 
 import java.io.IOException;
-import java.text.Format;
-import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.LocalTime;
-import java.time.format.DateTimeFormatter;
-import java.time.format.FormatStyle;
-import java.util.Date;
-import java.util.List;
-
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -20,19 +13,17 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
 import medplus.App;
+import medplus.data.DiagnosisData;
 import medplus.data.MedicalHistoryData;
 import medplus.data.PatientData;
-import medplus.data.StaffData;
-import medplus.models.MedicalHistory;
-import medplus.tableModels.AnalysisTableDataModel;
 import medplus.tableModels.DiagnosisTableDataModel;
 import medplus.tableModels.MedicalHistoryTableDataModel;
-import medplus.tableModels.PatientTableDataModel;
-import medplus.tableModels.StaffTableDataModel;
 
 public class patient_details_diagnosis_controller {
     @FXML
     private Text GenderText;
+    @FXML
+    private Pane addDiagnosisButton;
 
     @FXML
     private Pane addMedHis;
@@ -89,6 +80,13 @@ public class patient_details_diagnosis_controller {
 
     @FXML
     private Text weightText;
+
+    @FXML
+    void addDiagnosis(MouseEvent event) throws IOException {
+        DiagnosisData.initdiagnosisData.setPatientName(PatientData.initPatientData.getName());
+        App.setRoot("add_diagnosis_screen");
+
+    }
 
     @FXML
     void changedToAddMedicalHistory(MouseEvent event) throws IOException {

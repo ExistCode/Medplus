@@ -64,6 +64,7 @@ public class add_diagnosis_controller {
 
     @FXML
     public void initialize() {
+        patientNameComboBox.setValue(DiagnosisData.initdiagnosisData.getPatientName());
         patientNameComboBox.setItems(fetchPatientName());
         staffIdComboBox.setItems(fetchStaffId());
     }

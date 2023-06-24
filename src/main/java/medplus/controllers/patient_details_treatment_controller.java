@@ -16,6 +16,7 @@ import javafx.scene.text.Text;
 import medplus.App;
 import medplus.data.MedicalHistoryData;
 import medplus.data.PatientData;
+import medplus.data.TreatmentData;
 import medplus.tableModels.DiagnosisTableDataModel;
 import medplus.tableModels.MedicalHistoryTableDataModel;
 import medplus.tableModels.TreatmentTableDataModel;
@@ -23,6 +24,8 @@ import medplus.tableModels.TreatmentTableDataModel;
 public class patient_details_treatment_controller {
     @FXML
     private Text GenderText;
+    @FXML
+    private Pane addTreatmentButton;
 
     @FXML
     private Pane addMedHis;
@@ -81,6 +84,13 @@ public class patient_details_treatment_controller {
     private Text weightText;
     @FXML
     private TableView<TreatmentTableDataModel> treatmentTable;
+
+    @FXML
+    void addTreatment(MouseEvent event) throws IOException {
+        TreatmentData.initTreatmentData.setPatientName(PatientData.initPatientData.getName());
+        App.setRoot("add_treatment_screen");
+
+    }
 
     @FXML
     void changedToAddMedicalHistory(MouseEvent event) throws IOException {

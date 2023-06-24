@@ -109,6 +109,7 @@ public class add_analysis_controller {
 
     @FXML
     public void initialize() {
+        patientNameComboBox.setValue(AnalysisData.initanalysisData.getPatientName());
         analysisType.setItems(analysisTypeOptions);
         System.out.println(fetchPatientName());
         staffIdComboBox.setItems(fetchStaffId());

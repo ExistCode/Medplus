@@ -16,11 +16,8 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import medplus.App;
 import medplus.data.AppointmentData;
-import medplus.data.MedicalHistoryData;
-import medplus.data.PatientData;
 import medplus.data.StaffData;
 import medplus.models.Appointment;
-import medplus.models.MedicalHistory;
 
 public class add_appointment_controller {
 

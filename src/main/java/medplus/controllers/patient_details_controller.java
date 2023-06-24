@@ -1,15 +1,9 @@
 package medplus.controllers;
 
 import java.io.IOException;
-import java.text.Format;
-import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
-import java.time.format.FormatStyle;
-import java.util.Date;
-import java.util.List;
-
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -21,15 +15,12 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
 import medplus.App;
+import medplus.data.AnalysisData;
 import medplus.data.MedicalHistoryData;
 import medplus.data.PatientData;
-import medplus.data.StaffData;
-import medplus.models.MedicalHistory;
 import medplus.tableModels.AnalysisTableDataModel;
 import medplus.tableModels.DiagnosisTableDataModel;
 import medplus.tableModels.MedicalHistoryTableDataModel;
-import medplus.tableModels.PatientTableDataModel;
-import medplus.tableModels.StaffTableDataModel;
 
 public class patient_details_controller extends patient_controller {
     @FXML
@@ -43,6 +34,15 @@ public class patient_details_controller extends patient_controller {
 
     @FXML
     private TableView<AnalysisTableDataModel> analysisTable;
+    @FXML
+    private Pane addAnalysisButton;
+
+    @FXML
+    void addAnalysis(MouseEvent event) throws IOException {
+        AnalysisData.initanalysisData.setPatientName(PatientData.initPatientData.getName());
+        App.setRoot("add_analysis_screen");
+
+    }
 
     @FXML
     private Text bloodTypeText;
