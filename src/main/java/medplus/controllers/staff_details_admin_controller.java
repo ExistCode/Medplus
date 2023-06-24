@@ -86,13 +86,13 @@ public class staff_details_admin_controller {
     private Pane updateTasks;
 
     @FXML
-    void addNewResponsibilities(MouseEvent event) {
-
+    void addNewResponsibilities(MouseEvent event) throws IOException {
+        App.setRoot("add_responsibility_screen");
     }
 
     @FXML
-    void addNewTasks(MouseEvent event) {
-
+    void addNewTasks(MouseEvent event) throws IOException {
+        App.setRoot("add_task_screen");
     }
 
     @FXML
@@ -154,7 +154,7 @@ public class staff_details_admin_controller {
     }
 
     @FXML
-    void updateResponsibilities(MouseEvent event) {
+    void updateResponsibilities(MouseEvent event) throws IOException {
         ResponsibilitiesTableDataModel selectedResponsibilities = responsibilitiesTable.getSelectionModel()
                 .getSelectedItem();
         System.out.println("ResponsibilitiesId: " + selectedResponsibilities.getResponsibilityId());
@@ -164,11 +164,12 @@ public class staff_details_admin_controller {
         ResponsibilitiesData.initResponsibilities
                 .setResponsibilityDescription(selectedResponsibilities.getResponsibilityDescription());
         ResponsibilitiesData.initResponsibilities.setStaffId(selectedResponsibilities.getStaffId());
+        App.setRoot("update_responsibility_screen");
 
     }
 
     @FXML
-    void updateTasks(MouseEvent event) {
+    void updateTasks(MouseEvent event) throws IOException {
         TaskTableDataModel selectedTask = tasksTable.getSelectionModel()
                 .getSelectedItem();
         if (selectedTask != null) {
@@ -177,7 +178,7 @@ public class staff_details_admin_controller {
             TaskData.initTask.setTaskDescription(selectedTask.getTaskDescription());
             TaskData.initTask.setStaffId(selectedTask.getStaffId());
         }
-
+        App.setRoot("update_task_screen");
     }
 
     @FXML
