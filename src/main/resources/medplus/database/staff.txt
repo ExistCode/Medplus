@@ -1,28 +1,28 @@
 Staff ID,Name,National ID,Email,Date of Birth,Age,Contact Number,Job Title,Department
-S001,John Doe,9012345678,johndoe@medplus.com,1985-06-15,38,60123456789,Resident Doctor,Internal Medicine
-S002,Emily Tan,9012345679,emilytan@medplus.com,1987-09-23,35,60123456780,General Practitioner,Family Medicine
-S003,Michael Lee,9012345680,michaellee@medplus.com,1980-11-07,42,60123456781,Surgeon,Orthopedics
-S004,Sarah Wong,9012345681,sarahwong@medplus.com,1990-03-12,32,60123456782,Obstetrician-Gynecologist,Obstetrics and Gynecology
-S005,David Lim,9012345682,davidlim@medplus.com,1978-08-29,44,60123456783,Cardiologist,Cardiology
-S006,Melissa Ng,9012345683,melissang@medplus.com,1983-02-18,39,60123456784,Dermatologist,Dermatology
-S007,Andrew Liew,9012345684,andrewliew@medplus.com,1982-07-06,41,60123456785,ENT Specialist,Otorhinolaryngology
-S008,Jessica Koh,9012345685,jessicakoh@medplus.com,1989-04-05,33,60123456786,Pediatrician,Pediatrics
-S009,Steven Tan,9012345686,steventan@medplus.com,1975-12-01,47,60123456787,Ophthalmologist,Ophthalmology
-S010,Lisa Chong,9012345687,lisachong@medplus.com,1981-10-14,41,60123456788,Psychiatrist,Psychiatry
-S011,Richard Teo,9012345688,richardteo@medplus.com,1984-03-28,39,60123456789,Neurologist,Neurology
-S012,Amy Yap,9012345689,amyyap@medplus.com,1986-09-07,37,60123456780,Anesthesiologist,Anesthesiology
-S013,Jason Lim,9012345690,jasonlim@medplus.com,1992-05-19,31,60123456781,Radiologist,Radiology
-S014,Samantha Chia,9012345691,samanthachia@medplus.com,1988-01-09,35,60123456782,Orthodontist,Dentistry
-S015,Patrick Goh,9012345692,patrickgoh@medplus.com,1987-07-22,36,60123456783,Physiotherapist,Physical Therapy
-S016,Natalie Tan,9012345693,natalietan@medplus.com,1991-11-03,30,60123456784,Nurse,Nursing
-S017,Benjamin Low,9012345694,benjaminlow@medplus.com,1979-01-31,44,60123456785,Pharmacist,Pharmacy
-S018,Michelle Chin,9012345695,michellechin@medplus.com,1993-06-25,28,60123456786,Medical Laboratory Technologist,Pathology
-S019,Kevin Lee,9012345696,kevinlee@medplus.com,1984-04-17,39,60123456787,Physician Assistant,Internal Medicine
-S020,Jennifer Lim,9012345697,jenniferlim@medplus.com,1985-12-28,37,60123456788,Occupational Therapist,Occupational Therapy
-S021,William Tan,9012345698,williamtan@medplus.com,1990-08-14,33,60123456789,Dietitian,Nutrition and Dietetics
-S022,Alice Ng,9012345699,aliceng@medplus.com,1982-02-25,41,60123456780,Medical Social Worker,Social Work
-S023,Kenneth Chong,9012345700,kennethchong@medplus.com,1983-09-10,38,60123456781,Medical Transcriptionist,Medical Records
+S001,John Doe,9012345678,johndoe@medplus.com,1985-06-15,38,60123456789,Resident Doctor,Doctor
+S002,Emily Tan,9012345679,emilytan@medplus.com,1987-09-23,35,60123456780,General Practitioner,Doctor
+S003,Michael Lee,9012345680,michaellee@medplus.com,1980-11-07,42,60123456781,Surgeon,Doctor
+S004,Sarah Wrong,12347483,sarahwong@medplus.com,1988-06-16,35,60123456782,Obstetrician,Doctor
+S005,David Lim,9012345682,davidlim@medplus.com,1978-08-29,44,60123456783,Cardiologist,Doctor
+S006,Melissa Ng,9012345683,melissang@medplus.com,1983-02-18,39,60123456784,Dermatologist,Doctor
+S007,Andrew Liew,9012345684,andrewliew@medplus.com,1982-07-06,41,60123456785,ENT Specialist,Doctor
+S008,Jessica Koh,9012345685,jessicakoh@medplus.com,1989-04-05,33,60123456786,Pediatrician,Doctor
+S009,Steven Tan,9012345686,steventan@medplus.com,1975-12-01,47,60123456787,Ophthalmologist,Doctor
+S010,Lisa Chong,9012345687,lisachong@medplus.com,1981-10-14,41,60123456788,Psychiatrist,Doctor
+S011,Richard Teo,9012345688,richardteo@medplus.com,1984-03-28,39,60123456789,Neurologist,Doctor
+S012,Amy Yap,9012345689,amyyap@medplus.com,1986-09-07,37,60123456780,Anesthesiologist,Doctor
+S013,Jason Lim,9012345690,jasonlim@medplus.com,1992-05-19,31,60123456781,Radiologist,Doctor
+S014,Samantha Chia,9012345691,samanthachia@medplus.com,1988-01-09,35,60123456782,Orthodontist,Doctor
+S015,Patrick Goh,9012345692,patrickgoh@medplus.com,1987-07-22,36,60123456783,Physiotherapist,Nurse
+S016,Natalie Tan,9012345693,natalietan@medplus.com,1991-11-03,30,60123456784,Nurse,Nurse
+S017,Benjamin Low,9012345694,benjaminlow@medplus.com,1979-01-31,44,60123456785,Pharmacist,Nurse
+S018,Michelle Chin,9012345695,michellechin@medplus.com,1993-06-25,28,60123456786,Laboratory Technologist,Nurse
+S019,Kevin Lee,9012345696,kevinlee@medplus.com,1984-04-17,39,60123456787,Physician Assistant,Doctor
+S020,Jennifer Lim,9012345697,jenniferlim@medplus.com,1985-12-28,37,60123456788,Occupational Therapist,Nurse
+S021,William Tan,9012345698,williamtan@medplus.com,1990-08-14,33,60123456789,Dietitian,Nurse
+S022,Alice Ng,9012345699,aliceng@medplus.com,1982-02-25,41,60123456780,Medical Worker,Nurse
+S023,Kenneth Chong,9012345700,kennethchong@medplus.com,1983-09-10,38,60123456781,Medical Transcriptionist,Administration
 S024,Grace Lim,9012345701,gracelim@medplus.com,1995-02-07,28,60123456782,Hospital Administrator,Administration
-S025,Daniel Wong,9012345702,danielwong@medplus.com,1988-06-30,35,60123456783,Phlebotomist,Laboratory
-S026,Stephanie Tan,9012345703,stephanietan@medplus.com,1993-03-08,30,60123456784,Medical Laboratory Technologist,Laboratory
-S027,Brian Lim,9012345704,brianlim@medplus.com,1991-09-17,32,60123456785,Medical Technologist,Laboratory
+S025,Daniel Wong,9012345702,danielwong@medplus.com,1988-06-30,35,60123456783,Phlebotomist,Nurse
+S026,Stephanie Tan,9012345703,stephanietan@medplus.com,1993-03-08,30,60123456784,Medical Laboratory Technologist,Nurse
+S027,Brian Lim,9012345704,brianlim@medplus.com,1991-09-17,32,60123456785,Medical Technologist,Nurse

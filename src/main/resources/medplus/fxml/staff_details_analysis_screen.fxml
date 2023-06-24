@@ -101,14 +101,14 @@
                   <Font name="SF Pro Rounded Semibold" size="16.0" />
                </font>
             </Text>
-            <Text fx:id="staffDepartment" layoutX="8.0" layoutY="151.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Department" textAlignment="CENTER" wrappingWidth="151.4765625">
+            <Text fx:id="staffDepartment" layoutX="2.0" layoutY="151.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Department" textAlignment="CENTER" wrappingWidth="151.4765625">
                <font>
-                  <Font name="SF Pro Text Regular" size="16.0" />
+                  <Font name="SF Pro Text Semibold" size="13.0" />
                </font>
             </Text>
-            <Text fx:id="staffSpecialty" layoutX="122.0" layoutY="151.0" strokeType="OUTSIDE" strokeWidth="0.0" text="specialty" textAlignment="CENTER" wrappingWidth="159.0">
+            <Text fx:id="staffSpecialty" layoutX="122.0" layoutY="151.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Medical Transciptionists" textAlignment="CENTER" wrappingWidth="159.0">
                <font>
-                  <Font name="SF Pro Text Regular" size="16.0" />
+                  <Font name="SF Pro Text Semibold" size="13.0" />
                </font>
             </Text>
             <Pane fx:id="editStaffButton" layoutX="37.0" layoutY="169.0" onMouseClicked="#editStaffDetails" prefHeight="35.0" prefWidth="102.0" style="-fx-background-color: #9ddbbe; -fx-background-radius: 12;">
