@@ -68,6 +68,7 @@ public class add_treatment_controller {
 
     @FXML
     public void initialize() {
+        patientNameComboBox.setValue(TreatmentData.initTreatmentData.getPatientName());
         patientNameComboBox.setItems(fetchPatientName());
         staffIdComboBox.setItems(fetchStaffId());
     }
@@ -83,13 +84,15 @@ public class add_treatment_controller {
 
         if (errorMessage == "") {
             List<Treatment> treatmentList = TreatmentData.fetchTreatmentDataFromDatabase();
-            int newTreatmentId = Integer.parseInt(treatmentList.get(treatmentList.size() - 1).getTreatmentId().substring(1))
+            int newTreatmentId = Integer
+                    .parseInt(treatmentList.get(treatmentList.size() - 1).getTreatmentId().substring(1))
                     + 1;
             String newTreatmentIdFormatted = String.format("T%03d", newTreatmentId);
             LocalDate dateStart = dateStartDatePicker.getValue();
             LocalDate dateEnd = dateEndDatePicker.getValue();
 
-            Treatment newTreatment = new Treatment(newTreatmentIdFormatted, patientNameComboBox.getSelectionModel().getSelectedItem(),
+            Treatment newTreatment = new Treatment(newTreatmentIdFormatted,
+                    patientNameComboBox.getSelectionModel().getSelectedItem(),
                     staffIdComboBox.getSelectionModel().getSelectedItem(),
                     dateStart,
                     dateEnd,
@@ -105,8 +108,8 @@ public class add_treatment_controller {
     private String validateInput() {
         String errorMessage = "";
 
-        if (patientNameComboBox.getSelectionModel().isEmpty() ||  staffIdComboBox.getSelectionModel().isEmpty()
-                || dateStartDatePicker.getValue() == null||  dateEndDatePicker.getValue() == null
+        if (patientNameComboBox.getSelectionModel().isEmpty() || staffIdComboBox.getSelectionModel().isEmpty()
+                || dateStartDatePicker.getValue() == null || dateEndDatePicker.getValue() == null
                 || treatmentInfoTextField.getText().isEmpty()) {
             errorMessage = "Please make sure all fields are filled with the appropriate type.";
             System.out.println(errorMessage);
@@ -116,4 +119,3 @@ public class add_treatment_controller {
     }
 
 }
-
