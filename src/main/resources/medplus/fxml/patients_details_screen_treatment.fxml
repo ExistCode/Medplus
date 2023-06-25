@@ -167,7 +167,7 @@
                </children>
             </Pane>
             <TableView fx:id="patientMedicalHistoryTable" layoutX="33.0" layoutY="74.0" prefHeight="187.0" prefWidth="920.0" style="-fx-background-color: transparent; -fx-background-radius: 16;" stylesheets="@../css/styles.css" />
-            <Pane fx:id="updateButton" layoutX="841.0" layoutY="16.0" onMouseClicked="#switchToUpdateScreen" prefHeight="48.0" prefWidth="52.0">
+            <Pane fx:id="updateButton" layoutX="841.0" layoutY="16.0" onMouseClicked="#updateMedHis" prefHeight="48.0" prefWidth="52.0">
                <children>
                   <ImageView fitHeight="48.0" fitWidth="35.0" layoutX="8.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -189,8 +189,8 @@
       </Pane>
       <Pane layoutX="614.0" layoutY="47.0" prefHeight="285.0" prefWidth="618.0" style="-fx-background-color: EFF7F9; -fx-background-radius: 20;">
          <children>
-            <TableView fx:id="treatmentTable" layoutX="26.0" layoutY="59.0" prefHeight="198.0" prefWidth="562.0" style="-fx-background-color: transparent; -fx-background-radius: 8;" stylesheets="@../css/styles.css" />
-            <Pane fx:id="analysisButton" layoutX="26.0" layoutY="16.0" onMouseClicked="#changedToAnalysis" prefHeight="32.0" prefWidth="143.0">
+            <TableView fx:id="treatmentTable" layoutX="19.0" layoutY="59.0" prefHeight="198.0" prefWidth="580.0" style="-fx-background-color: transparent; -fx-background-radius: 8;" stylesheets="@../css/styles.css" />
+            <Pane fx:id="analysisButton" layoutX="19.0" layoutY="16.0" onMouseClicked="#changedToAnalysis" prefHeight="32.0" prefWidth="143.0">
                <children>
                   <Text fill="#00000040" layoutX="47.0" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Analysis">
                      <font>
@@ -199,7 +199,7 @@
                   </Text>
                </children>
             </Pane>
-            <Pane fx:id="diagnosisButton" layoutX="169.0" layoutY="16.0" onMouseClicked="#changedToDiagnosis" prefHeight="32.0" prefWidth="143.0">
+            <Pane fx:id="diagnosisButton" layoutX="162.0" layoutY="16.0" onMouseClicked="#changedToDiagnosis" prefHeight="32.0" prefWidth="143.0">
                <children>
                   <Text fill="#00000040" layoutX="47.0" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Diagnosis">
                      <font>
@@ -208,7 +208,7 @@
                   </Text>
                </children>
             </Pane>
-            <Pane fx:id="treatmentButton" layoutX="307.0" layoutY="16.0" onMouseClicked="#changedToTreatment" prefHeight="32.0" prefWidth="143.0" style="-fx-background-color: white; -fx-background-radius: 6;">
+            <Pane fx:id="treatmentButton" layoutX="300.0" layoutY="16.0" onMouseClicked="#changedToTreatment" prefHeight="32.0" prefWidth="143.0" style="-fx-background-color: white; -fx-background-radius: 6;">
                <children>
                   <Text layoutX="47.0" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Treatment">
                      <font>
@@ -217,13 +217,31 @@
                   </Text>
                </children>
             </Pane>
-            <Pane fx:id="addTreatmentButton" layoutX="510.0" layoutY="16.0" onMouseClicked="#addTreatment" prefHeight="32.0" prefWidth="81.0" style="-fx-background-color: FEAD54; -fx-background-radius: 12;">
+            <Pane fx:id="addTreatmentButton" layoutX="449.0" layoutY="16.0" onMouseClicked="#addTreatment" prefHeight="32.0" prefWidth="81.0" style="-fx-background-color: FEAD54; -fx-background-radius: 12;">
                <children>
                   <Text layoutX="17.0" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="+ Add">
                      <font>
                         <Font name="SF Pro Rounded Bold" size="16.0" />
                      </font>
                   </Text>
+               </children>
+            </Pane>
+            <Pane fx:id="updateTreatmentButton" layoutX="535.0" layoutY="16.0" onMouseClicked="#updateTreatment" prefHeight="30.0" prefWidth="30.0">
+               <children>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="-1.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/icons/pencil-buttons-48.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Pane fx:id="deleteTreatmentButton" layoutX="567.0" layoutY="16.0" onMouseClicked="#deleteTreatment" prefHeight="30.0" prefWidth="30.0">
+               <children>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="-1.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/icons/delete-button-90.png" />
+                     </image>
+                  </ImageView>
                </children>
             </Pane>
          </children>

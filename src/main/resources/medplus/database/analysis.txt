@@ -50,7 +50,6 @@ A048,Wong Li Ling,S018,Bioblood Analysis,Normal cholesterol levels,2023-06-04,Ch
 A049,Siti Rahayu,S027,Urine Analysis,Presence of urinary tract infection,2023-03-29,Check urinary tract health
 A050,Mohammad Ali,S026,RW Analysis,Positive for influenza B virus,2023-05-21,Analyze respiratory samples
 A051,Ayu Suryani,S018,Bioblood Analysis,Low red blood cell count,2023-05-16,Check blood composition
-A052,Rajesh Kumar,S027,Urine Analysis,Normal urine pH level,2023-03-11,Check urinary tract health
 A053,Anita Devi,S018,Bioblood Analysis,High white blood cell count,2023-06-20,Check blood composition
 A054,Chen Wei,S026,RW Analysis,Negative for rhinovirus,2023-04-30,Analyze respiratory samples
 A055,Mohammad Yusuf,S018,Bioblood Analysis,Normal platelet count,2023-06-13,Check blood composition

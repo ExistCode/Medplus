@@ -4,7 +4,7 @@ T002,Ahmad Hidayat,S008,2023-02-24,2023-02-22,Child vaccination
 T003,Siti Rahayu,S003,2023-01-09,2023-01-13,Appendectomy surgery
 T004,Mohammad Yusuf,S012,2023-03-15,2023-03-18,General anesthesia for dental procedure
 T005,Novi Susanti,S009,2023-06-17,2023-06-22,Eye examination and prescription
-T006,Rajesh Kumar,S011,2023-05-07,2023-05-12,Neurological evaluation
+T006,Rajesh Kumar,S011,2023-05-07,2023-05-12,-,
 T007,Anita Dewi,S006,2023-03-28,2023-04-01,Dermatological treatment for acne
 T008,Mohammad Ali,S014,2023-04-10,2023-04-14,Orthodontic consultation
 T009,Chen Wei,S020,2023-05-23,2023-05-27,Occupational therapy session
@@ -26,14 +26,12 @@ T024,Lee Min-ho,S005,2023-05-13,2023-05-17,Cardiac stress test
 T025,Siti Nur Azizah,S006,2023-02-12,2023-02-16,Acne treatment
 T026,Novi Susanti,S014,2023-08-28,2023-02-01,Orthodontic adjustment
 T027,Ahmad Hidayat,S012,2023-08-08,2023-05-13,General anesthesia for surgery
-T028,Chen Wei,S004,2023-03-13,2023-03-18,Prenatal ultrasound
-T029,Siti Rahayu,S010,2023-02-02,2023-02-07,Psychiatric medication review
+T028,Chen Wei,S004,2023-03-13,2023-03-18,-,
 T030,Mohammad Hassan,S019,2023-01-20,2023-01-24,Medical assistant follow-up
 T031,Ahmad Rizal,S011,2023-04-15,2023-04-20,Neurological treatment
 T032,Rajesh Kumar,S008,2023-06-06,2023-06-11,Child check-up
 T033,Anita Dewi,S003,2023-04-02,2023-04-07,Gallbladder removal surgery
-T034,Mohammad Ali,S012,2023-02-28,2023-03-05,General anesthesia for dental extraction
-T035,Chen Wei,S015,2023-05-28,2023-06-02,Physiotherapy for back pain
+T034,Mohammad Ali,S012,2023-02-28,2023-03-05,-,
 T036,Ayu Suryani,S020,2023-03-16,2023-03-20,Occupational therapy evaluation
 T037,Rajesh Patel,S005,2023-02-08,2023-02-13,Cardiac consultation
 T038,Chen Ming,S019,2023-05-03,2023-05-08,Medical assistant consultation

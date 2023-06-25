@@ -271,6 +271,5 @@ public class staff_controller {
                 filteredData);
         sortedStaffData.comparatorProperty().bind(staffTable.comparatorProperty());
         return filteredData;
-        // staffTable.setItems(sortedStaffData);
     }
 }

@@ -76,11 +76,6 @@ public class update_analysis_controller {
         String errorMessage = validateInput();
 
         if (errorMessage == "") {
-            // List<Analysis> analysisList = AnalysisData.fetchAnalysisDataFromDatabase();
-            // int newAnalysisId = Integer.parseInt(analysisList.get(analysisList.size() -
-            // 1).getAnalysisId().substring(1))
-            // + 1;
-            // String newAnalysisIdFormatted = String.format("A%03d", newAnalysisId);
 
             Analysis newAnalysis = new Analysis(AnalysisData.initanalysisData.getAnalysisId(),
                     patientNameComboBox.getSelectionModel().getSelectedItem(),

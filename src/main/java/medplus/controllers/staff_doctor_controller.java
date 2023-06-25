@@ -138,17 +138,6 @@ public class staff_doctor_controller {
         }
     }
 
-    // @FXML
-    // void deleteRow(MouseEvent event) {
-    // doctorTable.getItems().removeAll(doctorTable.getSelectionModel().getSelectedItems());
-    // String selectedRowId =
-    // doctorTable.getSelectionModel().getSelectedItem().getStaffId().toString();
-    // int selectedRowIdPlusOne = Integer.parseInt(selectedRowId.substring(1));
-    // String newDoctorIdFormatted = String.format("S%03d", selectedRowIdPlusOne);
-    // StaffData.deleteStaffById(newDoctorIdFormatted);
-
-    // }
-
     @FXML
     void switchToUpdateScreen(MouseEvent event) throws IOException {
         App.setRoot("update_staff_screen");

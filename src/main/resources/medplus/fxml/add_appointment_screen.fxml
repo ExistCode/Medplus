@@ -31,7 +31,7 @@
             <Font name="SF Pro Text Semibold" size="24.0" />
          </font>
       </TextField>
-      <TextField fx:id="patinetIdTextField" layoutX="716.0" layoutY="219.0" prefHeight="60.0" prefWidth="450.0" promptText="Enter Patient ID" style="-fx-background-color: white; -fx-background-radius: 16; -fx-border-radius: 16; -fx-border-color: #089bab;">
+      <TextField fx:id="patientIdTextField" layoutX="716.0" layoutY="219.0" prefHeight="60.0" prefWidth="450.0" promptText="Enter Patient ID" style="-fx-background-color: white; -fx-background-radius: 16; -fx-border-radius: 16; -fx-border-color: #089bab;">
          <font>
             <Font name="SF Pro Text Semibold" size="24.0" />
          </font>

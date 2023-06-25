@@ -147,27 +147,6 @@ public class search_screen_controller {
         }
     }
 
-    // @FXML
-    // ObservableList<AnalysisTableDataModel> searchAnalysis(ActionEvent event) {
-    // ObservableList<AnalysisTableDataModel> searchedAnalysisList =
-    // FXCollections.observableArrayList();
-    // ObservableList<AnalysisTableDataModel> analysisDataList =
-    // AnalysisTableDataModel
-    // .convertAnalysisDataToAnalysisTableDataModel();
-    // for (AnalysisTableDataModel analysis : analysisDataList) {
-    // if (searchButton.getText().equals(analysis.getAnalysisId())) {
-    // searchedAnalysisList.add(analysis);
-
-    // } else {
-    // searchedAnalysisList.addAll(analysisDataList);
-
-    // }
-
-    // }
-    // return searchedAnalysisList;
-
-    // }
-
     @FXML
     public void initialize() {
 
@@ -222,24 +201,6 @@ public class search_screen_controller {
         sortedAnalysisData.comparatorProperty().bind(analysisTable.comparatorProperty());
         analysisTable.setItems(sortedAnalysisData);
 
-        // analysisTable.setOnMouseClicked(event -> {
-        // if (event.getClickCount() == 2) {
-        // AnalysisTableDataModel selectedAnalysis =
-        // analysisTable.getSelectionModel().getSelectedItem();
-        // if (selectedAnalysis != null) {
-        // Alert popUpAnalysisDetails = new Alert(AlertType.INFORMATION);
-        // popUpAnalysisDetails.setTitle("Analysis Details");
-
-        // System.out.println(AnalysisData.initanalysisData.getAnalysisId());
-        // System.out.println(AnalysisData.initanalysisData.getPatientName());
-        // System.out.println(AnalysisData.initanalysisData.getStaffId());
-        // System.out.println(AnalysisData.initanalysisData.getTypeOfTest());
-        // System.out.println(AnalysisData.initanalysisData.getResultSummary());
-        // System.out.println(AnalysisData.initanalysisData.getDate());
-        // System.out.println(AnalysisData.initanalysisData.getTestInformation());
-        // }
-        // }
-        // });
     }
 
 }

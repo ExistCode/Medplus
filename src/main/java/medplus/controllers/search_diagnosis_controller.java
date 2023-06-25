@@ -192,30 +192,5 @@ public class search_diagnosis_controller {
         sortedDiagnosisData.comparatorProperty().bind(diagnosisTable.comparatorProperty());
         diagnosisTable.setItems(sortedDiagnosisData);
 
-        /*
-         * diagnosisTable.setOnMouseClicked(event -> {
-         * if (event.getClickCount() == 2) {
-         * DiagnosisTableDataModel selectedDiagnosis =
-         * diagnosisTable.getSelectionModel().getSelectedItem();
-         * if (selectedDiagnosis != null) {
-         * 
-         * DiagnosisData.initdiagnosisData.setDiagnosisId(selectedDiagnosis.
-         * getDiagnosisId());
-         * DiagnosisData.initdiagnosisData.setPatientName(selectedDiagnosis.
-         * getPatientName());
-         * DiagnosisData.initdiagnosisData.setStaffId(selectedDiagnosis.getStaffId());
-         * DiagnosisData.initdiagnosisData.setDate(selectedDiagnosis.getDate());
-         * DiagnosisData.initdiagnosisData.setDiagnosis(selectedDiagnosis.getDiagnosis()
-         * );
-         * 
-         * System.out.println(DiagnosisData.initdiagnosisData.getDiagnosisId());
-         * System.out.println(DiagnosisData.initdiagnosisData.getPatientName());
-         * System.out.println(DiagnosisData.initdiagnosisData.getStaffId());
-         * System.out.println(DiagnosisData.initdiagnosisData.getDate());
-         * System.out.println(DiagnosisData.initdiagnosisData.getDiagnosis());
-         * }
-         * }
-         * });
-         */
     }
 }

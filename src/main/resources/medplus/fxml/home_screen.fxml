@@ -309,7 +309,7 @@
             </Text>
             <Text fx:id="firstAppointmentDetails" layoutX="169.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Details" textAlignment="CENTER" wrappingWidth="243.62109375">
                <font>
-                  <Font name="Verdana" size="16.0" />
+                  <Font name="Verdana" size="15.0" />
                </font>
             </Text>
             <Text fx:id="firstAppointmentStaffName" fill="#00000040" layoutX="386.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Staff Name" textAlignment="CENTER" wrappingWidth="176.23864168123805">
@@ -328,7 +328,7 @@
             </Text>
             <Text fx:id="secondAppointmentDetails" layoutX="169.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Details" textAlignment="CENTER" wrappingWidth="243.62109375">
                <font>
-                  <Font name="Verdana" size="16.0" />
+                  <Font name="Verdana" size="15.0" />
                </font>
             </Text>
             <Text fx:id="secondAppointmentStaffName" fill="#00000040" layoutX="386.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Staff Name" textAlignment="CENTER" wrappingWidth="176.23864168123805">

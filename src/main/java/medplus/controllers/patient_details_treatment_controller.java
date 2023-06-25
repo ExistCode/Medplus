@@ -23,6 +23,10 @@ import medplus.tableModels.TreatmentTableDataModel;
 
 public class patient_details_treatment_controller {
     @FXML
+    private Pane deleteTreatmentButton;
+    @FXML
+    private Pane updateTreatmentButton;
+    @FXML
     private Text GenderText;
     @FXML
     private Pane addTreatmentButton;
@@ -93,6 +97,39 @@ public class patient_details_treatment_controller {
     }
 
     @FXML
+    void updateTreatment(MouseEvent event) throws IOException {
+        TreatmentTableDataModel selectedTreatment = treatmentTable.getSelectionModel().getSelectedItem();
+        if (selectedTreatment != null) {
+            try {
+                TreatmentData.initTreatmentData.setTreatmentId(selectedTreatment.getTreatmentId());
+                TreatmentData.initTreatmentData.setPatientName(selectedTreatment.getPatientName());
+                TreatmentData.initTreatmentData.setStaffId(selectedTreatment.getStaffId());
+                TreatmentData.initTreatmentData.setStartDate(selectedTreatment.getStartDate());
+                TreatmentData.initTreatmentData.setEndDate(selectedTreatment.getEndDate());
+                TreatmentData.initTreatmentData.setTreatmentInfo(selectedTreatment.getTreatmentInfo());
+                App.setRoot("update_treatment_screen");
+
+            } catch (IOException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+
+        }
+
+    }
+
+    @FXML
+    void deleteTreatment(MouseEvent event) {
+        treatmentTable.getItems().removeAll(treatmentTable.getSelectionModel().getSelectedItems());
+        String selectedRowId = treatmentTable.getSelectionModel().getSelectedItem().getTreatmentId().toString();
+        int selectedRowIdPlusOne = Integer.parseInt(selectedRowId.substring(1))
+                + 1;
+        String newTreatmentIdFormatted = String.format("T%03d", selectedRowIdPlusOne);
+        TreatmentData.deleteTreatmentById(newTreatmentIdFormatted);
+
+    }
+
+    @FXML
     void changedToAddMedicalHistory(MouseEvent event) throws IOException {
         MedicalHistoryData.initMedicalHistoryData.setPatientId(PatientData.initPatientData.getPatientId());
         App.setRoot("add_medical_history_screen");
@@ -154,7 +191,7 @@ public class patient_details_treatment_controller {
     }
 
     @FXML
-    void switchToUpdateScreen(MouseEvent event) throws IOException {
+    void updateMedHis(MouseEvent event) throws IOException {
         MedicalHistoryTableDataModel selectedMedHis = patientMedicalHistoryTable.getSelectionModel()
                 .getSelectedItem();
         System.out.println("\nClicked Observation: " + selectedMedHis.getObservation());
@@ -197,14 +234,10 @@ public class patient_details_treatment_controller {
 
     @FXML
     public void initialize() {
-        // Format f = new SimpleDateFormat("dd MMM yy");
-        // String strDate = PatientData.initPatientData.getPatientDateOfBirth()
-        // .format(DateTimeFormatter.ofLocalizedDate(FormatStyle.LONG));
+
         System.out.println(PatientData.initPatientData.getName());
         patientsNameText.setText(PatientData.initPatientData.getName());
         GenderText.setText(PatientData.initPatientData.getPatientGender());
-        // dateOfBirthText.setText(strDate);
-        // dateOfBirthText.setText(PatientData.initpatientData.getPatientDateOfBirth().toString());
         bloodTypeText.setText(PatientData.initPatientData.getPatientBloodType());
         heightText.setText(Double.toString(PatientData.initPatientData.getPatientHeight()));
         weightText.setText(Double.toString(PatientData.initPatientData.getPatientWeight()));
@@ -227,9 +260,6 @@ public class patient_details_treatment_controller {
         System.out.println("\nPatient Id: " + patientId);
         ObservableList<MedicalHistoryTableDataModel> medicalHistoryDataList = MedicalHistoryTableDataModel
                 .convertMedicalHistoryDataToTableDataModel(patientId);
-        // for (MedicalHistoryTableDataModel medhis : medicalHistoryDataList) {
-        // System.out.println(medhis.getObservation());
-        // }
 
         // Clear existing columns before adding new ones
         patientMedicalHistoryTable.getColumns().clear();
@@ -274,7 +304,7 @@ public class patient_details_treatment_controller {
         }
         TableColumn treatmentIdColumn = new TableColumn("Treatment ID");
         TableColumn patientNameColumn = new TableColumn("Patient Name");
-        TableColumn doctorIdColumn = new TableColumn("Doctor Id");
+        TableColumn doctorIdColumn = new TableColumn("Staff Id");
         TableColumn startDateColumn = new TableColumn("Start Date");
         TableColumn endDateColumn = new TableColumn("End Date");
         TableColumn treatmentInfoColumn = new TableColumn("Treatment Info");
@@ -285,7 +315,7 @@ public class patient_details_treatment_controller {
         // Set cell value factories for each TableColumn
         treatmentIdColumn.setCellValueFactory(new PropertyValueFactory<>("treatmentId"));
         patientNameColumn.setCellValueFactory(new PropertyValueFactory<>("patientName"));
-        doctorIdColumn.setCellValueFactory(new PropertyValueFactory<>("doctorId"));
+        doctorIdColumn.setCellValueFactory(new PropertyValueFactory<>("staffId"));
         startDateColumn.setCellValueFactory(new PropertyValueFactory<>("startDate"));
         endDateColumn.setCellValueFactory(new PropertyValueFactory<>("endDate"));
         treatmentInfoColumn.setCellValueFactory(new PropertyValueFactory<>("treatmentInfo"));

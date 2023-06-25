@@ -38,7 +38,7 @@ public class add_patient_controller {
     private TextField addressTextField;
 
     @FXML
-    private ComboBox<String> Gender;
+    private ComboBox<String> gender;
 
     @FXML
     private TextField contactNumberTextField;
@@ -87,7 +87,7 @@ public class add_patient_controller {
 
             Patient newPatient = new Patient(newPatientIdFormatted, nameTextField.getText(),
                     nationalIdTextField.getText(),
-                    Gender.getSelectionModel().getSelectedItem(),
+                    gender.getSelectionModel().getSelectedItem(),
                     dateOfBirth, p.getYears(), Double.parseDouble(heightTextField.getText()),
                     Double.parseDouble(weightTextField.getText()),
                     bloodType.getSelectionModel().getSelectedItem(),
@@ -95,7 +95,7 @@ public class add_patient_controller {
                     contactNumberTextField.getText());
             PatientData.addNewPatient(newPatient);
             PatientData.initPatientData.setPatientId(nameTextField.getText());
-            PatientData.initPatientData.setPatientGender(Gender.getSelectionModel().getSelectedItem());
+            PatientData.initPatientData.setPatientGender(gender.getSelectionModel().getSelectedItem());
             PatientData.initPatientData.setDateOfBirth(dateOfBirth);
             PatientData.initPatientData
                     .setPatientBloodType(bloodType.getSelectionModel().getSelectedItem());
@@ -113,7 +113,7 @@ public class add_patient_controller {
         String errorMessage = "";
 
         if (nameTextField.getText().isEmpty() || nationalIdTextField.getText().isEmpty()
-                || Gender.getSelectionModel().isEmpty() || dateOfBirthSelector.getValue() == null
+                || gender.getSelectionModel().isEmpty() || dateOfBirthSelector.getValue() == null
                 || heightTextField.getText().isEmpty() || weightTextField.getText().isEmpty()
                 || bloodType.getSelectionModel().isEmpty() || addressTextField.getText().isEmpty()
                 || contactNumberTextField.getText().isEmpty()) {
@@ -139,13 +139,10 @@ public class add_patient_controller {
 
     }
 
-    /**
-     * 
-     */
     @FXML
     public void initialize() {
         bloodType.setItems(bloodTypeOptions);
-        Gender.setItems(genderOptions);
+        gender.setItems(genderOptions);
 
     }
 
