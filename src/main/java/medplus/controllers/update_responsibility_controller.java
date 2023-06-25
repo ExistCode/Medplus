@@ -1,23 +1,17 @@
 package medplus.controllers;
 
 import java.io.IOException;
-import java.util.List;
-
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.ComboBox;
-import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
 import medplus.App;
-import medplus.data.ProcedureData;
 import medplus.data.ResponsibilitiesData;
-import medplus.data.StaffData;
-import medplus.models.Procedure;
 import medplus.models.Responsibilities;
 import medplus.tableModels.StaffTableDataModel;
 

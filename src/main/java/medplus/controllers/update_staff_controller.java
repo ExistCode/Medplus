@@ -25,7 +25,7 @@ public class update_staff_controller {
             "Administration");
 
     @FXML
-    private Pane addStaffButton;
+    private Pane updateStaffButton;
 
     @FXML
     private TextField ageTextField;

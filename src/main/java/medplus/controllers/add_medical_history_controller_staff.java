@@ -79,7 +79,7 @@ public class add_medical_history_controller_staff {
 
     @FXML
     void backToStaffDetails(MouseEvent event) throws IOException {
-        App.setRoot("staff_details_analysis_screen");
+        App.setRoot("staff_details_screen");
     }
 
     private String validateInput() {

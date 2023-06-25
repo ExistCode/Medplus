@@ -21,6 +21,10 @@ import medplus.tableModels.MedicalHistoryTableDataModel;
 
 public class patient_details_diagnosis_controller {
     @FXML
+    private Pane deleteDiagnosisButton;
+    @FXML
+    private Pane updateDiagnosisButton;
+    @FXML
     private Text GenderText;
     @FXML
     private Pane addDiagnosisButton;
@@ -89,6 +93,38 @@ public class patient_details_diagnosis_controller {
     }
 
     @FXML
+    void updateDiagnosis(MouseEvent event) throws IOException {
+        DiagnosisTableDataModel selectedDiagnosis = diagnosisTable.getSelectionModel().getSelectedItem();
+        if (selectedDiagnosis != null) {
+            try {
+                DiagnosisData.initdiagnosisData.setDiagnosisId(selectedDiagnosis.getDiagnosisId());
+                DiagnosisData.initdiagnosisData.setPatientName(selectedDiagnosis.getPatientName());
+                DiagnosisData.initdiagnosisData.setStaffId(selectedDiagnosis.getStaffId());
+                DiagnosisData.initdiagnosisData.setDate(selectedDiagnosis.getDate());
+                DiagnosisData.initdiagnosisData.setDiagnosis(selectedDiagnosis.getDiagnosis());
+
+                App.setRoot("update_diagnosis_screen");
+
+            } catch (IOException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+
+        }
+
+    }
+
+    @FXML
+    void deleteDiagnosis(MouseEvent event) {
+        diagnosisTable.getItems().removeAll(diagnosisTable.getSelectionModel().getSelectedItems());
+        String selectedRowId = diagnosisTable.getSelectionModel().getSelectedItem().getDiagnosisId().toString();
+        int selectedRowIdPlusOne = Integer.parseInt(selectedRowId.substring(1)) + 1;
+        String newDiagnosisIdFormatted = String.format("D%03d", selectedRowIdPlusOne);
+        DiagnosisData.deleteDiagnosisById(newDiagnosisIdFormatted);
+
+    }
+
+    @FXML
     void changedToAddMedicalHistory(MouseEvent event) throws IOException {
         MedicalHistoryData.initMedicalHistoryData.setPatientId(PatientData.initPatientData.getPatientId());
         App.setRoot("add_medical_history_screen");
@@ -150,7 +186,7 @@ public class patient_details_diagnosis_controller {
     }
 
     @FXML
-    void switchToUpdateScreen(MouseEvent event) throws IOException {
+    void updateMedHis(MouseEvent event) throws IOException {
         MedicalHistoryTableDataModel selectedMedHis = patientMedicalHistoryTable.getSelectionModel()
                 .getSelectedItem();
         System.out.println("\nClicked Observation: " + selectedMedHis.getObservation());
@@ -282,7 +318,7 @@ public class patient_details_diagnosis_controller {
         patientNameColumn.setCellValueFactory(new PropertyValueFactory<>("patientName"));
         staffIdColumn.setCellValueFactory(new PropertyValueFactory<>("staffId"));
         dateColumn.setCellValueFactory(new PropertyValueFactory<>("date"));
-        sicknessColumn.setCellValueFactory(new PropertyValueFactory<>("sickness"));
+        sicknessColumn.setCellValueFactory(new PropertyValueFactory<>("diagnosis"));
 
         diagnosisTable.setItems(patientDiagnosisTableData);
 

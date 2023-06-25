@@ -38,7 +38,7 @@ public class add_appointment_controller {
     private TextField descriptionTextField;
 
     @FXML
-    private TextField patinetIdTextField;
+    private TextField patientIdTextField;
 
     @FXML
     private ComboBox<String> roomNumberComboBox;
@@ -55,7 +55,7 @@ public class add_appointment_controller {
             int newAppointmentId = Integer
                     .parseInt(appointmentList.get(appointmentList.size() - 1).getAppointmentId().substring(1)) + 1;
             String newAppointmentIdFormatted = String.format("A%03d", newAppointmentId);
-            String patientId = patinetIdTextField.getText();
+            String patientId = patientIdTextField.getText();
             String staffId = staffIdTextField.getText();
             LocalDate date = appointmentDatePicker.getValue();
             String description = descriptionTextField.getText();
@@ -79,7 +79,7 @@ public class add_appointment_controller {
     private String validateInput() {
         String errorMessage = "";
 
-        if (patinetIdTextField.getText().isEmpty() || staffIdTextField.getText().isEmpty()
+        if (patientIdTextField.getText().isEmpty() || staffIdTextField.getText().isEmpty()
                 || appointmentDatePicker.getValue() == null || descriptionTextField.getText().isEmpty()
                 || roomNumberComboBox.getValue() == null) {
             errorMessage = "Please make sure all fields are filled.";

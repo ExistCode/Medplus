@@ -117,7 +117,7 @@
          </children>
       </Pane>
       <ComboBox fx:id="bloodType" layoutX="154.0" layoutY="519.0" prefHeight="55.0" prefWidth="464.0" promptText="Blood Type" style="-fx-background-color: white; -fx-border-color: #089bab; -fx-background-radius: 16; -fx-border-radius: 16; -fx-font-size: 24;" />
-      <ComboBox fx:id="Gender" layoutX="708.0" layoutY="392.0" prefHeight="55.0" prefWidth="464.0" promptText="Gender" style="-fx-background-color: white; -fx-border-color: #089bab; -fx-background-radius: 16; -fx-border-radius: 16; -fx-font-size: 24; -fx-font-family: SF Pro Text;" />
+      <ComboBox fx:id="gender" layoutX="708.0" layoutY="392.0" prefHeight="55.0" prefWidth="464.0" promptText="Gender" style="-fx-background-color: white; -fx-border-color: #089bab; -fx-background-radius: 16; -fx-border-radius: 16; -fx-font-size: 24; -fx-font-family: SF Pro Text;" />
       <Text fx:id="errorMessageDisplay" fill="#f9988b" layoutX="19.0" layoutY="704.0" strokeType="OUTSIDE" strokeWidth="0.0" text=" " textAlignment="CENTER" wrappingWidth="1316.3828125">
          <font>
             <Font size="16.0" />

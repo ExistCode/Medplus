@@ -24,6 +24,11 @@ import medplus.tableModels.MedicalHistoryTableDataModel;
 
 public class patient_details_controller extends patient_controller {
     @FXML
+    private Pane deleteAnalysisButton;
+    @FXML
+    private Pane updateAnalysisButton;
+
+    @FXML
     private Text GenderText;
 
     @FXML
@@ -41,6 +46,45 @@ public class patient_details_controller extends patient_controller {
     void addAnalysis(MouseEvent event) throws IOException {
         AnalysisData.initanalysisData.setPatientName(PatientData.initPatientData.getName());
         App.setRoot("add_analysis_screen");
+
+    }
+
+    @FXML
+    void updateAnalysis(MouseEvent event) throws IOException {
+        AnalysisTableDataModel selectedAnalysis = analysisTable.getSelectionModel().getSelectedItem();
+        if (selectedAnalysis != null) {
+            try {
+                AnalysisData.initanalysisData.setAnalysisId(selectedAnalysis.getAnalysisId());
+                AnalysisData.initanalysisData.setPatientName(selectedAnalysis.getPatientName());
+                AnalysisData.initanalysisData.setStaffId(selectedAnalysis.getStaffId());
+                AnalysisData.initanalysisData.setTypeOfTest(selectedAnalysis.getTypeOfTest());
+                AnalysisData.initanalysisData.setResultSummary(selectedAnalysis.getResultSummary());
+                AnalysisData.initanalysisData.setDate(selectedAnalysis.getDate());
+                AnalysisData.initanalysisData.setTestInformation(selectedAnalysis.getTestInformation());
+
+                App.setRoot("update_analysis_screen");
+
+            } catch (IOException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+
+        }
+
+    }
+
+    @FXML
+    void deleteAnalysis(MouseEvent event) {
+        AnalysisTableDataModel selectedAnalysis = analysisTable.getSelectionModel().getSelectedItem();
+
+        if (selectedAnalysis != null) {
+            analysisTable.getItems().remove(selectedAnalysis);
+
+            String selectedRowId = selectedAnalysis.getAnalysisId().toString();
+            int selectedRowIdPlusOne = Integer.parseInt(selectedRowId.substring(1));
+            String newAnalysisIdFormatted = String.format("A%03d", selectedRowIdPlusOne);
+            AnalysisData.deleteAnalysisById(newAnalysisIdFormatted);
+        }
 
     }
 
@@ -156,7 +200,7 @@ public class patient_details_controller extends patient_controller {
     }
 
     @FXML
-    void switchToUpdateScreen(MouseEvent event) throws IOException {
+    void updateMedHis(MouseEvent event) throws IOException {
         MedicalHistoryTableDataModel selectedMedHis = patientMedicalHistoryTable.getSelectionModel()
                 .getSelectedItem();
         System.out.println("\nClicked Observation: " + selectedMedHis.getObservation());
