@@ -127,9 +127,6 @@ public class update_patient_controller {
 
     }
 
-    /**
-     * 
-     */
     @FXML
     public void initialize() {
         fullNameTextField.setText(PatientData.initPatientData.getName());

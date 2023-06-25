@@ -139,9 +139,6 @@ public class add_patient_controller {
 
     }
 
-    /**
-     * 
-     */
     @FXML
     public void initialize() {
         bloodType.setItems(bloodTypeOptions);

@@ -157,6 +157,7 @@ public class home_controller {
         numOfNurses.setText(Integer.toString(numOfNurse));
         numOfAdmin.setText(Integer.toString(numOfAdmins));
         numOfRooms.setText(Integer.toString(initialRoomList.size()));
+
         List<Patient> patientList = getLatestThreePatients();
         firstPatientsNames.setText(patientList.get(0).getName());
         firstPatientGender.setText(patientList.get(0).getPatientGender());
@@ -210,9 +211,6 @@ public class home_controller {
         lastThreePatientList.add(0, originalPatientList.get(originalPatientList.size() - 1));
         lastThreePatientList.add(1, originalPatientList.get(originalPatientList.size() - 2));
         lastThreePatientList.add(2, originalPatientList.get(originalPatientList.size() - 3));
-        for (int i = 0; i < lastThreePatientList.size(); i++) {
-            System.out.println(lastThreePatientList.get(i).getName());
-        }
 
         return lastThreePatientList;
 
@@ -224,7 +222,6 @@ public class home_controller {
 
         for (Treatment tre : originalTreatmentList) {
             if (tre.getStartDate().isAfter(LocalDate.now())) {
-                System.out.println(tre.getTreatmentId());
                 lastTwoTreatmentList.add(tre);
 
             }

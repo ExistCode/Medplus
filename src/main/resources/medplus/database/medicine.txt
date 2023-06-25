@@ -1,4 +1,21 @@
 Medicine ID,Patient Name,Doctor ID,Medicine Name,Amount,Dose Detail
-M002,John Doe,S001,amoxilin,1,-
-M003,Emily Johnson,S004,ABCDE,2,2per day
-M004,William Brown,S006,-,10,19 times a day
+M011,Ahmad Abdullah,S008,Amoxicillin,1,-
+M012,Lim Mei Ling,S003,Paracetamol,2,1 per day
+M013,Siti Nur Azizah,S010,Ibuprofen,3,1 per day
+M014,Mohammad Ali,S012,Ciprofloxacin,1,-
+M015,Chen Wei,S007,Ranitidine,2,2 per day
+M016,Nurul Indah,S014,Loratadine,3,1 per day
+M017,Rajesh Kumar,S006,Aspirin,2,1 per day
+M018,Anita Dewi,S015,Amoxicillin,1,-
+M019,Lee Joon-ho,S016,Paracetamol,2,2 per day
+M020,Novi Susanti,S018,Ibuprofen,3,1 per day
+M021,Ahmad Ibrahim,S020,Ciprofloxacin,1,-
+M022,Cindy Chen,S022,Ranitidine,2,2 per day
+M023,Ahmad Hidayat,S024,Loratadine,3,1 per day
+M024,Aisyah Zahra,S025,Aspirin,2,1 per day
+M025,David Tan,S019,Amoxicillin,1,-
+M026,Siti Rahayu,S021,Paracetamol,2,2 per day
+M027,Mohammad Hassan,S023,Ibuprofen,3,1 per day
+M028,Lee Min-jung,S026,Ciprofloxacin,1,-
+M029,Rajesh Patel,S028,Ranitidine,2,2 per day
+M030,Anita Fitriani,S030,Loratadine,3,1 per day

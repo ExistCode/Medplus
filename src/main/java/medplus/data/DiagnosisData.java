@@ -103,11 +103,6 @@ public class DiagnosisData {
                         System.out.println(e);
                 }
 
-                // for (int i = 0; i < fetchedPatientListAfterDeletion.size(); i++) {
-                // System.out.println("ENTER FOR");
-                // System.out.println(fetchedPatientListAfterDeletion.get(i));
-                // }
-
                 try {
                         FileWriter writer = new FileWriter(fileName);
                         for (int i = 0; i < fetchedDiagnosisListAfterDeletion.size(); i++) {

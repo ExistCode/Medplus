@@ -75,11 +75,7 @@ public class add_medicine_controller {
         patientIdComboBox.setItems(fetchPatientName());
         staffIdComboBox.setItems(fetchStaffId());
 
-        // Scanner sc = new Scanner(System.in);
-        // String input = sc.nextLine();
-
     }
-
 
     @FXML
     void backToSearch(MouseEvent event) throws IOException {
@@ -92,10 +88,12 @@ public class add_medicine_controller {
 
         if (errorMessage == "") {
             List<Medicine> medicineList = MedicineData.fetchMedicineDataFromDatabase();
-            int newMedicineId = Integer.parseInt(medicineList.get(medicineList.size() - 1).getMedicineId().substring(1))+ 1;
+            int newMedicineId = Integer.parseInt(medicineList.get(medicineList.size() - 1).getMedicineId().substring(1))
+                    + 1;
             String newMedicineIdFormatted = String.format("M%03d", newMedicineId);
 
-            Medicine newMedicine = new Medicine(newMedicineIdFormatted, patientIdComboBox.getSelectionModel().getSelectedItem(),
+            Medicine newMedicine = new Medicine(newMedicineIdFormatted,
+                    patientIdComboBox.getSelectionModel().getSelectedItem(),
                     staffIdComboBox.getSelectionModel().getSelectedItem(),
                     medNameTextField.getText(),
                     medAmountTextField.getText(),
