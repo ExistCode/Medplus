@@ -56,7 +56,7 @@ For any inquiries or feedback regarding MedPlus+, please contact our support tea
 
 ## Contributor
 
-1. @bonifacioronald
-2. @ehznauhcmil
-3. @CharlieCheebay
-4. @yuyuc03
+1. [Bonifacio Ronald](https://github.com/bonifacioronald)
+2. [Lim Chuan Zhe](https://github.com/ehznauhcmil)
+3. [Richard Charlie Cahyono](https://github.com/CharlieCheebay)
+4. [Cheng You You](https://github.com/yuyuc03)
