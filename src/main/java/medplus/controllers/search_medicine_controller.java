@@ -13,9 +13,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import medplus.App;
 import medplus.data.MedicineData;
-import medplus.data.PatientData;
 import medplus.tableModels.MedicineTableDataModel;
-import medplus.tableModels.PatientTableDataModel;
 
 public class search_medicine_controller {
 

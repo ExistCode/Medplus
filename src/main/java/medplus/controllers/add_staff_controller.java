@@ -16,9 +16,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
 import medplus.App;
-import medplus.data.PatientData;
 import medplus.data.StaffData;
-import medplus.models.Patient;
 import medplus.models.Staff;
 
 public class add_staff_controller {

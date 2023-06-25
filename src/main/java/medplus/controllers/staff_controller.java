@@ -1,8 +1,6 @@
 package medplus.controllers;
 
 import java.io.IOException;
-import java.time.LocalDateTime;
-
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
 import javafx.collections.transformation.SortedList;
@@ -14,9 +12,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import medplus.App;
-import medplus.data.PatientData;
 import medplus.data.StaffData;
-import medplus.tableModels.PatientTableDataModel;
 import medplus.tableModels.StaffTableDataModel;
 
 public class staff_controller {
