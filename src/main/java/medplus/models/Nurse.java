@@ -2,6 +2,8 @@ package medplus.models;
 
 import java.time.LocalDate;
 
+import medplus.controllers.login_controller;
+
 public class Nurse extends Staff {
     private String certification;
     private int yearsOfExperience;
@@ -49,5 +51,11 @@ public class Nurse extends Staff {
 
     public String getShift() {
         return shift;
+    }
+
+    @Override
+    public String getAllData() {
+        super.getAllData();
+        return getCertification() + getYearsOfExperience() + getSpecialization() + getShift();
     }
 }
