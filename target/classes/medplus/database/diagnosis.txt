@@ -1,0 +1,41 @@
+Diagnosis ID,Patient Name,Staff ID,Date,Diagnosis
+D001,Ahmad Abdullah,S004,2023-01-15,Appendicitis
+D002,Emily Tan,S008,2023-02-28,Common Cold
+D003,Anita Devi,S011,2023-03-19,Migraine
+D004,Steven Tan,S009,2023-04-02,Cataracts
+D005,Sarah Wong,S004,2023-05-05,Polycystic Ovary Syndrome
+D006,Mohammad Ali,S002,2023-06-11,Influenza
+D007,Richard Teo,S011,2023-07-08,Epilepsy
+D008,Melissa Ng,S006,2023-08-21,Acne Vulgaris
+D009,David Lim,S005,2023-09-14,Arrhythmia
+D010,Sarah Wong,S004,2023-10-03,Ovarian Cancer
+D011,Emily Tan,S008,2023-11-29,Anxiety Disorder
+D012,Natalie Tan,S016,2023-12-17,Foot Sprain
+D013,John Doe,S001,2024-01-22,Conjunctivitis
+D014,Jessica Koh,S008,2024-02-11,Attention Deficit Hyperactivity Disorder
+D015,Ahmad Ibrahim,S002,2024-03-07,Asthma
+D016,Samantha Chia,S014,2024-04-29,Malocclusion
+D017,David Lim,S005,2024-05-14,Myocardial Infarction
+D018,Richard Teo,S011,2024-06-23,Multiple Sclerosis
+D019,Melissa Ng,S006,2024-07-19,Eczema
+D020,Steven Tan,S009,2024-08-26,Glaucoma
+D021,Emily Tan,S008,2024-09-02,Depression
+D022,David Lim,S005,2024-10-11,Hypertension
+D023,Sarah Wong,S004,2024-11-07,Endometriosis
+D024,Ahmad Abdullah,S004,2024-12-13,Gestational Diabetes
+D025,Mohammad Ali,S002,2025-01-18,Common Cold
+D026,Emily Tan,S008,2025-02-23,Social Anxiety Disorder
+D027,Richard Teo,S011,2025-03-11,Parkinson's Disease
+D028,Melissa Ng,S006,2025-04-27,Psoriasis
+D029,David Lim,S005,2025-05-06,Hypertrophic Cardiomyopathy
+D030,Sarah Wong,S004,2025-06-15,Pelvic Inflammatory Disease
+D031,Steven Tan,S009,2025-07-21,Retinal Detachment
+D032,Ahmad Abdullah,S004,2025-08-30,Gestational Hypertension
+D033,Emily Tan,S008,2025-09-18,Bipolar Disorder
+D034,Melissa Ng,S006,2025-10-27,Contact Dermatitis
+D035,Richard Teo,S011,2025-11-15,Cerebral Palsy
+D036,David Lim,S005,2025-12-24,Coronary Artery Disease
+D037,Steven Tan,S009,2026-01-09,Macular Degeneration
+D038,Sarah Wong,S004,2026-02-13,Fibroids
+D039,Ahmad Abdullah,S004,2026-03-20,Pregnancy-induced Hypertension
+D040,Emily Tan,S008,2026-04-05,Panic Disorder
