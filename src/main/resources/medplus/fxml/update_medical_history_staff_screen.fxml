@@ -41,7 +41,7 @@
             <Font name="SF Pro Rounded Bold" size="24.0" />
          </font>
       </Text>
-      <Pane fx:id="updateMedHisButton" layoutX="460.0" layoutY="598.0" onMouseClicked="#updateMedHis" prefHeight="90.0" prefWidth="359.0" style="-fx-background-color: FEAD54; -fx-background-radius: 40;">
+      <Pane fx:id="updateMedHisButton" layoutX="461.0" layoutY="568.0" onMouseClicked="#updateMedHis" prefHeight="90.0" prefWidth="359.0" style="-fx-background-color: FEAD54; -fx-background-radius: 40;">
          <children>
             <Text fill="WHITE" layoutX="20.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Update Medical History" textAlignment="CENTER">
                <font>
@@ -78,5 +78,10 @@
       </Text>
       <ComboBox fx:id="patientIdComboBox" editable="true" layoutX="154.0" layoutY="219.0" prefHeight="60.0" prefWidth="450.0" promptText="Patient Name" style="-fx-border-color: #089bab; -fx-background-color: white; -fx-background-radius: 16; -fx-border-radius: 16; -fx-font-size: 24;" />
       <ComboBox fx:id="staffIdComboBox" layoutX="716.0" layoutY="219.0" prefHeight="60.0" prefWidth="450.0" promptText="Staff Id" style="-fx-border-color: #089bab; -fx-background-color: white; -fx-background-radius: 16; -fx-border-radius: 16; -fx-font-size: 24;" />
+      <Text fx:id="errorMessageDisplay" fill="#f9988b" layoutX="14.0" layoutY="694.0" strokeType="OUTSIDE" strokeWidth="0.0" text=" " textAlignment="CENTER" wrappingWidth="1316.3828125">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Text>
    </children>
 </Pane>

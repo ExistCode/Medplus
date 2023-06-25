@@ -11,6 +11,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
+import javafx.scene.text.Text;
 import medplus.App;
 import medplus.data.MedicalHistoryData;
 import medplus.data.PatientData;
@@ -41,6 +42,9 @@ public class add_medical_history_controller {
 
     @FXML
     private TextField staffIDTextField;
+
+    @FXML
+    private Text errorMessageDisplay;
 
     @FXML
     void backToSearch(MouseEvent event) throws IOException {
@@ -89,6 +93,7 @@ public class add_medical_history_controller {
                 || medHisDatePicker.getValue() == null || resultTextField.getText().isEmpty()
                 || observationTextField.getText().isEmpty() || complicationTextField.getText().isEmpty()) {
             errorMessage = "Please make sure all fields are filled.";
+            errorMessageDisplay.setText(errorMessage);
         }
 
         return errorMessage;

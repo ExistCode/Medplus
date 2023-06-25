@@ -60,7 +60,7 @@ public class update_medicine_controller {
     }
 
     @FXML
-    void backToSearch(MouseEvent event) throws IOException{
+    void backToSearch(MouseEvent event) throws IOException {
         App.setRoot("search_medicine_screen");
     }
 
@@ -70,10 +70,11 @@ public class update_medicine_controller {
     @FXML
     void updateMedicine(MouseEvent event) throws IOException {
         String errorMessage = validateInput();
-        
+
         if (errorMessage == "") {
 
-            Medicine newMedicine = new Medicine(MedicineData.initMedicineData.getMedicineId(), patientIdComboBox.getSelectionModel().getSelectedItem(),
+            Medicine newMedicine = new Medicine(MedicineData.initMedicineData.getMedicineId(),
+                    patientIdComboBox.getSelectionModel().getSelectedItem(),
                     staffIdComboBox.getSelectionModel().getSelectedItem(),
                     medNameTextField.getText(),
                     medAmountTextField.getText(),

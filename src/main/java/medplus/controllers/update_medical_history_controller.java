@@ -12,6 +12,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
+import javafx.scene.text.Text;
 import medplus.App;
 import medplus.data.MedicalHistoryData;
 import medplus.models.MedicalHistory;
@@ -45,6 +46,9 @@ public class update_medical_history_controller {
     private Pane updateMedHisButton;
 
     @FXML
+    private Text errorMessageDisplay;
+
+    @FXML
     void updateMedHis(MouseEvent event) throws IOException {
         String errorMessage = validateInput();
 
@@ -76,6 +80,7 @@ public class update_medical_history_controller {
                 observationTextField.getText().isEmpty() ||
                 complicationTextField.getText().isEmpty()) {
             errorMessage = "Please make sure all fields are filled.";
+            errorMessageDisplay.setText(errorMessage);
         }
 
         return errorMessage;
