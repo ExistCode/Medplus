@@ -8,9 +8,6 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-/**
- * JavaFX App
- */
 public class App extends Application {
 
     private static Scene scene;
@@ -19,7 +16,7 @@ public class App extends Application {
     public void start(Stage stage) throws IOException {
 
         scene = new Scene(loadFXML("home_screen"), 1280, 720);
-        // scene.getStylesheets().add(App.class.getResource("css/style.css").toExternalForm());
+
         stage.setResizable(false);
         stage.setScene(scene);
         stage.show();
@@ -32,8 +29,6 @@ public class App extends Application {
 
     private static Parent loadFXML(String fxml) throws IOException {
 
-        // FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("fxml/" + fxml +
-        // ".fxml"));
         FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("fxml/" + fxml + ".fxml"));
 
         return fxmlLoader.load();

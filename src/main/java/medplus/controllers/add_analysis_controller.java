@@ -80,11 +80,6 @@ public class add_analysis_controller {
                     summaryTextField.getText(),
                     dateAnalysisSelector.getValue(),
                     testInfoTextField.getText());
-            // if
-            // (patientNameTextField.getText().equalsIgnoreCase(patientDataList.get(0).getPatientId()))
-            // {
-            // System.out.println(patientDataList.get(0).getName());
-            // }
 
             AnalysisData.addNewAnalysis(newAnalysis);
             App.setRoot("search_home_screen");

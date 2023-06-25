@@ -177,7 +177,6 @@ public class patient_details_diagnosis_controller {
         if (selectedMedHis != null) {
 
             patientMedicalHistoryTable.getItems().remove(selectedMedHis);
-            // staffTable.setItems(filteringList());
 
             String selectedRowId = selectedMedHis.getMedHisId().toString();
             System.out.println("\n selectedRowid: " + selectedRowId);
@@ -229,14 +228,9 @@ public class patient_details_diagnosis_controller {
 
     @FXML
     public void initialize() {
-        // Format f = new SimpleDateFormat("dd MMM yy");
-        // String strDate = PatientData.initPatientData.getPatientDateOfBirth()
-        // .format(DateTimeFormatter.ofLocalizedDate(FormatStyle.LONG));
         System.out.println(PatientData.initPatientData.getName());
         patientsNameText.setText(PatientData.initPatientData.getName());
         GenderText.setText(PatientData.initPatientData.getPatientGender());
-        // dateOfBirthText.setText(strDate);
-        // dateOfBirthText.setText(PatientData.initpatientData.getPatientDateOfBirth().toString());
         bloodTypeText.setText(PatientData.initPatientData.getPatientBloodType());
         heightText.setText(Double.toString(PatientData.initPatientData.getPatientHeight()));
         weightText.setText(Double.toString(PatientData.initPatientData.getPatientWeight()));
@@ -259,9 +253,6 @@ public class patient_details_diagnosis_controller {
         System.out.println("\nPatient Id: " + patientId);
         ObservableList<MedicalHistoryTableDataModel> medicalHistoryDataList = MedicalHistoryTableDataModel
                 .convertMedicalHistoryDataToTableDataModel(patientId);
-        // for (MedicalHistoryTableDataModel medhis : medicalHistoryDataList) {
-        // System.out.println(medhis.getObservation());
-        // }
 
         // Clear existing columns before adding new ones
         patientMedicalHistoryTable.getColumns().clear();

@@ -201,34 +201,5 @@ public class search_treatment_controller {
         SortedList<TreatmentTableDataModel> sortedTreatmentData = new SortedList<>(filteredData);
         sortedTreatmentData.comparatorProperty().bind(treatmentTable.comparatorProperty());
         treatmentTable.setItems(sortedTreatmentData);
-
-        /*
-         * treatmentTable.setOnMouseClicked(event -> {
-         * if (event.getClickCount() == 2) {
-         * TreatmentTableDataModel selectedTreatment =
-         * treatmentTable.getSelectionModel().getSelectedItem();
-         * if (selectedTreatment != null) {
-         * 
-         * TreatmentData.initTreatmentData.setPatientName(selectedTreatment.
-         * getPatientName());
-         * TreatmentData.initTreatmentData.setDoctorId(selectedTreatment.getDoctorId());
-         * TreatmentData.initTreatmentData.setStartDate(selectedTreatment.getStartDate()
-         * );
-         * TreatmentData.initTreatmentData.setEndDate(selectedTreatment.getEndDate());
-         * TreatmentData.initTreatmentData.setTreatmentInfo(selectedTreatment.
-         * getTreatmentInfo());
-         * 
-         * System.out.println(TreatmentData.initTreatmentData.getPatientName());
-         * System.out.println(TreatmentData.initTreatmentData.getDoctorId());
-         * System.out.println(TreatmentData.initTreatmentData.getStartDate());
-         * System.out.println(TreatmentData.initTreatmentData.getEndDate());
-         * System.out.println(TreatmentData.initTreatmentData.getTreatmentInfo());
-         * }
-         * }
-         * 
-         * });
-         * 
-         * }
-         */
     }
 }
