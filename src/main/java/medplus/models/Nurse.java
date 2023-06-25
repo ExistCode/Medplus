@@ -56,6 +56,7 @@ public class Nurse extends Staff {
     @Override
     public String getAllData() {
         super.getAllData();
-        return getCertification() + getYearsOfExperience() + getSpecialization() + getShift();
+        return getCertification() + ", " + getYearsOfExperience() + ", " + getSpecialization() + ", " + getShift();
     }
+
 }

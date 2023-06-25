@@ -46,7 +46,7 @@ public class Doctor extends Staff {
     @Override
     public String getAllData() {
         super.getAllData();
-        return getSpecialization() + getYearsOfExperience() + getDoctorAppointment();
+        return getSpecialization() + ", " + getYearsOfExperience() + ", " + getDoctorAppointment();
 
     }
 }

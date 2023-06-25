@@ -1,6 +1,8 @@
 package medplus.controllers;
 
 import java.io.IOException;
+import java.util.List;
+
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
 import javafx.collections.transformation.SortedList;
@@ -13,6 +15,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import medplus.App;
 import medplus.data.StaffData;
+import medplus.models.Staff;
 import medplus.tableModels.StaffTableDataModel;
 
 public class staff_controller {
@@ -154,7 +157,6 @@ public class staff_controller {
                 StaffData.initStaffData.setStaffContactNumber(selectedStaff.getContactNumber());
                 StaffData.initStaffData.setStaffJobTitle(selectedStaff.getJobTitle());
                 StaffData.initStaffData.setStaffDepartment(selectedStaff.getDepartment());
-
                 App.setRoot("update_staff_screen");
 
             } catch (IOException e) {

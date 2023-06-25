@@ -101,8 +101,8 @@ public class Staff implements Person {
     }
 
     public String getAllData() {
-        return getStaffId() + getName() + getStaffNationalId() + getStaffEmail() + getStaffContactNumber()
-                + getStaffJobTitle() + getStaffDepartment();
+        return getStaffId() + "," + getName() + "," + getStaffNationalId() + "," + getStaffEmail() + ","
+                + getStaffContactNumber() + "," + getStaffJobTitle() + "," + getStaffDepartment();
     }
 
 }
