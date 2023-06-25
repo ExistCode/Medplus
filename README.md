@@ -54,5 +54,9 @@ For any inquiries or feedback regarding MedPlus+, please contact our support tea
 
 ---
 
-##Contributor:
-1. 
+## Contributor
+
+1. @bonifacioronald
+2. @ehznauhcmil
+3. @CharlieCheebay
+4. @yuyuc03
