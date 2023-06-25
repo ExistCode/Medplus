@@ -219,7 +219,7 @@ public class staff_nurse_controller {
                     try {
 
                         StaffData.initStaffData.setName(selectedStaff.getName());
-                        StaffData.initStaffData.seStafftEmail(selectedStaff.getEmail());
+                        StaffData.initStaffData.setStaffEmail(selectedStaff.getEmail());
                         StaffData.initStaffData.setStaffContactNumber(selectedStaff.getContactNumber());
                         StaffData.initStaffData.setStaffDepartment(selectedStaff.getDepartment());
                         StaffData.initStaffData.setStaffJobTitle(selectedStaff.getJobTitle());

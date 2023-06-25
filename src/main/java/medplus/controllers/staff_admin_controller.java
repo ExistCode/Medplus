@@ -131,7 +131,7 @@ public class staff_admin_controller {
                 StaffData.initStaffData.setStaffId(selectedStaff.getStaffId());
                 StaffData.initStaffData.setName(selectedStaff.getName());
                 StaffData.initStaffData.setStaffNationalId("12347483");
-                StaffData.initStaffData.seStafftEmail(selectedStaff.getEmail());
+                StaffData.initStaffData.setStaffEmail(selectedStaff.getEmail());
                 StaffData.initStaffData.setDateOfBirth(null);
                 StaffData.initStaffData.setStaffAge(30);
                 StaffData.initStaffData.setStaffContactNumber(selectedStaff.getContactNumber());
@@ -225,7 +225,7 @@ public class staff_admin_controller {
                     try {
                         StaffData.initStaffData.setStaffId(selectedStaff.getStaffId());
                         StaffData.initStaffData.setName(selectedStaff.getName());
-                        StaffData.initStaffData.seStafftEmail(selectedStaff.getEmail());
+                        StaffData.initStaffData.setStaffEmail(selectedStaff.getEmail());
                         StaffData.initStaffData.setStaffContactNumber(selectedStaff.getContactNumber());
                         StaffData.initStaffData.setStaffDepartment(selectedStaff.getDepartment());
                         StaffData.initStaffData.setStaffJobTitle(selectedStaff.getJobTitle());

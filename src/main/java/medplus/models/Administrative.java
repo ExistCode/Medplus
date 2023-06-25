@@ -31,4 +31,10 @@ public class Administrative extends Staff {
     public String getResponsibilities() {
         return responsibilities;
     }
+
+    @Override
+    public String getAllData() {
+        super.getAllData();
+        return getTasks() + ", " + getResponsibilities();
+    }
 }

@@ -1,6 +1,8 @@
 package medplus.controllers;
 
 import java.io.IOException;
+import java.util.List;
+
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
 import javafx.collections.transformation.SortedList;
@@ -13,6 +15,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import medplus.App;
 import medplus.data.StaffData;
+import medplus.models.Staff;
 import medplus.tableModels.StaffTableDataModel;
 
 public class staff_controller {
@@ -148,13 +151,12 @@ public class staff_controller {
                 StaffData.initStaffData.setStaffId(selectedStaff.getStaffId());
                 StaffData.initStaffData.setName(selectedStaff.getName());
                 StaffData.initStaffData.setStaffNationalId("12347483");
-                StaffData.initStaffData.seStafftEmail(selectedStaff.getEmail());
+                StaffData.initStaffData.setStaffEmail(selectedStaff.getEmail());
                 StaffData.initStaffData.setDateOfBirth(null);
                 StaffData.initStaffData.setStaffAge(30);
                 StaffData.initStaffData.setStaffContactNumber(selectedStaff.getContactNumber());
                 StaffData.initStaffData.setStaffJobTitle(selectedStaff.getJobTitle());
                 StaffData.initStaffData.setStaffDepartment(selectedStaff.getDepartment());
-
                 App.setRoot("update_staff_screen");
 
             } catch (IOException e) {
@@ -206,7 +208,7 @@ public class staff_controller {
                         StaffData.initStaffData.setStaffId(selectedStaff.getStaffId());
                         StaffData.initStaffData.setName(selectedStaff.getName());
                         StaffData.initStaffData.setStaffNationalId("12347483");
-                        StaffData.initStaffData.seStafftEmail(selectedStaff.getEmail());
+                        StaffData.initStaffData.setStaffEmail(selectedStaff.getEmail());
                         StaffData.initStaffData.setDateOfBirth(null);
                         StaffData.initStaffData.setStaffAge(30);
                         StaffData.initStaffData.setStaffContactNumber(selectedStaff.getContactNumber());

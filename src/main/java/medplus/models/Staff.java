@@ -1,8 +1,6 @@
 package medplus.models;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
 
 public class Staff implements Person {
     private String staffId;
@@ -41,7 +39,7 @@ public class Staff implements Person {
         nationalId = nId;
     }
 
-    public void seStafftEmail(String e) {
+    public void setStaffEmail(String e) {
         email = e;
     }
 
@@ -102,22 +100,9 @@ public class Staff implements Person {
         return department;
     }
 
-    public static void main(String[] args) {
-        // Create a list to store the dummy staff data
-        List<Staff> staffDataList = new ArrayList<>();
-
-        // Create and add dummy staff data to the list
-        staffDataList.add(new Staff("S001", "John Smith", "1234567890", "john@example.com",
-                LocalDate.of(1985, 10, 25), 36, "9876543210", "Doctor", "Cardiology"));
-        staffDataList.add(new Staff("S002", "Jane Doe", "0987654321", "jane@example.com",
-                LocalDate.of(1990, 7, 15), 31, "0123456789", "Nurse", "Pediatrics"));
-        staffDataList.add(new Staff("S003", "David Johnson", "5432109876", "david@example.com",
-                LocalDate.of(1978, 3, 8), 43, "3456789012", "Technician", "Laboratory"));
-        staffDataList.add(new Staff("S004", "Emily Wilson", "0123456789", "emily@example.com",
-                LocalDate.of(1982, 12, 12), 39, "7890123456", "Administrator", "Administration"));
-        staffDataList.add(new Staff("S005", "Michael Brown", "9876543210", "michael@example.com",
-                LocalDate.of(1995, 5, 3), 26, "2345678901", "Receptionist", "Front Office"));
-
-        // Use the staffDataList as needed
+    public String getAllData() {
+        return getStaffId() + "," + getName() + "," + getStaffNationalId() + "," + getStaffEmail() + ","
+                + getStaffContactNumber() + "," + getStaffJobTitle() + "," + getStaffDepartment();
     }
+
 }

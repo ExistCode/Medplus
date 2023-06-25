@@ -41,4 +41,12 @@ public class Doctor extends Staff {
     public String getDoctorAppointment() {
         return doctorAppointment;
     }
+
+    // Polymorphism
+    @Override
+    public String getAllData() {
+        super.getAllData();
+        return getSpecialization() + ", " + getYearsOfExperience() + ", " + getDoctorAppointment();
+
+    }
 }
