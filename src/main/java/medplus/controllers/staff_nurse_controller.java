@@ -14,7 +14,6 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import medplus.App;
-import medplus.data.PatientData;
 import medplus.data.StaffData;
 import medplus.tableModels.StaffTableDataModel;
 

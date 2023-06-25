@@ -2,20 +2,17 @@ package medplus.data;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
-
 import java.time.LocalDate;
 import java.io.*;
 
-import medplus.models.Analysis;
 import medplus.models.Diagnosis;
 
 public class DiagnosisData {
-        public static Diagnosis initdiagnosisData = new Diagnosis("", "", "", null , "");
+        public static Diagnosis initdiagnosisData = new Diagnosis("", "", "", null, "");
 
         public static void main(String[] args) {
-        createNewFileWithHeaders();
-        fetchDiagnosisDataFromDatabase();
+                createNewFileWithHeaders();
+                fetchDiagnosisDataFromDatabase();
         }
 
         public static String fileName = "src/main/resources/medplus/database/diagnosis.txt";
@@ -35,7 +32,6 @@ public class DiagnosisData {
                                 String staffId = diagnosisData[2].trim();
                                 LocalDate date = LocalDate.parse(diagnosisData[3].trim());
                                 String diagnosis = diagnosisData[4].trim();
-                                
 
                                 Diagnosis ds = new Diagnosis(diagnosisId, patientName, staffId, date, diagnosis);
                                 diagnosisList.add(ds);

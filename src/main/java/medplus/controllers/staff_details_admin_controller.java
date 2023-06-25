@@ -1,13 +1,8 @@
 package medplus.controllers;
 
 import java.io.IOException;
-import java.time.LocalDate;
-import java.time.LocalTime;
-import java.time.format.DateTimeFormatter;
-
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -15,14 +10,9 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
 import medplus.App;
-import medplus.data.AppointmentData;
-import medplus.data.MedicalHistoryData;
-import medplus.data.PatientData;
 import medplus.data.ResponsibilitiesData;
 import medplus.data.StaffData;
 import medplus.data.TaskData;
-import medplus.tableModels.AppointmentTableDataModel;
-import medplus.tableModels.MedicalHistoryTableDataModel;
 import medplus.tableModels.ResponsibilitiesTableDataModel;
 import medplus.tableModels.TaskTableDataModel;
 

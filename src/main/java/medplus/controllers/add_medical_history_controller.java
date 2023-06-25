@@ -15,7 +15,6 @@ import medplus.App;
 import medplus.data.MedicalHistoryData;
 import medplus.data.PatientData;
 import medplus.models.MedicalHistory;
-import java.time.format.DateTimeFormatter;
 
 public class add_medical_history_controller {
 

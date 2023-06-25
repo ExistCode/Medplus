@@ -25,7 +25,7 @@
             <Font name="Verdana Bold" size="28.0" />
          </font>
       </Text>
-      <TextField fx:id="patientNameTextField" layoutX="154.0" layoutY="219.0" prefHeight="60.0" prefWidth="450.0" promptText="Enter Responsibility Name" style="-fx-background-color: white; -fx-background-radius: 16; -fx-border-radius: 16; -fx-border-color: #089bab;">
+      <TextField fx:id="responsibilityName" layoutX="154.0" layoutY="219.0" prefHeight="60.0" prefWidth="450.0" promptText="Enter Responsibility Name" style="-fx-background-color: white; -fx-background-radius: 16; -fx-border-radius: 16; -fx-border-color: #089bab;">
          <font>
             <Font name="Verdana" size="24.0" />
          </font>
@@ -35,7 +35,7 @@
             <Font name="Verdana Bold" size="28.0" />
          </font>
       </Text>
-      <Pane fx:id="addResponsibilityButton" layoutX="600.0" layoutY="550.0" prefHeight="60.0" prefWidth="160.0" style="-fx-background-color: FEAD54; -fx-background-radius: 40;">
+      <Pane fx:id="updateResponsibility" layoutX="600.0" layoutY="550.0" onMouseClicked="#updateResponsibility" prefHeight="60.0" prefWidth="160.0" style="-fx-background-color: FEAD54; -fx-background-radius: 40;">
          <children>
             <Text fill="WHITE" layoutX="26.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Update">
                <font>
@@ -54,7 +54,7 @@
             <Font size="16.0" />
          </font>
       </Text>
-      <TextField fx:id="procedureTypeTextField" layoutX="154.0" layoutY="389.0" prefHeight="60.0" prefWidth="1009.0" promptText="Enter Description Details Here" style="-fx-background-color: white; -fx-background-radius: 16; -fx-border-radius: 16; -fx-border-color: #089bab;">
+      <TextField fx:id="responsibilityDetails" layoutX="154.0" layoutY="389.0" prefHeight="60.0" prefWidth="1009.0" promptText="Enter Description Details Here" style="-fx-background-color: white; -fx-background-radius: 16; -fx-border-radius: 16; -fx-border-color: #089bab;">
          <font>
             <Font name="Verdana" size="24.0" />
          </font>

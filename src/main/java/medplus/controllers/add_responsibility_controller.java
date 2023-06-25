@@ -14,11 +14,22 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
 import medplus.App;
+import medplus.data.AnalysisData;
 import medplus.data.ProcedureData;
+import medplus.data.ResponsibilitiesData;
+import medplus.data.StaffData;
+import medplus.models.Analysis;
 import medplus.models.Procedure;
+import medplus.models.Responsibilities;
+import medplus.tableModels.PatientTableDataModel;
 import medplus.tableModels.StaffTableDataModel;
 
 public class add_responsibility_controller {
+    @FXML
+    private TextField responsibilityDetails;
+
+    @FXML
+    private TextField responsibilityName;
 
     @FXML
     private Pane addResponsibilityButton;
@@ -30,13 +41,14 @@ public class add_responsibility_controller {
     private Text errorMessageDisplay;
 
     @FXML
-    private ComboBox <String> staffIdComboBox;
+    private ComboBox<String> staffIdComboBox;
 
     @FXML
     void backToStaff(MouseEvent event) throws IOException {
         App.setRoot("staff_details_admin_screen");
 
     }
+
     ObservableList<String> fetchStaffId() {
         ObservableList<StaffTableDataModel> staffDataList = StaffTableDataModel
                 .convertStaffDataToStaffTableDataModel();
@@ -46,8 +58,48 @@ public class add_responsibility_controller {
         }
         return staffId;
     }
+
     @FXML
     public void initialize() {
+        staffIdComboBox.setValue(StaffData.initStaffData.getStaffId());
         staffIdComboBox.setItems(fetchStaffId());
+    }
+
+    @FXML
+    void addResponsibility(MouseEvent event) throws IOException {
+
+        String errorMessage = validateInput();
+
+        if (errorMessage == "") {
+            List<Responsibilities> responsibilities = ResponsibilitiesData.fetchResponsibilitiesDataFromDatabase();
+            int newResponsibilitiesId = Integer
+                    .parseInt(responsibilities.get(responsibilities.size() - 1).getResponsibilityId().substring(2))
+                    + 1;
+            String newResponsibilitiesIdFormatted = String.format("RS%03d", newResponsibilitiesId);
+
+            Responsibilities newResponsibilities = new Responsibilities(newResponsibilitiesIdFormatted,
+                    responsibilityName.getText(),
+
+                    responsibilityDetails.getText(), staffIdComboBox.getSelectionModel().getSelectedItem());
+
+            ResponsibilitiesData.addNewResponsibility(newResponsibilities);
+            App.setRoot("staff_details_admin_screen");
+        } else {
+            // Show error message
+            System.out.println(errorMessage);
+        }
+
+    }
+
+    private String validateInput() {
+        String errorMessage = "";
+
+        if (responsibilityName.getText().isEmpty() || staffIdComboBox.getSelectionModel().isEmpty()
+                || responsibilityDetails.getText().isEmpty()) {
+            errorMessage = "Please make sure all fields are filled with the appropriate type.";
+            System.out.println(errorMessage);
+            errorMessageDisplay.setText(errorMessage);
+        }
+        return errorMessage;
     }
 }
