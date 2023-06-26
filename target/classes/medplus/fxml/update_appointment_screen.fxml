@@ -46,7 +46,7 @@
             <Font name="SF Pro Rounded Bold" size="24.0" />
          </font>
       </Text>
-      <Pane fx:id="updateAppointmentButton" layoutX="460.0" layoutY="598.0" onMouseClicked="#updateNewAppointment" prefHeight="90.0" prefWidth="359.0" style="-fx-background-color: FEAD54; -fx-background-radius: 40;">
+      <Pane fx:id="updateAppointmentButton" layoutX="461.0" layoutY="568.0" onMouseClicked="#updateNewAppointment" prefHeight="90.0" prefWidth="359.0" style="-fx-background-color: FEAD54; -fx-background-radius: 40;">
          <children>
             <Text fill="WHITE" layoutX="30.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Update Appointment">
                <font>
@@ -72,5 +72,10 @@
          </font>
       </Text>
       <ComboBox fx:id="roomNumberComboBox" layoutX="716.0" layoutY="345.0" prefHeight="60.0" prefWidth="450.0" promptText="Room Number" style="-fx-border-color: #089bab; -fx-background-color: white; -fx-background-radius: 16; -fx-border-radius: 16; -fx-font-size: 24;" />
+      <Text fx:id="errorMessageDisplay" fill="#f9988b" layoutX="14.0" layoutY="694.0" strokeType="OUTSIDE" strokeWidth="0.0" text=" " textAlignment="CENTER" wrappingWidth="1316.3828125">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Text>
    </children>
 </Pane>

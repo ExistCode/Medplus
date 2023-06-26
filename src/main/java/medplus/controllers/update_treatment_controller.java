@@ -45,7 +45,7 @@ public class update_treatment_controller {
     private Text errorMessageDisplay;
 
     @FXML
-    void backToSearch(MouseEvent event) throws IOException{
+    void backToSearch(MouseEvent event) throws IOException {
         App.setRoot("search_treatment_screen");
     }
 
@@ -55,7 +55,8 @@ public class update_treatment_controller {
 
         if (errorMessage == "") {
 
-            Treatment newTreatment = new Treatment(TreatmentData.initTreatmentData.getTreatmentId(), patientNameComboBox.getSelectionModel().getSelectedItem(),
+            Treatment newTreatment = new Treatment(TreatmentData.initTreatmentData.getTreatmentId(),
+                    patientNameComboBox.getSelectionModel().getSelectedItem(),
                     staffIdComboBox.getSelectionModel().getSelectedItem(),
                     dateStartDatePicker.getValue(),
                     dateEndDatePicker.getValue(),

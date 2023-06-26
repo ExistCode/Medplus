@@ -50,7 +50,7 @@
             <Font name="SF Pro Rounded Bold" size="24.0" />
          </font>
       </Text>
-      <Pane fx:id="addMedHisButton" layoutX="460.0" layoutY="598.0" onMouseClicked="#addNewMedHis" prefHeight="90.0" prefWidth="359.0" style="-fx-background-color: FEAD54; -fx-background-radius: 40;">
+      <Pane fx:id="addMedHisButton" layoutX="461.0" layoutY="572.0" onMouseClicked="#addNewMedHis" prefHeight="90.0" prefWidth="359.0" style="-fx-background-color: FEAD54; -fx-background-radius: 40;">
          <children>
             <Text fill="WHITE" layoutX="37.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add Medical History" textAlignment="CENTER">
                <font>
@@ -83,6 +83,11 @@
       <Text fill="#089bab" layoutX="162.0" layoutY="449.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Observation">
          <font>
             <Font name="SF Pro Rounded Bold" size="24.0" />
+         </font>
+      </Text>
+      <Text fx:id="errorMessageDisplay" fill="#f9988b" layoutY="705.0" strokeType="OUTSIDE" strokeWidth="0.0" text=" " textAlignment="CENTER" wrappingWidth="1316.3828125">
+         <font>
+            <Font size="16.0" />
          </font>
       </Text>
    </children>

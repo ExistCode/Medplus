@@ -12,6 +12,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
+import javafx.scene.text.Text;
 import medplus.App;
 import medplus.data.AppointmentData;
 import medplus.models.Appointment;
@@ -42,6 +43,9 @@ public class update_appointment_controller {
 
     @FXML
     private Pane updateAppointmentButton;
+
+    @FXML
+    private Text errorMessageDisplay;
 
     @FXML
     void backToStaffDetails(MouseEvent event) throws IOException {
@@ -78,6 +82,7 @@ public class update_appointment_controller {
                 appointmentDatePicker.getValue() == null ||
                 descriptionTextField.getText().isEmpty()) {
             errorMessage = "Please make sure all fields are filled.";
+            errorMessageDisplay.setText(errorMessage);
         }
 
         return errorMessage;
