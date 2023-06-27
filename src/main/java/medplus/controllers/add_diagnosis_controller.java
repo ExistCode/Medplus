@@ -40,6 +40,7 @@ public class add_diagnosis_controller {
 
     @FXML
     private Text errorMessageDisplay;
+    // Fetch Patient Name
 
     ObservableList<String> fetchPatientName() {
         ObservableList<PatientTableDataModel> patientDataList = PatientTableDataModel
@@ -50,6 +51,7 @@ public class add_diagnosis_controller {
         }
         return patientId;
     }
+    // Fetch Staff Id
 
     ObservableList<String> fetchStaffId() {
         ObservableList<StaffTableDataModel> staffDataList = StaffTableDataModel

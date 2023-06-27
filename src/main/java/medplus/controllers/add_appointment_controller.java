@@ -66,6 +66,7 @@ public class add_appointment_controller {
 
             Appointment newAppointment = new Appointment(newAppointmentIdFormatted, patientId, staffId, roomNumber,
                     date, LocalTime.now(), description);
+
             AppointmentData.addNewAppointment(newAppointment);
 
             try {
@@ -98,6 +99,7 @@ public class add_appointment_controller {
 
     }
 
+    // Initialize Combobox and staffId
     @FXML
     public void initialize() {
         staffIdTextField.setText(StaffData.initStaffData.getStaffId());

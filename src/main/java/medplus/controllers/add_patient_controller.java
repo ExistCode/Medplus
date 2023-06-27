@@ -140,6 +140,7 @@ public class add_patient_controller {
 
     }
 
+    // initialize Combobox
     @FXML
     public void initialize() {
         bloodType.setItems(bloodTypeOptions);
