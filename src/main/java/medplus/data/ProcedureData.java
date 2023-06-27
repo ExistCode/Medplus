@@ -9,7 +9,12 @@ import java.io.*;
 import medplus.models.Procedure;
 
 public class ProcedureData {
-        public static Procedure initProcedureData = new Procedure("", "", "",null, "", "", "");
+        public static Procedure initProcedureData = new Procedure("", "", "", null, "", "", "");
+
+        public static void main(String[] args) {
+                createNewFileWithHeaders();
+                fetchProcedureDataFromDatabase();
+        }
 
         public static String fileName = "src/main/resources/medplus/database/procedure.txt";
 
@@ -23,15 +28,16 @@ public class ProcedureData {
 
                         while ((line = reader.readLine()) != null) {
                                 String[] procedureData = line.split(",");
-                                String procedureId =procedureData[0].trim();
-                                String patientName =procedureData[1].trim();
-                                String staffId =procedureData[2].trim();
+                                String procedureId = procedureData[0].trim();
+                                String patientName = procedureData[1].trim();
+                                String staffId = procedureData[2].trim();
                                 LocalDate date = LocalDate.parse(procedureData[3].trim());
                                 String time = procedureData[4].trim();
                                 String procedureType = procedureData[5].trim();
                                 String procedureDescription = procedureData[6].trim();
 
-                                Procedure procedure = new Procedure(procedureId, patientName, staffId, date, time, procedureType, procedureDescription);
+                                Procedure procedure = new Procedure(procedureId, patientName, staffId, date, time,
+                                                procedureType, procedureDescription);
                                 procedureList.add(procedure);
                         }
 
@@ -74,7 +80,6 @@ public class ProcedureData {
                                         newProcedure.getType(),
                                         newProcedure.getDescription());
 
-
                         writer.append(procedureData);
                         writer.append("\n");
                         writer.close();
@@ -84,7 +89,8 @@ public class ProcedureData {
                 }
         }
 
-        /*public static void deleteProcedureById(String id) {
+        public static void deleteProcedureById(String id) {
+                System.out.println("\nDELETED ID: " + id);
                 ArrayList<String> fetchedProcedureListAfterDeletion = new ArrayList<>();
                 String line;
 
@@ -115,7 +121,7 @@ public class ProcedureData {
                 } finally {
                         System.out.println("Deletion done!");
                 }
-        }*/
+        }
 
         public static void updateProcedureData(Procedure newProcedureData) {
                 ArrayList<String> fetchedProcedureListAfterDeletion = new ArrayList<>();
@@ -124,6 +130,7 @@ public class ProcedureData {
                 try {
                         BufferedReader reader = new BufferedReader(new FileReader(fileName));
                         while ((line = reader.readLine()) != null) {
+
                                 if (line.contains(newProcedureData.getProcedureId())) {
                                         fetchedProcedureListAfterDeletion.add(newProcedureData.getProcedureId() + ","
                                                         + newProcedureData.getPatientName() + ","

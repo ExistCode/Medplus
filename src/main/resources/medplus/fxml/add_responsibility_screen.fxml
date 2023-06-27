@@ -35,9 +35,9 @@
             <Font name="Verdana Bold" size="28.0" />
          </font>
       </Text>
-      <Pane fx:id="addResponsibilityButton" layoutX="600.0" layoutY="550.0" onMouseClicked="#addResponsibility" prefHeight="60.0" prefWidth="160.0" style="-fx-background-color: FEAD54; -fx-background-radius: 40;">
+      <Pane fx:id="addResponsibilityButton" layoutX="590.0" layoutY="546.0" onMouseClicked="#addResponsibility" prefHeight="60.0" prefWidth="140.0" style="-fx-background-color: FEAD54; -fx-background-radius: 40;">
          <children>
-            <Text fill="WHITE" layoutX="50.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add">
+            <Text fill="WHITE" layoutX="42.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add">
                <font>
                   <Font name="Verdana Bold" size="28.0" />
                </font>

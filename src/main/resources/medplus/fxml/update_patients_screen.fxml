@@ -23,7 +23,7 @@
       </Text>
       <Text fill="#089bab" layoutX="154.0" layoutY="141.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Full Name">
          <font>
-            <Font name="Verdana Semibold" size="28.0" />
+            <Font name="Verdana Bold" size="32.0" />
          </font>
       </Text>
       <TextField fx:id="fullNameTextField" layoutX="154.0" layoutY="158.0" prefHeight="55.0" prefWidth="464.0" style="-fx-background-color: white; -fx-background-radius: 16; -fx-border-radius: 16; -fx-border-color: #089bab;">
@@ -33,13 +33,13 @@
       </TextField>
       <Text fill="#089bab" layoutX="154.0" layoutY="251.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date of Birth">
          <font>
-            <Font name="Verdana Semibold" size="28.0" />
+            <Font name="Verdana Bold" size="32.0" />
          </font>
       </Text>
       <DatePicker fx:id="dateOfBirthPicker" layoutX="154.0" layoutY="266.0" prefHeight="55.0" prefWidth="464.0" promptText="YYYY-MM-DD" style="-fx-background-color: white; -fx-border-radius: 16; -fx-background-radius: 16; -fx-font-size: 24;" />
       <Text fill="#089bab" layoutX="154.0" layoutY="379.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Address">
          <font>
-            <Font name="Verdana Semibold" size="28.0" />
+            <Font name="Verdana Bold" size="32.0" />
          </font>
       </Text>
       <TextField fx:id="addressTextField" layoutX="154.0" layoutY="392.0" prefHeight="55.0" prefWidth="464.0" style="-fx-background-color: white; -fx-background-radius: 16; -fx-border-radius: 16; -fx-border-color: #089bab;">
@@ -47,9 +47,9 @@
             <Font name="Verdana Semibold" size="24.0" />
          </font>
       </TextField>
-      <Text fill="#089bab" layoutX="708.0" layoutY="141.0" strokeType="OUTSIDE" strokeWidth="0.0" text="National Id">
+      <Text fill="#089bab" layoutX="708.0" layoutY="141.0" strokeType="OUTSIDE" strokeWidth="0.0" text="National ID">
          <font>
-            <Font name="Verdana Semibold" size="28.0" />
+            <Font name="Verdana Bold" size="32.0" />
          </font>
       </Text>
       <TextField fx:id="nationalIdTextField" layoutX="708.0" layoutY="158.0" prefHeight="55.0" prefWidth="464.0" style="-fx-background-color: white; -fx-background-radius: 16; -fx-border-radius: 16; -fx-border-color: #089bab;">
@@ -57,9 +57,9 @@
             <Font name="Verdana Semibold" size="24.0" />
          </font>
       </TextField>
-      <Text fill="#089bab" layoutX="725.0" layoutY="251.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Contact Number">
+      <Text fill="#089bab" layoutX="708.0" layoutY="250.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Contact Number">
          <font>
-            <Font name="Verdana Semibold" size="28.0" />
+            <Font name="Verdana Bold" size="32.0" />
          </font>
       </Text>
       <TextField fx:id="contactNumberTextField" layoutX="708.0" layoutY="266.0" prefHeight="55.0" prefWidth="464.0" style="-fx-background-color: white; -fx-background-radius: 16; -fx-border-radius: 16; -fx-border-color: #089bab;">
@@ -67,19 +67,19 @@
             <Font name="Verdana Semibold" size="24.0" />
          </font>
       </TextField>
-      <Text fill="#089bab" layoutX="708.0" layoutY="379.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gender">
+      <Text fill="#089bab" layoutX="710.0" layoutY="378.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gender">
          <font>
-            <Font name="Verdana Semibold" size="28.0" />
+            <Font name="Verdana Bold" size="32.0" />
          </font>
       </Text>
-      <Text fill="#089bab" layoutX="154.0" layoutY="502.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Blood type">
+      <Text fill="#089bab" layoutX="154.0" layoutY="502.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Blood Type">
          <font>
-            <Font name="Verdana Semibold" size="28.0" />
+            <Font name="Verdana Bold" size="32.0" />
          </font>
       </Text>
       <Text fill="#089bab" layoutX="708.0" layoutY="502.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Height">
          <font>
-            <Font name="Verdana Semibold" size="28.0" />
+            <Font name="Verdana Bold" size="32.0" />
          </font>
       </Text>
       <TextField fx:id="heightTextField" layoutX="708.0" layoutY="519.0" prefHeight="55.0" prefWidth="175.0" style="-fx-background-color: white; -fx-background-radius: 16; -fx-border-radius: 16; -fx-border-color: #089bab;">
@@ -89,7 +89,7 @@
       </TextField>
       <Text fill="#089bab" layoutX="949.0" layoutY="503.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Weight">
          <font>
-            <Font name="Verdana Semibold" size="28.0" />
+            <Font name="Verdana Bold" size="32.0" />
          </font>
       </Text>
       <TextField fx:id="weightTextField" layoutX="949.0" layoutY="519.0" prefHeight="55.0" prefWidth="175.0" style="-fx-background-color: white; -fx-background-radius: 16; -fx-border-radius: 16; -fx-border-color: #089bab;">
@@ -107,16 +107,16 @@
             <Font name="Verdana Regular" size="28.0" />
          </font>
       </Text>
-      <Pane fx:id="updatePatientButton" layoutX="526.0" layoutY="614.0" onMouseClicked="#updatePatient" prefHeight="64.0" prefWidth="249.0" style="-fx-background-color: FEAD54; -fx-background-radius: 40;">
+      <Pane fx:id="updatePatientButton" layoutX="600.0" layoutY="630.0" onMouseClicked="#updatePatient" prefHeight="60.0" prefWidth="140.0" style="-fx-background-color: FEAD54; -fx-background-radius: 40;">
          <children>
-            <Text fill="WHITE" layoutX="24.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Update Patient">
+            <Text fill="WHITE" layoutX="20.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Update">
                <font>
                   <Font name="Verdana Bold" size="24.0" />
                </font>
             </Text>
          </children>
       </Pane>
-      <ComboBox fx:id="bloodTypeComboBox" layoutX="154.0" layoutY="519.0" prefHeight="55.0" prefWidth="464.0" promptText="Blood type" style="-fx-background-color: white; -fx-border-color: #089bab; -fx-background-radius: 16; -fx-border-radius: 16; -fx-font-size: 24;" />
+      <ComboBox fx:id="bloodTypeComboBox" layoutX="154.0" layoutY="519.0" prefHeight="55.0" prefWidth="464.0" promptText="Blood Type" style="-fx-background-color: white; -fx-border-color: #089bab; -fx-background-radius: 16; -fx-border-radius: 16; -fx-font-size: 24;" />
       <ComboBox fx:id="genderComboBox" layoutX="708.0" layoutY="392.0" prefHeight="55.0" prefWidth="464.0" promptText="Gender" style="-fx-background-color: white; -fx-border-color: #089bab; -fx-background-radius: 16; -fx-border-radius: 16; -fx-font-size: 24; -fx-font-family: Verdana;" />
       <Text fx:id="errorMessageDisplay" fill="#f9988b" layoutX="-3.0" layoutY="702.0" strokeType="OUTSIDE" strokeWidth="0.0" text=" " textAlignment="CENTER" wrappingWidth="1289.2489626407623">
          <font>

@@ -1,21 +1,61 @@
 Medicine ID,Patient Name,Doctor ID,Medicine Name,Amount,Dose Detail
-M011,Ahmad Abdullah,S008,Amoxicillin,1,-
-M012,Lim Mei Ling,S003,Paracetamol,2,1 per day
-M013,Siti Nur Azizah,S010,Ibuprofen,3,1 per day
-M014,Mohammad Ali,S012,Ciprofloxacin,1,-
-M015,Chen Wei,S007,Ranitidine,2,2 per day
-M016,Nurul Indah,S014,Loratadine,3,1 per day
-M017,Rajesh Kumar,S006,Aspirin,2,1 per day
-M018,Anita Dewi,S015,Amoxicillin,1,-
-M019,Lee Joon-ho,S016,Paracetamol,2,2 per day
-M020,Novi Susanti,S018,Ibuprofen,3,1 per day
-M021,Ahmad Ibrahim,S020,Ciprofloxacin,1,-
-M022,Cindy Chen,S022,Ranitidine,2,2 per day
-M023,Ahmad Hidayat,S024,Loratadine,3,1 per day
-M024,Aisyah Zahra,S025,Aspirin,2,1 per day
-M025,David Tan,S019,Amoxicillin,1,-
-M026,Siti Rahayu,S021,Paracetamol,2,2 per day
-M027,Mohammad Hassan,S023,Ibuprofen,3,1 per day
-M028,Lee Min-jung,S026,Ciprofloxacin,1,-
-M029,Rajesh Patel,S028,Ranitidine,2,2 per day
-M030,Anita Fitriani,S030,Loratadine,3,1 per day
+M001,David Tan,S002,Amoxicillin 500mg,14,Take 1 capsule every 8 hours for 7 days.
+M002,Siti Nur Azizah,S012,Paracetamol 550mg,10,Take 1 tablet every 4 to 6 hours, as needed, for pain or fever.
+M003,Anita Fitriani,S016,Aspirin 325mg,30,Take 1 tablet daily with food.
+M004,Mohammad Ali,S005,Simvastatin 20mg,30,Take 1 tablet daily at bedtime.
+M005,Ahmad Rizal,S015,Lisinopril 10mg,30,Take 1 tablet daily in the morning.
+M006,Cindy Chen,S008,Amoxicillin 250mg,20,Take 1 capsule every 8 hours for 10 days.
+M007,Novi Susanti,S017,Prednisone 5mg,60,Take 1 tablet daily with food.
+M008,Lee Min-ho,S012,Tylenol Extra Strength,24,Take 2 caplets every 6 hours, as needed, for pain or fever.
+M009,Ahmad Hidayat,S001,Naproxen 500mg,20,Take 1 tablet twice daily with food.
+M010,Rahma Dewi,S016,Ibuprofen 200mg,40,Take 1 tablet every 4 to 6 hours, as needed, for pain or fever.
+M011,Ahmad Abdullah,S017,Metformin 500mg,60,Take 1 tablet twice daily with food.
+M012,Mohammad Hassan,S008,Cephalexin 500mg,14,Take 1 capsule every 12 hours for 7 days.
+M013,Rajesh Kumar,S005,Amlodipine 5mg,30,Take 1 tablet daily with or without food.
+M014,Nurul Indah,S015,Loratadine 10mg,30,Take 1 tablet daily.
+M015,Lee Min-jung,S016,Pantoprazole 40mg,30,Take 1 tablet daily before a meal.
+M016,Chen Ming,S002,Furosemide 20mg,30,Take 1 tablet daily in the morning.
+M017,Siti Rahayu,S017,Alprazolam 0.5mg,30,Take 1 tablet 3 times daily as needed for anxiety.
+M018,Rajendra Kumar,S015,Vitamin D3 1000IU,60,Take 1 softgel daily with food.
+M019,Anita Dewi,S012,Diphenhydramine 25mg,30,Take 1 capsule at bedtime as needed for sleep.
+M020,Emily Tan,P006,Omeprazole 20mg,30,Take 1 capsule daily before a meal.
+M021,Patrick Goh,S017,Warfarin 5mg,30,Take 1 tablet daily at the same time.
+M022,John Doe,S008,Amoxicillin 875mg,14,Take 1 tablet every 12 hours for 7 days.
+M023,Natalie Tan,S001,Acetaminophen 325mg,20,Take 1 tablet every 4 to 6 hours, as needed, for pain or fever.
+M024,Amy Yap,S015,Meloxicam 15mg,30,Take 1 tablet daily with or without food.
+M025,Benjamin Low,S017,Lisinopril 5mg,30,Take 1 tablet daily in the morning.
+M026,David Lim,S005,Metoprolol 50mg,30,Take 1 tablet twice daily.
+M027,Jessica Koh,S008,Amoxicillin 500mg,20,Take 1 capsule every 8 hours for 10 days.
+M028,Emily Tan,S012,Prednisone 10mg,60,Take 1 tablet daily with food.
+M029,Patrick Goh,S016,Naproxen 250mg,20,Take 1 tablet twice daily with food.
+M030,John Doe,S017,Ibuprofen 400mg,40,Take 1 tablet every 4 to 6 hours, as needed, for pain or fever.
+M031,Amy Yap,S015,Acetaminophen 500mg,30,Take 2 tablets every 6 hours, as needed, for pain or fever.
+M032,Benjamin Low,S001,Ranitidine 150mg,30,Take 1 tablet twice daily.
+M033,David Lim,S008,Doxycycline 100mg,14,Take 1 capsule twice daily for 7 days.
+M034,Jessica Koh,S016,Diphenhydramine 50mg,30,Take 1 capsule at bedtime as needed for sleep.
+M035,Emily Tan,S017,Atorvastatin 20mg,30,Take 1 tablet daily at bedtime.
+M036,Patrick Goh,S012,Lorazepam 1mg,30,Take 1 tablet 3 times daily as needed for anxiety.
+M037,John Doe,S005,Metformin 1000mg,60,Take 1 tablet twice daily with food.
+M038,Amy Yap,S015,Fexofenadine 180mg,30,Take 1 tablet daily.
+M039,Benjamin Low,S008,Pantoprazole 20mg,30,Take 1 tablet daily before a meal.
+M040,David Lim,S017,Oxycodone 5mg,30,Take 1 tablet every 4 to 6 hours, as needed, for pain.
+M041,Jessica Koh,S016,Folic Acid 1mg,30,Take 1 tablet daily.
+M042,Emily Tan,S002,Hydrochlorothiazide 25mg,30,Take 1 tablet daily in the morning.
+M043,Patrick Goh,S012,Clindamycin 300mg,14,Take 1 capsule every 8 hours for 7 days.
+M044,John Doe,S001,Diclofenac 50mg,20,Take 1 tablet twice daily with food.
+M045,Amy Yap,S016,Gabapentin 300mg,60,Take 1 capsule 3 times daily.
+M046,Benjamin Low,S017,Losartan 50mg,30,Take 1 tablet daily.
+M047,David Lim,S005,Enalapril 10mg,30,Take 1 tablet daily with or without food.
+M048,Jessica Koh,S008,Amoxicillin 250mg,14,Take 1 capsule every 8 hours for 7 days.
+M049,Emily Tan,S015,Acetaminophen 650mg,20,Take 1 tablet every 4 to 6 hours, as needed, for pain or fever.
+M050,Patrick Goh,S017,Citalopram 20mg,30,Take 1 tablet daily.
+M051,John Doe,S016,Naproxen 500mg,40,Take 1 tablet every 12 hours with food.
+M052,Amy Yap,S008,Ibuprofen 800mg,30,Take 1 tablet every 6 to 8 hours, as needed, for pain or fever.
+M053,Benjamin Low,S001,Aspirin 81mg,30,Take 1 tablet daily with food.
+M054,David Lim,S017,Atenolol 50mg,30,Take 1 tablet daily in the morning.
+M055,Jessica Koh,S015,Dexamethasone 4mg,30,Take 1 tablet daily with food.
+M056,Emily Tan,S012,Clarithromycin 500mg,14,Take 1 tablet twice daily for 7 days.
+M057,Patrick Goh,S016,Diazepam 5mg,30,Take 1 tablet 3 times daily as needed for anxiety.
+M058,John Doe,S017,Lisinopril 20mg,30,Take 1 tablet daily with or without food.
+M059,Amy Yap,S008,Metformin 500mg,60,Take 1 tablet twice daily with food.
+M060,Benjamin Low,S015,Vitamin C 1000mg,30,Take 1 tablet daily.

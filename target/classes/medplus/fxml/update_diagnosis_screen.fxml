@@ -11,11 +11,11 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: EFF7F9;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="medplus.controllers.update_diagnosis_controller">
    <children>
-      <Pane fx:id="updateDiagnosisButton" layoutX="450.0" layoutY="605.0" onMouseClicked="#updateDiagnosis" prefHeight="60.0" prefWidth="340.0" style="-fx-background-color: FEAD54; -fx-background-radius: 40;">
+      <Pane fx:id="updateDiagnosisButton" layoutX="600.0" layoutY="630.0" onMouseClicked="#updateDiagnosis" prefHeight="60.0" prefWidth="140.0" style="-fx-background-color: FEAD54; -fx-background-radius: 40;">
          <children>
-            <Text fill="WHITE" layoutX="10.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Update Diagnosis">
+            <Text fill="WHITE" layoutX="20.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Update">
                <font>
-                  <Font name="Verdana Bold" size="32.0" />
+                  <Font name="Verdana Bold" size="24.0" />
                </font>
             </Text>
          </children>
