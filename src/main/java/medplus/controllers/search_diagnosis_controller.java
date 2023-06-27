@@ -107,7 +107,6 @@ public class search_diagnosis_controller {
     void switchToAddScreen(MouseEvent event) throws IOException {
         App.setRoot("add_diagnosis_screen");
     }
-    // cannot function
 
     @FXML
     void switchToUpdateScreen(MouseEvent event) throws IOException {
