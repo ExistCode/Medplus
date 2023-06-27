@@ -18,11 +18,13 @@ public class TaskData {
         createNewFileWithHeaders();
         fetchTasksDataFromDatabase();
     }
+    // Database file location
 
     public static String fileName = "src/main/resources/medplus/database/tasks.txt";
 
     public static List<Tasks> fetchTasksDataFromDatabase() {
         List<Tasks> taskList = new ArrayList<>();
+        // Read the txt file and splitting into their respective fields
 
         try {
             BufferedReader reader = new BufferedReader(new FileReader(fileName));
@@ -35,6 +37,7 @@ public class TaskData {
                 String taskName = taskData[1].trim();
                 String taskDescription = taskData[2].trim();
                 String staffId = taskData[3].trim();
+                // Add the data to the empty list
 
                 Tasks task = new Tasks(taskId, taskName, taskDescription, staffId);
                 taskList.add(task);
@@ -52,6 +55,7 @@ public class TaskData {
         List<Tasks> singleAdminList = new ArrayList<>();
 
         try {
+
             BufferedReader reader = new BufferedReader(new FileReader(fileName));
             String line;
             reader.readLine(); // Skip the header line
@@ -83,6 +87,7 @@ public class TaskData {
 
         try {
             if (database.createNewFile()) {
+                // Create a new file
                 FileWriter writer = new FileWriter(fileName, true);
                 writer.append("Task ID, Task Name, Task Description, Staff ID");
                 writer.append("\n");
@@ -121,6 +126,7 @@ public class TaskData {
 
         try {
             BufferedReader reader = new BufferedReader(new FileReader(fileName));
+            // Iterate over the list and insert the one isn't deleted
             while ((line = reader.readLine()) != null) {
                 if (line.contains(id)) {
                     System.out.println("FOUND ID");
@@ -153,6 +159,8 @@ public class TaskData {
 
         try {
             BufferedReader reader = new BufferedReader(new FileReader(fileName));
+            // Iterate over the list and insert the updated version of the object
+
             while ((line = reader.readLine()) != null) {
                 if (line.contains(newTaskData.getTaskId())) {
                     System.out.println(newTaskData.getTaskId());

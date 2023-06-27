@@ -41,7 +41,7 @@ public class patient_details_treatment_controller {
     private Text bloodTypeText;
 
     @FXML
-    private Pane dashboardbutton;
+    private Pane dashboardButton;
 
     @FXML
     private Text dateOfBirthText;
@@ -70,10 +70,10 @@ public class patient_details_treatment_controller {
     private Text patientsNameText;
 
     @FXML
-    private Pane patientsbutton;
+    private Pane patientsButton;
 
     @FXML
-    private Pane searchbutton;
+    private Pane searchBsutton;
 
     @FXML
     private Pane staffButton;
@@ -98,6 +98,7 @@ public class patient_details_treatment_controller {
 
     @FXML
     void updateTreatment(MouseEvent event) throws IOException {
+        // Get the selected data
         TreatmentTableDataModel selectedTreatment = treatmentTable.getSelectionModel().getSelectedItem();
         if (selectedTreatment != null) {
             try {
@@ -295,6 +296,7 @@ public class patient_details_treatment_controller {
                 .convertTreatmentDataToTreatmentTableDataModel();
 
         ObservableList<TreatmentTableDataModel> patientTreatmentTable = FXCollections.observableArrayList();
+        // Iterate through the patient's treatment data
 
         for (TreatmentTableDataModel treatment : treatmentDataList) {
             System.out.println(treatment.getPatientName());
@@ -302,6 +304,7 @@ public class patient_details_treatment_controller {
                 patientTreatmentTable.add(treatment);
             }
         }
+        // Setting the table column
         TableColumn treatmentIdColumn = new TableColumn("Treatment ID");
         TableColumn patientNameColumn = new TableColumn("Patient Name");
         TableColumn doctorIdColumn = new TableColumn("Staff Id");

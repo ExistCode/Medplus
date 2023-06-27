@@ -7,12 +7,14 @@ import java.io.*;
 import medplus.models.Medicine;
 
 public class MedicineData {
-        public static Medicine initMedicineData = new Medicine("", "", "", "", "","");
+        public static Medicine initMedicineData = new Medicine("", "", "", "", "", "");
+        // Database file location
 
         public static String fileName = "src/main/resources/medplus/database/medicine.txt";
 
         public static List<Medicine> fetchMedicineDataFromDatabase() {
                 List<Medicine> medicineList = new ArrayList<>();
+                // Read the txt file and splitting into their respective fields
 
                 try {
                         BufferedReader reader = new BufferedReader(new FileReader(fileName));
@@ -27,8 +29,10 @@ public class MedicineData {
                                 String medicineName = medicineData[3].trim();
                                 String amount = medicineData[4].trim();
                                 String doseDetail = medicineData[5].trim();
+                                // Add the data to the empty list
 
-                                Medicine medicine = new Medicine(medicineId, patientName, doctorId, medicineName, amount, doseDetail);
+                                Medicine medicine = new Medicine(medicineId, patientName, doctorId, medicineName,
+                                                amount, doseDetail);
                                 medicineList.add(medicine);
                         }
 
@@ -44,6 +48,8 @@ public class MedicineData {
                 File database = new File(fileName);
 
                 try {
+                        // Create a new file
+
                         if (database.createNewFile()) {
                                 FileWriter writer = new FileWriter(fileName, true);
                                 writer.append("Medicine ID, Patient Name, Doctor ID, Medicine Name, Amount, Dose Detaik");
@@ -85,6 +91,7 @@ public class MedicineData {
 
                 try {
                         BufferedReader reader = new BufferedReader(new FileReader(fileName));
+                        // Iterate over the list and insert the one isn't deleted
                         while ((line = reader.readLine()) != null) {
                                 if (line.contains(id)) {
                                         System.out.println("FOUND ID");
@@ -118,6 +125,8 @@ public class MedicineData {
 
                 try {
                         BufferedReader reader = new BufferedReader(new FileReader(fileName));
+                        // Iterate over the list and insert the updated version of the object
+
                         while ((line = reader.readLine()) != null) {
                                 if (line.contains(newMedicineData.getMedicineId())) {
                                         fetchedMedicineListAfterDeletion.add(newMedicineData.getMedicineId() + ","

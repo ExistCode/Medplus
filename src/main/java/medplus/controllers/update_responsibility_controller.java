@@ -40,6 +40,7 @@ public class update_responsibility_controller {
 
     }
 
+    // Fetching all the staff Id from the staff list
     ObservableList<String> fetchStaffId() {
         ObservableList<StaffTableDataModel> staffDataList = StaffTableDataModel
                 .convertStaffDataToStaffTableDataModel();
@@ -50,6 +51,7 @@ public class update_responsibility_controller {
         return staffId;
     }
 
+    // Initialize the admin's responsibility details
     @FXML
     public void initialize() {
         responsibilityName.setText(ResponsibilitiesData.initResponsibilities.getResponsibilityName());
@@ -75,6 +77,7 @@ public class update_responsibility_controller {
 
     }
 
+    // Validating no empty and wrong input from user
     private String validateInput() {
         String errorMessage = "";
 

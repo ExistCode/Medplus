@@ -12,17 +12,19 @@ import java.util.List;
 import medplus.models.Treatment;
 
 public class TreatmentData {
-    public static Treatment initTreatmentData = new Treatment("", "", "", null, null, "");
+        public static Treatment initTreatmentData = new Treatment("", "", "", null, null, "");
 
         public static void main(String[] args) {
                 createNewFileWithHeaders();
                 fetchTreatmentDataFromDatabase();
         }
+        // Database file location
 
         public static String fileName = "src/main/resources/medplus/database/treatment.txt";
 
         public static List<Treatment> fetchTreatmentDataFromDatabase() {
                 List<Treatment> treatmentList = new ArrayList<>();
+                // Read the txt file and splitting into their respective fields
 
                 try {
                         BufferedReader reader = new BufferedReader(new FileReader(fileName));
@@ -37,8 +39,10 @@ public class TreatmentData {
                                 LocalDate startDate = LocalDate.parse(TreatmentData[3].trim());
                                 LocalDate endDate = LocalDate.parse(TreatmentData[4].trim());
                                 String treatmentInfo = TreatmentData[5].trim();
+                                // Add the data to the empty list
 
-                                Treatment treatment = new Treatment(treatmentId, patientName, staffId, startDate, endDate, treatmentInfo);
+                                Treatment treatment = new Treatment(treatmentId, patientName, staffId, startDate,
+                                                endDate, treatmentInfo);
                                 treatmentList.add(treatment);
                         }
 
@@ -54,6 +58,7 @@ public class TreatmentData {
                 File database = new File(fileName);
 
                 try {
+                        // Create a new file
                         if (database.createNewFile()) {
                                 FileWriter writer = new FileWriter(fileName, true);
                                 writer.append("Treatment ID, Patient Name, Staff ID, Start Date, End Date, Treatment Info");
@@ -95,6 +100,8 @@ public class TreatmentData {
 
                 try {
                         BufferedReader reader = new BufferedReader(new FileReader(fileName));
+                        // Iterate over the list and insert the one isn't deleted
+
                         while ((line = reader.readLine()) != null) {
                                 if (line.contains(id)) {
                                         System.out.println("FOUND ID");
@@ -128,6 +135,8 @@ public class TreatmentData {
 
                 try {
                         BufferedReader reader = new BufferedReader(new FileReader(fileName));
+                        // Iterate over the list and insert the updated version of the object
+
                         while ((line = reader.readLine()) != null) {
                                 if (line.contains(newTreatmentData.getTreatmentId())) {
                                         fetchedTreatmentListAfterDeletion.add(newTreatmentData.getTreatmentId() + ","

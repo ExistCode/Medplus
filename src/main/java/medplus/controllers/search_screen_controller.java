@@ -30,7 +30,7 @@ public class search_screen_controller {
     private Button analysisButton;
 
     @FXML
-    private Pane dashboardbutton;
+    private Pane dashboardButton;
 
     @FXML
     private Button diagnosisButton;
@@ -39,21 +39,19 @@ public class search_screen_controller {
     private Button medicineButton;
 
     @FXML
-    private Pane patientsbutton;
+    private Pane patientsButton;
 
     @FXML
     private Button procedureButton;
 
     @FXML
-    private Pane searchbutton;
+    private Pane searchButton;
 
     @FXML
     private Pane staffButton;
 
     @FXML
     private Button treatmentButton;
-    @FXML
-    private Pane deleteButton;
 
     @FXML
     private TableView<AnalysisTableDataModel> analysisTable;
@@ -110,6 +108,8 @@ public class search_screen_controller {
 
     @FXML
     void switchToUpdateScreen(MouseEvent event) throws IOException {
+        // Retrieve the selected data and insert it into the empty object
+
         AnalysisTableDataModel selectedAnalysis = analysisTable.getSelectionModel().getSelectedItem();
         if (selectedAnalysis != null) {
             try {
@@ -132,21 +132,7 @@ public class search_screen_controller {
 
     }
 
-    @FXML
-    void deleteRow(MouseEvent event) {
-
-        AnalysisTableDataModel selectedAnalysis = analysisTable.getSelectionModel().getSelectedItem();
-
-        if (selectedAnalysis != null) {
-            analysisTable.getItems().remove(selectedAnalysis);
-
-            String selectedRowId = selectedAnalysis.getAnalysisId().toString();
-            int selectedRowIdPlusOne = Integer.parseInt(selectedRowId.substring(1));
-            String newAnalysisIdFormatted = String.format("A%03d", selectedRowIdPlusOne);
-            AnalysisData.deleteAnalysisById(newAnalysisIdFormatted);
-        }
-    }
-
+    // Initialize the javafx controller and the table view content
     @FXML
     public void initialize() {
 

@@ -111,19 +111,10 @@ public class staff_controller {
     }
 
     @FXML
-    void changedToAnalysis(MouseEvent event) {
-
-    }
-
-    @FXML
-    void changedToDiagnosis(MouseEvent event) {
-
-    }
-
-    @FXML
     void changedToTreatment(MouseEvent event) {
 
     }
+    // Initialize the javafx controller and staff table
 
     public void initialize() {
 
@@ -179,6 +170,7 @@ public class staff_controller {
         });
     }
 
+    // Filtered the data
     private FilteredList<StaffTableDataModel> filteringList() {
         ObservableList<StaffTableDataModel> staffDataList = StaffTableDataModel.convertStaffDataToStaffTableDataModel();
         FilteredList<StaffTableDataModel> filteredData = new FilteredList<>(staffDataList, p -> true);

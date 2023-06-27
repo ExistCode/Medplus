@@ -16,11 +16,13 @@ public class MedicalHistoryData {
     public static MedicalHistory initMedicalHistoryData = new MedicalHistory("", "", "", LocalDate.now(),
             LocalTime.now(),
             "", "", "");
+    // Database file location
 
     public static String fileName = "src/main/resources/medplus/database/medical_history.txt";
 
     public static List<MedicalHistory> fetchAllMedicalHistoryDataFromDatabase() {
         List<MedicalHistory> medicalHistoryList = new ArrayList<>();
+        // Read the txt file and splitting into their respective fields
 
         try {
             BufferedReader reader = new BufferedReader(new FileReader(fileName));
@@ -37,6 +39,7 @@ public class MedicalHistoryData {
                 String result = medicalHistoryData[5].trim();
                 String observation = medicalHistoryData[6].trim();
                 String complication = medicalHistoryData[7].trim();
+                // Add the data to the empty list
 
                 MedicalHistory medicalHistory = new MedicalHistory(medHisId, patientId, staffId, date, time, result,
                         observation, complication);
@@ -89,6 +92,8 @@ public class MedicalHistoryData {
 
     public static void addNewMedicalHistory(MedicalHistory newMedicalHistory) {
         try {
+            // Create a new file
+
             FileWriter writer = new FileWriter(fileName, true);
             String medicalHistoryData = String.format("%s,%s,%s,%s,%s,%s,%s,%s", newMedicalHistory.getMedHisId(),
                     newMedicalHistory.getPatientId(), newMedicalHistory.getStaffId(), newMedicalHistory.getDate(),
@@ -111,6 +116,7 @@ public class MedicalHistoryData {
 
         try {
             BufferedReader reader = new BufferedReader(new FileReader(fileName));
+            // Iterate over the list and insert the one isn't deleted
             while ((line = reader.readLine()) != null) {
                 if (line.contains(medHisId)) {
                     System.out.println("FOUND ID");
@@ -143,6 +149,8 @@ public class MedicalHistoryData {
 
         try {
             BufferedReader reader = new BufferedReader(new FileReader(fileName));
+            // Iterate over the list and insert the updated version of the object
+
             while ((line = reader.readLine()) != null) {
                 if (line.contains(newMedicalHistoryData.getMedHisId())) {
                     fetchedMedicalHistoryListAfterUpdate.add(newMedicalHistoryData.getMedHisId() + ","

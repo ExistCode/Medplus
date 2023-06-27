@@ -30,7 +30,7 @@ public class search_treatment_controller {
     private Button analysisButton;
 
     @FXML
-    private Pane dashboardbutton;
+    private Pane dashboardButton;
 
     @FXML
     private Button diagnosisButton;
@@ -39,13 +39,13 @@ public class search_treatment_controller {
     private Button medicineButton;
 
     @FXML
-    private Pane patientsbutton;
+    private Pane patientsButton;
 
     @FXML
     private Button procedureButton;
 
     @FXML
-    private Pane searchbutton;
+    private Pane searchButton;
 
     @FXML
     private Pane staffButton;
@@ -55,9 +55,6 @@ public class search_treatment_controller {
 
     @FXML
     private Pane addButton;
-
-    @FXML
-    private Pane deleteButton;
 
     @FXML
     private Pane updateButton;
@@ -116,18 +113,9 @@ public class search_treatment_controller {
     }
 
     @FXML
-    void deleteRow(MouseEvent event) {
-        treatmentTable.getItems().removeAll(treatmentTable.getSelectionModel().getSelectedItems());
-        String selectedRowId = treatmentTable.getSelectionModel().getSelectedItem().getTreatmentId().toString();
-        int selectedRowIdPlusOne = Integer.parseInt(selectedRowId.substring(1))
-                + 1;
-        String newTreatmentIdFormatted = String.format("T%03d", selectedRowIdPlusOne);
-        TreatmentData.deleteTreatmentById(newTreatmentIdFormatted);
-
-    }
-
-    @FXML
     void switchToUpdateScreen(MouseEvent event) throws IOException {
+        // Retrieve the selected data and insert it into the empty object
+
         TreatmentTableDataModel selectedTreatment = treatmentTable.getSelectionModel().getSelectedItem();
         if (selectedTreatment != null) {
             try {
@@ -148,6 +136,7 @@ public class search_treatment_controller {
 
     }
 
+    // Initialize the javafx controller and the table view content
     @FXML
     public void initialize() {
         ObservableList<TreatmentTableDataModel> treatmentDataList = TreatmentTableDataModel

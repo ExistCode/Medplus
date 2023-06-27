@@ -3,16 +3,20 @@ package medplus.controllers;
 import java.io.IOException;
 
 import javafx.collections.ObservableList;
+import javafx.collections.transformation.FilteredList;
+import javafx.collections.transformation.SortedList;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import medplus.App;
 import medplus.data.MedicineData;
+import medplus.tableModels.AnalysisTableDataModel;
 import medplus.tableModels.MedicineTableDataModel;
 
 public class search_medicine_controller {
@@ -27,10 +31,7 @@ public class search_medicine_controller {
     private Button analysisButton;
 
     @FXML
-    private Pane dashboardbutton;
-
-    @FXML
-    private Pane deleteButton;
+    private Pane dashboardButton;
 
     @FXML
     private Button diagnosisButton;
@@ -39,13 +40,13 @@ public class search_medicine_controller {
     private Button medicineButton;
 
     @FXML
-    private Pane patientsbutton;
+    private Pane patientsButton;
 
     @FXML
     private Button procedureButton;
 
     @FXML
-    private Pane searchbutton;
+    private Pane searchButton;
 
     @FXML
     private Pane staffButton;
@@ -55,6 +56,8 @@ public class search_medicine_controller {
 
     @FXML
     private Pane updateButton;
+    @FXML
+    private TextField searchedAnalysisText;
 
     @FXML
     private TableView<MedicineTableDataModel> medicineTable;
@@ -110,18 +113,9 @@ public class search_medicine_controller {
     }
 
     @FXML
-    void deleteRow(MouseEvent event) {
-        medicineTable.getItems().removeAll(medicineTable.getSelectionModel().getSelectedItems());
-        String selectedRowId = medicineTable.getSelectionModel().getSelectedItem().getMedicineId().toString();
-        int selectedRowIdPlusOne = Integer.parseInt(selectedRowId.substring(1))
-                + 1;
-        String newMedicineIdFormatted = String.format("M%03d", selectedRowIdPlusOne);
-        MedicineData.deleteMedicineById(newMedicineIdFormatted);
-
-    }
-
-    @FXML
     void switchToUpdateScreen(MouseEvent event) throws IOException {
+        // Retrieve the selected data and insert it into the empty object
+
         MedicineTableDataModel selectedMedicine = medicineTable.getSelectionModel().getSelectedItem();
         if (selectedMedicine != null) {
             try {
@@ -141,6 +135,7 @@ public class search_medicine_controller {
         }
     }
 
+    // Initialize the javafx controller and the table view content
     @FXML
     public void initialize() {
         ObservableList<MedicineTableDataModel> medicineDataList = MedicineTableDataModel
@@ -166,25 +161,35 @@ public class search_medicine_controller {
 
         medicineTable.setItems(medicineDataList);
 
-        medicineTable.setOnMouseClicked(event -> {
-            if (event.getClickCount() == 2) {
-                MedicineTableDataModel selectedMedicine = medicineTable.getSelectionModel().getSelectedItem();
-                if (selectedMedicine != null) {
-
-                    MedicineData.initMedicineData.setPatientName(selectedMedicine.getPatientName());
-                    MedicineData.initMedicineData.setStaffId(selectedMedicine.getStaffId());
-                    MedicineData.initMedicineData.setMedicineName(selectedMedicine.getMedicineName());
-                    MedicineData.initMedicineData.setAmount(selectedMedicine.getAmount());
-                    MedicineData.initMedicineData.setDoseDetail(selectedMedicine.getDoseDetail());
-
-                    System.out.println(MedicineData.initMedicineData.getPatientName());
-                    System.out.println(MedicineData.initMedicineData.getStaffId());
-                    System.out.println(MedicineData.initMedicineData.getMedicineName());
-                    System.out.println(MedicineData.initMedicineData.getAmount());
-                    System.out.println(MedicineData.initMedicineData.getDoseDetail());
+        FilteredList<MedicineTableDataModel> filteredData = new FilteredList<>(medicineDataList, b -> true);
+        searchedAnalysisText.textProperty().addListener((observable, oldvalue, newvalue) -> {
+            filteredData.setPredicate(MedicineTableDataModel -> {
+                if (newvalue.isEmpty() || newvalue.isBlank() || newvalue == null) {
+                    return true;
                 }
-            }
 
+                String searchKeyword = newvalue.toLowerCase();
+                if (MedicineTableDataModel.getPatientName().toLowerCase().indexOf(searchKeyword) > -1) {
+                    return true;
+                } else if (MedicineTableDataModel.getMedicineName().toLowerCase().indexOf(searchKeyword) > -1) {
+                    return true;
+                } else if (MedicineTableDataModel.getMedicineId().toLowerCase().indexOf(searchKeyword) > -1) {
+                    return true;
+                } else if (MedicineTableDataModel.getAmount().toLowerCase().indexOf(searchKeyword) > -1) {
+                    return true;
+                } else if (MedicineTableDataModel.getDoseDetail().toLowerCase().indexOf(searchKeyword) > -1) {
+                    return true;
+                } else if (MedicineTableDataModel.getStaffId().toLowerCase().indexOf(searchKeyword) > -1) {
+                    return true;
+                }
+
+                else {
+                    return false;
+                }
+            });
         });
+        SortedList<MedicineTableDataModel> sortedMedicineData = new SortedList<>(filteredData);
+        sortedMedicineData.comparatorProperty().bind(medicineTable.comparatorProperty());
+        medicineTable.setItems(sortedMedicineData);
     }
 }

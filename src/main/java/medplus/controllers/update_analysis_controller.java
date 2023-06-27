@@ -58,6 +58,8 @@ public class update_analysis_controller {
         App.setRoot("search_home_screen");
     }
 
+    // Initialize the analysis details to be updated
+
     @FXML
     public void initialize() {
         patientNameComboBox.setValue(AnalysisData.initanalysisData.getPatientName());
@@ -93,6 +95,7 @@ public class update_analysis_controller {
         }
 
     }
+    // Validate no empty input and wrong fields
 
     private String validateInput() {
         String errorMessage = "";
@@ -106,6 +109,7 @@ public class update_analysis_controller {
         }
         return errorMessage;
     }
+    // Fetch the data from the patient name from the list
 
     ObservableList<String> fetchPatientName() {
         ObservableList<PatientTableDataModel> patientDataList = PatientTableDataModel
@@ -117,6 +121,7 @@ public class update_analysis_controller {
         return patientName;
     }
 
+    // Fetch the data from the staffId from the list
     ObservableList<String> fetchStaffId() {
         ObservableList<StaffTableDataModel> staffDataList = StaffTableDataModel
                 .convertStaffDataToStaffTableDataModel();

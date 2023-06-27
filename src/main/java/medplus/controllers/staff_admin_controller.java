@@ -59,6 +59,10 @@ public class staff_admin_controller {
 
     @FXML
     private Pane staffButton;
+    @FXML
+    private Pane updateButton;
+    @FXML
+    private Pane deleteButton;
 
     @FXML
     void addNewPatientScreen(MouseEvent event) throws IOException {
@@ -125,9 +129,11 @@ public class staff_admin_controller {
 
     @FXML
     void switchToUpdateScreen(MouseEvent event) throws IOException {
+        // Get the selected data
         StaffTableDataModel selectedStaff = adminTable.getSelectionModel().getSelectedItem();
         if (selectedStaff != null) {
             try {
+                // Putting the value to an empty object
                 StaffData.initStaffData.setStaffId(selectedStaff.getStaffId());
                 StaffData.initStaffData.setName(selectedStaff.getName());
                 StaffData.initStaffData.setStaffNationalId("12347483");
@@ -149,16 +155,12 @@ public class staff_admin_controller {
 
     }
 
-    @FXML
-    private Pane updateButton;
-    @FXML
-    private Pane deleteButton;
-
+    // Initialize the javafx controller and staff table
     public void initialize() {
 
         ObservableList<StaffTableDataModel> staffDataList = StaffTableDataModel.convertStaffDataToStaffTableDataModel();
         ObservableList<StaffTableDataModel> adminList = FXCollections.observableArrayList();
-
+        // Iterate through staff data
         for (StaffTableDataModel staff : staffDataList) {
 
             if (staff.getDepartment().equals("Administration")) {
@@ -186,6 +188,7 @@ public class staff_admin_controller {
         contactNumberColumn.setCellValueFactory(new PropertyValueFactory<>("contactNumber"));
 
         adminTable.setItems(adminList);
+        // Filter the List
         FilteredList<StaffTableDataModel> filteredData = new FilteredList<>(adminList, b -> true);
         searchField.textProperty().addListener((observable, oldvalue, newvalue) -> {
             filteredData.setPredicate(StaffTableDataModel -> {
@@ -211,6 +214,7 @@ public class staff_admin_controller {
                 }
             });
         });
+        // Sorted the filtered Data
 
         SortedList<StaffTableDataModel> sortedStaffData = new SortedList<>(
                 filteredData);

@@ -71,6 +71,7 @@ public class update_medical_history_controller {
 
     }
 
+    // Validate user input correct fields
     private String validateInput() {
         String errorMessage = "";
 
@@ -90,6 +91,7 @@ public class update_medical_history_controller {
     void backToSearch(MouseEvent event) throws IOException {
         App.setRoot("patients_details_screen_analysis");
     }
+    // Initialize the medical history details to be updated
 
     @FXML
     public void initialize() {
@@ -102,6 +104,7 @@ public class update_medical_history_controller {
         patientIdComboBox.setItems(fetchPatientName());
         staffIdComboBox.setItems(fetchStaffId());
     }
+    // Fetch the patient name from the patient list
 
     ObservableList<String> fetchPatientName() {
         ObservableList<PatientTableDataModel> patientDataList = PatientTableDataModel
@@ -112,6 +115,7 @@ public class update_medical_history_controller {
         }
         return patientName;
     }
+    // Fetch the staff Id from the staff list
 
     ObservableList<String> fetchStaffId() {
         ObservableList<StaffTableDataModel> staffDataList = StaffTableDataModel

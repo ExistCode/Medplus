@@ -17,11 +17,13 @@ public class ResponsibilitiesData {
         createNewFileWithHeaders();
         fetchResponsibilitiesDataFromDatabase();
     }
+    // Database file location
 
     public static String fileName = "src/main/resources/medplus/database/responsibilities.txt";
 
     public static List<Responsibilities> fetchResponsibilitiesDataFromDatabase() {
         List<Responsibilities> responsibilitiesList = new ArrayList<>();
+        // Read the txt file and splitting into their respective fields
 
         try {
             BufferedReader reader = new BufferedReader(new FileReader(fileName));
@@ -34,6 +36,7 @@ public class ResponsibilitiesData {
                 String responsibilityName = responsibilitiesData[1].trim();
                 String responsibilityDescription = responsibilitiesData[2].trim();
                 String staffId = responsibilitiesData[3].trim();
+                // Add the data to the empty list
 
                 Responsibilities responsibility = new Responsibilities(responsibilityId, responsibilityName,
                         responsibilityDescription, staffId);
@@ -100,6 +103,8 @@ public class ResponsibilitiesData {
 
     public static void addNewResponsibility(Responsibilities newResponsibility) {
         try {
+            // Create a new file
+
             FileWriter writer = new FileWriter(fileName, true);
             String responsibilityData = String.format("%s,%s,%s,%s", newResponsibility.getResponsibilityId(),
                     newResponsibility.getResponsibilityName(), newResponsibility.getResponsibilityDescription(),
@@ -121,6 +126,8 @@ public class ResponsibilitiesData {
 
         try {
             BufferedReader reader = new BufferedReader(new FileReader(fileName));
+            // Iterate over the list and insert the one isn't deleted
+
             while ((line = reader.readLine()) != null) {
                 if (line.contains(id)) {
                     System.out.println("FOUND ID");
@@ -153,6 +160,8 @@ public class ResponsibilitiesData {
 
         try {
             BufferedReader reader = new BufferedReader(new FileReader(fileName));
+            // Iterate over the list and insert the updated version of the object
+
             while ((line = reader.readLine()) != null) {
                 if (line.contains(newResponsibilityData.getResponsibilityId())) {
                     System.out.println(newResponsibilityData.getResponsibilityId());

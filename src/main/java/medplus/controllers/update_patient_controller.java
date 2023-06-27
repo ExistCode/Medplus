@@ -97,6 +97,7 @@ public class update_patient_controller {
         }
     }
 
+    // Validating correct and non-empty fields from user
     private String validateInput() {
         String errorMessage = "";
 
@@ -127,6 +128,7 @@ public class update_patient_controller {
 
     }
 
+    // initialize patient details
     @FXML
     public void initialize() {
         fullNameTextField.setText(PatientData.initPatientData.getName());

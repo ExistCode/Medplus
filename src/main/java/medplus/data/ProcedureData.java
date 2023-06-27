@@ -15,11 +15,13 @@ public class ProcedureData {
                 createNewFileWithHeaders();
                 fetchProcedureDataFromDatabase();
         }
+        // Database file location
 
         public static String fileName = "src/main/resources/medplus/database/procedure.txt";
 
         public static List<Procedure> fetchProcedureDataFromDatabase() {
                 List<Procedure> procedureList = new ArrayList<>();
+                // Read the txt file and splitting into their respective fields
 
                 try {
                         BufferedReader reader = new BufferedReader(new FileReader(fileName));
@@ -35,6 +37,7 @@ public class ProcedureData {
                                 String time = procedureData[4].trim();
                                 String procedureType = procedureData[5].trim();
                                 String procedureDescription = procedureData[6].trim();
+                                // Add the data to the empty list
 
                                 Procedure procedure = new Procedure(procedureId, patientName, staffId, date, time,
                                                 procedureType, procedureDescription);
@@ -53,6 +56,8 @@ public class ProcedureData {
                 File database = new File(fileName);
 
                 try {
+                        // Create a new file
+
                         if (database.createNewFile()) {
                                 FileWriter writer = new FileWriter(fileName, true);
                                 writer.append("Procedure ID, Patient Name, Staff ID, Date, Time, Procedure Type, Procedure Description");
@@ -96,6 +101,8 @@ public class ProcedureData {
 
                 try {
                         BufferedReader reader = new BufferedReader(new FileReader(fileName));
+                        // Iterate over the list and insert the one isn't deleted
+
                         while ((line = reader.readLine()) != null) {
                                 if (line.contains(id)) {
                                         System.out.println("FOUND ID");
@@ -129,6 +136,8 @@ public class ProcedureData {
 
                 try {
                         BufferedReader reader = new BufferedReader(new FileReader(fileName));
+                        // Iterate over the list and insert the updated version of the object
+
                         while ((line = reader.readLine()) != null) {
 
                                 if (line.contains(newProcedureData.getProcedureId())) {

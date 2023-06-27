@@ -132,6 +132,7 @@ public class staff_doctor_controller {
     private Pane updateButton;
     @FXML
     private Pane deleteButton;
+    // Initialize the javafx controller with staff details
 
     public void initialize() {
 
@@ -165,6 +166,7 @@ public class staff_doctor_controller {
         contactNumberColumn.setCellValueFactory(new PropertyValueFactory<>("contactNumber"));
 
         doctorTable.setItems(doctorList);
+        // Filtered the doctor data
         FilteredList<StaffTableDataModel> filteredData = new FilteredList<>(doctorList, b -> true);
         searchField.textProperty().addListener((observable, oldvalue, newvalue) -> {
             filteredData.setPredicate(StaffTableDataModel -> {
@@ -190,6 +192,7 @@ public class staff_doctor_controller {
                 }
             });
         });
+        // Sorted it using sortedList
 
         SortedList<StaffTableDataModel> sortedStaffData = new SortedList<>(
                 filteredData);

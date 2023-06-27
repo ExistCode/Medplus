@@ -59,6 +59,10 @@ public class staff_nurse_controller {
 
     @FXML
     private Pane staffButton;
+    @FXML
+    private Pane updateButton;
+    @FXML
+    private Pane deleteButton;
 
     @FXML
     void addNewPatientScreen(MouseEvent event) throws IOException {
@@ -128,10 +132,7 @@ public class staff_nurse_controller {
 
     }
 
-    @FXML
-    private Pane updateButton;
-    @FXML
-    private Pane deleteButton;
+    // Initialize the javafx controller with staff details
 
     public void initialize() {
 
@@ -165,6 +166,7 @@ public class staff_nurse_controller {
         contactNumberColumn.setCellValueFactory(new PropertyValueFactory<>("contactNumber"));
 
         nurseTable.setItems(nurseList);
+        // Filtered the list and sorted it
         FilteredList<StaffTableDataModel> filteredData = new FilteredList<>(nurseList, b -> true);
         searchField.textProperty().addListener((observable, oldvalue, newvalue) -> {
             filteredData.setPredicate(StaffTableDataModel -> {

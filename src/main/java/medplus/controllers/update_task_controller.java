@@ -51,6 +51,7 @@ public class update_task_controller {
         return staffId;
     }
 
+    // Initializing the admin's task details
     @FXML
     public void initialize() {
         staffIdComboBox.setValue(TaskData.initTask.getStaffId());
@@ -74,6 +75,7 @@ public class update_task_controller {
         }
 
     }
+    // Validating no empty and wrong input from user
 
     private String validateInput() {
         String errorMessage = "";

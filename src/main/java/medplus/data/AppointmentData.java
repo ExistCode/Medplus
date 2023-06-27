@@ -16,11 +16,13 @@ public class AppointmentData {
     public static Appointment initAppointmentData = new Appointment("", "", "", "", LocalDate.now(),
             LocalTime.now(),
             "");
+    // Database file location
 
     public static String fileName = "src/main/resources/medplus/database/appointment.txt";
 
     public static List<Appointment> fetchAllAppointmentDataFromDatabase() {
         List<Appointment> appointmentList = new ArrayList<>();
+        // Read the txt file and splitting into their respective fields
 
         try {
             BufferedReader reader = new BufferedReader(new FileReader(fileName));
@@ -36,6 +38,7 @@ public class AppointmentData {
                 LocalDate date = LocalDate.parse(appointmentData[4].trim());
                 LocalTime time = LocalTime.parse(appointmentData[5].trim());
                 String description = appointmentData[6].trim();
+                // Add the data to the empty list
 
                 Appointment appointment = new Appointment(appointmentId, patientId, staffId, roomNum, date, time,
                         description);
@@ -85,6 +88,8 @@ public class AppointmentData {
 
     public static void addNewAppointment(Appointment newAppointment) {
         try {
+            // Create a new file
+
             FileWriter writer = new FileWriter(fileName, true);
             String appointmentData = String.format("%s,%s,%s,%s,%s,%s,%s", newAppointment.getAppointmentId(),
                     newAppointment.getPatientId(), newAppointment.getStaffId(), newAppointment.getRoomNum(),
@@ -106,6 +111,8 @@ public class AppointmentData {
 
         try {
             BufferedReader reader = new BufferedReader(new FileReader(fileName));
+            // Iterate over the list and insert the one isn't deleted
+
             while ((line = reader.readLine()) != null) {
                 if (line.contains(appointmentId)) {
                     System.out.println("FOUND ID");
@@ -138,6 +145,8 @@ public class AppointmentData {
 
         try {
             BufferedReader reader = new BufferedReader(new FileReader(fileName));
+            // Iterate over the list and insert the updated version of the object
+
             while ((line = reader.readLine()) != null) {
                 if (line.contains(newAppointmentData.getAppointmentId())) {
                     fetchedAppointmentListAfterUpdate.add(newAppointmentData.getAppointmentId() + ","

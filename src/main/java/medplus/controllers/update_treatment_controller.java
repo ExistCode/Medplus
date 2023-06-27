@@ -68,6 +68,7 @@ public class update_treatment_controller {
             System.out.println(errorMessage);
         }
     }
+    // Validating no empty and wrong input from user
 
     private String validateInput() {
         String errorMessage = "";
@@ -83,6 +84,7 @@ public class update_treatment_controller {
         return errorMessage;
     }
 
+    // Initializing the patient's treatment data
     @FXML
     public void initialize() {
         patientNameComboBox.setValue(TreatmentData.initTreatmentData.getPatientName());

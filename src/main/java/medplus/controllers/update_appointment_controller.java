@@ -33,7 +33,7 @@ public class update_appointment_controller {
     private TextField descriptionTextField;
 
     @FXML
-    private TextField patinetIdTextField;
+    private TextField patientIdTextField;
 
     @FXML
     private ComboBox<String> roomNumberComboBox;
@@ -59,7 +59,7 @@ public class update_appointment_controller {
         if (errorMessage.isEmpty()) {
             Appointment updatedAppointment = new Appointment(
                     AppointmentData.initAppointmentData.getAppointmentId(),
-                    patinetIdTextField.getText(),
+                    patientIdTextField.getText(),
                     staffIdTextField.getText(),
                     roomNumberComboBox.getValue(),
                     appointmentDatePicker.getValue(),
@@ -75,8 +75,8 @@ public class update_appointment_controller {
 
     private String validateInput() {
         String errorMessage = "";
-
-        if (patinetIdTextField.getText().isEmpty() ||
+        // Checking if there is empty input
+        if (patientIdTextField.getText().isEmpty() ||
                 staffIdTextField.getText().isEmpty() ||
                 roomNumberComboBox.getValue() == null ||
                 appointmentDatePicker.getValue() == null ||
@@ -88,9 +88,10 @@ public class update_appointment_controller {
         return errorMessage;
     }
 
+    // Initialize the appointment details to be updated
     @FXML
     public void initialize() {
-        patinetIdTextField.setText(AppointmentData.initAppointmentData.getPatientId());
+        patientIdTextField.setText(AppointmentData.initAppointmentData.getPatientId());
         staffIdTextField.setText(AppointmentData.initAppointmentData.getStaffId());
         roomNumberComboBox.setValue(AppointmentData.initAppointmentData.getRoomNum());
         appointmentDatePicker.setValue(AppointmentData.initAppointmentData.getDate());

@@ -93,6 +93,7 @@ public class update_staff_controller {
         }
 
     }
+    // Validating no empty and wrong input from user
 
     private String validateInput() {
         String errorMessage = "";
@@ -109,6 +110,7 @@ public class update_staff_controller {
         return errorMessage;
     }
 
+    // Initializing the staff details
     @FXML
     public void initialize() {
         nameTextField.setText(StaffData.initStaffData.getName());
