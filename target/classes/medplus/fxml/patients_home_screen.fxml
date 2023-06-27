@@ -53,7 +53,7 @@
       </Pane>
       <Pane layoutX="-4.0" prefHeight="722.0" prefWidth="203.0" style="-fx-background-color: #089bAB;">
          <children>
-            <Pane fx:id="dashboardbutton" layoutX="55.0" layoutY="65.0" onMouseClicked="#changedToDashboard" prefHeight="144.0" prefWidth="95.0">
+            <Pane fx:id="dashboardButton" layoutX="55.0" layoutY="65.0" onMouseClicked="#changedToDashboard" prefHeight="144.0" prefWidth="95.0">
                <children>
                   <ImageView fitHeight="60.0" fitWidth="61.0" layoutX="18.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -67,7 +67,7 @@
                   </Text>
                </children>
             </Pane>
-            <Pane fx:id="patientsbutton" layoutX="55.0" layoutY="210.0" onMouseClicked="#changedToPatients" prefHeight="144.0" prefWidth="95.0" style="-fx-background-color: white; -fx-background-radius: 60;">
+            <Pane fx:id="patientsButton" layoutX="55.0" layoutY="210.0" onMouseClicked="#changedToPatients" prefHeight="144.0" prefWidth="95.0" style="-fx-background-color: white; -fx-background-radius: 60;">
                <children>
                   <ImageView fitHeight="60.0" fitWidth="61.0" layoutX="19.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -95,7 +95,7 @@
                   </Text>
                </children>
             </Pane>
-            <Pane fx:id="searchbutton" layoutX="54.0" layoutY="498.0" onMouseClicked="#changedToSearch" prefHeight="144.0" prefWidth="95.0">
+            <Pane fx:id="searchButton" layoutX="54.0" layoutY="498.0" onMouseClicked="#changedToSearch" prefHeight="144.0" prefWidth="95.0">
                <children>
                   <ImageView fitHeight="60.0" fitWidth="61.0" layoutX="20.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -111,9 +111,7 @@
             </Pane>
          </children>
       </Pane>
-      <Pane fx:id="updateButton" layoutX="1138.0" layoutY="160.0" onMouseClicked="#switchToUpdateScreen" prefHeight="48.0" prefWidth="52.0" />
-      <Pane fx:id="deleteButton" layoutX="1196.0" layoutY="160.0" onMouseClicked="#deleteRow" prefHeight="48.0" prefWidth="52.0" />
-      <TextField fx:id="searchButton" alignment="CENTER" layoutX="1007.0" layoutY="160.0" prefHeight="48.0" prefWidth="241.0" promptText="Search Patients" style="-fx-border-color: #089bab; -fx-background-color: transparent; -fx-border-radius: 12; -fx-font-size: 16;">
+      <TextField fx:id="searchField" alignment="CENTER" layoutX="1007.0" layoutY="160.0" prefHeight="48.0" prefWidth="241.0" promptText="Search Patients" style="-fx-border-color: #089bab; -fx-background-color: transparent; -fx-border-radius: 12; -fx-font-size: 16;">
          <font>
             <Font name="SF Pro Text Semibold" size="13.0" />
          </font>

@@ -75,6 +75,7 @@ public class add_procedure_controller {
 
     private String validateInput() {
         String errorMessage = "";
+        // Validate no empty input
 
         if (patientNameTextField.getText().isEmpty() || staffIDTextField.getText().isEmpty()
                 || dateDatePicker.getValue() == null || timeTextField.getText().isEmpty()

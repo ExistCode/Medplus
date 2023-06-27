@@ -33,7 +33,7 @@ public class staff_details_controller {
     private TableView<AppointmentTableDataModel> appointmentTable;
 
     @FXML
-    private Pane dashboardbutton;
+    private Pane dashboardButton;
 
     @FXML
     private Pane deleteAppointmentButton;
@@ -51,10 +51,10 @@ public class staff_details_controller {
     private TableView<MedicalHistoryTableDataModel> medicalHistoryTable;
 
     @FXML
-    private Pane patientsbutton;
+    private Pane patientsButton;
 
     @FXML
-    private Pane searchbutton;
+    private Pane searchButton;
 
     @FXML
     private Text staffBirthday;

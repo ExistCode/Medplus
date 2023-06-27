@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.List;
-
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -82,7 +81,7 @@ public class add_appointment_controller {
 
     private String validateInput() {
         String errorMessage = "";
-
+        // Validate no empty input
         if (patientIdTextField.getText().isEmpty() || staffIdTextField.getText().isEmpty()
                 || appointmentDatePicker.getValue() == null || descriptionTextField.getText().isEmpty()
                 || roomNumberComboBox.getValue() == null) {

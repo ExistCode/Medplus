@@ -288,7 +288,7 @@ public class patient_details_diagnosis_controller {
                 .convertDiagnosisDataToDiagnosisTableDataModel();
 
         ObservableList<DiagnosisTableDataModel> patientDiagnosisTableData = FXCollections.observableArrayList();
-
+        // Iterate over the list and add patient's diagnosis data
         for (DiagnosisTableDataModel diagnosis : diagnosisDataList) {
             System.out.println(diagnosis.getPatientName());
             if (diagnosis.getPatientName().equalsIgnoreCase(PatientData.initPatientData.getName())) {

@@ -19,11 +19,6 @@ import medplus.tableModels.PatientTableDataModel;
 
 public class patient_controller {
 
-    private ObservableList tableItems;
-    private FilteredList filteredTableItems;
-
-    //
-
     @FXML
     private Text GenderText;
 
@@ -40,28 +35,24 @@ public class patient_controller {
     private TableView<PatientTableDataModel> patientsTable;
 
     @FXML
-    private TextField searchButton;
-
-    @FXML
-    void addNewPatientScreen(MouseEvent event) throws IOException {
-        App.setRoot("add_patients_screen");
-    }
+    private TextField searchField;
 
     @FXML
     private Pane dashboardbutton;
 
     @FXML
-    private Pane patientsbutton;
+    private Pane patientsButton;
 
     @FXML
-    private Pane searchbutton;
+    private Pane searchButton;
 
     @FXML
     private Pane staffButton;
+
     @FXML
-    private Pane deleteButton;
-    @FXML
-    private Pane updateButton;
+    void addNewPatientScreen(MouseEvent event) throws IOException {
+        App.setRoot("add_patients_screen");
+    }
 
     @FXML
     void changedToDashboard(MouseEvent event) throws IOException {
@@ -71,60 +62,6 @@ public class patient_controller {
     @FXML
     void changedToPatients(MouseEvent event) throws IOException {
         App.setRoot("patients_home_screen");
-
-    }
-
-    @FXML
-    void deleteRow(MouseEvent event) {
-        PatientTableDataModel selectedPatient = patientsTable.getSelectionModel().getSelectedItem();
-        if (selectedPatient != null) {
-
-            patientsTable.getItems().removeAll(patientsTable.getSelectionModel().getSelectedItems());
-            String selectedRowId = patientsTable.getSelectionModel().getSelectedItem().getPatientId().toString();
-            int selectedRowIdPlusOne = Integer.parseInt(selectedRowId.substring(1))
-                    + 1;
-            String newPatientIdFormatted = String.format("P%03d", selectedRowIdPlusOne);
-            PatientData.deletePatientById(newPatientIdFormatted);
-        } else {
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Error");
-            alert.setHeaderText("Please select a patient");
-            alert.showAndWait();
-
-        }
-
-    }
-
-    @FXML
-    void switchToUpdateScreen(MouseEvent event) throws IOException {
-        PatientTableDataModel selectedPatient = patientsTable.getSelectionModel().getSelectedItem();
-        if (selectedPatient != null) {
-            try {
-                PatientData.initPatientData.setPatientId(selectedPatient.getPatientId());
-                PatientData.initPatientData.setName(selectedPatient.getName());
-                PatientData.initPatientData.setPatientNationalId("6789012345");
-                PatientData.initPatientData.setPatientGender(selectedPatient.getGender());
-                PatientData.initPatientData.setDateOfBirth(selectedPatient.getDateOfBirth());
-                PatientData.initPatientData.setPatientAge(selectedPatient.getAge());
-                PatientData.initPatientData.setPatientHeight(selectedPatient.getHeight());
-                PatientData.initPatientData.setPatientWeight(selectedPatient.getWeight());
-                PatientData.initPatientData.setPatientBloodType(selectedPatient.getBloodType());
-                PatientData.initPatientData.setPatientAddress("Miami");
-                PatientData.initPatientData.setPatientContactNumber("60238343422");
-
-                App.setRoot("update_patients_screen");
-
-            } catch (IOException e) {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
-            }
-
-        } else {
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Error");
-            alert.setHeaderText("Please select a patient");
-            alert.showAndWait();
-        }
 
     }
 
@@ -206,7 +143,7 @@ public class patient_controller {
                 .convertPatientDataToPatientTableDataModel();
 
         FilteredList<PatientTableDataModel> filteredData = new FilteredList<>(patientDataList, b -> true);
-        searchButton.textProperty().addListener((observable, oldvalue, newvalue) -> {
+        searchField.textProperty().addListener((observable, oldvalue, newvalue) -> {
             filteredData.setPredicate(PatientTableDataModel -> {
                 if (newvalue.isEmpty() || newvalue.isBlank() || newvalue == null) {
                     return true;

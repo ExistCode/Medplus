@@ -2,8 +2,6 @@ package medplus.models;
 
 import java.time.LocalDate;
 
-import medplus.controllers.login_controller;
-
 public class Nurse extends Staff {
     private String certification;
     private int yearsOfExperience;

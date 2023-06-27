@@ -2,7 +2,6 @@ package medplus.controllers;
 
 import java.io.IOException;
 import java.util.List;
-
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -100,6 +99,7 @@ public class add_diagnosis_controller {
 
     private String validateInput() {
         String errorMessage = "";
+        // Validate no empty input
 
         if (patientNameComboBox.getSelectionModel().isEmpty() || staffIdComboBox.getSelectionModel().isEmpty()
                 || dateOfDiagnosisSelector.getValue() == null || diagnosisTextField.getText().isEmpty()) {

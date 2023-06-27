@@ -3,7 +3,6 @@ package medplus.controllers;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.util.List;
-
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -107,7 +106,7 @@ public class add_treatment_controller {
 
     private String validateInput() {
         String errorMessage = "";
-
+        // Validate no empty input
         if (patientNameComboBox.getSelectionModel().isEmpty() || staffIdComboBox.getSelectionModel().isEmpty()
                 || dateStartDatePicker.getValue() == null || dateEndDatePicker.getValue() == null
                 || treatmentInfoTextField.getText().isEmpty()) {

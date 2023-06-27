@@ -159,23 +159,28 @@ public class home_controller {
         numOfRooms.setText(Integer.toString(initialRoomList.size()));
 
         List<Patient> patientList = getLatestThreePatients();
+        // Showing the details of the first patient
         firstPatientsNames.setText(patientList.get(0).getName());
         firstPatientGender.setText(patientList.get(0).getPatientGender());
         firstPatientsdateOfBirth.setText(patientList.get(0).getDateOfBirth().toString());
         firstPatientsAddress.setText(patientList.get(0).getPatientAddress());
+        // Show the details of the second patient
         SecondPatientsNames.setText(patientList.get(1).getName());
         SecondPatientGender.setText(patientList.get(1).getPatientGender());
         SecondPatientdateOfBirth.setText(patientList.get(1).getDateOfBirth().toString());
         SecondPatientAddress.setText(patientList.get(1).getPatientAddress());
+        // Show the details of the third patient
         thirdPatientsNames.setText(patientList.get(2).getName());
         thirdPatientGender.setText(patientList.get(2).getPatientGender());
         thirdPatientDateOfBirth.setText(patientList.get(2).getDateOfBirth().toString());
         ThirdPatientAddress.setText(patientList.get(2).getPatientAddress());
+        // Show the details of the first appointment
         firstPatientNameAppointment.setText(getLatest2Treatments().get(1).getPatientName());
-        secondPatientNameAppointment.setText(getLatest2Treatments().get(0).getPatientName());
         firstAppointmentDetails.setText(
                 getLatest2Treatments().get(1).getTreatmentInfo());
         firstAppointmentStaffName.setText(getLatest2Treatments().get(1).getStaffId());
+        secondPatientNameAppointment.setText(getLatest2Treatments().get(0).getPatientName());
+        // Show the details of the second appointment
         secondAppointmentDetails.setText(
                 getLatest2Treatments().get(0).getTreatmentInfo());
         secondAppointmentStaffName.setText(getLatest2Treatments().get(0).getStaffId());
@@ -207,13 +212,10 @@ public class home_controller {
     public static List<Patient> getLatestThreePatients() {
         List<Patient> lastThreePatientList = new ArrayList<>();
         List<Patient> originalPatientList = PatientData.fetchPatientDataFromDatabase();
-
         lastThreePatientList.add(0, originalPatientList.get(originalPatientList.size() - 1));
         lastThreePatientList.add(1, originalPatientList.get(originalPatientList.size() - 2));
         lastThreePatientList.add(2, originalPatientList.get(originalPatientList.size() - 3));
-
         return lastThreePatientList;
-
     }
 
     public static List<Treatment> getLatest2Treatments() {
@@ -223,10 +225,8 @@ public class home_controller {
         for (Treatment tre : originalTreatmentList) {
             if (tre.getStartDate().isAfter(LocalDate.now())) {
                 lastTwoTreatmentList.add(tre);
-
             }
         }
-
         return lastTwoTreatmentList;
 
     }
@@ -235,11 +235,9 @@ public class home_controller {
     void seePatientsDetails1(MouseEvent event) throws IOException {
         List<Patient> patientList = getLatestThreePatients();
         PatientData.initPatientData.setPatientId(patientList.get(0).getPatientId());
-
         PatientData.initPatientData.setPatientId(patientList.get(0).getPatientId());
         PatientData.initPatientData.setName(patientList.get(0).getName());
         PatientData.initPatientData.setPatientGender(patientList.get(0).getPatientGender());
-
         PatientData.initPatientData.setDateOfBirth(patientList.get(0).getDateOfBirth());
         PatientData.initPatientData.setPatientBloodType(patientList.get(0).getPatientBloodType());
         PatientData.initPatientData.setPatientHeight(patientList.get(0).getPatientHeight());
@@ -251,12 +249,9 @@ public class home_controller {
     @FXML
     void seePatientsDetails2(MouseEvent event) throws IOException {
         List<Patient> patientList = getLatestThreePatients();
-
         PatientData.initPatientData.setPatientId(patientList.get(1).getPatientId());
-
         PatientData.initPatientData.setName(patientList.get(1).getName());
         PatientData.initPatientData.setPatientGender(patientList.get(1).getPatientGender());
-
         PatientData.initPatientData.setDateOfBirth(patientList.get(1).getDateOfBirth());
         PatientData.initPatientData.setPatientBloodType(patientList.get(1).getPatientBloodType());
         PatientData.initPatientData.setPatientHeight(patientList.get(1).getPatientHeight());
@@ -268,12 +263,9 @@ public class home_controller {
     @FXML
     void seePatientsDetails3(MouseEvent event) throws IOException {
         List<Patient> patientList = getLatestThreePatients();
-
         PatientData.initPatientData.setPatientId(patientList.get(2).getPatientId());
-
         PatientData.initPatientData.setName(patientList.get(2).getName());
         PatientData.initPatientData.setPatientGender(patientList.get(2).getPatientGender());
-
         PatientData.initPatientData.setDateOfBirth(patientList.get(2).getDateOfBirth());
         PatientData.initPatientData.setPatientBloodType(patientList.get(2).getPatientBloodType());
         PatientData.initPatientData.setPatientHeight(patientList.get(2).getPatientHeight());

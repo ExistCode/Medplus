@@ -2,7 +2,6 @@ package medplus.controllers;
 
 import java.io.IOException;
 import java.util.List;
-
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -87,6 +86,7 @@ public class add_responsibility_controller {
 
     private String validateInput() {
         String errorMessage = "";
+        // Validate no empty input
 
         if (responsibilityName.getText().isEmpty() || staffIdComboBox.getSelectionModel().isEmpty()
                 || responsibilityDetails.getText().isEmpty()) {
