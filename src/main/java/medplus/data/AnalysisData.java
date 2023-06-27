@@ -15,11 +15,13 @@ public class AnalysisData {
                 createNewFileWithHeaders();
                 fetchAnalysisDataFromDatabase();
         }
+        // Database file location
 
         public static String fileName = "src/main/resources/medplus/database/analysis.txt";
 
         public static List<Analysis> fetchAnalysisDataFromDatabase() {
                 List<Analysis> analysisList = new ArrayList<>();
+                // Read the txt file and splitting into their respective fields
 
                 try {
                         BufferedReader reader = new BufferedReader(new FileReader(fileName));
@@ -35,7 +37,7 @@ public class AnalysisData {
                                 String resultSummary = analysisData[4].trim();
                                 LocalDate date = LocalDate.parse(analysisData[5].trim());
                                 String testInformation = analysisData[6].trim();
-
+                                // Add the data to the empty list
                                 Analysis analysis = new Analysis(analysisId, patientId, staffId, typeOfTest,
                                                 resultSummary, date, testInformation);
                                 analysisList.add(analysis);
@@ -53,6 +55,8 @@ public class AnalysisData {
                 File database = new File(fileName);
 
                 try {
+                        // Create a new file
+
                         if (database.createNewFile()) {
                                 FileWriter writer = new FileWriter(fileName, true);
                                 writer.append("Patient Name, Staff ID, Analysis Type, Result Summary, Date of Analysis, Test Information");
@@ -96,6 +100,7 @@ public class AnalysisData {
 
                 try {
                         BufferedReader reader = new BufferedReader(new FileReader(fileName));
+                        // Iterate over the list and insert the one isn't deleted
                         while ((line = reader.readLine()) != null) {
                                 if (line.contains(id)) {
                                         System.out.println("FOUND ID");
@@ -129,6 +134,8 @@ public class AnalysisData {
 
                 try {
                         BufferedReader reader = new BufferedReader(new FileReader(fileName));
+                        // Iterate over the list and insert the updated version of the object
+
                         while ((line = reader.readLine()) != null) {
 
                                 if (line.contains(newAnalysisData.getAnalysisId())) {

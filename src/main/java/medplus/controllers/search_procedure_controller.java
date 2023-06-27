@@ -26,7 +26,7 @@ public class search_procedure_controller {
     private Button analysisButton;
 
     @FXML
-    private Pane dashboardbutton;
+    private Pane dashboardButton;
 
     @FXML
     private Button diagnosisButton;
@@ -35,7 +35,7 @@ public class search_procedure_controller {
     private Button medicineButton;
 
     @FXML
-    private Pane patientsbutton;
+    private Pane patientsButton;
 
     @FXML
     private Button procedureButton;
@@ -47,7 +47,7 @@ public class search_procedure_controller {
     private TextField searchProcedureTextField;
 
     @FXML
-    private Pane searchbutton;
+    private Pane searchButton;
 
     @FXML
     private Pane staffButton;
@@ -111,6 +111,8 @@ public class search_procedure_controller {
 
     @FXML
     void switchToUpdateScreen(MouseEvent event) {
+        // Retrieve the selected data and insert it into the empty object
+
         ProcedureTableDataModel selectedProcedure = procedureTable.getSelectionModel().getSelectedItem();
         if (selectedProcedure != null) {
             try {
@@ -131,6 +133,7 @@ public class search_procedure_controller {
         }
 
     }
+    // Initialize the javafx controller and the table view content
 
     @FXML
     public void initialize() {

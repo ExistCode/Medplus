@@ -14,11 +14,13 @@ public class DiagnosisData {
                 createNewFileWithHeaders();
                 fetchDiagnosisDataFromDatabase();
         }
+        // Database file location
 
         public static String fileName = "src/main/resources/medplus/database/diagnosis.txt";
 
         public static List<Diagnosis> fetchDiagnosisDataFromDatabase() {
                 List<Diagnosis> diagnosisList = new ArrayList<>();
+                // Read the txt file and splitting into their respective fields
 
                 try {
                         BufferedReader reader = new BufferedReader(new FileReader(fileName));
@@ -32,6 +34,7 @@ public class DiagnosisData {
                                 String staffId = diagnosisData[2].trim();
                                 LocalDate date = LocalDate.parse(diagnosisData[3].trim());
                                 String diagnosis = diagnosisData[4].trim();
+                                // Add the data to the empty list
 
                                 Diagnosis ds = new Diagnosis(diagnosisId, patientName, staffId, date, diagnosis);
                                 diagnosisList.add(ds);
@@ -49,6 +52,8 @@ public class DiagnosisData {
                 File database = new File(fileName);
 
                 try {
+                        // Create a new file
+
                         if (database.createNewFile()) {
                                 FileWriter writer = new FileWriter(fileName, true);
                                 writer.append("Diagnosis ID, Patient Name, Staff ID, Date, Diagnosis");
@@ -90,6 +95,7 @@ public class DiagnosisData {
 
                 try {
                         BufferedReader reader = new BufferedReader(new FileReader(fileName));
+                        // Iterate over the list and insert the one isn't deleted
                         while ((line = reader.readLine()) != null) {
                                 if (line.contains(id)) {
                                         System.out.println("FOUND ID");
@@ -124,6 +130,7 @@ public class DiagnosisData {
                 try {
                         BufferedReader reader = new BufferedReader(new FileReader(fileName));
                         while ((line = reader.readLine()) != null) {
+                                // Iterate over the list and insert the updated version of the object
 
                                 if (line.contains(newDiagnosisData.getDiagnosisId())) {
                                         System.out.println(newDiagnosisData.getDiagnosisId());

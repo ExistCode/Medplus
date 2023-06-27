@@ -15,11 +15,13 @@ public class StaffData {
         createNewFileWithHeaders();
         fetchStaffDataFromDatabase();
     }
+    // Database file location
 
     public static String fileName = "src/main/resources/medplus/database/staff.txt";
 
     public static List<Staff> fetchStaffDataFromDatabase() {
         List<Staff> staffList = new ArrayList<>();
+        // Read the txt file and splitting into their respective fields
 
         try {
             BufferedReader reader = new BufferedReader(new FileReader(fileName));
@@ -37,6 +39,7 @@ public class StaffData {
                 String contactNumber = staffData[6].trim();
                 String jobTitle = staffData[7].trim();
                 String department = staffData[8].trim();
+                // Add the data to the empty list
 
                 Staff staff = new Staff(staffId, name, nationalId, email, dateOfBirth, age, contactNumber, jobTitle,
                         department);
@@ -55,6 +58,8 @@ public class StaffData {
         File database = new File(fileName);
 
         try {
+            // Create a new file
+
             if (database.createNewFile()) {
                 FileWriter writer = new FileWriter(fileName, true);
                 writer.append(
@@ -101,6 +106,8 @@ public class StaffData {
 
         try {
             BufferedReader reader = new BufferedReader(new FileReader(fileName));
+            // Iterate over the list and insert the one isn't deleted
+
             while ((line = reader.readLine()) != null) {
                 if (line.contains(id)) {
                     System.out.println("FOUND ID");
@@ -113,11 +120,6 @@ public class StaffData {
         } catch (IOException e) {
             System.out.println(e);
         }
-
-        // for (int i = 0; i < fetchedStaffListAfterDeletion.size(); i++) {
-        // System.out.println("ENTER FOR");
-        // System.out.println(fetchedStaffListAfterDeletion.get(i));
-        // }
 
         try {
             FileWriter writer = new FileWriter(fileName);
@@ -172,6 +174,8 @@ public class StaffData {
             System.out.println("Please enter the staff ID or keyword to update the record:");
             String searchKey = input.next();
             String line;
+            // Iterate over the list and insert the updated version of the object
+
             while ((line = reader.readLine()) != null) {
                 if (line.contains(searchKey)) {
                     System.out.println("Enter the attribute value you want to change:");

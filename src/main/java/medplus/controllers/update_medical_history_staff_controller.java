@@ -68,6 +68,7 @@ public class update_medical_history_staff_controller {
             System.out.println(errorMessage);
         }
     }
+    // Validating correct input from the user
 
     private String validateInput() {
         String errorMessage = "";
@@ -89,6 +90,7 @@ public class update_medical_history_staff_controller {
         App.setRoot("staff_details_analysis_screen");
     }
 
+    // Initialize the medical history details
     @FXML
     public void initialize() {
         patientIdComboBox.setValue(MedicalHistoryData.initMedicalHistoryData.getPatientId());
@@ -100,6 +102,7 @@ public class update_medical_history_staff_controller {
         patientIdComboBox.setItems(fetchPatientName());
         staffIdComboBox.setItems(fetchStaffId());
     }
+    // Fetch the patient name from the patient list
 
     ObservableList<String> fetchPatientName() {
         ObservableList<PatientTableDataModel> patientDataList = PatientTableDataModel
@@ -110,6 +113,7 @@ public class update_medical_history_staff_controller {
         }
         return patientName;
     }
+    // Fetch the staff Id from the staff list
 
     ObservableList<String> fetchStaffId() {
         ObservableList<StaffTableDataModel> staffDataList = StaffTableDataModel

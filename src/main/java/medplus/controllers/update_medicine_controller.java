@@ -38,6 +38,10 @@ public class update_medicine_controller {
     private ComboBox<String> staffIdComboBox;
     @FXML
     private ComboBox<String> patientIdComboBox;
+    @FXML
+    private Text errorMessageDisplay;
+
+    // fetching patient name from the database
 
     ObservableList<String> fetchPatientName() {
         ObservableList<PatientTableDataModel> patientDataList = PatientTableDataModel
@@ -49,6 +53,7 @@ public class update_medicine_controller {
         return patientId;
     }
 
+    // fetching all the staff Id from the database
     ObservableList<String> fetchStaffId() {
         ObservableList<StaffTableDataModel> staffDataList = StaffTableDataModel
                 .convertStaffDataToStaffTableDataModel();
@@ -63,9 +68,6 @@ public class update_medicine_controller {
     void backToSearch(MouseEvent event) throws IOException {
         App.setRoot("search_medicine_screen");
     }
-
-    @FXML
-    private Text errorMessageDisplay;
 
     @FXML
     void updateMedicine(MouseEvent event) throws IOException {
@@ -87,6 +89,7 @@ public class update_medicine_controller {
         }
     }
 
+    // Validate the user input correct and not empty fields
     private String validateInput() {
         String errorMessage = "";
 
@@ -101,6 +104,7 @@ public class update_medicine_controller {
         return errorMessage;
     }
 
+    // Initialize the medicine details
     @FXML
     public void initialize() {
         patientIdComboBox.setValue(MedicineData.initMedicineData.getPatientName());

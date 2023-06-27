@@ -41,6 +41,7 @@ public class update_diagnosis_controller {
     @FXML
     private ComboBox<String> patientNameComboBox;
 
+    // Fetch the patient name from the patient list
     ObservableList<String> fetchPatientName() {
         ObservableList<PatientTableDataModel> patientDataList = PatientTableDataModel
                 .convertPatientDataToPatientTableDataModel();
@@ -50,6 +51,7 @@ public class update_diagnosis_controller {
         }
         return patientName;
     }
+    // fetch the staff Id
 
     ObservableList<String> fetchStaffId() {
         ObservableList<StaffTableDataModel> staffDataList = StaffTableDataModel
@@ -66,6 +68,7 @@ public class update_diagnosis_controller {
         App.setRoot("search_diagnosis_screen");
     }
 
+    // Initialize the diagnosis details
     @FXML
     public void initialize() {
         patientNameComboBox.setValue(DiagnosisData.initdiagnosisData.getPatientName());

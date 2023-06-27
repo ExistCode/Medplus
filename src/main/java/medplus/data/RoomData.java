@@ -17,11 +17,13 @@ public class RoomData {
         createNewFileWithHeaders();
         fetchRoomDataFromDatabase();
     }
+    // Database file location
 
     public static String fileName = "src/main/resources/medplus/database/room.txt";
 
     public static List<Room> fetchRoomDataFromDatabase() {
         List<Room> roomList = new ArrayList<>();
+        // Read the txt file and splitting into their respective fields
 
         try {
             BufferedReader reader = new BufferedReader(new FileReader(fileName));
@@ -33,6 +35,7 @@ public class RoomData {
                 String roomNum = roomData[0].trim();
                 int capacity = Integer.parseInt(roomData[1].trim());
                 String status = roomData[2].trim();
+                // Add the data to the empty list
 
                 Room room = new Room(roomNum, capacity, status);
                 roomList.add(room);
@@ -50,6 +53,8 @@ public class RoomData {
         File database = new File(fileName);
 
         try {
+            // Create a new file
+
             if (database.createNewFile()) {
                 FileWriter writer = new FileWriter(fileName, true);
                 writer.append("Room Number, Capacity, Status");
@@ -88,6 +93,8 @@ public class RoomData {
 
         try {
             BufferedReader reader = new BufferedReader(new FileReader(fileName));
+            // Iterate over the list and insert the one isn't deleted
+
             while ((line = reader.readLine()) != null) {
                 if (line.contains(roomNum)) {
                     System.out.println("FOUND Room Number");
@@ -120,6 +127,8 @@ public class RoomData {
 
         try {
             BufferedReader reader = new BufferedReader(new FileReader(fileName));
+            // Iterate over the list and insert the updated version of the object
+
             while ((line = reader.readLine()) != null) {
                 if (line.contains(newRoomData.getRoomNum())) {
                     fetchedRoomListAfterUpdate.add(newRoomData.getRoomNum() + ","

@@ -10,11 +10,13 @@ import medplus.models.Patient;
 
 public class PatientData {
         public static Patient initPatientData = new Patient("", "", "", "", null, 0, 0.0, 0.0, "", "", "");
+        // Database file location
 
         public static String fileName = "src/main/resources/medplus/database/patient.txt";
 
         public static List<Patient> fetchPatientDataFromDatabase() {
                 List<Patient> patientList = new ArrayList<>();
+                // Read the txt file and splitting into their respective fields
 
                 try {
                         BufferedReader reader = new BufferedReader(new FileReader(fileName));
@@ -34,6 +36,7 @@ public class PatientData {
                                 String bloodType = patientData[8].trim();
                                 String address = patientData[9].trim();
                                 String contactNumber = patientData[10].trim();
+                                // Add the data to the empty list
 
                                 Patient patient = new Patient(patientId, name, nationalId, gender, dateOfBirth, age,
                                                 height, weight, bloodType, address, contactNumber);
@@ -52,6 +55,8 @@ public class PatientData {
                 File database = new File(fileName);
 
                 try {
+                        // Create a new file
+
                         if (database.createNewFile()) {
                                 FileWriter writer = new FileWriter(fileName, true);
                                 writer.append("Patient ID, Name, National ID, Gender, Date of Birth, Age, Height, Weight, Blood Type, Address, Contact Number");
@@ -98,6 +103,8 @@ public class PatientData {
 
                 try {
                         BufferedReader reader = new BufferedReader(new FileReader(fileName));
+                        // Iterate over the list and insert the one isn't deleted
+
                         while ((line = reader.readLine()) != null) {
                                 if (line.contains(id)) {
                                         System.out.println("FOUND ID");
@@ -131,6 +138,8 @@ public class PatientData {
 
                 try {
                         BufferedReader reader = new BufferedReader(new FileReader(fileName));
+                        // Iterate over the list and insert the updated version of the object
+
                         while ((line = reader.readLine()) != null) {
                                 if (line.contains(newPatientData.getPatientId())) {
                                         fetchedPatientListAfterDeletion.add(newPatientData.getPatientId() + ","

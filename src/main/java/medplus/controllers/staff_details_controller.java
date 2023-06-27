@@ -140,6 +140,7 @@ public class staff_details_controller {
         App.setRoot("add_appointment_screen");
     }
 
+    // Retrieve the selected data and delete it
     @FXML
     void deleteAppointment(MouseEvent event) {
         AppointmentTableDataModel selectedAppointment = appointmentTable.getSelectionModel().getSelectedItem();
@@ -248,6 +249,7 @@ public class staff_details_controller {
 
         appointmentTable.setItems(appointmentDataList);
     }
+    // Initialize the javafx controller with staff details
 
     @FXML
     public void initialize() {
@@ -262,6 +264,7 @@ public class staff_details_controller {
         initializeMedicalHistoryTable();
 
     }
+    // Initialize the medical history table
 
     @FXML
     public void initializeMedicalHistoryTable() {

@@ -63,8 +63,8 @@ public class update_procedure_controller {
         String errorMessage = validateInput();
 
         if (errorMessage == "") {
-            
-            Procedure newProcedure = new Procedure(ProcedureData.initProcedureData.getProcedureId(), 
+
+            Procedure newProcedure = new Procedure(ProcedureData.initProcedureData.getProcedureId(),
                     patientNameComboBox.getSelectionModel().getSelectedItem(),
                     staffIDTextField.getText(),
                     dateDatePicker.getValue(),
@@ -80,6 +80,7 @@ public class update_procedure_controller {
         }
     }
 
+    // Validate non-empty and correct input from user
     private String validateInput() {
         String errorMessage = "";
 
@@ -93,6 +94,7 @@ public class update_procedure_controller {
         return errorMessage;
     }
 
+    // fetching all the patient name from patient list
     ObservableList<String> fetchPatientName() {
         ObservableList<PatientTableDataModel> patientDataList = PatientTableDataModel
                 .convertPatientDataToPatientTableDataModel();
@@ -102,6 +104,7 @@ public class update_procedure_controller {
         }
         return patientName;
     }
+    // fetching all the staff Id from staff list
 
     ObservableList<String> fetchStaffId() {
         ObservableList<StaffTableDataModel> staffDataList = StaffTableDataModel
@@ -113,6 +116,7 @@ public class update_procedure_controller {
         return staffId;
     }
 
+    // Initialize the procedure details
     @FXML
     public void initialize() {
         patientNameComboBox.setValue(ProcedureData.initProcedureData.getPatientName());

@@ -39,7 +39,7 @@ public class patient_details_diagnosis_controller {
     private Text bloodTypeText;
 
     @FXML
-    private Pane dashboardbutton;
+    private Pane dashboardButton;
 
     @FXML
     private Text dateOfBirthText;
@@ -68,10 +68,10 @@ public class patient_details_diagnosis_controller {
     private Text patientsNameText;
 
     @FXML
-    private Pane patientsbutton;
+    private Pane patientsButton;
 
     @FXML
-    private Pane searchbutton;
+    private Pane searchButton;
 
     @FXML
     private Pane staffButton;

@@ -120,7 +120,6 @@ public class staff_details_admin_controller {
 
     @FXML
     void deleteStaff(MouseEvent event) throws IOException {
-        System.out.println(StaffData.initStaffData.getStaffId());
         StaffData.deleteStaffById(StaffData.initStaffData.getStaffId());
         App.setRoot("staff_all_home_screen");
     }
@@ -145,6 +144,7 @@ public class staff_details_admin_controller {
 
     @FXML
     void updateResponsibilities(MouseEvent event) throws IOException {
+        // Retrieve the selected data and insert it to the empty object
         ResponsibilitiesTableDataModel selectedResponsibilities = responsibilitiesTable.getSelectionModel()
                 .getSelectedItem();
         System.out.println("ResponsibilitiesId: " + selectedResponsibilities.getResponsibilityId());
@@ -170,6 +170,7 @@ public class staff_details_admin_controller {
         }
         App.setRoot("update_task_screen");
     }
+    // Initialize the javafx controller with staff details
 
     @FXML
     public void initialize() {
@@ -183,6 +184,7 @@ public class staff_details_admin_controller {
 
     }
 
+    // Initialize the Responsibility Table
     @FXML
     public void initializeResponsibilitiesTable() {
         System.out.println("\nEnter Initialize Responsibilities Table");
@@ -211,6 +213,7 @@ public class staff_details_admin_controller {
 
         responsibilitiesTable.setItems(responsibilitiesDataList);
     }
+    // Initialize the task table
 
     @FXML
     public void initializeTasksTable() {

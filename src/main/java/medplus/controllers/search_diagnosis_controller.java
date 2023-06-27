@@ -29,7 +29,7 @@ public class search_diagnosis_controller {
     private Button analysisButton;
 
     @FXML
-    private Pane dashboardbutton;
+    private Pane dashboardButton;
 
     @FXML
     private Button diagnosisButton;
@@ -38,13 +38,13 @@ public class search_diagnosis_controller {
     private Button medicineButton;
 
     @FXML
-    private Pane patientsbutton;
+    private Pane patientsButton;
 
     @FXML
     private Button procedureButton;
 
     @FXML
-    private Pane searchbutton;
+    private Pane searchButton;
 
     @FXML
     private Pane staffButton;
@@ -107,10 +107,10 @@ public class search_diagnosis_controller {
     void switchToAddScreen(MouseEvent event) throws IOException {
         App.setRoot("add_diagnosis_screen");
     }
-    // cannot function
 
     @FXML
     void switchToUpdateScreen(MouseEvent event) throws IOException {
+        // Retrieve the selected data and insert it into the empty object
         DiagnosisTableDataModel selectedDiagnosis = diagnosisTable.getSelectionModel().getSelectedItem();
         if (selectedDiagnosis != null) {
             try {
@@ -130,19 +130,8 @@ public class search_diagnosis_controller {
         }
     }
 
-    @FXML
-    void deleteRow(MouseEvent event) {
-        diagnosisTable.getItems().removeAll(diagnosisTable.getSelectionModel().getSelectedItems());
-        String selectedRowId = diagnosisTable.getSelectionModel().getSelectedItem().getDiagnosisId().toString();
-        int selectedRowIdPlusOne = Integer.parseInt(selectedRowId.substring(1)) + 1;
-        String newDiagnosisIdFormatted = String.format("D%03d", selectedRowIdPlusOne);
-        DiagnosisData.deleteDiagnosisById(newDiagnosisIdFormatted);
+    // Initialize the javafx controller and the table view content
 
-    }
-
-    /**
-     * 
-     */
     @FXML
     public void initialize() {
         ObservableList<DiagnosisTableDataModel> diagnosisDataList = DiagnosisTableDataModel
@@ -164,7 +153,7 @@ public class search_diagnosis_controller {
         dateColumn.setCellValueFactory(new PropertyValueFactory<>("date"));
         diagnosisColumn.setCellValueFactory(new PropertyValueFactory<>("diagnosis"));
         diagnosisTable.setItems(diagnosisDataList);
-
+        // Filtered the list
         FilteredList<DiagnosisTableDataModel> filteredData = new FilteredList<>(diagnosisDataList, b -> true);
         searchDiagnosisText.textProperty().addListener((observable, oldvalue, newvalue) -> {
             filteredData.setPredicate(DiagnosisTableDataModel -> {
@@ -188,6 +177,7 @@ public class search_diagnosis_controller {
                 }
             });
         });
+        // Sorted the list according to the filtered data
         SortedList<DiagnosisTableDataModel> sortedDiagnosisData = new SortedList<>(filteredData);
         sortedDiagnosisData.comparatorProperty().bind(diagnosisTable.comparatorProperty());
         diagnosisTable.setItems(sortedDiagnosisData);
