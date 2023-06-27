@@ -20,12 +20,12 @@
       </ImageView>
       <Text fill="#089bab" layoutX="557.0" layoutY="248.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sign in">
          <font>
-            <Font name="SF Pro Display Bold" size="36.0" />
+            <Font name="Verdana" size="36.0" />
          </font>
       </Text>
       <Text layoutX="557.0" layoutY="291.0" opacity="0.25" strokeType="OUTSIDE" strokeWidth="0.0" text="Please enter your credential here">
          <font>
-            <Font name="SF Pro Display Bold" size="20.0" />
+            <Font name="Verdana" size="20.0" />
          </font>
       </Text>
       <TextField fx:id="Username" layoutX="557.0" layoutY="315.0" prefHeight="67.0" prefWidth="528.0" promptText="Please enter your username (admin)" style="-fx-background-radius: 10;">
@@ -33,12 +33,12 @@
             <Insets left="25.0" />
          </padding>
          <font>
-            <Font name="SF Pro Rounded Bold" size="16.0" />
+            <Font name="Verdana" size="16.0" />
          </font>
       </TextField>
       <PasswordField fx:id="Password" layoutX="557.0" layoutY="403.0" prefHeight="66.0" prefWidth="528.0" promptText="Please enter your password (admin123)" style="-fx-background-radius: 10;">
          <font>
-            <Font name="SF Pro Rounded Bold" size="16.0" />
+            <Font name="Verdana" size="16.0" />
          </font>
          <padding>
             <Insets left="25.0" />
@@ -46,12 +46,12 @@
       </PasswordField>
       <Button fx:id="button" layoutX="686.0" layoutY="595.0" mnemonicParsing="false" onAction="#SignIn" prefHeight="74.0" prefWidth="267.0" style="-fx-background-color: #089BAB; -fx-background-radius: 40;" text="Sign in" textFill="WHITE">
          <font>
-            <Font name="SF Pro Rounded Semibold" size="20.0" />
+            <Font name="Verdana" size="20.0" />
          </font>
       </Button>
-      <Text fill="#089bab" layoutX="925.0" layoutY="523.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Forgot password?">
+      <Text fill="#089bab" layoutX="926.0" layoutY="523.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Forgot password?">
          <font>
-            <Font name="SF Pro Rounded Semibold" size="20.0" />
+            <Font name="Verdana" size="20.0" />
          </font>
       </Text>
       <ImageView fitHeight="814.0" fitWidth="345.0" layoutX="-1.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true">
@@ -61,7 +61,7 @@
       </ImageView>
       <Label fx:id="label" layoutX="557.0" layoutY="545.0" prefHeight="34.0" prefWidth="600.0" textFill="#bf3636">
          <font>
-            <Font name="SF Pro Text Semibold" size="20.0" />
+            <Font name="Verdana" size="20.0" />
          </font>
       </Label>
    </children>

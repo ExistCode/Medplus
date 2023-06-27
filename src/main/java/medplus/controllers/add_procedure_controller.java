@@ -3,7 +3,10 @@ package medplus.controllers;
 import java.io.IOException;
 import java.util.List;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
@@ -13,8 +16,16 @@ import javafx.scene.text.Text;
 import medplus.App;
 import medplus.data.ProcedureData;
 import medplus.models.Procedure;
+import medplus.tableModels.PatientTableDataModel;
+import medplus.tableModels.StaffTableDataModel;
 
 public class add_procedure_controller {
+
+    @FXML
+    private ComboBox<String> staffIdComboBox;
+
+    @FXML
+    private ComboBox<String> patientNameComboBox;
 
     @FXML
     private Pane addProcedureButton;
@@ -51,17 +62,21 @@ public class add_procedure_controller {
 
     @FXML
     void addProcedure(MouseEvent event) throws IOException {
+        ObservableList<PatientTableDataModel> patientDataList = PatientTableDataModel
+                .convertPatientDataToPatientTableDataModel();
         String errorMessage = validateInput();
 
-        if (errorMessage.isEmpty()) {
+        if (errorMessage == "") {
             List<Procedure> procedureList = ProcedureData.fetchProcedureDataFromDatabase();
             int newProcedureId = Integer
                     .parseInt(procedureList.get(procedureList.size() - 1).getProcedureId().substring(2))
                     + 1;
             String newProcedureIdFormatted = String.format("PD%03d", newProcedureId);
 
-            Procedure newProcedure = new Procedure(newProcedureIdFormatted, patientNameTextField.getText(),
-                    staffIDTextField.getText(), dateDatePicker.getValue(), timeTextField.getText(),
+            Procedure newProcedure = new Procedure(newProcedureIdFormatted,
+                    patientNameComboBox.getSelectionModel().getSelectedItem(),
+                    staffIdComboBox.getSelectionModel().getSelectedItem(), dateDatePicker.getValue(),
+                    timeTextField.getText(),
                     procedureTypeTextField.getText(), procedureDescriptionTextField.getText());
 
             ProcedureData.addNewProcedure(newProcedure);
@@ -69,7 +84,6 @@ public class add_procedure_controller {
         } else {
             // Show error message
             System.out.println(errorMessage);
-            errorMessageDisplay.setText(errorMessage);
         }
     }
 
@@ -77,7 +91,7 @@ public class add_procedure_controller {
         String errorMessage = "";
         // Validate no empty input
 
-        if (patientNameTextField.getText().isEmpty() || staffIDTextField.getText().isEmpty()
+        if (patientNameComboBox.getSelectionModel().isEmpty() || staffIdComboBox.getSelectionModel().isEmpty()
                 || dateDatePicker.getValue() == null || timeTextField.getText().isEmpty()
                 || procedureTypeTextField.getText().isEmpty() || procedureDescriptionTextField.getText().isEmpty()) {
             errorMessage = "Please make sure all fields are filled with the appropriate type.";
@@ -85,6 +99,35 @@ public class add_procedure_controller {
             errorMessageDisplay.setText(errorMessage);
         }
         return errorMessage;
+    }
+
+    @FXML
+    public void initialize() {
+        patientNameComboBox.setValue(ProcedureData.initProcedureData.getPatientName());
+        System.out.println(fetchPatientName());
+        staffIdComboBox.setItems(fetchStaffId());
+        patientNameComboBox.setItems(fetchPatientName());
+
+    }
+
+    ObservableList<String> fetchPatientName() {
+        ObservableList<PatientTableDataModel> patientDataList = PatientTableDataModel
+                .convertPatientDataToPatientTableDataModel();
+        ObservableList<String> patientName = FXCollections.observableArrayList();
+        for (PatientTableDataModel patient : patientDataList) {
+            patientName.add(patient.getName());
+        }
+        return patientName;
+    }
+
+    ObservableList<String> fetchStaffId() {
+        ObservableList<StaffTableDataModel> staffDataList = StaffTableDataModel
+                .convertStaffDataToStaffTableDataModel();
+        ObservableList<String> staffId = FXCollections.observableArrayList();
+        for (StaffTableDataModel staff : staffDataList) {
+            staffId.add(staff.getStaffId());
+        }
+        return staffId;
     }
 
 }

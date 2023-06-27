@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
@@ -25,11 +26,6 @@
             <Font name="Verdana Bold" size="28.0" />
          </font>
       </Text>
-      <TextField fx:id="patientNameTextField" layoutX="154.0" layoutY="219.0" prefHeight="60.0" prefWidth="450.0" promptText="Enter Patient Name" style="-fx-background-color: white; -fx-background-radius: 16; -fx-border-radius: 16; -fx-border-color: #089bab;">
-         <font>
-            <Font name="Verdana" size="24.0" />
-         </font>
-      </TextField>
       <Text fill="#089bab" layoutX="154.0" layoutY="332.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date">
          <font>
             <Font name="Verdana Bold" size="28.0" />
@@ -75,11 +71,6 @@
          </font>
       </Text>
       <DatePicker fx:id="dateDatePicker" layoutX="154.0" layoutY="345.0" prefHeight="60.0" prefWidth="450.0" promptText="YYYY-MM-DD" style="-fx-background-color: white; -fx-border-radius: 16; -fx-background-radius: 16; -fx-font-size: 24;" />
-      <TextField fx:id="staffIDTextField" layoutX="716.0" layoutY="219.0" prefHeight="60.0" prefWidth="450.0" promptText="Enter Staff ID" style="-fx-background-color: white; -fx-background-radius: 16; -fx-border-radius: 16; -fx-border-color: #089bab;">
-         <font>
-            <Font name="Verdana" size="24.0" />
-         </font>
-      </TextField>
       <Text fx:id="errorMessageDisplay" fill="#f9988b" layoutX="10.0" layoutY="710.0" strokeType="OUTSIDE" strokeWidth="0.0" text=" " textAlignment="CENTER" wrappingWidth="1257.1827697753906">
          <font>
             <Font size="16.0" />
@@ -90,5 +81,7 @@
             <Font name="Verdana" size="24.0" />
          </font>
       </TextField>
+      <ComboBox fx:id="patientNameComboBox" layoutX="142.0" layoutY="219.0" prefHeight="60.0" prefWidth="450.0" promptText="Patient Name" style="-fx-border-color: #089bab; -fx-background-color: white; -fx-background-radius: 16; -fx-border-radius: 16; -fx-font-size: 24;" />
+      <ComboBox fx:id="staffIdComboBox" layoutX="716.0" layoutY="219.0" prefHeight="60.0" prefWidth="450.0" promptText="Staff ID" style="-fx-border-color: #089bab; -fx-background-color: white; -fx-background-radius: 16; -fx-border-radius: 16; -fx-font-size: 24;" />
    </children>
 </Pane>

@@ -18,12 +18,12 @@
       </ImageView>
       <Text fill="#089bab" layoutX="154.0" layoutY="75.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add New Patient">
          <font>
-            <Font name="SF Pro Text Bold" size="32.0" />
+            <Font name="Verdana Bold" size="32.0" />
          </font>
       </Text>
-      <Text fill="#089bab" layoutX="154.0" layoutY="141.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name">
+      <Text fill="#089bab" layoutX="154.0" layoutY="141.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Patient Name">
          <font>
-            <Font name="SF Pro Rounded Semibold" size="28.0" />
+            <Font name="Verdana Bold" size="28.0" />
          </font>
       </Text>
       <TextField fx:id="nameTextField" layoutX="154.0" layoutY="158.0" prefHeight="55.0" prefWidth="464.0" promptText="Enter Patient Name" style="-fx-background-color: white; -fx-background-radius: 16; -fx-border-radius: 16; -fx-border-color: #089bab;">
@@ -33,13 +33,13 @@
       </TextField>
       <Text fill="#089bab" layoutX="154.0" layoutY="263.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date of Birth">
          <font>
-            <Font name="SF Pro Rounded Semibold" size="28.0" />
+            <Font name="Verdana Bold" size="28.0" />
          </font>
       </Text>
       <DatePicker fx:id="dateOfBirthSelector" editable="false" layoutX="154.0" layoutY="278.0" prefHeight="55.0" prefWidth="464.0" promptText="DD/MM/YYYY" style="-fx-background-color: white; -fx-border-radius: 16; -fx-background-radius: 16; -fx-font-size: 24;" />
       <Text fill="#089bab" layoutX="154.0" layoutY="379.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Address">
          <font>
-            <Font name="SF Pro Rounded Semibold" size="28.0" />
+            <Font name="Verdana Bold" size="28.0" />
          </font>
       </Text>
       <TextField fx:id="addressTextField" layoutX="154.0" layoutY="392.0" prefHeight="55.0" prefWidth="464.0" promptText="Enter Permanent Address" style="-fx-background-color: white; -fx-background-radius: 16; -fx-border-radius: 16; -fx-border-color: #089bab;">
@@ -49,7 +49,7 @@
       </TextField>
       <Text fill="#089bab" layoutX="708.0" layoutY="141.0" strokeType="OUTSIDE" strokeWidth="0.0" text="National ID">
          <font>
-            <Font name="SF Pro Rounded Semibold" size="28.0" />
+            <Font name="Verdana Bold" size="28.0" />
          </font>
       </Text>
       <TextField fx:id="nationalIdTextField" layoutX="708.0" layoutY="158.0" prefHeight="55.0" prefWidth="464.0" promptText="Enter National ID" style="-fx-background-color: white; -fx-background-radius: 16; -fx-border-radius: 16; -fx-border-color: #089bab;">
@@ -59,7 +59,7 @@
       </TextField>
       <Text fill="#089bab" layoutX="708.0" layoutY="262.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Contact">
          <font>
-            <Font name="SF Pro Rounded Semibold" size="28.0" />
+            <Font name="Verdana Bold" size="28.0" />
          </font>
       </Text>
       <TextField fx:id="contactNumberTextField" layoutX="708.0" layoutY="278.0" prefHeight="55.0" prefWidth="464.0" promptText="Enter Phone Number" style="-fx-background-color: white; -fx-background-radius: 16; -fx-border-radius: 16; -fx-border-color: #089bab;">
@@ -69,17 +69,17 @@
       </TextField>
       <Text fill="#089bab" layoutX="708.0" layoutY="379.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gender">
          <font>
-            <Font name="SF Pro Rounded Semibold" size="28.0" />
+            <Font name="Verdana Bold" size="28.0" />
          </font>
       </Text>
-      <Text fill="#089bab" layoutX="154.0" layoutY="502.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Blood type">
+      <Text fill="#089bab" layoutX="154.0" layoutY="502.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Blood Type">
          <font>
-            <Font name="SF Pro Rounded Semibold" size="28.0" />
+            <Font name="Verdana Bold" size="28.0" />
          </font>
       </Text>
       <Text fill="#089bab" layoutX="708.0" layoutY="502.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Height">
          <font>
-            <Font name="SF Pro Rounded Semibold" size="28.0" />
+            <Font name="Verdana Bold" size="28.0" />
          </font>
       </Text>
       <TextField fx:id="heightTextField" layoutX="708.0" layoutY="519.0" prefHeight="55.0" prefWidth="175.0" promptText="Height" style="-fx-background-color: white; -fx-background-radius: 16; -fx-border-radius: 16; -fx-border-color: #089bab;">
@@ -107,11 +107,11 @@
             <Font name="SF Pro Rounded Regular" size="28.0" />
          </font>
       </Text>
-      <Pane fx:id="addPatientButton" layoutX="559.0" layoutY="617.0" onMouseClicked="#addPatient" prefHeight="64.0" prefWidth="225.0" style="-fx-background-color: FEAD54; -fx-background-radius: 40;">
+      <Pane fx:id="addPatientButton" layoutX="590.0" layoutY="600.0" onMouseClicked="#addPatient" prefHeight="60.0" prefWidth="140.0" style="-fx-background-color: FEAD54; -fx-background-radius: 40;">
          <children>
-            <Text fill="WHITE" layoutX="43.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add Patient">
+            <Text fill="WHITE" layoutX="46.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add">
                <font>
-                  <Font name="SF Pro Text Bold" size="24.0" />
+                  <Font name="Verdana Bold" size="24.0" />
                </font>
             </Text>
          </children>

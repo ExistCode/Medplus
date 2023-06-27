@@ -17,12 +17,12 @@
       </ImageView>
       <Text fill="#089bab" layoutX="154.0" layoutY="77.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Update Task">
          <font>
-            <Font name="Verdana Bold" size="28.0" />
+            <Font name="Verdana Bold" size="32.0" />
          </font>
       </Text>
       <Text fill="#089bab" layoutX="154.0" layoutY="202.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name">
          <font>
-            <Font name="Verdana Bold" size="28.0" />
+            <Font name="Verdana Bold" size="32.0" />
          </font>
       </Text>
       <TextField fx:id="taskName" layoutX="154.0" layoutY="219.0" prefHeight="60.0" prefWidth="450.0" promptText="Enter Responsibility Name" style="-fx-background-color: white; -fx-background-radius: 16; -fx-border-radius: 16; -fx-border-color: #089bab;">
@@ -32,21 +32,21 @@
       </TextField>
       <Text fill="#089bab" layoutX="716.0" layoutY="201.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Staff ID">
          <font>
-            <Font name="Verdana Bold" size="28.0" />
+            <Font name="Verdana Bold" size="32.0" />
          </font>
       </Text>
-      <Pane fx:id="updateTask" layoutX="600.0" layoutY="550.0" onMouseClicked="#updateTasks" prefHeight="60.0" prefWidth="160.0" style="-fx-background-color: FEAD54; -fx-background-radius: 40;">
+      <Pane fx:id="updateTask" layoutX="600.0" layoutY="630.0" onMouseClicked="#updateTasks" prefHeight="60.0" prefWidth="140.0" style="-fx-background-color: FEAD54; -fx-background-radius: 40;">
          <children>
-            <Text fill="WHITE" layoutX="26.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Update">
+            <Text fill="WHITE" layoutX="20.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Update">
                <font>
-                  <Font name="Verdana Bold" size="28.0" />
+                  <Font name="Verdana Bold" size="24.0" />
                </font>
             </Text>
          </children>
       </Pane>
       <Text fill="#089bab" layoutX="154.0" layoutY="375.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Description">
          <font>
-            <Font name="Verdana Bold" size="28.0" />
+            <Font name="Verdana Bold" size="32.0" />
          </font>
       </Text>
       <Text fx:id="errorMessageDisplay" fill="#f9988b" layoutX="10.0" layoutY="710.0" strokeType="OUTSIDE" strokeWidth="0.0" text=" " textAlignment="CENTER" wrappingWidth="1257.1827697753906">
