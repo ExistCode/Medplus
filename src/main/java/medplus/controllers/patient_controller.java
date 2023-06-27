@@ -38,7 +38,7 @@ public class patient_controller {
     private TextField searchField;
 
     @FXML
-    private Pane dashboardbutton;
+    private Pane dashboardButton;
 
     @FXML
     private Pane patientsButton;
@@ -75,11 +75,12 @@ public class patient_controller {
         App.setRoot("staff_all_home_screen");
     }
 
+    // Initialize the controller and setting up the table
     @FXML
     public void initialize() {
         initializePatientTableData();
         searchPatient();
-
+        // Function to move to other screen when double clicked
         patientsTable.setOnMouseClicked(event -> {
             if (event.getClickCount() == 2) {
                 PatientTableDataModel selectedPatient = patientsTable.getSelectionModel().getSelectedItem();
@@ -107,11 +108,12 @@ public class patient_controller {
 
     }
 
+    // Initialize the patient Table
     @FXML
     public void initializePatientTableData() {
         ObservableList<PatientTableDataModel> patientDataList = PatientTableDataModel
                 .convertPatientDataToPatientTableDataModel();
-
+        // Set the current table column
         TableColumn patientIdColumn = new TableColumn("Patient ID");
         TableColumn nameColumn = new TableColumn("Name");
         TableColumn genderColumn = new TableColumn("Gender");
@@ -139,9 +141,10 @@ public class patient_controller {
 
     @FXML
     public void searchPatient() {
+        // Fetch the current patient list
         ObservableList<PatientTableDataModel> patientDataList = PatientTableDataModel
                 .convertPatientDataToPatientTableDataModel();
-
+        // Filter it according to the search field input
         FilteredList<PatientTableDataModel> filteredData = new FilteredList<>(patientDataList, b -> true);
         searchField.textProperty().addListener((observable, oldvalue, newvalue) -> {
             filteredData.setPredicate(PatientTableDataModel -> {

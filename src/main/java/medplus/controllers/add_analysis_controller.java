@@ -104,13 +104,14 @@ public class add_analysis_controller {
 
     @FXML
     public void initialize() {
+        // Initialize the combobox
         patientNameComboBox.setValue(AnalysisData.initanalysisData.getPatientName());
         analysisType.setItems(analysisTypeOptions);
-        System.out.println(fetchPatientName());
         staffIdComboBox.setItems(fetchStaffId());
         patientNameComboBox.setItems(fetchPatientName());
 
     }
+    // Fetch every patient Name
 
     ObservableList<String> fetchPatientName() {
         ObservableList<PatientTableDataModel> patientDataList = PatientTableDataModel
@@ -121,6 +122,7 @@ public class add_analysis_controller {
         }
         return patientName;
     }
+    // Fetch every staff Id
 
     ObservableList<String> fetchStaffId() {
         ObservableList<StaffTableDataModel> staffDataList = StaffTableDataModel

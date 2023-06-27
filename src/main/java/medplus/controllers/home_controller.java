@@ -126,18 +126,19 @@ public class home_controller {
         App.setRoot("home_screen");
     }
 
+    // Initializes the JavaFX controller and sets up the initial state of the UI
+    // elements.
     @FXML
     public void initialize() {
         Format f = new SimpleDateFormat("dd MMM yy");
         String strDate = f.format(new Date());
         datetime.setText(strDate);
+        // Fetch initial data from the database
         List<Patient> initialPatientList = PatientData.fetchPatientDataFromDatabase();
         List<Staff> initialStaffList = StaffData.fetchStaffDataFromDatabase();
-
         List<Appointment> initialAppointmentList = AppointmentData.fetchAllAppointmentDataFromDatabase();
         List<Room> initialRoomList = RoomData.fetchRoomDataFromDatabase();
-        numOfPatients.setText(Integer.toString(initialPatientList.size()));
-        numOfStaffs.setText(Integer.toString(initialStaffList.size()));
+
         // To get the number of staff
         for (Staff staff : initialStaffList) {
             if (staff.getStaffDepartment().equals("Doctor")) {
@@ -151,36 +152,39 @@ public class home_controller {
             }
 
         }
-
+        // Display the number of patients and staff members
+        numOfPatients.setText(Integer.toString(initialPatientList.size()));
+        numOfStaffs.setText(Integer.toString(initialStaffList.size()));
         numOfAppointments.setText(Integer.toString(initialAppointmentList.size()));
         numOfDoctors.setText(Integer.toString(numOfDoctor));
         numOfNurses.setText(Integer.toString(numOfNurse));
         numOfAdmin.setText(Integer.toString(numOfAdmins));
         numOfRooms.setText(Integer.toString(initialRoomList.size()));
-
+        // Retrieve the latest three patients and display their details
         List<Patient> patientList = getLatestThreePatients();
-        // Showing the details of the first patient
         firstPatientsNames.setText(patientList.get(0).getName());
         firstPatientGender.setText(patientList.get(0).getPatientGender());
         firstPatientsdateOfBirth.setText(patientList.get(0).getDateOfBirth().toString());
         firstPatientsAddress.setText(patientList.get(0).getPatientAddress());
-        // Show the details of the second patient
+
         SecondPatientsNames.setText(patientList.get(1).getName());
         SecondPatientGender.setText(patientList.get(1).getPatientGender());
         SecondPatientdateOfBirth.setText(patientList.get(1).getDateOfBirth().toString());
         SecondPatientAddress.setText(patientList.get(1).getPatientAddress());
-        // Show the details of the third patient
+
         thirdPatientsNames.setText(patientList.get(2).getName());
         thirdPatientGender.setText(patientList.get(2).getPatientGender());
         thirdPatientDateOfBirth.setText(patientList.get(2).getDateOfBirth().toString());
         ThirdPatientAddress.setText(patientList.get(2).getPatientAddress());
-        // Show the details of the first appointment
+
+        // Display the details of the latest two appointments
+
         firstPatientNameAppointment.setText(getLatest2Treatments().get(1).getPatientName());
         firstAppointmentDetails.setText(
                 getLatest2Treatments().get(1).getTreatmentInfo());
         firstAppointmentStaffName.setText(getLatest2Treatments().get(1).getStaffId());
         secondPatientNameAppointment.setText(getLatest2Treatments().get(0).getPatientName());
-        // Show the details of the second appointment
+
         secondAppointmentDetails.setText(
                 getLatest2Treatments().get(0).getTreatmentInfo());
         secondAppointmentStaffName.setText(getLatest2Treatments().get(0).getStaffId());
