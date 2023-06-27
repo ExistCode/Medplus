@@ -46,24 +46,24 @@ public class staff_admin_controller {
     private TableView<StaffTableDataModel> adminTable;
 
     @FXML
-    private TextField searchButton;
+    private TextField searchField;
+
+    @FXML
+    private Pane dashboardButton;
+
+    @FXML
+    private Pane patientsButton;
+
+    @FXML
+    private Pane searchButton;
+
+    @FXML
+    private Pane staffButton;
 
     @FXML
     void addNewPatientScreen(MouseEvent event) throws IOException {
         App.setRoot("add_staff_screen");
     }
-
-    @FXML
-    private Pane dashboardbutton;
-
-    @FXML
-    private Pane patientsbutton;
-
-    @FXML
-    private Pane searchbutton;
-
-    @FXML
-    private Pane staffButton;
 
     @FXML
     void changedToDashboard(MouseEvent event) throws IOException {
@@ -187,7 +187,7 @@ public class staff_admin_controller {
 
         adminTable.setItems(adminList);
         FilteredList<StaffTableDataModel> filteredData = new FilteredList<>(adminList, b -> true);
-        searchButton.textProperty().addListener((observable, oldvalue, newvalue) -> {
+        searchField.textProperty().addListener((observable, oldvalue, newvalue) -> {
             filteredData.setPredicate(StaffTableDataModel -> {
                 if (newvalue.isEmpty() || newvalue.isBlank() || newvalue == null) {
                     return true;
@@ -229,8 +229,6 @@ public class staff_admin_controller {
                         StaffData.initStaffData.setStaffContactNumber(selectedStaff.getContactNumber());
                         StaffData.initStaffData.setStaffDepartment(selectedStaff.getDepartment());
                         StaffData.initStaffData.setStaffJobTitle(selectedStaff.getJobTitle());
-                        //
-
                         System.out.println(StaffData.initStaffData.getName());
                         System.out.println(StaffData.initStaffData.getStaffEmail());
                         System.out.println(StaffData.initStaffData.getStaffContactNumber());

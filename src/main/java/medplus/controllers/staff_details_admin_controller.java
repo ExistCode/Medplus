@@ -40,13 +40,13 @@ public class staff_details_admin_controller {
     private Pane editStaffButton;
 
     @FXML
-    private Pane patientsbutton;
+    private Pane patientsButton;
 
     @FXML
     private TableView<ResponsibilitiesTableDataModel> responsibilitiesTable;
 
     @FXML
-    private Pane searchbutton;
+    private Pane searchButton;
 
     @FXML
     private Text staffBirthday;

@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.time.LocalDate;
 import java.time.Period;
 import java.util.List;
-
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -93,7 +92,7 @@ public class add_staff_controller {
 
     private String validateInput() {
         String errorMessage = "";
-
+        // Validate no empty input
         if (nameTextField.getText().isEmpty() || nationalIdTextField.getText().isEmpty()
                 || emailTextField.getText().isEmpty() || dateOfBirthSelector.getValue() == null
                 || contactNumberTextField.getText().isEmpty() || jobTitleTextField.getText().isEmpty()

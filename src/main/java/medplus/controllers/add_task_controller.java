@@ -2,7 +2,6 @@ package medplus.controllers;
 
 import java.io.IOException;
 import java.util.List;
-
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -79,7 +78,7 @@ public class add_task_controller {
 
     private String validateInput() {
         String errorMessage = "";
-
+        // Validate no empty input
         if (taskName.getText().isEmpty() || staffIdComboBox.getSelectionModel().isEmpty()
                 || TaskDetails.getText().isEmpty()) {
             errorMessage = "Please make sure all fields are filled with the appropriate type.";

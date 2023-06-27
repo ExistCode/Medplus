@@ -111,6 +111,7 @@ public class add_patient_controller {
 
     private String validateInput() {
         String errorMessage = "";
+        // Validate no empty input
 
         if (nameTextField.getText().isEmpty() || nationalIdTextField.getText().isEmpty()
                 || gender.getSelectionModel().isEmpty() || dateOfBirthSelector.getValue() == null

@@ -2,7 +2,6 @@ package medplus.controllers;
 
 import java.io.IOException;
 import java.util.List;
-
 import javafx.fxml.FXML;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
@@ -59,7 +58,6 @@ public class update_procedure_controller {
                     .parseInt(procedureList.get(procedureList.size() - 1).getProcedureId().substring(2))
                     + 1;
             String newProcedureIdFormatted = String.format("PD%03d", newProcedureId);
-
             Procedure newProcedure = new Procedure(newProcedureIdFormatted, patientNameTextField.getText(),
                     staffIDTextField.getText(),
                     dateDatePicker.getValue(),

@@ -136,10 +136,8 @@ public class update_patient_controller {
         addressTextField.setText(PatientData.initPatientData.getPatientAddress());
         genderComboBox.setValue(PatientData.initPatientData.getPatientGender());
         genderComboBox.setItems(genderOptions);
-
         bloodTypeComboBox.setValue(PatientData.initPatientData.getPatientBloodType());
         bloodTypeComboBox.setItems(bloodTypeOptions);
-
         weightTextField.setText(String.valueOf(PatientData.initPatientData.getPatientWeight()));
         heightTextField.setText(String.valueOf(PatientData.initPatientData.getPatientHeight()));
     }

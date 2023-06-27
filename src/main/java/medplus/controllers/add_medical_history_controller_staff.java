@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.List;
-
 import javafx.fxml.FXML;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
@@ -63,15 +62,15 @@ public class add_medical_history_controller_staff {
             String result = resultTextField.getText();
             String observation = observationTextField.getText();
             String complication = complicationTextField.getText();
-
+            // Added value to the object
             MedicalHistory newMedicalHistory = new MedicalHistory(newMedHisIdFormatted, patientId, staffId, date,
                     LocalTime.now(), result,
                     observation, complication); // Empty medHisId parameter
             MedicalHistoryData.addNewMedicalHistory(newMedicalHistory);
-            System.out.println("Medical History added");
 
             try {
-                App.setRoot("staff_details_analysis_screen");
+                // Moving to other screen
+                App.setRoot("staff_details_screen");
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -88,6 +87,7 @@ public class add_medical_history_controller_staff {
 
     private String validateInput() {
         String errorMessage = "";
+        // Validate no empty input
 
         if (patientIdTextField.getText().isEmpty() || staffIDTextField.getText().isEmpty()
                 || medHisDatePicker.getValue() == null || resultTextField.getText().isEmpty()

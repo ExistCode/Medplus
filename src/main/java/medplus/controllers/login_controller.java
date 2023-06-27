@@ -32,6 +32,7 @@ public class login_controller {
         try {
             username = Username.getText();
             password = Password.getText();
+            // Validate Credentials
             if (!username.isEmpty() || !password.isEmpty()) {
                 if (username.equalsIgnoreCase(adminUsername) && password.equalsIgnoreCase(adminPassword)) {
                     App.setRoot("home_screen");

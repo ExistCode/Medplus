@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.List;
-
 import javafx.fxml.FXML;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
@@ -76,6 +75,7 @@ public class add_medical_history_controller {
             MedicalHistoryData.addNewMedicalHistory(newMedicalHistory);
 
             try {
+                // Move to next screen
                 App.setRoot("patients_details_screen_analysis");
             } catch (IOException e) {
                 e.printStackTrace();
@@ -88,6 +88,7 @@ public class add_medical_history_controller {
 
     private String validateInput() {
         String errorMessage = "";
+        // Validate no empty input
 
         if (patientIdTextField.getText().isEmpty() || staffIDTextField.getText().isEmpty()
                 || medHisDatePicker.getValue() == null || resultTextField.getText().isEmpty()
