@@ -37,7 +37,7 @@ public class login_controller {
                 if (username.equalsIgnoreCase(adminUsername) && password.equalsIgnoreCase(adminPassword)) {
                     App.setRoot("home_screen");
                 } else {
-                    label.setText("!Wrong username or password. Try again.");
+                    label.setText("Wrong username or password! Try again.");
                 }
 
             } else {
