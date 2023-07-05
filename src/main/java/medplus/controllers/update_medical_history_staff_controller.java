@@ -63,7 +63,7 @@ public class update_medical_history_staff_controller {
                     complicationTextField.getText());
 
             MedicalHistoryData.updateMedicalHistory(updatedMedHis);
-            App.setRoot("staff_details_analysis_screen");
+            App.setRoot("staff_details_screen");
         } else {
             System.out.println(errorMessage);
         }
@@ -87,7 +87,7 @@ public class update_medical_history_staff_controller {
 
     @FXML
     void backToSearch(MouseEvent event) throws IOException {
-        App.setRoot("staff_details_analysis_screen");
+        App.setRoot("staff_details_screen");
     }
 
     // Initialize the medical history details

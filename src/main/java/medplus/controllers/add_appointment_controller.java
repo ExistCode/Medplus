@@ -70,7 +70,7 @@ public class add_appointment_controller {
             AppointmentData.addNewAppointment(newAppointment);
 
             try {
-                App.setRoot("staff_details_analysis_Screen");
+                App.setRoot("staff_details_screen");
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -95,14 +95,14 @@ public class add_appointment_controller {
 
     @FXML
     void backToSearch(MouseEvent event) throws IOException {
-        App.setRoot("staff_details_analysis_screen");
+        App.setRoot("staff_details_screen");
 
     }
 
     // Initialize Combobox and staffId
     @FXML
     public void initialize() {
-        staffIdTextField.setText(StaffData.initStaffData.getStaffId());
+        staffIdTextField.setText(AppointmentData.initAppointmentData.getStaffId());
         roomNumberComboBox.setItems(roomNumOption);
     }
 }

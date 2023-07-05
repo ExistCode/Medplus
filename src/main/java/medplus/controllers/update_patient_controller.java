@@ -90,7 +90,15 @@ public class update_patient_controller {
                     addressTextField.getText(),
                     contactNumberTextField.getText());
             PatientData.updatePatientData(newPatient);
-            App.setRoot("patients_home_screen");
+            PatientData.initPatientData.setPatientId(PatientData.initPatientData.getPatientId());
+            PatientData.initPatientData.setPatientGender(genderComboBox.getSelectionModel().getSelectedItem());
+            PatientData.initPatientData.setDateOfBirth(dateOfBirth);
+            PatientData.initPatientData
+                    .setPatientBloodType(bloodTypeComboBox.getSelectionModel().getSelectedItem());
+            PatientData.initPatientData.setPatientHeight(Double.parseDouble(heightTextField.getText()));
+            PatientData.initPatientData.setPatientWeight(Double.parseDouble(weightTextField.getText()));
+
+            App.setRoot("patients_details_screen_analysis");
         } else {
             // Show error message
             System.out.println(errorMessage);

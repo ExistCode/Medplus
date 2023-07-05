@@ -1,5 +1,5 @@
 Diagnosis ID,Patient Name,Staff ID,Date,Diagnosis
-D001,Ahmad Abdullah,S004,2023-01-15,Appendicitis
+D001,Ahmad Abdullah,S003,2023-01-15,Appendicitis
 D002,Emily Tan,S008,2023-02-28,Common Cold
 D003,Anita Devi,S011,2023-03-19,Migraine
 D004,Steven Tan,S009,2023-04-02,Cataracts

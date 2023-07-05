@@ -136,7 +136,7 @@ public class staff_details_controller {
 
     @FXML
     void addNewAppointment(MouseEvent event) throws IOException {
-        AppointmentData.initAppointmentData.setPatientId(StaffData.initStaffData.getStaffId());
+        AppointmentData.initAppointmentData.setStaffId(StaffData.initStaffData.getStaffId());
         App.setRoot("add_appointment_screen");
     }
 

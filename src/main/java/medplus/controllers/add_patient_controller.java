@@ -94,11 +94,12 @@ public class add_patient_controller {
                     addressTextField.getText(),
                     contactNumberTextField.getText());
             PatientData.addNewPatient(newPatient);
-            PatientData.initPatientData.setPatientId(nameTextField.getText());
+            PatientData.initPatientData.setPatientId(newPatientIdFormatted);
             PatientData.initPatientData.setPatientGender(gender.getSelectionModel().getSelectedItem());
             PatientData.initPatientData.setDateOfBirth(dateOfBirth);
             PatientData.initPatientData
                     .setPatientBloodType(bloodType.getSelectionModel().getSelectedItem());
+            PatientData.initPatientData.setPatientAddress(addressTextField.getText());
             PatientData.initPatientData.setPatientHeight(Double.parseDouble(heightTextField.getText()));
             PatientData.initPatientData.setPatientWeight(Double.parseDouble(weightTextField.getText()));
 
