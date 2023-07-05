@@ -136,7 +136,8 @@ public class staff_admin_controller {
                 // Putting the value to an empty object
                 StaffData.initStaffData.setStaffId(selectedStaff.getStaffId());
                 StaffData.initStaffData.setName(selectedStaff.getName());
-                StaffData.initStaffData.setStaffNationalId("12347483");
+                StaffData.initStaffData.setDateOfBirth(StaffData.initStaffData.getDateOfBirth());
+                StaffData.initStaffData.setStaffNationalId(StaffData.initStaffData.getStaffNationalId());
                 StaffData.initStaffData.setStaffEmail(selectedStaff.getEmail());
                 StaffData.initStaffData.setDateOfBirth(null);
                 StaffData.initStaffData.setStaffAge(30);

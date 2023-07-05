@@ -21,10 +21,30 @@ S019,Kevin Lee,9012345696,kevinlee@medplus.com,1984-04-17,39,60123456787,Physici
 S020,Jennifer Lim,9012345697,jenniferlim@medplus.com,1985-12-28,37,60123456788,Occupational Therapist,Nurse
 S021,William Tan,9012345698,williamtan@medplus.com,1990-08-14,33,60123456789,Dietitian,Nurse
 S022,Alice Ng,9012345699,aliceng@medplus.com,1982-02-25,41,60123456780,Medical Worker,Nurse
-S023,Kenneth Chong,12347483,kennethchong@medplus.com,2023-06-02,0,60123456781,Transcriptionists,Administration
 S024,Grace Lim,9012345701,gracelim@medplus.com,1995-02-07,28,60123456782,Hospital Administrator,Administration
 S025,Daniel Wong,9012345702,danielwong@medplus.com,1988-06-30,35,60123456783,Phlebotomist,Nurse
 S026,Stephanie Tan,9012345703,stephanietan@medplus.com,1993-03-08,30,60123456784,Medical Laboratory Technologist,Nurse
 S027,Brian Lim,9012345704,brianlim@medplus.com,1991-09-17,32,60123456785,Medical Technologist,Nurse
 S028,A,23224235325,dhioadf,1994-07-01,29,2434653764,Doctor,Doctor
 S029,B,986213124,hjf@pekf,1985-07-13,37,012364879,Doctor,Doctor
+S030,Michelle Tan,9012345679,michelletan@medplus.com,1989-09-23,33,60123456890,Administrative Officer,Administration
+S031,David Ng,9012345680,davidng@medplus.com,1987-11-07,36,60123456891,Administrative Assistant,Administration
+S032,Stephanie Lee,9012345681,stephanielee@medplus.com,1992-03-12,29,60123456892,Office Manager,Administration
+S033,Alexander Wong,9012345682,alexanderwong@medplus.com,1985-08-29,37,60123456893,Medical Billing Specialist,Administration
+S034,Nicole Lim,9012345683,nicolelim@medplus.com,1988-02-18,34,60123456894,Healthcare Compliance Officer,Administration
+S035,William Chen,9012345684,williamchen@medplus.com,1982-07-06,40,60123456895,Medical Records Clerk,Administration
+S036,Amanda Goh,9012345685,amandagoh@medplus.com,1990-04-05,32,60123456896,Patient Services Coordinator,Administration
+S037,Benjamin Tan,9012345686,benjamintan@medplus.com,1977-12-01,45,60123456897,Human Resources Manager,Administration
+S038,Emily Lim,9012345687,emilylim@medplus.com,1983-10-14,39,60123456898,Front Desk Receptionist,Administration
+S039,Christopher Ng,9012345688,christopherng@medplus.com,1986-05-19,37,60123456899,Quality Assurance Specialist,Administration
+S040,Michelle Lim,9012345699,michellelim@medplus.com,1989-02-25,34,60123456900,Registered Nurse,Nurse
+S041,Joshua Tan,9012345700,joshuatan@medplus.com,1985-09-10,38,60123456901,Licensed Practical Nurse,Nurse
+S042,Rebecca Chong,9012345701,rebeccachong@medplus.com,1991-02-07,32,60123456902,Operating Room Nurse,Nurse
+S043,Andrew Lim,9012345702,andrewlim@medplus.com,1988-06-30,35,60123456903,ICU Nurse,Nurse
+S044,Sophia Wong,9012345703,sophiawong@medplus.com,1993-03-08,28,60123456904,Emergency Room Nurse,Nurse
+S045,Thomas Ng,9012345704,thomasng@medplus.com,1991-09-17,32,60123456905,Pediatric Nurse,Nurse
+S046,Jessica Yap,9012345705,jessicayap@medplus.com,1986-04-14,37,60123456906,Medical-Surgical Nurse,Nurse
+S047,William Chia,9012345706,williamchia@medplus.com,1989-11-27,34,60123456907,Psychiatric Nurse,Nurse
+S048,Natalie Lim,9012345707,natalielim@medplus.com,1983-08-02,40,60123456908,Home Health Nurse,Nurse
+S049,Jonathan Teo,9012345708,jonathanteo@medplus.com,1992-12-19,31,60123456909,Rehabilitation Nurse,Nurse
+S050,Michelle Tan,9012345709,michelletan@medplus.com,1987-05-12,36,60123456910,Medical Specialist,Doctor

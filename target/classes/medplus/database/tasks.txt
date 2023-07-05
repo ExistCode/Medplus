@@ -24,5 +24,4 @@ T022,Analyze healthcare data and generate reports,Collect  analyze  and present 
 T023,Promote healthcare ethics and compliance,Foster ethical practices and ensure compliance with regulations and standards in healthcare.,S023
 T024,Research healthcare policies and trends,Conduct research on healthcare policies emerging trends and their implications for healthcare delivery.,S024
 T025,Manage risk in healthcare settings,Identify potential risks and develop strategies to minimize risks and enhance patient safety.,S023
-T026,Coordinate healthcare facility accreditation,Guide and oversee the accreditation process for healthcare facilities.,S024
 T027,Conduct healthcare administration research,Undertake research projects on topics related to healthcare administration and management.,S023

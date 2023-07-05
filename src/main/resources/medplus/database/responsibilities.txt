@@ -24,5 +24,4 @@ RS022,Data Analysis and Reporting,Analyze healthcare data and generate reports f
 RS023,Healthcare Ethics and Compliance,Promote ethical practices and ensure compliance in healthcare organizations,S023
 RS024,Healthcare Policy Analysis,Research and analyze healthcare policies and their impact on healthcare delivery,S024
 RS025,Risk Management,Identify and mitigate risks in healthcare settings to ensure patient safety,S023
-RS026,Healthcare Facility Accreditation,Facilitate and manage the accreditation process for healthcare facilities,S024
 RS027,Healthcare Administration Research,Conduct research on healthcare administration topics and trends,S023

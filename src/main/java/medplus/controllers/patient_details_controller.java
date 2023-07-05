@@ -18,6 +18,7 @@ import medplus.App;
 import medplus.data.AnalysisData;
 import medplus.data.MedicalHistoryData;
 import medplus.data.PatientData;
+import medplus.models.Patient;
 import medplus.tableModels.AnalysisTableDataModel;
 import medplus.tableModels.DiagnosisTableDataModel;
 import medplus.tableModels.MedicalHistoryTableDataModel;
@@ -216,15 +217,15 @@ public class patient_details_controller extends patient_controller {
     void editPatientDetails(MouseEvent event) throws IOException {
         PatientData.initPatientData.setPatientId(PatientData.initPatientData.getPatientId());
         PatientData.initPatientData.setName(PatientData.initPatientData.getName());
-        PatientData.initPatientData.setPatientNationalId("6789012345");
+        PatientData.initPatientData.setPatientNationalId(PatientData.initPatientData.getPatientNationalId());
         PatientData.initPatientData.setPatientGender(PatientData.initPatientData.getPatientGender());
         PatientData.initPatientData.setDateOfBirth(PatientData.initPatientData.getDateOfBirth());
         PatientData.initPatientData.setPatientAge(PatientData.initPatientData.getPatientAge());
         PatientData.initPatientData.setPatientHeight(PatientData.initPatientData.getPatientHeight());
         PatientData.initPatientData.setPatientWeight(PatientData.initPatientData.getPatientWeight());
         PatientData.initPatientData.setPatientBloodType(PatientData.initPatientData.getPatientBloodType());
-        PatientData.initPatientData.setPatientAddress("Miami");
-        PatientData.initPatientData.setPatientContactNumber("60238343422");
+        PatientData.initPatientData.setPatientAddress(PatientData.initPatientData.getPatientAddress());
+        PatientData.initPatientData.setPatientContactNumber(PatientData.initPatientData.getPatientContactNumber());
         App.setRoot("update_patients_screen");
 
     }
