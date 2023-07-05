@@ -241,6 +241,7 @@ public class patient_details_controller extends patient_controller {
         patientsNameText.setText(PatientData.initPatientData.getName());
         GenderText.setText(PatientData.initPatientData.getPatientGender());
         bloodTypeText.setText(PatientData.initPatientData.getPatientBloodType());
+        dateOfBirthText.setText(PatientData.initPatientData.getDateOfBirth().toString());
         heightText.setText(Double.toString(PatientData.initPatientData.getPatientHeight()));
         weightText.setText(Double.toString(PatientData.initPatientData.getPatientWeight()));
         initializeMedicalHistoryTable();

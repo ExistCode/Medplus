@@ -49,7 +49,7 @@ public class update_appointment_controller {
 
     @FXML
     void backToStaffDetails(MouseEvent event) throws IOException {
-        App.setRoot("staff_details_analysis_screen");
+        App.setRoot("staff_details_screen");
     }
 
     @FXML
@@ -67,7 +67,7 @@ public class update_appointment_controller {
                     descriptionTextField.getText());
 
             AppointmentData.updateAppointment(updatedAppointment);
-            App.setRoot("staff_details_analysis_screen");
+            App.setRoot("staff_details_screen");
         } else {
             System.out.println(errorMessage);
         }

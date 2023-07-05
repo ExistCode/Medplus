@@ -70,7 +70,7 @@ public class add_appointment_controller {
             AppointmentData.addNewAppointment(newAppointment);
 
             try {
-                App.setRoot("staff_details_analysis_Screen");
+                App.setRoot("staff_details_screen");
             } catch (IOException e) {
                 e.printStackTrace();
             }

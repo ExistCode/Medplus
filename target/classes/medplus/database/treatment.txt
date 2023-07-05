@@ -1,6 +1,6 @@
 Treatment ID,Patient Name,Doctor ID,Start Date,End Date,Treatment Info
 T001,Mohammad Hassan,S004,2023-04-01,2023-04-05,Check-up and medication prescription
-T002,Ahmad Hidayat,S008,2023-02-24,2023-02-22,Child vaccination
+T002,Ahmad Hidayat,S008,2023-02-24,2023-02-22,-,
 T003,Siti Rahayu,S003,2023-01-09,2023-01-13,Appendectomy surgery
 T004,Mohammad Yusuf,S012,2023-03-15,2023-03-18,General anesthesia for dental procedure
 T005,Novi Susanti,S009,2023-06-17,2023-06-22,Eye examination and prescription

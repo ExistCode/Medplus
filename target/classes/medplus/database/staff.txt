@@ -1,5 +1,5 @@
 Staff ID,Name,National ID,Email,Date of Birth,Age,Contact Number,Job Title,Department
-S001,John Doe,9012345678,johndoe@medplus.com,1985-06-15,38,60123456789,Resident Doctor,Doctor
+S001,John Doe,12347483,johndoe@medplus.com,1995-06-30,28,60123456789,Resident Doctor,Doctor
 S002,Emily Tan,9012345679,emilytan@medplus.com,1987-09-23,35,60123456780,General Practitioner,Doctor
 S003,Michael Lee,12347483,michaellee@medplus.com,2023-06-09,0,60123456781,Surgeon,Doctor
 S004,Sarah Wrong,12347483,sarahwong@medplus.com,1988-06-16,35,60123456782,Obstetrician,Doctor
@@ -26,3 +26,5 @@ S024,Grace Lim,9012345701,gracelim@medplus.com,1995-02-07,28,60123456782,Hospita
 S025,Daniel Wong,9012345702,danielwong@medplus.com,1988-06-30,35,60123456783,Phlebotomist,Nurse
 S026,Stephanie Tan,9012345703,stephanietan@medplus.com,1993-03-08,30,60123456784,Medical Laboratory Technologist,Nurse
 S027,Brian Lim,9012345704,brianlim@medplus.com,1991-09-17,32,60123456785,Medical Technologist,Nurse
+S028,A,23224235325,dhioadf,1994-07-01,29,2434653764,Doctor,Doctor
+S029,B,986213124,hjf@pekf,1985-07-13,37,012364879,Doctor,Doctor
