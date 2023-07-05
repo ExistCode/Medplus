@@ -246,14 +246,14 @@
                   <Font name="SF Pro Rounded Semibold" size="40.0" />
                </font>
             </Text>
-            <Text fill="WHITE" layoutX="28.0" layoutY="275.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Administrative" wrappingWidth="177.27801513671875">
+            <Text fill="WHITE" layoutX="28.0" layoutY="275.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Administrative" textAlignment="CENTER" wrappingWidth="161.74024839438448">
                <font>
                   <Font name="SF Pro Text Regular" size="20.0" />
                </font>
             </Text>
          </children>
       </Pane>
-      <Text fill="#f9988b" layoutX="696.0" layoutY="540.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Upcoming's Treatment">
+      <Text fill="#f9988b" layoutX="696.0" layoutY="540.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Upcoming Treatments">
          <font>
             <Font name="SF Pro Display Semibold" size="24.0" />
          </font>
